@@ -786,32 +786,73 @@
             margin-bottom: var(--space-sm);
         }
 
-        .cta-section p {
+        .cta-section > .container > p {
             font-size: 18px;
-            margin-bottom: var(--space-lg);
+            margin-bottom: var(--space-xl);
             opacity: 0.95;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .cta-section .btn-primary {
+        /* CTA Options Grid */
+        .cta-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            max-width: 1100px;
+            margin: 0 auto var(--space-lg);
+        }
+
+        @media (max-width: 968px) {
+            .cta-options {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+        }
+
+        .cta-option {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            transition: all 0.3s ease;
+        }
+
+        .cta-option:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .cta-option-icon {
+            font-size: 48px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .cta-option h3 {
+            color: var(--white);
+            font-size: 20px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .cta-option p {
+            font-size: 15px;
+            opacity: 0.9;
+            margin-bottom: var(--space-md);
+            min-height: 45px;
+        }
+
+        .cta-option .btn-primary {
             background: var(--white);
             color: var(--teal);
+            width: 100%;
         }
 
-        .cta-section .btn-primary:hover {
+        .cta-option .btn-primary:hover {
             background: var(--gray-100);
             color: var(--navy);
-        }
-
-        .cta-section .btn-secondary {
-            border-color: var(--white);
-            color: var(--white);
-        }
-
-        .cta-section .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
         }
 
         .cta-note {
@@ -1516,21 +1557,45 @@
         <div class="container">
             <h2>Готовы убрать речевой блок?</h2>
             <p>
-                Первый шаг — точно понять, <strong>где именно у вас сбой</strong><br>
+                Первый шаг — точно понять, где именно у вас сбой<br>
                 и какой тип Foreign Language Anxiety работает в вашем случае.
             </p>
 
-            <div class="btn-group" style="justify-content: center; margin-top: 24px;">
-                <a href="https://t.me/unblock_eng" class="btn btn-primary" target="_blank">
-                    Написать в Telegram: «AUDIT»
-                </a>
-                <a href="diagnostic.html" class="btn btn-secondary">
-                    Пройти диагностику (2 мин)
-                </a>
+            <div class="cta-options">
+                <!-- Option 1: Quick Diagnostic -->
+                <div class="cta-option">
+                    <div class="cta-option-icon">📊</div>
+                    <h3>Быстрая диагностика</h3>
+                    <p>2 минуты, мгновенный результат с типом вашего блока</p>
+                    <a href="diagnostic.html" class="btn btn-primary">
+                        Пройти диагностику
+                    </a>
+                </div>
+
+                <!-- Option 2: Personal Audit -->
+                <div class="cta-option">
+                    <div class="cta-option-icon">💬</div>
+                    <h3>Персональный аудит</h3>
+                    <p>30 минут, глубокий разбор ситуации и план действий</p>
+                    <a href="https://t.me/unblock_eng" class="btn btn-primary" target="_blank">
+                        Написать: "AUDIT"
+                    </a>
+                </div>
+
+                <!-- Option 3: PDF Download -->
+                <div class="cta-option">
+                    <div class="cta-option-icon">📄</div>
+                    <h3>Срочная подготовка</h3>
+                    <p>PDF гайд: 5 Control Phrases для созвона через 24 часа</p>
+                    <a href="#" class="btn btn-primary">
+                        Скачать PDF
+                    </a>
+                </div>
             </div>
 
-            <p class="cta-note">
-                <strong>Бесплатный аудит:</strong> разбор вашей ситуации и чёткий план действий за 30 минут.
+            <p class="cta-note" style="margin-top: 32px;">
+                Все три варианта <strong>бесплатные</strong>. 
+                Выберите подходящий под вашу ситуацию.
             </p>
         </div>
     </section>
@@ -1557,14 +1622,14 @@
                         <li><a href="#problem">Проблема</a></li>
                         <li><a href="#about">О методике</a></li>
                         <li><a href="diagnostic.html">Диагностика</a></li>
-                        <li><a href="#">Кейсы клиентов</a></li>
+                        <li><a href="#diagnostic">Кейсы клиентов</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-links">
                     <h4>Ресурсы</h4>
                     <ul>
-                        <li><a href="#">Скачать PDF гайд</a></li>
+                        <li><a href="#">Срочная подготовка к созвону (PDF)</a></li>
                         <li><a href="https://t.me/unblock_eng" target="_blank">Telegram канал</a></li>
                         <li><a href="#">Политика конфиденциальности</a></li>
                         <li><a href="#">Договор оферты</a></li>
