@@ -52,18 +52,59 @@
         .header {
             text-align: center;
             margin-bottom: 48px;
+            padding: 32px 24px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
         }
 
-        .header .logo {
+        .logo-container {
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .logo-accent {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+            -webkit-text-fill-color: var(--teal);
+        }
+
+        .tagline {
             font-size: 18px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 8px;
+            color: var(--gray-600);
+            font-weight: 500;
+            margin-top: 12px;
         }
 
-        .header .tagline {
+        .tagline-meta {
             font-size: 14px;
             color: var(--gray-500);
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 28px;
+            }
+            .tagline {
+                font-size: 16px;
+            }
         }
 
         /* ==================== PROGRESS BAR ==================== */
@@ -124,7 +165,7 @@
             }
         }
 
-        /* ==================== INTRO SCREEN ==================== */
+        /* ==================== SCREENS ==================== */
         .screen {
             display: none;
         }
@@ -178,6 +219,31 @@
             color: var(--teal);
             font-weight: 700;
             font-size: 18px;
+        }
+
+        /* ==================== DISCLAIMER BOX ==================== */
+        .disclaimer-box {
+            background: #fff8e1;
+            border-left: 4px solid var(--orange);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            border-radius: 8px;
+        }
+
+        .disclaimer-box h4 {
+            color: var(--orange);
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .disclaimer-box p {
+            font-size: 14px;
+            color: var(--gray-700);
+            margin-bottom: 0;
+            line-height: 1.6;
         }
 
         /* ==================== QUESTIONS ==================== */
@@ -435,6 +501,7 @@
         .type-score-label {
             font-size: 14px;
             color: var(--gray-500);
+            min-width: 140px;
         }
 
         .type-score-bar {
@@ -454,6 +521,8 @@
         .type-score-value {
             font-weight: 700;
             color: var(--navy);
+            min-width: 50px;
+            text-align: right;
         }
 
         .recommendation-box {
@@ -569,10 +638,16 @@
 <body>
 
     <div class="container">
-        <!-- Header -->
+        <!-- Enhanced Header -->
         <div class="header">
-            <div class="logo">Unblock English</div>
+            <div class="logo-container">
+                <div class="logo">
+                    Unblock English
+                    <span class="logo-accent">Разблокируй английский</span>
+                </div>
+            </div>
             <div class="tagline">Диагностика речевого блока</div>
+            <div class="tagline-meta">Foreign Language Anxiety Assessment</div>
         </div>
 
         <!-- Progress Bar -->
@@ -592,6 +667,16 @@
             <!-- SCREEN 0: INTRO -->
             <div class="screen active" id="screen-0">
                 <h2>Карта вашей языковой тревоги</h2>
+                
+                <div class="disclaimer-box">
+                    <h4><span>⚠️</span> Это упрощённая диагностика</h4>
+                    <p>
+                        Данный тест даёт первичное понимание вашего типа блока. 
+                        На бесплатном аудите мы проведём две полноценные диагностики 
+                        с более глубоким анализом вашей конкретной ситуации.
+                    </p>
+                </div>
+
                 <p>
                     Эта диагностика поможет определить:
                 </p>
@@ -766,11 +851,11 @@
                     <div class="question-helper">(Это поможет определить ваш тип тревоги)</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(8, 'yes', 'accuracy')">
+                    <div class="option" onclick="selectOption(8, 'yes')">
                         <input type="radio" name="q8" id="q8-yes" value="yes">
                         <label for="q8-yes">Да, боюсь ошибиться</label>
                     </div>
-                    <div class="option" onclick="selectOption(8, 'no', 'accuracy')">
+                    <div class="option" onclick="selectOption(8, 'no')">
                         <input type="radio" name="q8" id="q8-no" value="no">
                         <label for="q8-no">Нет, ошибки не смущают</label>
                     </div>
@@ -788,11 +873,11 @@
                     <div class="question-helper">(Это поможет определить ваш тип тревоги)</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(9, 'yes', 'accuracy')">
+                    <div class="option" onclick="selectOption(9, 'yes')">
                         <input type="radio" name="q9" id="q9-yes" value="yes">
                         <label for="q9-yes">Да, боюсь "потерять лицо"</label>
                     </div>
-                    <div class="option" onclick="selectOption(9, 'no', 'accuracy')">
+                    <div class="option" onclick="selectOption(9, 'no')">
                         <input type="radio" name="q9" id="q9-no" value="no">
                         <label for="q9-no">Нет, это меня не волнует</label>
                     </div>
@@ -810,11 +895,11 @@
                     <div class="question-helper">(Это поможет определить ваш тип тревоги)</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(10, 'yes', 'fluency')">
+                    <div class="option" onclick="selectOption(10, 'yes')">
                         <input type="radio" name="q10" id="q10-yes" value="yes">
                         <label for="q10-yes">Да, постоянно прокручиваю в голове</label>
                     </div>
-                    <div class="option" onclick="selectOption(10, 'no', 'fluency')">
+                    <div class="option" onclick="selectOption(10, 'no')">
                         <input type="radio" name="q10" id="q10-no" value="no">
                         <label for="q10-no">Нет, не зацикливаюсь</label>
                     </div>
@@ -892,6 +977,15 @@
                     <div class="severity-badge" id="severityBadge">Требует системной работы</div>
                 </div>
 
+                <div class="disclaimer-box">
+                    <h4><span>📊</span> Полная диагностика на аудите</h4>
+                    <p>
+                        Это упрощённая диагностика даёт первичное понимание. На бесплатном аудите 
+                        мы проведём две полноценные диагностики: (1) детальный анализ типа блока, 
+                        (2) карту триггерных ситуаций с конкретными техниками под ваш случай.
+                    </p>
+                </div>
+
                 <div class="anxiety-type-card" id="anxietyTypeCard">
                     <h3>
                         <span class="type-icon">🎯</span>
@@ -935,7 +1029,7 @@
                     <h3>Готовы убрать блок?</h3>
                     <p>
                         Запишитесь на бесплатный аудит (30 минут). 
-                        Вы получите конкретный план работы под ваш тип блока.
+                        Вы получите две полноценные диагностики и конкретный план работы под ваш тип блока.
                     </p>
                     <div class="button-group" style="justify-content: center;">
                         <a href="https://t.me/unblock_eng" class="btn btn-primary" target="_blank">
@@ -968,13 +1062,13 @@
     <script>
         // State management
         let currentScreen = 0;
-        const totalScreens = 13; // 0 (intro) + 10 (questions) + 1 (situations) + 1 (email) + 1 (results)
+        const totalScreens = 13;
         let answers = {
-            fla: [], // FLA assessment (Q1-10)
-            accuracy: [], // Accuracy anxiety markers (Q8-9)
-            fluency: [], // Fluency anxiety markers (Q10)
-            situations: [], // Trigger situations (Q11)
-            email: '' // User email
+            fla: Array(10).fill(null),
+            accuracy: 0,
+            fluency: 0,
+            situations: [],
+            email: ''
         };
 
         // Show/hide progress bar
@@ -987,7 +1081,7 @@
                 progressContainer.style.display = 'none';
             } else {
                 progressContainer.style.display = 'block';
-                const progress = ((currentScreen - 1) / 11) * 100; // 11 question screens
+                const progress = ((currentScreen - 1) / 11) * 100;
                 progressFill.style.width = progress + '%';
                 progressCount.textContent = `${Math.min(currentScreen, 12)} / 12`;
             }
@@ -995,64 +1089,55 @@
 
         // Navigate between screens
         function nextScreen() {
-            // Hide current screen
             document.getElementById(`screen-${currentScreen}`).classList.remove('active');
-            
-            // Move to next screen
             currentScreen++;
-            
-            // Show next screen
             document.getElementById(`screen-${currentScreen}`).classList.add('active');
-            
-            // Update progress bar
             updateProgressBar();
-            
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function prevScreen() {
             if (currentScreen === 0) return;
-            
-            // Hide current screen
             document.getElementById(`screen-${currentScreen}`).classList.remove('active');
-            
-            // Move to previous screen
             currentScreen--;
-            
-            // Show previous screen
             document.getElementById(`screen-${currentScreen}`).classList.add('active');
-            
-            // Update progress bar
             updateProgressBar();
-            
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Handle option selection (radio buttons)
-        function selectOption(questionNum, value, type) {
-            // Update visual selection
+        function selectOption(questionNum, value) {
             const allOptions = document.querySelectorAll(`#screen-${questionNum} .option`);
             allOptions.forEach(opt => opt.classList.remove('selected'));
             event.currentTarget.classList.add('selected');
             
-            // Check the radio button
             document.getElementById(`q${questionNum}-${value}`).checked = true;
             
-            // Store answer
-            if (questionNum <= 10) {
-                answers.fla[questionNum - 1] = value === 'yes' ? 1 : 0;
+            // Store previous answer
+            const previousAnswer = answers.fla[questionNum - 1];
+            
+            // Update FLA answer
+            answers.fla[questionNum - 1] = value === 'yes' ? 1 : 0;
+            
+            // Track anxiety type markers
+            if (questionNum === 8 || questionNum === 9) {
+                // Accuracy markers
+                if (previousAnswer === 1 && value === 'no') {
+                    answers.accuracy--;
+                } else if (previousAnswer !== 1 && value === 'yes') {
+                    answers.accuracy++;
+                }
             }
             
-            // Track anxiety type
-            if (type === 'accuracy' && value === 'yes') {
-                answers.accuracy.push(questionNum);
-            } else if (type === 'fluency' && value === 'yes') {
-                answers.fluency.push(questionNum);
+            if (questionNum === 10) {
+                // Fluency marker
+                if (previousAnswer === 1 && value === 'no') {
+                    answers.fluency--;
+                } else if (previousAnswer !== 1 && value === 'yes') {
+                    answers.fluency++;
+                }
             }
             
-            // Enable next button
             document.getElementById(`next-${questionNum}`).disabled = false;
         }
 
@@ -1060,11 +1145,8 @@
         function toggleCheckbox(id) {
             const checkbox = document.getElementById(id);
             checkbox.checked = !checkbox.checked;
-            
-            // Update visual
             event.currentTarget.classList.toggle('selected');
             
-            // Update answers
             if (checkbox.checked) {
                 if (!answers.situations.includes(checkbox.value)) {
                     answers.situations.push(checkbox.value);
@@ -1085,28 +1167,84 @@
             
             answers.email = email;
             
-            // Calculate results
-            calculateResults();
+            // Send data to Google Forms
+            sendToGoogleForms();
             
-            // Send data (you'd replace this with actual backend call)
-            console.log('Diagnostic data:', answers);
+            // Calculate and show results
+            calculateResults();
             
             // Show results screen
             nextScreen();
         }
 
+        // Send data to Google Forms
+        function sendToGoogleForms() {
+            const flaScore = answers.fla.reduce((a, b) => a + b, 0);
+            const accuracyPercent = Math.round((answers.accuracy / 2) * 100);
+            const fluencyPercent = Math.round((answers.fluency / 1) * 100);
+            
+            let severity = flaScore >= 7 ? 'Выраженный блок' : 
+                          flaScore >= 4 ? 'Умеренная тревога' : 'Лёгкая тревога';
+            
+            let dominantType;
+            if (answers.accuracy > answers.fluency) {
+                dominantType = 'Accuracy Anxiety';
+            } else if (answers.fluency > answers.accuracy) {
+                dominantType = 'Fluency Anxiety';
+            } else {
+                dominantType = 'Комбинированный тип';
+            }
+            
+            // Google Form submission
+            const formData = new FormData();
+            
+            // TODO: Replace these with your actual Google Form entry IDs
+            // Get them from the pre-filled link method described in instructions
+            formData.append('entry.REPLACE_EMAIL', answers.email);
+            formData.append('entry.REPLACE_SCORE', flaScore + '/10');
+            formData.append('entry.REPLACE_SEVERITY', severity);
+            formData.append('entry.REPLACE_TYPE', dominantType);
+            formData.append('entry.REPLACE_ACCURACY', accuracyPercent + '%');
+            formData.append('entry.REPLACE_FLUENCY', fluencyPercent + '%');
+            formData.append('entry.REPLACE_SITUATIONS', answers.situations.join(', '));
+            formData.append('entry.REPLACE_TIMESTAMP', new Date().toISOString());
+            
+            // Submit to Google Form (no-cors mode - fire and forget)
+            fetch('https://docs.google.com/forms/d/e/1FAIpQLSc8ZHDYHeKZh7Rk_l-i9hCQAUIycmsuOttIKHvwAAPsOgp8Qg/formResponse', {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            }).then(() => {
+                console.log('✓ Data sent to Google Forms');
+            }).catch((error) => {
+                console.error('✗ Error sending to Google Forms:', error);
+            });
+            
+            // Log to console for debugging
+            console.log('=== DIAGNOSTIC DATA ===');
+            console.log({
+                email: answers.email,
+                fla_score: flaScore,
+                severity: severity,
+                dominant_type: dominantType,
+                accuracy_percent: accuracyPercent,
+                fluency_percent: fluencyPercent,
+                situations: answers.situations,
+                timestamp: new Date().toISOString()
+            });
+            console.log('======================');
+        }
+
         // Calculate and display results
         function calculateResults() {
-            // Calculate total FLA score
             const flaScore = answers.fla.reduce((a, b) => a + b, 0);
             
-            // Calculate anxiety type percentages
-            const accuracyCount = answers.accuracy.length;
-            const fluencyCount = answers.fluency.length;
-            const totalTypeQuestions = 3; // Q8, Q9, Q10
+            // Calculate percentages correctly
+            const accuracyMax = 2;
+            const fluencyMax = 1;
             
-            const accuracyPercent = Math.round((accuracyCount / 2) * 100); // Q8, Q9
-            const fluencyPercent = Math.round((fluencyCount / 1) * 100); // Q10
+            const accuracyPercent = Math.round((answers.accuracy / accuracyMax) * 100);
+            const fluencyPercent = Math.round((answers.fluency / fluencyMax) * 100);
             
             // Determine severity
             let severity, severityText, severityClass;
@@ -1126,11 +1264,11 @@
             
             // Determine dominant anxiety type
             let dominantType, typeTitle, typeDescription;
-            if (accuracyCount > fluencyCount) {
+            if (answers.accuracy > answers.fluency) {
                 dominantType = 'accuracy';
                 typeTitle = 'Accuracy Anxiety (Тревога Точности)';
                 typeDescription = 'У вас преобладает страх ошибок и перфекционизм. Вы боитесь сделать грамматическую ошибку, потерять лицо, показаться глупым. Это "красная ручка" из детства — когда вас наказывали за каждую ошибку. Хорошая новость: этот тип блока убирается быстрее всего, так как работает через когнитивную переустановку (CBT/ACT).';
-            } else if (fluencyCount > accuracyCount) {
+            } else if (answers.fluency > answers.accuracy) {
                 dominantType = 'fluency';
                 typeTitle = 'Fluency Anxiety (Тревога Беглости)';
                 typeDescription = 'У вас преобладает блокировка в спонтанной речи. Вы знаете что сказать, но слова "не выходят". Мозг "зависает" под давлением. Это amygdala hijack — физиологическая реакция на стресс. Работа идёт через дыхание, соматику и техники восстановления контроля.';
@@ -1157,7 +1295,7 @@
             document.getElementById('fluencyBar').style.width = fluencyPercent + '%';
             document.getElementById('fluencyScore').textContent = fluencyPercent + '%';
             
-            // Recommendations based on severity and type
+            // Recommendations
             const recommendations = [];
             
             if (severity === 'severe') {
@@ -1195,7 +1333,6 @@
             document.getElementById('triggerSituations').textContent = 
                 triggers || 'Не указаны конкретные ситуации';
             
-            // Confirm email
             document.getElementById('confirmEmail').textContent = answers.email;
         }
 
