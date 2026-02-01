@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Бесплатная диагностика речевого блока. Узнайте ваш тип языковой тревоги за 2 минуты.">
+    <title>Диагностика речевого блока | Unblock English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #2C3E50;
+            --teal: #16A085;
+            --teal-dark: #138D75;
+            --gray-900: #1a202c;
+            --gray-700: #2d3748;
+            --gray-600: #4a5568;
+            --gray-500: #718096;
+            --gray-400: #a0aec0;
+            --gray-300: #cbd5e0;
+            --gray-200: #e2e8f0;
+            --gray-100: #f7fafc;
+            --white: #ffffff;
+            --red: #E74C3C;
+            --green: #27AE60;
+            --orange: #E67E22;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background: linear-gradient(180deg, var(--gray-100) 0%, var(--white) 100%);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* ==================== HEADER ==================== */
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .header .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .header .tagline {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* ==================== PROGRESS BAR ==================== */
+        .progress-container {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .progress-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        .progress-count {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--teal) 0%, var(--navy) 100%);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        /* ==================== MAIN CARD ==================== */
+        .diagnostic-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .diagnostic-card {
+                padding: 24px;
+            }
+        }
+
+        /* ==================== INTRO SCREEN ==================== */
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .screen h2 {
+            font-size: 28px;
+            color: var(--navy);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .screen p {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .screen ul {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .screen ul li {
+            padding-left: 28px;
+            margin-bottom: 12px;
+            position: relative;
+            color: var(--gray-700);
+        }
+
+        .screen ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* ==================== QUESTIONS ==================== */
+        .question-container {
+            margin-bottom: 32px;
+        }
+
+        .question-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 8px;
+        }
+
+        .question-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .question-helper {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Radio/Checkbox Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            background: var(--gray-100);
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 16px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .option:hover {
+            background: var(--white);
+            border-color: var(--teal);
+        }
+
+        .option input[type="radio"],
+        .option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--teal);
+            cursor: pointer;
+        }
+
+        .option label {
+            font-size: 16px;
+            color: var(--gray-700);
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .option.selected {
+            background: var(--white);
+            border-color: var(--teal);
+            box-shadow: 0 2px 8px rgba(22, 160, 133, 0.15);
+        }
+
+        /* Text Input */
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px;
+            font-family: inherit;
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.1);
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .input-helper {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 4px;
+        }
+
+        /* ==================== BUTTONS ==================== */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .button-group {
+                flex-direction: column;
+            }
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 160, 133, 0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gray-600);
+            border: 2px solid var(--gray-300);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gray-400);
+            background: var(--gray-100);
+        }
+
+        /* ==================== RESULTS SCREEN ==================== */
+        .results-header {
+            text-align: center;
+            padding: 32px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+            border-radius: 12px;
+            color: var(--white);
+            margin-bottom: 32px;
+        }
+
+        .results-header h2 {
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .score-display {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1;
+            margin: 16px 0;
+        }
+
+        .score-label {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .severity-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        .severity-mild {
+            background: rgba(39, 174, 96, 0.2);
+            color: var(--white);
+        }
+
+        .severity-moderate {
+            background: rgba(230, 126, 34, 0.2);
+            color: var(--white);
+        }
+
+        .severity-severe {
+            background: rgba(231, 76, 60, 0.2);
+            color: var(--white);
+        }
+
+        .anxiety-type-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .anxiety-type-card h3 {
+            color: var(--navy);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .type-icon {
+            font-size: 24px;
+        }
+
+        .anxiety-type-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .type-score {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .type-score-label {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .type-score-bar {
+            flex: 1;
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .type-score-fill {
+            height: 100%;
+            background: var(--teal);
+            border-radius: 4px;
+        }
+
+        .type-score-value {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .recommendation-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--green);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        .recommendation-box h4 {
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .recommendation-box ul {
+            list-style: none;
+        }
+
+        .recommendation-box li {
+            padding-left: 24px;
+            margin-bottom: 8px;
+            position: relative;
+            color: var(--gray-700);
+        }
+
+        .recommendation-box li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .cta-box p {
+            color: var(--white);
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+
+        .cta-box .btn-primary {
+            background: var(--white);
+            color: var(--teal);
+        }
+
+        .cta-box .btn-primary:hover {
+            background: var(--gray-100);
+            color: var(--navy);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--gray-500);
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==================== EMAIL GATE ==================== */
+        .email-gate {
+            background: var(--white);
+            border: 2px solid var(--teal);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .email-gate h3 {
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .email-gate p {
+            color: var(--gray-600);
+            margin-bottom: 24px;
+        }
+
+        .email-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .privacy-note {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-top: 12px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">Unblock English</div>
+            <div class="tagline">Диагностика речевого блока</div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-header">
+                <span class="progress-text" id="progressText">Заполнение диагностики</span>
+                <span class="progress-count" id="progressCount">0 / 12</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <!-- Main Diagnostic Card -->
+        <div class="diagnostic-card">
+            
+            <!-- SCREEN 0: INTRO -->
+            <div class="screen active" id="screen-0">
+                <h2>Карта вашей языковой тревоги</h2>
+                <p>
+                    Эта диагностика поможет определить:
+                </p>
+                <ul>
+                    <li>Есть ли у вас Foreign Language Anxiety (речевой блок)</li>
+                    <li>Ваш тип тревоги: Accuracy (страх ошибок) или Fluency (зависание в речи)</li>
+                    <li>Конкретные ситуации, где вы блокируетесь</li>
+                    <li>Рекомендованный план работы</li>
+                </ul>
+                <p>
+                    <strong>Время:</strong> 2-3 минуты<br>
+                    <strong>Вопросов:</strong> 12<br>
+                    <strong>Результат:</strong> Мгновенно после заполнения
+                </p>
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="nextScreen()">Начать диагностику</button>
+                </div>
+            </div>
+
+            <!-- SCREEN 1-10: FLA Assessment Questions -->
+            <div class="screen" id="screen-1">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 1 из 10</div>
+                    <div class="question-text">Я понимаю английский текст/email, но теряюсь в живом разговоре</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(1, 'yes')">
+                        <input type="radio" name="q1" id="q1-yes" value="yes">
+                        <label for="q1-yes">Да, это про меня</label>
+                    </div>
+                    <div class="option" onclick="selectOption(1, 'no')">
+                        <input type="radio" name="q1" id="q1-no" value="no">
+                        <label for="q1-no">Нет, я справляюсь одинаково</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-1" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <div class="screen" id="screen-2">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 2 из 10</div>
+                    <div class="question-text">Я готовлюсь к созвону часами, но всё равно паникую</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(2, 'yes')">
+                        <input type="radio" name="q2" id="q2-yes" value="yes">
+                        <label for="q2-yes">Да, постоянно</label>
+                    </div>
+                    <div class="option" onclick="selectOption(2, 'no')">
+                        <input type="radio" name="q2" id="q2-no" value="no">
+                        <label for="q2-no">Нет, подготовка помогает</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-2" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <div class="screen" id="screen-3">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 3 из 10</div>
+                    <div class="question-text">После разговора на английском я чувствую себя истощённым</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(3, 'yes')">
+                        <input type="radio" name="q3" id="q3-yes" value="yes">
+                        <label for="q3-yes">Да, как после экзамена</label>
+                    </div>
+                    <div class="option" onclick="selectOption(3, 'no')">
+                        <input type="radio" name="q3" id="q3-no" value="no">
+                        <label for="q3-no">Нет, чувствую себя нормально</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-3" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <div class="screen" id="screen-4">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 4 из 10</div>
+                    <div class="question-text">Я избегаю ситуаций, где нужно говорить на английском</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(4, 'yes')">
+                        <input type="radio" name="q4" id="q4-yes" value="yes">
+                        <label for="q4-yes">Да, стараюсь избежать</label>
+                    </div>
+                    <div class="option" onclick="selectOption(4, 'no')">
+                        <input type="radio" name="q4" id="q4-no" value="no">
+                        <label for="q4-no">Нет, не избегаю</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-4" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <div class="screen" id="screen-5">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 5 из 10</div>
+                    <div class="question-text">Мой пульс учащается, когда вижу входящий звонок на английском</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(5, 'yes')">
+                        <input type="radio" name="q5" id="q5-yes" value="yes">
+                        <label for="q5-yes">Да, физическая реакция есть</label>
+                    </div>
+                    <div class="option" onclick="selectOption(5, 'no')">
+                        <input type="radio" name="q5" id="q5-no" value="no">
+                        <label for="q5-no">Нет, реагирую спокойно</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-5" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <div class="screen" id="screen-6">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 6 из 10</div>
+                    <div class="question-text">Я знаю слово, но не могу его вспомнить в момент разговора</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(6, 'yes')">
+                        <input type="radio" name="q6" id="q6-yes" value="yes">
+                        <label for="q6-yes">Да, слова "проваливаются"</label>
+                    </div>
+                    <div class="option" onclick="selectOption(6, 'no')">
+                        <input type="radio" name="q6" id="q6-no" value="no">
+                        <label for="q6-no">Нет, нахожу слова</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-6" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <div class="screen" id="screen-7">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 7 из 10</div>
+                    <div class="question-text">Я слышу вопрос, но мозг "зависает" при попытке ответить</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(7, 'yes')">
+                        <input type="radio" name="q7" id="q7-yes" value="yes">
+                        <label for="q7-yes">Да, часто бывает ступор</label>
+                    </div>
+                    <div class="option" onclick="selectOption(7, 'no')">
+                        <input type="radio" name="q7" id="q7-no" value="no">
+                        <label for="q7-no">Нет, отвечаю без проблем</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-7" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <div class="screen" id="screen-8">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 8 из 10</div>
+                    <div class="question-text">Я переживаю о каждой грамматической ошибке</div>
+                    <div class="question-helper">(Это поможет определить ваш тип тревоги)</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(8, 'yes', 'accuracy')">
+                        <input type="radio" name="q8" id="q8-yes" value="yes">
+                        <label for="q8-yes">Да, боюсь ошибиться</label>
+                    </div>
+                    <div class="option" onclick="selectOption(8, 'no', 'accuracy')">
+                        <input type="radio" name="q8" id="q8-no" value="no">
+                        <label for="q8-no">Нет, ошибки не смущают</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-8" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <div class="screen" id="screen-9">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 9 из 10</div>
+                    <div class="question-text">Мне кажется, что собеседник думает, что я глупый</div>
+                    <div class="question-helper">(Это поможет определить ваш тип тревоги)</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(9, 'yes', 'accuracy')">
+                        <input type="radio" name="q9" id="q9-yes" value="yes">
+                        <label for="q9-yes">Да, боюсь "потерять лицо"</label>
+                    </div>
+                    <div class="option" onclick="selectOption(9, 'no', 'accuracy')">
+                        <input type="radio" name="q9" id="q9-no" value="no">
+                        <label for="q9-no">Нет, это меня не волнует</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-9" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <div class="screen" id="screen-10">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 10 из 10</div>
+                    <div class="question-text">После созвона я вспоминаю, что НАДО БЫЛО сказать</div>
+                    <div class="question-helper">(Это поможет определить ваш тип тревоги)</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(10, 'yes', 'fluency')">
+                        <input type="radio" name="q10" id="q10-yes" value="yes">
+                        <label for="q10-yes">Да, постоянно прокручиваю в голове</label>
+                    </div>
+                    <div class="option" onclick="selectOption(10, 'no', 'fluency')">
+                        <input type="radio" name="q10" id="q10-no" value="no">
+                        <label for="q10-no">Нет, не зацикливаюсь</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-10" onclick="nextScreen()" disabled>Далее</button>
+                </div>
+            </div>
+
+            <!-- SCREEN 11: Situation Triggers -->
+            <div class="screen" id="screen-11">
+                <div class="question-container">
+                    <div class="question-number">Вопрос 11 из 12</div>
+                    <div class="question-text">В каких ситуациях вы зависаете?</div>
+                    <div class="question-helper">Выберите все подходящие варианты</div>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="toggleCheckbox('s1')">
+                        <input type="checkbox" id="s1" value="interview">
+                        <label for="s1">Техническое интервью</label>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox('s2')">
+                        <input type="checkbox" id="s2" value="calls">
+                        <label for="s2">Созвоны с заказчиками/клиентами</label>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox('s3')">
+                        <input type="checkbox" id="s3" value="presentation">
+                        <label for="s3">Презентации/защита цифр</label>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox('s4')">
+                        <input type="checkbox" id="s4" value="standup">
+                        <label for="s4">Stand-up митинги</label>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox('s5')">
+                        <input type="checkbox" id="s5" value="negotiation">
+                        <label for="s5">Переговоры о зарплате/условиях</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
+                    <button class="btn btn-primary" id="next-11" onclick="nextScreen()">Далее</button>
+                </div>
+            </div>
+
+            <!-- SCREEN 12: Email Gate -->
+            <div class="screen" id="screen-12">
+                <div class="email-gate">
+                    <h3>🎯 Последний шаг</h3>
+                    <p>
+                        Введите ваш email, чтобы получить результаты диагностики 
+                        и бесплатный PDF "Срочная подготовка к созвону"
+                    </p>
+                    <div class="email-form">
+                        <div class="input-group">
+                            <input type="email" id="userEmail" placeholder="your@email.com" required>
+                        </div>
+                        <button class="btn btn-primary" onclick="submitDiagnostic()" style="width: 100%;">
+                            Получить результаты
+                        </button>
+                        <p class="privacy-note">
+                            Мы не передаём ваши данные третьим лицам. 
+                            Отписаться можно в любой момент.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN 13: Results -->
+            <div class="screen" id="screen-13">
+                <div class="results-header">
+                    <h2>Ваш результат</h2>
+                    <div class="score-display" id="totalScore">8/10</div>
+                    <div class="score-label" id="severityText">Выраженный речевой блок</div>
+                    <div class="severity-badge" id="severityBadge">Требует системной работы</div>
+                </div>
+
+                <div class="anxiety-type-card" id="anxietyTypeCard">
+                    <h3>
+                        <span class="type-icon">🎯</span>
+                        <span id="anxietyTypeTitle">Ваш тип тревоги</span>
+                    </h3>
+                    <p id="anxietyTypeDescription"></p>
+                    
+                    <div class="type-score">
+                        <span class="type-score-label">Accuracy Anxiety:</span>
+                        <div class="type-score-bar">
+                            <div class="type-score-fill" id="accuracyBar" style="width: 60%"></div>
+                        </div>
+                        <span class="type-score-value" id="accuracyScore">60%</span>
+                    </div>
+                    
+                    <div class="type-score">
+                        <span class="type-score-label">Fluency Anxiety:</span>
+                        <div class="type-score-bar">
+                            <div class="type-score-fill" id="fluencyBar" style="width: 40%"></div>
+                        </div>
+                        <span class="type-score-value" id="fluencyScore">40%</span>
+                    </div>
+                </div>
+
+                <div class="recommendation-box">
+                    <h4>Что это значит для вас:</h4>
+                    <ul id="recommendationList">
+                        <!-- Populated by JavaScript -->
+                    </ul>
+                </div>
+
+                <div class="anxiety-type-card">
+                    <h3>
+                        <span class="type-icon">📍</span>
+                        Ваши триггерные ситуации
+                    </h3>
+                    <p id="triggerSituations"></p>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Готовы убрать блок?</h3>
+                    <p>
+                        Запишитесь на бесплатный аудит (30 минут). 
+                        Вы получите конкретный план работы под ваш тип блока.
+                    </p>
+                    <div class="button-group" style="justify-content: center;">
+                        <a href="https://t.me/unblock_eng" class="btn btn-primary" target="_blank">
+                            Написать в Telegram: "AUDIT"
+                        </a>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 14px; opacity: 0.9;">
+                        Результаты отправлены на <strong id="confirmEmail"></strong>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                <a href="/">← Вернуться на главную</a> | 
+                <a href="https://t.me/unblock_eng" target="_blank">Telegram</a> | 
+                <a href="https://unblock-english.ru">unblock-english.ru</a>
+            </p>
+            <p style="margin-top: 8px;">
+                © 2026 Unblock English | Диагностика Foreign Language Anxiety
+            </p>
+        </div>
+
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // State management
+        let currentScreen = 0;
+        const totalScreens = 13; // 0 (intro) + 10 (questions) + 1 (situations) + 1 (email) + 1 (results)
+        let answers = {
+            fla: [], // FLA assessment (Q1-10)
+            accuracy: [], // Accuracy anxiety markers (Q8-9)
+            fluency: [], // Fluency anxiety markers (Q10)
+            situations: [], // Trigger situations (Q11)
+            email: '' // User email
+        };
+
+        // Show/hide progress bar
+        function updateProgressBar() {
+            const progressContainer = document.getElementById('progressContainer');
+            const progressFill = document.getElementById('progressFill');
+            const progressCount = document.getElementById('progressCount');
+            
+            if (currentScreen === 0 || currentScreen === totalScreens) {
+                progressContainer.style.display = 'none';
+            } else {
+                progressContainer.style.display = 'block';
+                const progress = ((currentScreen - 1) / 11) * 100; // 11 question screens
+                progressFill.style.width = progress + '%';
+                progressCount.textContent = `${Math.min(currentScreen, 12)} / 12`;
+            }
+        }
+
+        // Navigate between screens
+        function nextScreen() {
+            // Hide current screen
+            document.getElementById(`screen-${currentScreen}`).classList.remove('active');
+            
+            // Move to next screen
+            currentScreen++;
+            
+            // Show next screen
+            document.getElementById(`screen-${currentScreen}`).classList.add('active');
+            
+            // Update progress bar
+            updateProgressBar();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function prevScreen() {
+            if (currentScreen === 0) return;
+            
+            // Hide current screen
+            document.getElementById(`screen-${currentScreen}`).classList.remove('active');
+            
+            // Move to previous screen
+            currentScreen--;
+            
+            // Show previous screen
+            document.getElementById(`screen-${currentScreen}`).classList.add('active');
+            
+            // Update progress bar
+            updateProgressBar();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Handle option selection (radio buttons)
+        function selectOption(questionNum, value, type) {
+            // Update visual selection
+            const allOptions = document.querySelectorAll(`#screen-${questionNum} .option`);
+            allOptions.forEach(opt => opt.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+            
+            // Check the radio button
+            document.getElementById(`q${questionNum}-${value}`).checked = true;
+            
+            // Store answer
+            if (questionNum <= 10) {
+                answers.fla[questionNum - 1] = value === 'yes' ? 1 : 0;
+            }
+            
+            // Track anxiety type
+            if (type === 'accuracy' && value === 'yes') {
+                answers.accuracy.push(questionNum);
+            } else if (type === 'fluency' && value === 'yes') {
+                answers.fluency.push(questionNum);
+            }
+            
+            // Enable next button
+            document.getElementById(`next-${questionNum}`).disabled = false;
+        }
+
+        // Handle checkbox toggles
+        function toggleCheckbox(id) {
+            const checkbox = document.getElementById(id);
+            checkbox.checked = !checkbox.checked;
+            
+            // Update visual
+            event.currentTarget.classList.toggle('selected');
+            
+            // Update answers
+            if (checkbox.checked) {
+                if (!answers.situations.includes(checkbox.value)) {
+                    answers.situations.push(checkbox.value);
+                }
+            } else {
+                answers.situations = answers.situations.filter(s => s !== checkbox.value);
+            }
+        }
+
+        // Submit diagnostic and show results
+        function submitDiagnostic() {
+            const email = document.getElementById('userEmail').value.trim();
+            
+            if (!email || !email.includes('@')) {
+                alert('Пожалуйста, введите корректный email');
+                return;
+            }
+            
+            answers.email = email;
+            
+            // Calculate results
+            calculateResults();
+            
+            // Send data (you'd replace this with actual backend call)
+            console.log('Diagnostic data:', answers);
+            
+            // Show results screen
+            nextScreen();
+        }
+
+        // Calculate and display results
+        function calculateResults() {
+            // Calculate total FLA score
+            const flaScore = answers.fla.reduce((a, b) => a + b, 0);
+            
+            // Calculate anxiety type percentages
+            const accuracyCount = answers.accuracy.length;
+            const fluencyCount = answers.fluency.length;
+            const totalTypeQuestions = 3; // Q8, Q9, Q10
+            
+            const accuracyPercent = Math.round((accuracyCount / 2) * 100); // Q8, Q9
+            const fluencyPercent = Math.round((fluencyCount / 1) * 100); // Q10
+            
+            // Determine severity
+            let severity, severityText, severityClass;
+            if (flaScore >= 7) {
+                severity = 'severe';
+                severityText = 'Выраженный речевой блок';
+                severityClass = 'severity-severe';
+            } else if (flaScore >= 4) {
+                severity = 'moderate';
+                severityText = 'Умеренная языковая тревога';
+                severityClass = 'severity-moderate';
+            } else {
+                severity = 'mild';
+                severityText = 'Лёгкая тревога';
+                severityClass = 'severity-mild';
+            }
+            
+            // Determine dominant anxiety type
+            let dominantType, typeTitle, typeDescription;
+            if (accuracyCount > fluencyCount) {
+                dominantType = 'accuracy';
+                typeTitle = 'Accuracy Anxiety (Тревога Точности)';
+                typeDescription = 'У вас преобладает страх ошибок и перфекционизм. Вы боитесь сделать грамматическую ошибку, потерять лицо, показаться глупым. Это "красная ручка" из детства — когда вас наказывали за каждую ошибку. Хорошая новость: этот тип блока убирается быстрее всего, так как работает через когнитивную переустановку (CBT/ACT).';
+            } else if (fluencyCount > accuracyCount) {
+                dominantType = 'fluency';
+                typeTitle = 'Fluency Anxiety (Тревога Беглости)';
+                typeDescription = 'У вас преобладает блокировка в спонтанной речи. Вы знаете что сказать, но слова "не выходят". Мозг "зависает" под давлением. Это amygdala hijack — физиологическая реакция на стресс. Работа идёт через дыхание, соматику и техники восстановления контроля.';
+            } else {
+                dominantType = 'mixed';
+                typeTitle = 'Комбинированный тип';
+                typeDescription = 'У вас смешанный тип тревоги — и страх ошибок, и блокировка в речи. Это самый частый вариант у IT/Finance специалистов. Работа идёт комплексно: и с перфекционизмом (CBT), и с физиологией (дыхание, соматика).';
+            }
+            
+            // Update results screen
+            document.getElementById('totalScore').textContent = `${flaScore}/10`;
+            document.getElementById('severityText').textContent = severityText;
+            document.getElementById('severityBadge').textContent = 
+                severity === 'severe' ? 'Требует системной работы' : 
+                severity === 'moderate' ? 'Можно убрать за 6-8 недель' : 
+                'Нужны тактические инструменты';
+            document.getElementById('severityBadge').className = `severity-badge ${severityClass}`;
+            
+            document.getElementById('anxietyTypeTitle').textContent = typeTitle;
+            document.getElementById('anxietyTypeDescription').textContent = typeDescription;
+            
+            document.getElementById('accuracyBar').style.width = accuracyPercent + '%';
+            document.getElementById('accuracyScore').textContent = accuracyPercent + '%';
+            document.getElementById('fluencyBar').style.width = fluencyPercent + '%';
+            document.getElementById('fluencyScore').textContent = fluencyPercent + '%';
+            
+            // Recommendations based on severity and type
+            const recommendations = [];
+            
+            if (severity === 'severe') {
+                recommendations.push('Вам нужна системная работа — не "больше практики", а устранение психофизиологического блока');
+                recommendations.push('Рекомендованная программа: Foundation (8 недель) или Mastery (16 недель)');
+                recommendations.push('Без работы с блоком ваша карьера упирается в речь, а не в знания');
+            } else if (severity === 'moderate') {
+                recommendations.push('Речевой блок можно убрать за 6-8 недель системной работы');
+                recommendations.push('Рекомендованная программа: Foundation (8 недель)');
+                recommendations.push('Сейчас самое время — пока блок не стал сильнее');
+            } else {
+                recommendations.push('У вас лёгкая тревога — возможно, достаточно тактических инструментов');
+                recommendations.push('Скачайте PDF "Срочная подготовка к созвону" и попробуйте техники');
+                recommendations.push('Если проблема повторяется — нужна более глубокая работа');
+            }
+            
+            const recList = document.getElementById('recommendationList');
+            recList.innerHTML = '';
+            recommendations.forEach(rec => {
+                const li = document.createElement('li');
+                li.textContent = rec;
+                recList.appendChild(li);
+            });
+            
+            // Trigger situations
+            const situationLabels = {
+                'interview': 'Техническое интервью',
+                'calls': 'Созвоны с заказчиками',
+                'presentation': 'Презентации/защита цифр',
+                'standup': 'Stand-up митинги',
+                'negotiation': 'Переговоры о зарплате'
+            };
+            
+            const triggers = answers.situations.map(s => situationLabels[s]).join(', ');
+            document.getElementById('triggerSituations').textContent = 
+                triggers || 'Не указаны конкретные ситуации';
+            
+            // Confirm email
+            document.getElementById('confirmEmail').textContent = answers.email;
+        }
+
+        // Initialize
+        updateProgressBar();
+    </script>
+
+</body>
+</html>
+```
+
+---
+
+## 🎯 KEY FEATURES
+
+### **1. Complete User Journey**
+
+**13 Screens:**
+0. Intro (what to expect)
+1-10. FLA Assessment (10 yes/no questions)
+11. Situation triggers (checkboxes)
+12. Email gate
+13. Results with analysis
+
+### **2. Smart Scoring System**
+
+**Calculates:**
+- Total FLA score (0-10)
+- Severity level (mild/moderate/severe)
+- Anxiety type (Accuracy vs Fluency)
+- Dominant pattern
+
+**Results show:**
+- Your score: 8/10
+- Severity: "Выраженный речевой блок"
+- Type: "Accuracy Anxiety (60%) vs Fluency (40%)"
+- Personalized recommendations
+- Trigger situations
+
+### **3. Email Capture**
+
+**Before showing results:**
+- Requires email input
+- Privacy note included
+- Gates the valuable content
+
+**What you get:**
+- User's email
+- Complete diagnostic answers
+- Anxiety type breakdown
+- Trigger situations
+- Timestamp
+
+### **4. Conversion Optimization**
+
+**Strong CTA on results page:**
+```
+Готовы убрать блок?
+→ Написать в Telegram: "AUDIT"
