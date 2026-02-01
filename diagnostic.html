@@ -92,12 +92,6 @@
             margin-top: 12px;
         }
 
-        .tagline-meta {
-            font-size: 14px;
-            color: var(--gray-500);
-            margin-top: 8px;
-        }
-
         @media (max-width: 768px) {
             .logo {
                 font-size: 28px;
@@ -318,48 +312,6 @@
             box-shadow: 0 2px 8px rgba(22, 160, 133, 0.15);
         }
 
-        /* Text Input */
-        .input-group {
-            margin-bottom: 24px;
-        }
-
-        .input-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-
-        .input-group input,
-        .input-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            font-size: 16px;
-            font-family: inherit;
-            border: 2px solid var(--gray-200);
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .input-group input:focus,
-        .input-group textarea:focus {
-            outline: none;
-            border-color: var(--teal);
-            box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.1);
-        }
-
-        .input-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .input-helper {
-            font-size: 13px;
-            color: var(--gray-500);
-            margin-top: 4px;
-        }
-
         /* ==================== BUTTONS ==================== */
         .button-group {
             display: flex;
@@ -383,6 +335,9 @@
             transition: all 0.2s ease;
             font-family: inherit;
             flex: 1;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
         .btn-primary {
@@ -603,34 +558,11 @@
             text-decoration: underline;
         }
 
-        /* ==================== EMAIL GATE ==================== */
-        .email-gate {
-            background: var(--white);
-            border: 2px solid var(--teal);
-            border-radius: 12px;
-            padding: 32px;
-            text-align: center;
-        }
-
-        .email-gate h3 {
-            color: var(--navy);
-            margin-bottom: 12px;
-        }
-
-        .email-gate p {
-            color: var(--gray-600);
-            margin-bottom: 24px;
-        }
-
-        .email-form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .privacy-note {
-            font-size: 12px;
+        .trust-note {
+            font-size: 14px;
             color: var(--gray-500);
-            margin-top: 12px;
+            margin-top: 8px;
+            font-style: italic;
         }
 
     </style>
@@ -638,7 +570,7 @@
 <body>
 
     <div class="container">
-        <!-- Enhanced Header -->
+        <!-- Header -->
         <div class="header">
             <div class="logo-container">
                 <div class="logo">
@@ -647,14 +579,13 @@
                 </div>
             </div>
             <div class="tagline">Диагностика речевого блока</div>
-            <div class="tagline-meta">Foreign Language Anxiety Assessment</div>
         </div>
 
         <!-- Progress Bar -->
         <div class="progress-container" id="progressContainer" style="display: none;">
             <div class="progress-header">
-                <span class="progress-text" id="progressText">Заполнение диагностики</span>
-                <span class="progress-count" id="progressCount">0 / 12</span>
+                <span class="progress-text">Заполнение диагностики</span>
+                <span class="progress-count" id="progressCount">Шаг 0 из 11</span>
             </div>
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
@@ -666,31 +597,21 @@
             
             <!-- SCREEN 0: INTRO -->
             <div class="screen active" id="screen-0">
-                <h2>Карта вашей языковой тревоги</h2>
+                <h2>Где именно у вас ломается речь</h2>
                 
-                <div class="disclaimer-box">
-                    <h4><span>⚠️</span> Это упрощённая диагностика</h4>
-                    <p>
-                        Данный тест даёт первичное понимание вашего типа блока. 
-                        На бесплатном аудите мы проведём две полноценные диагностики 
-                        с более глубоким анализом вашей конкретной ситуации.
-                    </p>
-                </div>
-
-                <p>
-                    Эта диагностика поможет определить:
-                </p>
+                <p>Этот короткий тест покажет:</p>
+                
                 <ul>
-                    <li>Есть ли у вас Foreign Language Anxiety (речевой блок)</li>
-                    <li>Ваш тип тревоги: Accuracy (страх ошибок) или Fluency (зависание в речи)</li>
-                    <li>Конкретные ситуации, где вы блокируетесь</li>
-                    <li>Рекомендованный план работы</li>
+                    <li>Есть ли у вас речевой блок (Foreign Language Anxiety)</li>
+                    <li>В каком моменте он возникает</li>
+                    <li>Какой тип тревоги у вас преобладает</li>
                 </ul>
+                
                 <p>
-                    <strong>Время:</strong> 2-3 минуты<br>
-                    <strong>Вопросов:</strong> 12<br>
-                    <strong>Результат:</strong> Мгновенно после заполнения
+                    <strong>Время:</strong> 2 минуты<br>
+                    <strong>Вопросов:</strong> 11
                 </p>
+                
                 <div class="button-group">
                     <button class="btn btn-primary" onclick="nextScreen()">Начать диагностику</button>
                 </div>
@@ -703,11 +624,11 @@
                     <div class="question-text">Я понимаю английский текст/email, но теряюсь в живом разговоре</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(1, 'yes')">
+                    <div class="option" onclick="selectOption(1, 'yes', this)">
                         <input type="radio" name="q1" id="q1-yes" value="yes">
                         <label for="q1-yes">Да, это про меня</label>
                     </div>
-                    <div class="option" onclick="selectOption(1, 'no')">
+                    <div class="option" onclick="selectOption(1, 'no', this)">
                         <input type="radio" name="q1" id="q1-no" value="no">
                         <label for="q1-no">Нет, я справляюсь одинаково</label>
                     </div>
@@ -724,11 +645,11 @@
                     <div class="question-text">Я готовлюсь к созвону часами, но всё равно паникую</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(2, 'yes')">
+                    <div class="option" onclick="selectOption(2, 'yes', this)">
                         <input type="radio" name="q2" id="q2-yes" value="yes">
                         <label for="q2-yes">Да, постоянно</label>
                     </div>
-                    <div class="option" onclick="selectOption(2, 'no')">
+                    <div class="option" onclick="selectOption(2, 'no', this)">
                         <input type="radio" name="q2" id="q2-no" value="no">
                         <label for="q2-no">Нет, подготовка помогает</label>
                     </div>
@@ -745,11 +666,11 @@
                     <div class="question-text">После разговора на английском я чувствую себя истощённым</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(3, 'yes')">
+                    <div class="option" onclick="selectOption(3, 'yes', this)">
                         <input type="radio" name="q3" id="q3-yes" value="yes">
                         <label for="q3-yes">Да, как после экзамена</label>
                     </div>
-                    <div class="option" onclick="selectOption(3, 'no')">
+                    <div class="option" onclick="selectOption(3, 'no', this)">
                         <input type="radio" name="q3" id="q3-no" value="no">
                         <label for="q3-no">Нет, чувствую себя нормально</label>
                     </div>
@@ -766,11 +687,11 @@
                     <div class="question-text">Я избегаю ситуаций, где нужно говорить на английском</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(4, 'yes')">
+                    <div class="option" onclick="selectOption(4, 'yes', this)">
                         <input type="radio" name="q4" id="q4-yes" value="yes">
                         <label for="q4-yes">Да, стараюсь избежать</label>
                     </div>
-                    <div class="option" onclick="selectOption(4, 'no')">
+                    <div class="option" onclick="selectOption(4, 'no', this)">
                         <input type="radio" name="q4" id="q4-no" value="no">
                         <label for="q4-no">Нет, не избегаю</label>
                     </div>
@@ -787,11 +708,11 @@
                     <div class="question-text">Мой пульс учащается, когда вижу входящий звонок на английском</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(5, 'yes')">
+                    <div class="option" onclick="selectOption(5, 'yes', this)">
                         <input type="radio" name="q5" id="q5-yes" value="yes">
                         <label for="q5-yes">Да, физическая реакция есть</label>
                     </div>
-                    <div class="option" onclick="selectOption(5, 'no')">
+                    <div class="option" onclick="selectOption(5, 'no', this)">
                         <input type="radio" name="q5" id="q5-no" value="no">
                         <label for="q5-no">Нет, реагирую спокойно</label>
                     </div>
@@ -805,14 +726,14 @@
             <div class="screen" id="screen-6">
                 <div class="question-container">
                     <div class="question-number">Вопрос 6 из 10</div>
-                    <div class="question-text">Я знаю слово, но не могу его вспомнить в момент разговора</div>
+                    <div class="question-text">Во время созвона я знаю слово, но не могу его вспомнить</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(6, 'yes')">
+                    <div class="option" onclick="selectOption(6, 'yes', this)">
                         <input type="radio" name="q6" id="q6-yes" value="yes">
                         <label for="q6-yes">Да, слова "проваливаются"</label>
                     </div>
-                    <div class="option" onclick="selectOption(6, 'no')">
+                    <div class="option" onclick="selectOption(6, 'no', this)">
                         <input type="radio" name="q6" id="q6-no" value="no">
                         <label for="q6-no">Нет, нахожу слова</label>
                     </div>
@@ -826,14 +747,14 @@
             <div class="screen" id="screen-7">
                 <div class="question-container">
                     <div class="question-number">Вопрос 7 из 10</div>
-                    <div class="question-text">Я слышу вопрос, но мозг "зависает" при попытке ответить</div>
+                    <div class="question-text">Во время созвона я слышу вопрос, но мозг «зависает» при попытке ответить</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(7, 'yes')">
+                    <div class="option" onclick="selectOption(7, 'yes', this)">
                         <input type="radio" name="q7" id="q7-yes" value="yes">
                         <label for="q7-yes">Да, часто бывает ступор</label>
                     </div>
-                    <div class="option" onclick="selectOption(7, 'no')">
+                    <div class="option" onclick="selectOption(7, 'no', this)">
                         <input type="radio" name="q7" id="q7-no" value="no">
                         <label for="q7-no">Нет, отвечаю без проблем</label>
                     </div>
@@ -851,11 +772,11 @@
                     <div class="question-helper">(Это поможет определить ваш тип тревоги)</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(8, 'yes')">
+                    <div class="option" onclick="selectOption(8, 'yes', this)">
                         <input type="radio" name="q8" id="q8-yes" value="yes">
                         <label for="q8-yes">Да, боюсь ошибиться</label>
                     </div>
-                    <div class="option" onclick="selectOption(8, 'no')">
+                    <div class="option" onclick="selectOption(8, 'no', this)">
                         <input type="radio" name="q8" id="q8-no" value="no">
                         <label for="q8-no">Нет, ошибки не смущают</label>
                     </div>
@@ -873,11 +794,11 @@
                     <div class="question-helper">(Это поможет определить ваш тип тревоги)</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(9, 'yes')">
+                    <div class="option" onclick="selectOption(9, 'yes', this)">
                         <input type="radio" name="q9" id="q9-yes" value="yes">
                         <label for="q9-yes">Да, боюсь "потерять лицо"</label>
                     </div>
-                    <div class="option" onclick="selectOption(9, 'no')">
+                    <div class="option" onclick="selectOption(9, 'no', this)">
                         <input type="radio" name="q9" id="q9-no" value="no">
                         <label for="q9-no">Нет, это меня не волнует</label>
                     </div>
@@ -891,15 +812,15 @@
             <div class="screen" id="screen-10">
                 <div class="question-container">
                     <div class="question-number">Вопрос 10 из 10</div>
-                    <div class="question-text">После созвона я вспоминаю, что НАДО БЫЛО сказать</div>
+                    <div class="question-text">После созвона я уже ПОСЛЕ понимаю, что надо было сказать</div>
                     <div class="question-helper">(Это поможет определить ваш тип тревоги)</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="selectOption(10, 'yes')">
+                    <div class="option" onclick="selectOption(10, 'yes', this)">
                         <input type="radio" name="q10" id="q10-yes" value="yes">
                         <label for="q10-yes">Да, постоянно прокручиваю в голове</label>
                     </div>
-                    <div class="option" onclick="selectOption(10, 'no')">
+                    <div class="option" onclick="selectOption(10, 'no', this)">
                         <input type="radio" name="q10" id="q10-no" value="no">
                         <label for="q10-no">Нет, не зацикливаюсь</label>
                     </div>
@@ -913,63 +834,40 @@
             <!-- SCREEN 11: Situation Triggers -->
             <div class="screen" id="screen-11">
                 <div class="question-container">
-                    <div class="question-number">Вопрос 11 из 12</div>
+                    <div class="question-number">Вопрос 11 из 11</div>
                     <div class="question-text">В каких ситуациях вы зависаете?</div>
                     <div class="question-helper">Выберите все подходящие варианты</div>
                 </div>
                 <div class="options">
-                    <div class="option" onclick="toggleCheckbox('s1')">
+                    <div class="option" onclick="toggleCheckbox('s1', this)">
                         <input type="checkbox" id="s1" value="interview">
                         <label for="s1">Техническое интервью</label>
                     </div>
-                    <div class="option" onclick="toggleCheckbox('s2')">
+                    <div class="option" onclick="toggleCheckbox('s2', this)">
                         <input type="checkbox" id="s2" value="calls">
                         <label for="s2">Созвоны с заказчиками/клиентами</label>
                     </div>
-                    <div class="option" onclick="toggleCheckbox('s3')">
+                    <div class="option" onclick="toggleCheckbox('s3', this)">
                         <input type="checkbox" id="s3" value="presentation">
                         <label for="s3">Презентации/защита цифр</label>
                     </div>
-                    <div class="option" onclick="toggleCheckbox('s4')">
+                    <div class="option" onclick="toggleCheckbox('s4', this)">
                         <input type="checkbox" id="s4" value="standup">
                         <label for="s4">Stand-up митинги</label>
                     </div>
-                    <div class="option" onclick="toggleCheckbox('s5')">
+                    <div class="option" onclick="toggleCheckbox('s5', this)">
                         <input type="checkbox" id="s5" value="negotiation">
                         <label for="s5">Переговоры о зарплате/условиях</label>
                     </div>
                 </div>
                 <div class="button-group">
                     <button class="btn btn-secondary" onclick="prevScreen()">Назад</button>
-                    <button class="btn btn-primary" id="next-11" onclick="nextScreen()">Далее</button>
+                    <button class="btn btn-primary" onclick="showResults()">Показать результаты</button>
                 </div>
             </div>
 
-            <!-- SCREEN 12: Email Gate -->
+            <!-- SCREEN 12: Results -->
             <div class="screen" id="screen-12">
-                <div class="email-gate">
-                    <h3>🎯 Последний шаг</h3>
-                    <p>
-                        Введите ваш email, чтобы получить результаты диагностики 
-                        и бесплатный PDF "Срочная подготовка к созвону"
-                    </p>
-                    <div class="email-form">
-                        <div class="input-group">
-                            <input type="email" id="userEmail" placeholder="your@email.com" required>
-                        </div>
-                        <button class="btn btn-primary" onclick="submitDiagnostic()" style="width: 100%;">
-                            Получить результаты
-                        </button>
-                        <p class="privacy-note">
-                            Мы не передаём ваши данные третьим лицам. 
-                            Отписаться можно в любой момент.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SCREEN 13: Results -->
-            <div class="screen" id="screen-13">
                 <div class="results-header">
                     <h2>Ваш результат</h2>
                     <div class="score-display" id="totalScore">8/10</div>
@@ -981,8 +879,7 @@
                     <h4><span>📊</span> Полная диагностика на аудите</h4>
                     <p>
                         Это упрощённая диагностика даёт первичное понимание. На бесплатном аудите 
-                        мы проведём две полноценные диагностики: (1) детальный анализ типа блока, 
-                        (2) карту триггерных ситуаций с конкретными техниками под ваш случай.
+                        вы получите полноценную диагностику и план работы под ваш тип блока.
                     </p>
                 </div>
 
@@ -992,6 +889,9 @@
                         <span id="anxietyTypeTitle">Ваш тип тревоги</span>
                     </h3>
                     <p id="anxietyTypeDescription"></p>
+                    <p class="trust-note">
+                        Этот результат основан на ваших ответах, а не на уровне английского.
+                    </p>
                     
                     <div class="type-score">
                         <span class="type-score-label">Accuracy Anxiety:</span>
@@ -1028,17 +928,14 @@
                 <div class="cta-box">
                     <h3>Готовы убрать блок?</h3>
                     <p>
-                        Запишитесь на бесплатный аудит (30 минут). 
-                        Вы получите две полноценные диагностики и конкретный план работы под ваш тип блока.
+                        Запишитесь на бесплатный аудит (30 минут).<br>
+                        Вы получите полноценную диагностику и план работы под ваш тип блока.
                     </p>
                     <div class="button-group" style="justify-content: center;">
                         <a href="https://t.me/unblock_eng" class="btn btn-primary" target="_blank">
                             Написать в Telegram: "AUDIT"
                         </a>
                     </div>
-                    <p style="margin-top: 16px; font-size: 14px; opacity: 0.9;">
-                        Результаты отправлены на <strong id="confirmEmail"></strong>
-                    </p>
                 </div>
             </div>
 
@@ -1062,13 +959,12 @@
     <script>
         // State management
         let currentScreen = 0;
-        const totalScreens = 13;
+        const totalScreens = 12;
         let answers = {
             fla: Array(10).fill(null),
             accuracy: 0,
             fluency: 0,
-            situations: [],
-            email: ''
+            situations: []
         };
 
         // Show/hide progress bar
@@ -1081,9 +977,9 @@
                 progressContainer.style.display = 'none';
             } else {
                 progressContainer.style.display = 'block';
-                const progress = ((currentScreen - 1) / 11) * 100;
+                const progress = ((currentScreen - 1) / 10) * 100;
                 progressFill.style.width = progress + '%';
-                progressCount.textContent = `${Math.min(currentScreen, 12)} / 12`;
+                progressCount.textContent = `Шаг ${Math.min(currentScreen, 11)} из 11`;
             }
         }
 
@@ -1105,23 +1001,18 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Handle option selection (radio buttons)
-        function selectOption(questionNum, value) {
+        // Handle option selection (radio buttons) - FIXED event handling
+        function selectOption(questionNum, value, element) {
             const allOptions = document.querySelectorAll(`#screen-${questionNum} .option`);
             allOptions.forEach(opt => opt.classList.remove('selected'));
-            event.currentTarget.classList.add('selected');
+            element.classList.add('selected');
             
             document.getElementById(`q${questionNum}-${value}`).checked = true;
             
-            // Store previous answer
             const previousAnswer = answers.fla[questionNum - 1];
-            
-            // Update FLA answer
             answers.fla[questionNum - 1] = value === 'yes' ? 1 : 0;
             
-            // Track anxiety type markers
             if (questionNum === 8 || questionNum === 9) {
-                // Accuracy markers
                 if (previousAnswer === 1 && value === 'no') {
                     answers.accuracy--;
                 } else if (previousAnswer !== 1 && value === 'yes') {
@@ -1130,7 +1021,6 @@
             }
             
             if (questionNum === 10) {
-                // Fluency marker
                 if (previousAnswer === 1 && value === 'no') {
                     answers.fluency--;
                 } else if (previousAnswer !== 1 && value === 'yes') {
@@ -1141,11 +1031,11 @@
             document.getElementById(`next-${questionNum}`).disabled = false;
         }
 
-        // Handle checkbox toggles
-        function toggleCheckbox(id) {
+        // Handle checkbox toggles - FIXED event handling
+        function toggleCheckbox(id, element) {
             const checkbox = document.getElementById(id);
             checkbox.checked = !checkbox.checked;
-            event.currentTarget.classList.toggle('selected');
+            element.classList.toggle('selected');
             
             if (checkbox.checked) {
                 if (!answers.situations.includes(checkbox.value)) {
@@ -1156,97 +1046,22 @@
             }
         }
 
-        // Submit diagnostic and show results
-        function submitDiagnostic() {
-            const email = document.getElementById('userEmail').value.trim();
-            
-            if (!email || !email.includes('@')) {
-                alert('Пожалуйста, введите корректный email');
-                return;
-            }
-            
-            answers.email = email;
-            
-            // Send data to Google Forms
-            sendToGoogleForms();
-            
-            // Calculate and show results
+        // Show results and calculate
+        function showResults() {
             calculateResults();
-            
-            // Show results screen
             nextScreen();
-        }
-
-        // Send data to Google Forms
-        function sendToGoogleForms() {
-            const flaScore = answers.fla.reduce((a, b) => a + b, 0);
-            const accuracyPercent = Math.round((answers.accuracy / 2) * 100);
-            const fluencyPercent = Math.round((answers.fluency / 1) * 100);
-            
-            let severity = flaScore >= 7 ? 'Выраженный блок' : 
-                          flaScore >= 4 ? 'Умеренная тревога' : 'Лёгкая тревога';
-            
-            let dominantType;
-            if (answers.accuracy > answers.fluency) {
-                dominantType = 'Accuracy Anxiety';
-            } else if (answers.fluency > answers.accuracy) {
-                dominantType = 'Fluency Anxiety';
-            } else {
-                dominantType = 'Комбинированный тип';
-            }
-            
-            // Google Form submission
-            const formData = new FormData();
-            
-            // TODO: Replace these with your actual Google Form entry IDs
-            // Get them from the pre-filled link method described in instructions
-            formData.append('entry.REPLACE_EMAIL', answers.email);
-            formData.append('entry.REPLACE_SCORE', flaScore + '/10');
-            formData.append('entry.REPLACE_SEVERITY', severity);
-            formData.append('entry.REPLACE_TYPE', dominantType);
-            formData.append('entry.REPLACE_ACCURACY', accuracyPercent + '%');
-            formData.append('entry.REPLACE_FLUENCY', fluencyPercent + '%');
-            formData.append('entry.REPLACE_SITUATIONS', answers.situations.join(', '));
-            formData.append('entry.REPLACE_TIMESTAMP', new Date().toISOString());
-            
-            // Submit to Google Form (no-cors mode - fire and forget)
-            fetch('https://docs.google.com/forms/d/e/1FAIpQLSc8ZHDYHeKZh7Rk_l-i9hCQAUIycmsuOttIKHvwAAPsOgp8Qg/formResponse', {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData
-            }).then(() => {
-                console.log('✓ Data sent to Google Forms');
-            }).catch((error) => {
-                console.error('✗ Error sending to Google Forms:', error);
-            });
-            
-            // Log to console for debugging
-            console.log('=== DIAGNOSTIC DATA ===');
-            console.log({
-                email: answers.email,
-                fla_score: flaScore,
-                severity: severity,
-                dominant_type: dominantType,
-                accuracy_percent: accuracyPercent,
-                fluency_percent: fluencyPercent,
-                situations: answers.situations,
-                timestamp: new Date().toISOString()
-            });
-            console.log('======================');
         }
 
         // Calculate and display results
         function calculateResults() {
             const flaScore = answers.fla.reduce((a, b) => a + b, 0);
             
-            // Calculate percentages correctly
             const accuracyMax = 2;
             const fluencyMax = 1;
             
             const accuracyPercent = Math.round((answers.accuracy / accuracyMax) * 100);
             const fluencyPercent = Math.round((answers.fluency / fluencyMax) * 100);
             
-            // Determine severity
             let severity, severityText, severityClass;
             if (flaScore >= 7) {
                 severity = 'severe';
@@ -1262,12 +1077,11 @@
                 severityClass = 'severity-mild';
             }
             
-            // Determine dominant anxiety type
             let dominantType, typeTitle, typeDescription;
             if (answers.accuracy > answers.fluency) {
                 dominantType = 'accuracy';
                 typeTitle = 'Accuracy Anxiety (Тревога Точности)';
-                typeDescription = 'У вас преобладает страх ошибок и перфекционизм. Вы боитесь сделать грамматическую ошибку, потерять лицо, показаться глупым. Это "красная ручка" из детства — когда вас наказывали за каждую ошибку. Хорошая новость: этот тип блока убирается быстрее всего, так как работает через когнитивную переустановку (CBT/ACT).';
+                typeDescription = 'У вас преобладает страх ошибок и перфекционизм. Вы боитесь сделать грамматическую ошибку, потерять лицо, показаться глупым. Это усвоенный паттерн: внимание к ошибкам важнее смысла. Хорошая новость: этот тип блока убирается быстрее всего, так как работает через когнитивную переустановку (CBT/ACT).';
             } else if (answers.fluency > answers.accuracy) {
                 dominantType = 'fluency';
                 typeTitle = 'Fluency Anxiety (Тревога Беглости)';
@@ -1278,7 +1092,6 @@
                 typeDescription = 'У вас смешанный тип тревоги — и страх ошибок, и блокировка в речи. Это самый частый вариант у IT/Finance специалистов. Работа идёт комплексно: и с перфекционизмом (CBT), и с физиологией (дыхание, соматика).';
             }
             
-            // Update results screen
             document.getElementById('totalScore').textContent = `${flaScore}/10`;
             document.getElementById('severityText').textContent = severityText;
             document.getElementById('severityBadge').textContent = 
@@ -1295,7 +1108,6 @@
             document.getElementById('fluencyBar').style.width = fluencyPercent + '%';
             document.getElementById('fluencyScore').textContent = fluencyPercent + '%';
             
-            // Recommendations
             const recommendations = [];
             
             if (severity === 'severe') {
@@ -1308,7 +1120,7 @@
                 recommendations.push('Сейчас самое время — пока блок не стал сильнее');
             } else {
                 recommendations.push('У вас лёгкая тревога — возможно, достаточно тактических инструментов');
-                recommendations.push('Скачайте PDF "Срочная подготовка к созвону" и попробуйте техники');
+                recommendations.push('Запишитесь на аудит, чтобы понять, нужна ли системная работа');
                 recommendations.push('Если проблема повторяется — нужна более глубокая работа');
             }
             
@@ -1320,7 +1132,6 @@
                 recList.appendChild(li);
             });
             
-            // Trigger situations
             const situationLabels = {
                 'interview': 'Техническое интервью',
                 'calls': 'Созвоны с заказчиками',
@@ -1333,7 +1144,17 @@
             document.getElementById('triggerSituations').textContent = 
                 triggers || 'Не указаны конкретные ситуации';
             
-            document.getElementById('confirmEmail').textContent = answers.email;
+            // Console log for analytics (optional - can track without backend)
+            console.log('=== DIAGNOSTIC COMPLETED ===');
+            console.log({
+                fla_score: flaScore,
+                severity: severity,
+                dominant_type: dominantType,
+                accuracy_percent: accuracyPercent,
+                fluency_percent: fluencyPercent,
+                situations: answers.situations,
+                timestamp: new Date().toISOString()
+            });
         }
 
         // Initialize
