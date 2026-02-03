@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Диагностическая сессия | Протокол аудита FLA</title>
-    <meta name="description" content="Условия и формат индивидуальной диагностической сессии для IT и Finance специалистов. Речевой аудит в условиях стресса.">
+    <title>Диагностическая сессия | Речевой аудит под давлением</title>
+    <meta name="description" content="Условия и формат индивидуальной диагностической сессии. Речевой аудит FLA в условиях стресса для IT и Finance.">
     <meta name="robots" content="noindex">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,134 +23,43 @@
             --gray-400: #9CA3AF;
             --gray-600: #4B5563;
             --gray-700: #374151;
+            --red-pale: #FFF9F9;
+            --red-border: #FFE4E4;
+            --red-text: #991B1B;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--gray-700);
-            background: var(--white);
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 80px 24px;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 48px;
-            color: var(--gray-400);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--gray-700); background: var(--white); margin: 0; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 680px; margin: 0 auto; padding: 80px 24px; }
+        
+        .back-link { display: inline-block; margin-bottom: 48px; color: var(--gray-400); text-decoration: none; font-size: 14px; transition: color 0.2s; }
         .back-link:hover { color: var(--navy); }
 
-        h1 {
-            font-size: 32px;
-            color: var(--navy);
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
+        header { margin-bottom: 64px; }
+        h1 { font-size: 32px; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.02em; }
+        .subtitle { font-size: 18px; color: var(--gray-600); }
 
-        .subtitle {
-            font-size: 18px;
-            color: var(--gray-600);
-            margin-bottom: 64px;
-        }
-
-        section { margin-bottom: 56px; }
-
-        h2 {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--gray-400);
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--gray-200);
-            padding-bottom: 8px;
-        }
+        section { margin-bottom: 64px; }
+        h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-400); margin-bottom: 32px; border-bottom: 1px solid var(--gray-200); padding-bottom: 8px; }
 
         .step { margin-bottom: 32px; }
-        .step h3 {
-            font-size: 18px;
-            color: var(--navy);
-            margin: 0 0 12px 0;
-        }
+        .step h3 { font-size: 18px; color: var(--navy); margin: 0 0 12px 0; }
         .step p { margin: 0; font-size: 16px; color: var(--gray-600); }
 
-        .limitations-list {
-            list-style: none;
-            padding: 0;
-        }
+        .faq-item { margin-bottom: 32px; }
+        .faq-item h4 { font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+        .faq-item p { font-size: 15px; color: var(--gray-600); margin: 0; }
 
-        .limitations-list li {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 16px;
-            font-size: 16px;
-        }
+        .refusal-box { background: var(--red-pale); border: 1px solid var(--red-border); padding: 32px; margin-top: 40px; }
+        .refusal-box h3 { color: var(--red-text); font-size: 18px; margin-bottom: 24px; }
 
-        .limitations-list li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--gray-400);
-        }
+        .price-box { background: var(--gray-50); padding: 40px; border-radius: 2px; margin-top: 64px; text-align: center; }
+        .price-value { font-size: 28px; font-weight: 700; color: var(--navy); display: block; margin-bottom: 8px; }
+        .price-note { font-size: 14px; color: var(--gray-400); margin-bottom: 32px; display: block; }
 
-        .faq-section {
-            border-top: 1px solid var(--gray-100);
-            padding-top: 40px;
-            margin-top: 40px;
-        }
-
-        .price-box {
-            background: var(--gray-50);
-            padding: 32px;
-            border-radius: 2px;
-            margin-top: 64px;
-        }
-
-        .price-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--navy);
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .price-note {
-            font-size: 14px;
-            color: var(--gray-400);
-            margin-bottom: 24px;
-            display: block;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--navy);
-            color: var(--white);
-            padding: 16px 32px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 2px;
-            transition: opacity 0.2s;
-        }
-
+        .cta-button { display: inline-block; background: var(--navy); color: var(--white); padding: 18px 40px; text-decoration: none; font-weight: 600; border-radius: 2px; transition: opacity 0.2s; }
         .cta-button:hover { opacity: 0.9; }
 
-        footer {
-            margin-top: 120px;
-            padding-top: 40px;
-            border-top: 1px solid var(--gray-200);
-            font-size: 13px;
-            color: var(--gray-400);
-        }
+        footer { margin-top: 100px; padding: 40px 0; border-top: 1px solid var(--gray-200); font-size: 12px; color: var(--gray-400); text-align: center; }
     </style>
 </head>
 <body>
@@ -160,56 +69,58 @@
 
     <header>
         <h1>Диагностическая сессия</h1>
-        <p class="subtitle">Индивидуальный протокол аудита языковой тревожности.</p>
+        <p class="subtitle">Речевой аудит под давлением. 90 минут системного разбора FLA-паттернов.</p>
     </header>
 
     <section>
-        <h2>Что происходит на сессии (90 минут)</h2>
-        
+        <h2>Протокол аудита</h2>
         <div class="step">
-            <h3>1. Стресс-тест коммуникации</h3>
-            <p>Имитация рабочих ситуаций высокого давления: внезапный вопрос на встрече, презентация идеи, ведение диалога при дефиците времени.</p>
+            <h3>1. Стресс-тестирование</h3>
+            <p>Моделирование коммуникативных ситуаций высокого риска: прямая аргументация, ответы на неудобные вопросы, ведение линии в условиях дефицита времени.</p>
         </div>
-
         <div class="step">
-            <h3>2. Когнитивный аудит</h3>
-            <p>Выявление психологических триггеров, которые переключают мозг в режим защиты и блокируют доступ к активному словарному запасу.</p>
+            <h3>2. Анализ когнитивного сбоя</h3>
+            <p>Фиксация момента, когда «знание языка» подменяется «реакцией защиты». Мы выявляем физиологические и психологические триггеры вашего блока.</p>
         </div>
-
         <div class="step">
-            <h3>3. Формирование плана работы</h3>
-            <p>Если тип вашего речевого блока соответствует моей методике, вы получаете пошаговую стратегию коррекции. Если нет — я порекомендую смежного специалиста или альтернативный подход.</p>
+            <h3>3. Решение о допуске</h3>
+            <p>На основе аудита принимается решение о целесообразности работы. Если проблема не в FLA-блоке, вы получите рекомендацию профильного специалиста.</p>
         </div>
     </section>
 
     <section>
-        <h2>Ограничения протокола</h2>
-        <ul class="limitations-list">
-            <li><strong>Уровень:</strong> Только B1 и выше. Я не обучаю языку с нуля, а восстанавливаю доступ к уже имеющимся знаниям.</li>
-            <li><strong>Цели:</strong> Работа ведется исключительно в контексте профессиональной коммуникации (IT, Finance, Management).</li>
-            <li><strong>Выбор:</strong> Я оставляю за собой право не начинать работу после диагностики, если задача лежит вне моей компетенции или требует иного подхода.</li>
-        </ul>
-    </section>
-
-    <section class="faq-section">
-        <div class="step">
-            <h3 style="font-size: 16px;">Нужна ли подготовка?</h3>
-            <p style="font-size: 14px;">Нет. Для точности аудита мне важно видеть вашу естественную реакцию на стресс и текущее состояние речевой системы.</p>
-        </div>
-        <div class="step">
-            <h3 style="font-size: 16px;">В каком формате проходит встреча?</h3>
-            <p style="font-size: 14px;">Онлайн-видеосвязь (Zoom/Teams/Google Meet). Продолжительность — строго 90 минут.</p>
+        <h2>Ограничения и критерии отказа</h2>
+        <div class="refusal-box">
+            <div class="faq-item">
+                <h4>Несоответствие уровня (Ниже B1)</h4>
+                <p>Если вам нужно учить новые слова и грамматику — вам нужен преподаватель. Я занимаюсь только восстановлением доступа к уже имеющимся знаниям.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Отсутствие профессиональных ставок</h4>
+                <p>Мой протокол разработан для среды ELF (IT, Finance, Management). Я не работаю с запросами «английский для туризма» или «бытового общения».</p>
+            </div>
+            <div class="faq-item">
+                <h4>Поиск эмоциональной поддержки</h4>
+                <p>Если вам важнее психологическое облегчение, чем восстановление функции речи, этот формат будет фрустрирующим. Это коррекция навыка, а не терапия.</p>
+            </div>
+            <div class="faq-item" style="margin-bottom: 0;">
+                <h4>Низкая значимость проблемы</h4>
+                <p>Если речевой барьер не влияет на ваш доход или карьеру прямо сейчас, системная работа на 8 недель не будет доведена до конца.</p>
+            </div>
         </div>
     </section>
 
     <div class="price-box">
-        <span class="price-value">8 000 ₽</span>
-        <span class="price-note">Оплата производится после согласования даты сессии.</span>
-        <a href="https://t.me/unblock_eng?text=Здравствуйте.%20Ознакомился%20с%20протоколом%20диагностической%20сессии.%20Мой%20уровень%20—%20[B1/B2/C1].%20Цель:%20[созвоны/интервью/переговоры].%20Удобное%20время%20для%20связи:%20[день/часы]." class="cta-button">Записаться через Telegram</a>
+        <span class="price-value">10 000 ₽</span>
+        <span class="price-note">Сессия длится 90 минут. Оплата — после согласования слота.</span>
+        <a href="https://t.me/unblock_eng?text=Здравствуйте.%20Ознакомился%20с%20протоколом%20диагностической%20сессии.%20Удобное%20время%20для%20связи:%20[укажите%20интервал]." class="cta-button">Записаться на аудит через Telegram</a>
     </div>
 
     <footer>
-        <p>© 2026 Unblock English. Профессиональный аудит речевых барьеров. Не является медицинской услугой.</p>
+        <p>
+            © 2025 Unblock English. Речевой аудит и коррекция FLA в профессиональной ELF-среде.<br>
+            Не является образовательной или медицинской услугой.
+        </p>
     </footer>
 </div>
 
