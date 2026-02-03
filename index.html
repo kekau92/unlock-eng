@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Работа с языковой тревожностью для IT и Finance профессионалов.">
     <title>Unblock English — Устранение языковой тревожности</title>
+    
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -12,13 +13,12 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --navy: #1A3A52;
             --navy-light: #2C5F7C;
-            --navy-dark: #0F2537;
             --white: #FFFFFF;
             --gray-50: #F9FAFB;
             --gray-100: #F3F4F6;
@@ -26,52 +26,66 @@
             --gray-400: #9CA3AF;
             --gray-600: #4B5563;
             --gray-700: #374151;
-            
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
-            --space-lg: 2rem;
-            --space-xl: 3rem;
-            --space-2xl: 4rem;
             --space-3xl: 6rem;
-            
-            --text-xs: 0.75rem;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 2rem;
-            --text-4xl: 2.5rem;
-            
-            --leading-tight: 1.2;
-            --leading-base: 1.5;
-            --leading-relaxed: 1.625;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            color: var(--gray-700); 
+            line-height: 1.5; 
+            background: var(--white); 
+            -webkit-font-smoothing: antialiased; 
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--gray-700);
-            line-height: var(--leading-base);
-            background: var(--white);
-            -webkit-font-smoothing: antialiased;
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 2rem; 
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
+        /* --- HEADER & LOGO (Left Aligned) --- */
+        .site-header {
+            display: flex;
+            justify-content: flex-start;
+            padding: 40px 0;
+            margin-bottom: 56px;
         }
 
-        /* Hero Section */
+        .logo {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-main {
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 0;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+
+        .logo-english {
+            font-weight: 300;
+            color: var(--gray-600);
+        }
+
+        .logo-tag {
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--gray-400);
+            margin-top: 6px;
+            white-space: nowrap;
+        }
+
+        /* --- HERO SECTION --- */
         .hero {
-            padding: var(--space-3xl) 0;
+            padding-bottom: var(--space-3xl);
             text-align: center;
         }
 
@@ -80,64 +94,39 @@
             font-weight: 600;
             letter-spacing: 2px;
             color: var(--gray-400);
-            margin-bottom: var(--space-lg);
-            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
         }
 
         .hero-headline {
-            font-size: var(--text-4xl);
+            font-size: clamp(2rem, 5vw, 2.5rem);
             font-weight: 700;
             color: var(--navy);
             line-height: 1.1;
-            margin-bottom: var(--space-xl);
+            margin-bottom: 3rem;
             letter-spacing: -0.02em;
         }
 
         .hero-subheadline {
             max-width: 720px;
-            margin: 0 auto var(--space-2xl);
+            margin: 0 auto 4rem;
             color: var(--gray-600);
-            font-size: var(--text-lg);
-        }
-
-        .hero-subheadline p {
-            margin-bottom: var(--space-md);
-        }
-
-        .hero-outcome {
-            font-weight: 500;
-            color: var(--navy);
-            margin-top: var(--space-lg);
-        }
-
-        .hero-cta-link {
-            display: inline-block;
+            font-size: 1.125rem;
         }
 
         .link-arrow {
-            display: inline-flex;
-            align-items: center;
-            font-size: var(--text-lg);
+            font-size: 1.125rem;
             font-weight: 600;
             color: var(--navy);
             text-decoration: none;
             border-bottom: 2px solid var(--navy);
             padding-bottom: 4px;
-            transition: color 0.2s;
+            transition: opacity 0.2s;
         }
+        
+        .link-arrow:hover { opacity: 0.7; }
 
-        .link-arrow:hover {
-            color: var(--navy-light);
-            border-color: var(--navy-light);
-        }
-
-        .cta-note {
-            font-size: var(--text-xs);
-            color: var(--gray-400);
-            margin-top: var(--space-sm);
-        }
-
-        /* Paradox Grid */
+        /* --- PARADOX SECTION --- */
         .paradox-section {
             padding: var(--space-3xl) 0;
             background: var(--gray-50);
@@ -145,13 +134,13 @@
 
         .paradox-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
         }
 
         .paradox-item {
             background: var(--white);
-            padding: var(--space-xl);
+            padding: 3rem;
             border: 1px solid var(--gray-200);
         }
 
@@ -159,108 +148,39 @@
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: var(--space-md);
+            margin-bottom: 1rem;
             display: block;
         }
-
-        .label-red { color: #DC2626; }
-        .label-navy { color: var(--navy); }
 
         .paradox-item h3 {
-            font-size: var(--text-xl);
-            margin-bottom: var(--space-md);
+            font-size: 1.5rem;
             color: var(--navy);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
         }
 
-        .paradox-item p {
-            font-size: var(--text-base);
-            color: var(--gray-600);
-        }
-
-        /* Process Section */
-        .process-section {
-            padding: var(--space-3xl) 0;
-        }
-
-        .process-header {
-            max-width: 800px;
-            margin-bottom: var(--space-3xl);
-        }
-
-        .process-header h2 {
-            font-size: var(--text-3xl);
-            color: var(--navy);
-            margin-bottom: var(--space-md);
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-xl);
-        }
-
-        .process-step-num {
-            font-size: var(--text-sm);
-            font-weight: 700;
-            color: var(--gray-400);
-            margin-bottom: var(--space-sm);
-            display: block;
-        }
-
-        .process-step h3 {
-            font-size: var(--text-lg);
-            margin-bottom: var(--space-md);
-            color: var(--navy);
-        }
-
-        .process-step p {
-            font-size: var(--text-sm);
-            color: var(--gray-600);
-        }
-
-        /* Testimonials */
+        /* --- TESTIMONIALS --- */
         .testimonials-section {
             padding: var(--space-3xl) 0;
-            background: var(--gray-50);
         }
 
         .testimonial-card {
             background: var(--white);
-            padding: var(--space-xl);
-            margin-bottom: var(--space-lg);
+            padding: 2.5rem;
             border-left: 4px solid var(--navy);
-        }
-
-        .testimonial-header {
-            margin-bottom: var(--space-md);
-        }
-
-        .testimonial-name {
-            font-weight: 700;
-            display: block;
-            color: var(--navy);
-        }
-
-        .testimonial-role {
-            font-size: var(--text-sm);
-            color: var(--gray-400);
-        }
-
-        .testimonial-body {
-            font-size: var(--text-base);
-            color: var(--gray-700);
-        }
-
-        .testimonial-excerpt {
-            margin-bottom: var(--space-md);
+            margin-bottom: 24px;
+            border-top: 1px solid var(--gray-100);
+            border-right: 1px solid var(--gray-100);
+            border-bottom: 1px solid var(--gray-100);
         }
 
         .testimonial-full {
             display: none;
-            padding-top: var(--space-md);
+            margin-top: 1rem;
+            padding-top: 1rem;
             border-top: 1px solid var(--gray-100);
-            margin-top: var(--space-md);
+            font-style: italic;
+            color: var(--gray-600);
         }
 
         .toggle-btn {
@@ -270,259 +190,62 @@
             font-weight: 600;
             cursor: pointer;
             padding: 0;
-            font-size: var(--text-sm);
+            margin-top: 12px;
+            font-size: 14px;
         }
 
-        /* About Section */
-        .about-section {
-            padding: var(--space-3xl) 0;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: var(--space-2xl);
-            align-items: start;
-        }
-
-        .about-photo img {
-            width: 100%;
-            height: auto;
-            filter: grayscale(100%);
-            border-radius: 2px;
-        }
-
-        .about-bio h2 {
-            font-size: var(--text-3xl);
-            color: var(--navy);
-            margin-bottom: var(--space-xl);
-        }
-
-        .about-bio p {
-            margin-bottom: var(--space-md);
-            font-size: var(--text-base);
-        }
-
-        .about-intro {
-            font-size: var(--text-lg);
-            color: var(--navy);
-            font-weight: 500;
-            margin-bottom: var(--space-xl);
-        }
-
-        .about-yandex {
-            background: var(--gray-50);
-            padding: var(--space-lg);
-            margin: var(--space-xl) 0;
-            border-left: 2px solid var(--gray-200);
-        }
-
-        .about-approach {
-            font-style: italic;
-            color: var(--gray-600);
-        }
-
-        /* Pricing Section */
-        .pricing-section {
-            padding: var(--space-3xl) 0;
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: var(--space-3xl);
-        }
-
-        .pricing-header h2 {
-            font-size: var(--text-3xl);
-            margin-bottom: var(--space-md);
-        }
-
-        .fees-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-        }
-
-        .fee-item {
+        /* --- SITE FOOTER --- */
+        .site-footer {
             background: var(--white);
-            color: var(--navy);
-            padding: var(--space-xl);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .fee-header {
-            margin-bottom: var(--space-lg);
-            min-height: 80px;
-        }
-
-        .fee-header h3 {
-            font-size: var(--text-lg);
-            margin-bottom: var(--space-xs);
-        }
-
-        .fee-meta {
-            font-size: var(--text-sm);
-            color: var(--gray-400);
-        }
-
-        .fee-price {
-            font-size: var(--text-2xl);
-            font-weight: 700;
-            margin-bottom: var(--space-xl);
-        }
-
-        .fee-description {
-            font-size: var(--text-sm);
-            color: var(--gray-600);
-            margin-bottom: var(--space-xl);
-            flex-grow: 1;
-        }
-
-        .fee-description ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .fee-description li {
-            margin-bottom: 8px;
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .fee-description li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--gray-400);
-        }
-
-        /* Next Steps */
-        .next-steps-section {
-            padding: var(--space-3xl) 0;
-            text-align: center;
-        }
-
-        .next-steps-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .next-steps-content h2 {
-            font-size: var(--text-3xl);
-            color: var(--navy);
-            margin-bottom: var(--space-lg);
-        }
-
-        .next-steps-content p {
-            margin-bottom: var(--space-2xl);
-            color: var(--gray-600);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--navy);
-            color: var(--white);
-            padding: var(--space-md) var(--space-2xl);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 2px;
-            transition: background 0.2s;
-        }
-
-        .cta-button:hover {
-            background: var(--navy-light);
-        }
-
-        /* Footer */
-        footer {
-            padding: var(--space-3xl) 0 var(--space-xl);
-            background: var(--gray-50);
-            border-top: 1px solid var(--gray-200);
-            font-size: var(--text-sm);
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--gray-100);
+            margin-top: 100px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: var(--space-3xl);
-            margin-bottom: var(--space-2xl);
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 48px;
+            margin-bottom: 64px;
         }
 
-        .footer-info h4 {
-            color: var(--navy);
-            margin-bottom: var(--space-md);
-        }
-
-        .footer-info ul {
-            list-style: none;
-        }
-
-        .footer-info li {
-            margin-bottom: 8px;
-        }
-
-        .footer-info a {
-            color: var(--gray-600);
-            text-decoration: none;
-        }
-
-        .footer-info a:hover {
-            color: var(--navy);
-        }
-
-        .footer-location {
+        .footer-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: var(--gray-400);
-            margin-top: var(--space-lg);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-link {
+            display: block;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 12px;
         }
 
         .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-100);
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
-            padding-top: var(--space-xl);
-            border-top: 1px solid var(--gray-200);
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .footer-legal {
-            color: var(--gray-400);
-        }
-
-        .footer-disclaimer {
-            max-width: 400px;
             font-size: 11px;
             color: var(--gray-400);
-            text-align: right;
-            line-height: 1.4;
+            line-height: 1.6;
         }
 
-        @media (max-width: 900px) {
-            .paradox-grid, .process-grid, .fees-grid {
-                grid-template-columns: 1fr;
-            }
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            .about-photo {
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            .hero-headline {
-                font-size: var(--text-3xl);
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: var(--space-lg);
-            }
-            .footer-disclaimer {
-                text-align: left;
-            }
+        @media (max-width: 600px) {
+            .site-header { padding-top: 24px; margin-bottom: 40px; }
+            .footer-bottom { flex-direction: column; }
+            .footer-legal:last-child { text-align: left !important; }
         }
     </style>
 </head>
@@ -530,6 +253,12 @@
 
     <section class="hero">
         <div class="container">
+            <header class="site-header">
+            <a href="index.html" class="logo">
+                <div class="logo-main">UNBLOCK <span class="logo-english">ENGLISH</span></div>
+                <div class="logo-tag">Communication Protocol</div>
+            </a>
+        </header>
             <div class="sector-tag" style="text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-600); margin-bottom: 8px;">
                 Для IT и Finance специалистов
             </div>
@@ -980,37 +709,42 @@
     </div>
 </section>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3 style="color: var(--navy); margin-bottom: var(--space-md);">Unblock English</h3>
-                    <p style="max-width: 400px; color: var(--gray-600);">
-                        Специализированная работа с языковой тревожностью для IT и Finance 
-                        профессионалов.
+                    <div class="logo">
+                        <div class="logo-main" style="font-size: 20px;">UNBLOCK <span class="logo-english">ENGLISH</span></div>
+                        <div class="logo-tag" style="font-size: 9px;">Communication Protocol</div>
+                    </div>
+                    <p style="font-size: 13px; color: var(--gray-600); margin-top: 24px; max-width: 280px;">
+                        Работа с языковой тревожностью и речевыми блоками в профессиональной ELF-среде.
                     </p>
                 </div>
-                <div class="footer-info">
-                    <h4>Контакты</h4>
-                    <ul>
-                        <li><a href="https://t.me/unblock_eng" target="_blank">Telegram</a></li>
-                        <li><a href="mailto:hello@unblock-english.ru">Email</a></li>
-                    </ul>
-                    
-                    <p class="footer-location">
-                        Работаю с русскоязычными специалистами<br>
-                        независимо от страны проживания.<br>
-                        Сессии проходят онлайн.
-                    </p>
+                
+                <div class="footer-nav">
+                    <span class="footer-label">Навигация</span>
+                    <a href="index.html" class="footer-link">Главная</a>
+                    <a href="diagnostics.html" class="footer-link">Самодиагностика</a>
+                    <a href="intake.html" class="footer-link">Формат аудита</a>
+                </div>
+
+                <div class="footer-contact">
+                    <span class="footer-label">Контакт</span>
+                    <a href="https://t.me/unblock_eng" target="_blank" class="footer-link">Telegram</a>
+                    <a href="mailto:hello@unblock-english.ru" class="footer-link">Email</a>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p class="footer-legal">© 2026 Unblock English. Все права защищены.</p>
-                <p class="footer-disclaimer">
-                    Это не медицинская услуга. Не является заменой терапии или лечения. 
-                    При серьёзных тревожных расстройствах обратитесь к психотерапевту.
-                </p>
+                <div class="footer-legal">
+                    © 2026 Unblock English. Все права защищены.<br>
+                    Не является образовательной или медицинской услугой.
+                </div>
+                <div class="footer-legal" style="text-align: right;">
+                    NYC Experience: Brown Harris Stevens & Halstead<br>
+                    Manhattan, NY (2018—2022)
+                </div>
             </div>
         </div>
     </footer>
