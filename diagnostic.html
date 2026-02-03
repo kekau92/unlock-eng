@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Диагностика языковой тревожности - Unblock English</title>
+    <title>Протокол диагностики — Unblock English</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #1A3A52;
-            --navy-light: #2C5F7C;
-            --navy-dark: #0F2537;
             --white: #FFFFFF;
             --gray-50: #F9FAFB;
             --gray-100: #F3F4F6;
@@ -24,992 +21,255 @@
             --gray-400: #9CA3AF;
             --gray-600: #4B5563;
             --gray-700: #374151;
-            --accent: #2C5F7C;
-            --accent-light: #E8F1F5;
-            --error: #DC2626;
-            --success: #16A34A;
-            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            font-family: var(--font-primary);
-            font-size: 16px;
-            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
             color: var(--gray-700);
-            background: var(--gray-50);
+            background: var(--white);
+            margin: 0;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 48px 24px;
-        }
+        .container { max-width: 680px; margin: 0 auto; padding: 60px 24px; }
+        
+        .hidden { display: none !important; }
 
-        /* HEADER */
-        .diagnostic-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
+        /* Progress Bar */
+        .progress-container { margin-bottom: 40px; }
+        .progress-bar { height: 4px; background: var(--gray-100); width: 100%; }
+        .progress-fill { height: 100%; background: var(--navy); width: 0%; transition: width 0.3s; }
+        .progress-text { font-size: 12px; color: var(--gray-400); margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
 
-        .diagnostic-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gray-600);
-            margin-bottom: 16px;
-        }
+        /* Typography */
+        h1 { font-size: 28px; color: var(--navy); margin-bottom: 24px; letter-spacing: -0.02em; }
+        h2 { font-size: 20px; color: var(--navy); margin-bottom: 32px; line-height: 1.4; }
+        p { margin-bottom: 16px; color: var(--gray-600); }
 
-        .diagnostic-header h1 {
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--navy);
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .diagnostic-intro {
-            font-size: 16px;
-            color: var(--gray-600);
-            line-height: 1.6;
-            max-width: 560px;
-            margin: 0 auto;
-        }
-
-        /* PROGRESS */
-        .progress-container {
-            margin-bottom: 32px;
-        }
-
-        .progress-text {
-            font-size: 14px;
-            color: var(--gray-600);
-            text-align: center;
-            margin-bottom: 12px;
-        }
-
-        .progress-bar-wrapper {
-            width: 100%;
-            height: 2px;
-            background: var(--gray-200);
-            border-radius: 1px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        /* QUESTION CARD */
-        .question-card {
+        /* Options */
+        .options-list { list-style: none; padding: 0; }
+        .option-item {
             background: var(--white);
             border: 1px solid var(--gray-200);
-            border-radius: 4px;
-            padding: 32px;
-            margin-bottom: 24px;
-        }
-
-        .question-number {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--gray-600);
-            margin-bottom: 12px;
-        }
-
-        .question-text {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--navy);
-            line-height: 1.4;
-            margin-bottom: 8px;
-        }
-
-        .question-helper {
-            font-size: 14px;
-            color: var(--gray-600);
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
-
-        /* OPTIONS */
-        .options-container {
-            display: grid;
-            gap: 12px;
-        }
-
-        .option-button {
-            width: 100%;
             padding: 16px 20px;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--gray-700);
-            text-align: left;
+            margin-bottom: 12px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: var(--font-primary);
-        }
-
-        .option-button:hover {
-            border-color: var(--accent);
-            background: var(--gray-50);
-        }
-
-        .option-button.selected {
-            border-color: var(--accent);
-            background: var(--accent-light);
-            color: var(--navy);
-        }
-
-        /* NAVIGATION */
-        .nav-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: space-between;
-            margin-top: 24px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            font-size: 14px;
-            font-weight: 500;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: var(--font-primary);
-        }
-
-        .btn-secondary {
-            background: var(--white);
-            color: var(--gray-700);
-            border: 1px solid var(--gray-200);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--gray-400);
-        }
-
-        .btn-primary {
-            background: var(--navy);
-            color: var(--white);
-            border: 1px solid var(--navy);
-        }
-
-        .btn-primary:hover {
-            background: var(--navy-light);
-        }
-
-        .btn-primary:disabled {
-            background: var(--gray-200);
-            color: var(--gray-400);
-            cursor: not-allowed;
-            border-color: var(--gray-200);
-        }
-
-        /* RESULTS PAGE */
-        .results-container {
-            background: var(--navy);
-            border: 1px solid var(--navy-light);
-            border-radius: 4px;
-            padding: 40px 32px;
-            margin-bottom: 32px;
-            color: var(--white);
-        }
-
-        .results-qualifier {
-            background: rgba(255, 255, 255, 0.1);
-            border-left: 2px solid rgba(255, 255, 255, 0.3);
-            padding: 16px;
-            margin-bottom: 32px;
-            font-size: 14px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .results-qualifier p {
-            margin-bottom: 8px;
-        }
-
-        .results-qualifier p:last-child {
-            margin-bottom: 0;
-        }
-
-        .results-header {
-            margin-bottom: 24px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 24px;
-        }
-
-        .results-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 400;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .results-header h2 {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 8px;
-        }
-
-        .results-meta {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
-            font-style: italic;
-            border-left: 2px solid rgba(255, 255, 255, 0.3);
-            padding-left: 12px;
-            margin-top: 8px;
-        }
-
-        .results-score {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 8px;
-        }
-
-        .results-score-label {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 24px;
-        }
-
-        .results-section {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 4px;
-            padding: 32px;
-            margin-bottom: 24px;
-        }
-
-        .results-section h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 16px;
-        }
-
-        .results-section p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--gray-700);
-            margin-bottom: 16px;
-        }
-
-        .results-section p:last-child {
-            margin-bottom: 0;
-        }
-
-        .pattern-type {
-            background: var(--accent-light);
-            border-left: 3px solid var(--accent);
-            padding: 20px;
-            margin: 24px 0;
+            transition: all 0.2s;
             border-radius: 2px;
         }
+        .option-item:hover { border-color: var(--navy); background: var(--gray-50); }
+        .option-item.selected { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
-        .pattern-type h4 {
-            font-size: 16px;
+        /* Results Screen */
+        .score-display { font-size: 48px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .severity-badge { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); margin-bottom: 32px; display: block; }
+        
+        .interpretation-box { padding: 32px; background: var(--gray-50); border-radius: 2px; margin-bottom: 40px; }
+        .pattern-analysis { border-top: 1px solid var(--gray-200); padding-top: 32px; margin-top: 32px; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
             font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 12px;
-        }
-
-        .pattern-type p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--gray-700);
-            margin-bottom: 0;
-        }
-
-        .severity-note {
-            font-size: 14px;
-            color: var(--gray-600);
-            line-height: 1.6;
-            padding: 16px;
-            background: var(--gray-50);
-            border-radius: 4px;
-            margin-top: 16px;
-        }
-
-        .audit-verification {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 4px;
-            padding: 32px;
-            margin-bottom: 32px;
-        }
-
-        .audit-verification h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 16px;
-        }
-
-        .audit-verification ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .audit-verification li {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--gray-700);
-            margin-bottom: 12px;
-            padding-left: 24px;
-            position: relative;
-        }
-
-        .audit-verification li::before {
-            content: '–';
-            position: absolute;
-            left: 0;
-            color: var(--gray-400);
-        }
-
-        .cta-section {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-left: 3px solid var(--accent);
-            border-radius: 4px;
-            padding: 32px;
-            margin-bottom: 32px;
-        }
-
-        .cta-section h3 {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--gray-700);
-            margin-bottom: 16px;
-        }
-
-        .cta-list {
-            list-style: none;
-            padding: 0;
-            margin: 24px 0;
-        }
-
-        .cta-list li {
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--gray-600);
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .cta-list li::before {
-            content: '–';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 24px;
-        }
-
-        .btn-cta {
-            display: block;
-            padding: 16px 24px;
-            font-size: 16px;
-            font-weight: 500;
-            text-align: center;
             text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.2s ease;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            font-size: 16px;
+            border: none;
         }
-
-        .btn-cta-primary {
-            background: var(--navy);
-            color: var(--white);
-            border: 1px solid var(--navy);
-        }
-
-        .btn-cta-primary:hover {
-            background: var(--navy-light);
-            border-color: var(--navy-light);
-        }
-
-        .btn-cta-secondary {
-            background: var(--white);
-            color: var(--navy);
-            border: 1px solid var(--gray-200);
-        }
-
-        .btn-cta-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .cta-note {
-            font-size: 14px;
-            color: var(--gray-600);
-            text-align: center;
-            margin-top: 16px;
-            font-style: italic;
-        }
-
-        .restart-link {
-            text-align: center;
-            margin-top: 32px;
-        }
-
-        .restart-link a {
-            font-size: 14px;
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s ease;
-        }
-
-        .restart-link a:hover {
-            border-bottom-color: var(--accent);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 32px 16px;
-            }
-
-            .diagnostic-header h1 {
-                font-size: 24px;
-            }
-
-            .question-card {
-                padding: 24px;
-            }
-
-            .question-text {
-                font-size: 16px;
-            }
-
-            .results-container {
-                padding: 32px 24px;
-            }
-
-            .results-score {
-                font-size: 36px;
-            }
-
-            .results-section {
-                padding: 24px;
-            }
-
-            .nav-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-
-        .hidden {
-            display: none;
-        }
+        .btn-primary { background: var(--navy); color: var(--white); }
+        .btn-secondary { background: var(--white); color: var(--navy); border: 1px solid var(--navy); }
+        
+        .cta-stack { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+        
+        footer { margin-top: 80px; font-size: 12px; color: var(--gray-400); text-align: center; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- INTRO SCREEN -->
-        <div id="intro-screen">
-            <div class="diagnostic-header">
-                <div class="diagnostic-label">Диагностический скрининг</div>
-                <h1>Определение типа речевого блока</h1>
-                <p class="diagnostic-intro">
-                    Этот тест поможет определить, есть ли у вас языковая тревожность 
-                    и в каких ситуациях она проявляется. Результат — ориентировочная 
-                    интерпретация для дальнейшей проверки на аудите.
-                </p>
-            </div>
 
-            <div class="question-card">
-                <p style="margin-bottom: 16px;">
-                    11 вопросов, примерно 2-3 минуты.
-                </p>
-                <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 24px;">
-                    Отвечайте честно — результаты видите только вы. 
-                    Это не экзамен, а инструмент для понимания паттерна.
-                </p>
-                <button class="btn btn-primary" onclick="startDiagnostic()" style="width: 100%;">
-                    Начать диагностику
-                </button>
-            </div>
+<div class="container">
+    <div id="intro-screen">
+        <h1>Протокол диагностики</h1>
+        <p>Этот тест предназначен для выявления паттернов языковой тревожности (FLA) у профессионалов. Он оценивает не уровень английского, а механизм потери контроля над речью в стрессовых ситуациях.</p>
+        <p>Время прохождения: 2 минуты.</p>
+        <button onclick="startDiagnostic()" class="btn btn-primary" style="margin-top: 24px;">Начать диагностику</button>
+    </div>
 
-            <p style="text-align: center; font-size: 14px; color: var(--gray-600); margin-top: 24px;">
-                <a href="index.html" style="color: var(--accent); text-decoration: none;">
-                    ← Вернуться на главную
-                </a>
-            </p>
+    <div id="diagnostic-screen" class="hidden">
+        <div class="progress-container">
+            <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+            <div id="progress-text" class="progress-text">Вопрос 1 из 11</div>
         </div>
-
-        <!-- QUESTIONS SCREEN -->
-        <div id="questions-screen" class="hidden">
-            <div class="progress-container">
-                <div class="progress-text">
-                    Вопрос <span id="current-question">1</span> из <span id="total-questions">11</span>
-                </div>
-                <div class="progress-bar-wrapper">
-                    <div class="progress-bar" id="progress-bar"></div>
-                </div>
-            </div>
-
-            <div class="question-card">
-                <div class="question-number" id="question-label">ВОПРОС 1</div>
-                <h2 class="question-text" id="question-text"></h2>
-                <p class="question-helper" id="question-helper"></p>
-                
-                <div class="options-container" id="options-container"></div>
-            </div>
-
-            <div class="nav-buttons">
-                <button class="btn btn-secondary" id="prev-btn" onclick="previousQuestion()" style="display: none;">
-                    ← Назад
-                </button>
-                <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" disabled style="margin-left: auto;">
-                    Далее →
-                </button>
-            </div>
+        <div id="question-container">
+            <h2 id="question-title">Загрузка...</h2>
+            <div id="options-container" class="options-list"></div>
         </div>
-
-        <!-- RESULTS SCREEN -->
-        <div id="results-screen" class="hidden">
-            <div class="results-container">
-                <div class="results-qualifier">
-                    <p>
-                        <strong>Это ориентировочная интерпретация</strong> на основе общих паттернов.
-                    </p>
-                    <p>
-                        Она не заменяет индивидуальную диагностику и может отличаться 
-                        при живом разборе вашей конкретной ситуации.
-                    </p>
-                </div>
-
-                <div class="results-header">
-                    <span class="results-label">Предварительная интерпретация</span>
-                    <h2>Ваш паттерн блока</h2>
-                    <p class="results-meta">Требует проверки на аудите</p>
-                </div>
-
-                <div class="results-score" id="total-score"></div>
-                <div class="results-score-label" id="severity-label"></div>
-            </div>
-
-            <div class="results-section">
-                <h3>Что показывает тест</h3>
-                <div id="severity-interpretation"></div>
-                
-                <div class="pattern-type" id="pattern-type"></div>
-
-                <div class="severity-note">
-                    <strong>Важно понимать:</strong> Этот результат — сигнал о вероятном паттерне, 
-                    не окончательный диагноз. Точный тип блока, триггеры и инструменты 
-                    определяются на индивидуальном аудите.
-                </div>
-            </div>
-
-            <div class="audit-verification">
-                <h3>Что мы проверим на аудите</h3>
-                <ul>
-                    <li>Действительно ли это тревога точности, или есть элементы замирания под давлением</li>
-                    <li>В каких именно ситуациях блок проявляется (не "вообще", а конкретные триггеры)</li>
-                    <li>Что запускает сбой — страх ошибки, нехватка времени, или физиологическая реакция</li>
-                    <li>Подходит ли вам работа с этим типом блока, или нужен другой специалист</li>
-                </ul>
-            </div>
-
-            <div class="cta-section">
-                <h3>Хотите проверить этот результат?</h3>
-                <p>
-                    На аудите мы разберём вашу конкретную ситуацию:
-                </p>
-                <ul class="cta-list">
-                    <li>Правильно ли определён тип блока по тесту</li>
-                    <li>Где именно возникает сбой в вашей работе</li>
-                    <li>Какие инструменты имеют смысл, а какие нет</li>
-                    <li>Можно ли вообще устранить блок в вашем случае</li>
-                </ul>
-                <p style="margin-top: 16px; font-size: 14px; color: var(--gray-600);">
-                    Без продаж и обязательств. Честная оценка: могу ли я помочь. 
-                    В 30-40% случаев я отказываю после диагностики.
-                </p>
-
-                <div class="cta-buttons">
-                    <a href="https://t.me/unblock_eng" target="_blank" class="btn-cta btn-cta-primary">
-                        Обсудить результат в Telegram →
-                    </a>
-                    <a href="index.html#pricing" class="btn-cta btn-cta-secondary">
-                        Узнать про аудит (₽8,000)
-                    </a>
-                </div>
-
-                <p class="cta-note">
-                    Или сохраните результат и вернитесь позже
-                </p>
-            </div>
-
-            <div class="restart-link">
-                <a href="#" onclick="restartDiagnostic(); return false;">
-                    ← Пройти тест заново
-                </a>
-            </div>
+        <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+            <button id="prev-btn" onclick="prevQuestion()" class="btn btn-secondary" style="visibility: hidden;">Назад</button>
+            <button id="next-btn" onclick="nextQuestion()" class="btn btn-primary" disabled>Далее</button>
         </div>
     </div>
 
-    <script>
-        // QUESTIONS DATA
-        const questions = [
-            {
-                id: 1,
-                text: "Как часто вы избегаете ситуаций, где нужно говорить на английском, хотя знаете язык достаточно хорошо?",
-                helper: "Речь о ситуациях, где вы могли бы справиться, но предпочитаете не рисковать.",
-                options: [
-                    { text: "Почти никогда — иду на контакт", value: 0 },
-                    { text: "Иногда откладываю, если можно", value: 1 },
-                    { text: "Часто избегаю или делегирую", value: 2 },
-                    { text: "Постоянно ищу способы не говорить", value: 3 }
-                ],
-                category: "avoidance"
-            },
-            {
-                id: 2,
-                text: "Что происходит перед важным созвоном или презентацией на английском?",
-                helper: "Обратите внимание на физические ощущения и мысли за час до события.",
-                options: [
-                    { text: "Обычное волнение, быстро проходит", value: 0 },
-                    { text: "Заметная тревога, но справляюсь", value: 1 },
-                    { text: "Сильное напряжение, сложно сосредоточиться", value: 2 },
-                    { text: "Паника, хочется отменить", value: 3 }
-                ],
-                category: "anticipatory"
-            },
-            {
-                id: 3,
-                text: "Когда вы начинаете говорить на английском в стрессовой ситуации, что происходит с речью?",
-                helper: "Стрессовая = собеседование, клиентский созвон, презентация руководству.",
-                options: [
-                    { text: "Говорю почти как обычно", value: 0 },
-                    { text: "Немного медленнее, но контролирую", value: 1 },
-                    { text: "Заметные паузы, ищу слова", value: 2 },
-                    { text: "Замираю или теряю нить мысли", value: 3 }
-                ],
-                category: "performance"
-            },
-            {
-                id: 4,
-                text: "Как долго после неудачного разговора на английском вы прокручиваете ситуацию в голове?",
-                helper: "Неудачный = сказали неправильно, забыли слово, не поняли вопрос.",
-                options: [
-                    { text: "Почти не думаю об этом", value: 0 },
-                    { text: "Несколько часов, потом отпускает", value: 1 },
-                    { text: "1-2 дня, мешает работать", value: 2 },
-                    { text: "Неделями, влияет на следующие разговоры", value: 3 }
-                ],
-                category: "rumination"
-            },
-            {
-                id: 5,
-                text: "Вы больше боитесь сказать неправильно или не суметь сказать вообще?",
-                helper: "Первое = страх ошибки. Второе = замирание доступа к языку.",
-                options: [
-                    { text: "Ни то, ни другое не беспокоит", value: 0 },
-                    { text: "Больше беспокоит ошибка", value: 1, type: "accuracy" },
-                    { text: "Больше беспокоит замирание", value: 1, type: "freeze" },
-                    { text: "Оба сильно беспокоят", value: 2 }
-                ],
-                category: "fear_type"
-            },
-            {
-                id: 6,
-                text: "Как вы оцениваете свой английский в письме по сравнению с устной речью?",
-                helper: "Сравните: emails, документы vs. созвоны, встречи.",
-                options: [
-                    { text: "Примерно одинаковый уровень", value: 0 },
-                    { text: "В письме чуть лучше", value: 1 },
-                    { text: "В письме заметно лучше", value: 2 },
-                    { text: "В письме совсем другой уровень", value: 3 }
-                ],
-                category: "disparity"
-            },
-            {
-                id: 7,
-                text: "Влияет ли ваш речевой блок на карьерные или финансовые возможности?",
-                helper: "Упущенные интервью, контракты, повышения из-за языка.",
-                options: [
-                    { text: "Не влияет", value: 0 },
-                    { text: "Возможно влияет, но не уверен", value: 1 },
-                    { text: "Влияет, но не критично", value: 2 },
-                    { text: "Прямо блокирует возможности", value: 3 }
-                ],
-                category: "impact"
-            },
-            {
-                id: 8,
-                text: "Что происходит с пульсом и дыханием, когда нужно внезапно ответить на английском?",
-                helper: "Внезапно = неожиданный вопрос, спонтанная ситуация без подготовки.",
-                options: [
-                    { text: "Ничего особенного", value: 0 },
-                    { text: "Легкое учащение, быстро нормализуется", value: 1 },
-                    { text: "Заметное учащение, мешает говорить", value: 2 },
-                    { text: "Сильная реакция, сложно контролировать", value: 3 }
-                ],
-                category: "physiological"
-            },
-            {
-                id: 9,
-                text: "Помогают ли вам курсы английского и разговорные клубы убрать блок?",
-                helper: "Улучшается ли речь под давлением после практики в комфортной среде?",
-                options: [
-                    { text: "Да, практика решает проблему", value: 0 },
-                    { text: "Немного помогает", value: 1 },
-                    { text: "Практически не помогает", value: 2 },
-                    { text: "Не помогает совсем, блок остаётся", value: 3 }
-                ],
-                category: "intervention"
-            },
-            {
-                id: 10,
-                text: "Как быстро вы восстанавливаетесь после стрессового разговора на английском?",
-                helper: "Стрессовый = собеседование, сложный созвон, конфликтная ситуация.",
-                options: [
-                    { text: "Сразу или через несколько минут", value: 0 },
-                    { text: "В течение часа", value: 1 },
-                    { text: "Несколько часов, остаток дня сложно", value: 2 },
-                    { text: "День или больше, влияет на работу", value: 3 }
-                ],
-                category: "recovery"
-            },
-            {
-                id: 11,
-                text: "Есть ли конкретное событие в ближайшие 2-8 недель, где вам критически нужен контроль над речью?",
-                helper: "Собеседование, презентация, переговоры, важная встреча.",
-                options: [
-                    { text: "Нет конкретного события", value: 0 },
-                    { text: "Есть, но не критично", value: 1 },
-                    { text: "Есть важное событие", value: 2 },
-                    { text: "Есть критически важное событие", value: 3 }
-                ],
-                category: "urgency"
-            }
-        ];
+    <div id="results-screen" class="hidden">
+        <div class="score-display" id="total-score">0 / 33</div>
+        <span class="severity-badge" id="severity-label">Анализ...</span>
+        
+        <div class="interpretation-box">
+            <div id="severity-interpretation"></div>
+            <div id="pattern-analysis" class="pattern-analysis"></div>
+        </div>
 
-        // STATE
-        let currentQuestionIndex = 0;
-        let answers = {};
-        let userAnswers = [];
+        <div id="cta-area" class="cta-stack">
+            <a href="intake.html" class="btn btn-secondary" style="text-align: center;">1. Условия и формат сессии-аудита →</a>
+            <a id="tg-link" href="https://t.me/unblock_eng" target="_blank" class="btn btn-primary" style="text-align: center;">2. Обсудить результат в Telegram</a>
+        </div>
+    </div>
 
-        // INITIALIZE
-        function startDiagnostic() {
-            document.getElementById('intro-screen').classList.add('hidden');
-            document.getElementById('questions-screen').classList.remove('hidden');
-            document.getElementById('total-questions').textContent = questions.length;
-            showQuestion(0);
+    <footer>
+        © 2025 Unblock English. Это не медицинская услуга. Восстановление контроля над речевой системой.
+    </footer>
+</div>
+
+<script>
+    const questions = [
+        { title: "Как часто вы ловите себя на мысли «сейчас я что-то скажу не так», прежде чем открыть рот на встрече?", options: ["Никогда", "Редко", "Часто", "Постоянно"], values: [0, 1, 2, 3], cat: "accuracy" },
+        { title: "Чувствуете ли вы, что ваш английский в переписке значительно лучше, чем при живом общении?", options: ["Разницы нет", "Немного лучше", "Заметно лучше", "Небо и земля"], values: [0, 1, 2, 3], cat: "general" },
+        { title: "Бывает ли так, что во время звонка вы внезапно забываете простое слово, которое точно знаете?", options: ["Нет", "Очень редко", "Бывает часто", "Это мой главный страх"], values: [0, 1, 2, 3], cat: "freeze" },
+        { title: "Насколько сильно вы концентрируетесь на грамматике, когда говорите?", options: ["Не думаю о ней", "Слегка слежу", "Сильно контролирую", "Парализован(а) правилами"], values: [0, 1, 2, 3], cat: "accuracy" },
+        { title: "Чувствуете ли вы физическое напряжение (в шее, плечах, животе), когда нужно говорить на английском?", options: ["Нет", "Легкий дискомфорт", "Заметное напряжение", "Сильный стресс"], values: [0, 1, 2, 3], cat: "freeze" },
+        { title: "Пытаетесь ли вы заранее прокрутить в голове всю фразу целиком, прежде чем её произнести?", options: ["Нет", "Иногда", "Почти всегда", "Всегда"], values: [0, 1, 2, 3], cat: "accuracy" },
+        { title: "Как вы реагируете, если вас не поняли с первого раза?", options: ["Спокойно повторяю", "Чуть смущаюсь", "Начинаю нервничать", "Хочу провалиться сквозь землю"], values: [0, 1, 2, 3], cat: "freeze" },
+        { id: "impact", title: "Насколько этот барьер мешает вашей карьере или доходу прямо сейчас?", options: ["Не мешает", "Мешает слегка", "Заметно ограничивает", "Критически блокирует рост"], values: [0, 1, 2, 3], cat: "impact" },
+        { title: "Склонны ли вы избегать ситуаций, где нужно говорить спонтанно (например, нетворкинг)?", options: ["Нет", "Редко", "Стараюсь избегать", "Всегда избегаю"], values: [0, 1, 2, 3], cat: "general" },
+        { title: "Чувствуете ли вы, что ваша личность на английском «беднее» или «глупее», чем на родном языке?", options: ["Нет", "Немного", "Заметно", "Это меня угнетает"], values: [0, 1, 2, 3], cat: "general" },
+        { id: "urgency", title: "Насколько срочно вам нужно решить эту проблему?", options: ["Просто интересуюсь", "В ближайшие полгода", "Нужно было вчера", "Критический дедлайн"], values: [0, 1, 2, 3], cat: "urgency" }
+    ];
+
+    let currentIndex = 0;
+    let answers = {};
+
+    function startDiagnostic() {
+        document.getElementById('intro-screen').classList.add('hidden');
+        document.getElementById('diagnostic-screen').classList.remove('hidden');
+        showQuestion();
+    }
+
+    function showQuestion() {
+        const q = questions[currentIndex];
+        document.getElementById('question-title').textContent = q.title;
+        const optContainer = document.getElementById('options-container');
+        optContainer.innerHTML = '';
+
+        q.options.forEach((opt, i) => {
+            const div = document.createElement('div');
+            div.className = 'option-item' + (answers[currentIndex] === i ? ' selected' : '');
+            div.textContent = opt;
+            div.onclick = () => selectOption(i);
+            optContainer.appendChild(div);
+        });
+
+        const progress = ((currentIndex + 1) / questions.length) * 100;
+        document.getElementById('progress-fill').style.width = `${progress}%`;
+        document.getElementById('progress-text').textContent = `Вопрос ${currentIndex + 1} из ${questions.length}`;
+        document.getElementById('prev-btn').style.visibility = currentIndex > 0 ? 'visible' : 'hidden';
+        document.getElementById('next-btn').disabled = answers[currentIndex] === undefined;
+        document.getElementById('next-btn').textContent = currentIndex === questions.length - 1 ? "Завершить" : "Далее";
+    }
+
+    function selectOption(index) {
+        answers[currentIndex] = index;
+        showQuestion();
+    }
+
+    function nextQuestion() {
+        if (currentIndex < questions.length - 1) {
+            currentIndex++;
+            showQuestion();
+        } else {
+            finish();
+        }
+    }
+
+    function prevQuestion() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showQuestion();
+        }
+    }
+
+    function finish() {
+        document.getElementById('diagnostic-screen').classList.add('hidden');
+        document.getElementById('results-screen').classList.remove('hidden');
+
+        let totalScore = 0;
+        let accuracyScore = 0;
+        let freezeScore = 0;
+        let impact = 0;
+        let urgency = 0;
+
+        questions.forEach((q, i) => {
+            const val = q.values[answers[i]];
+            totalScore += val;
+            if (q.cat === 'accuracy') accuracyScore += val;
+            if (q.cat === 'freeze') freezeScore += val;
+            if (q.id === 'impact') impact = val;
+            if (q.id === 'urgency') urgency = val;
+        });
+
+        // БЕЗЖАЛОСТНЫЙ ГЕЙТ
+        if (impact <= 1 && urgency <= 1) {
+            renderLowPriority(totalScore);
+        } else {
+            renderHighPriority(totalScore, accuracyScore, freezeScore);
+        }
+    }
+
+    function renderLowPriority(score) {
+        document.getElementById('total-score').textContent = `${score} / 33`;
+        document.getElementById('severity-label').textContent = "Низкий приоритет для коррекции";
+        document.getElementById('severity-interpretation').innerHTML = `
+            <p>Ваш результат указывает на то, что текущий уровень дискомфорта не является критическим для вашей карьеры.</p>
+            <p>На данном этапе индивидуальная работа по моей методике будет <strong>избыточной</strong>. Ваша ситуация успешно решается регулярной практикой без специального вмешательства.</p>
+        `;
+        document.getElementById('pattern-analysis').innerHTML = '';
+        document.getElementById('cta-area').innerHTML = `
+            <p style="text-align: center; color: var(--gray-400); font-size: 14px;">Индивидуальный аудит не требуется.</p>
+            <a href="index.html" class="btn btn-secondary" style="text-align: center;">Вернуться на главную</a>
+        `;
+    }
+
+    function renderHighPriority(score, acc, freeze) {
+        document.getElementById('total-score').textContent = `${score} / 33`;
+        
+        let label = "Легкая тревога";
+        let text = "Ваш уровень тревожности не блокирует речь полностью, но создает лишний шум.";
+        
+        if (score > 16) {
+            label = "Выраженная тревожность";
+            text = "Ситуация требует глубокого разбора. Блок носит системный характер и вряд ли исчезнет от простой «практики». Требуется проверка на совместимость с методикой.";
+        } else if (score > 8) {
+            label = "Умеренная тревожность";
+            text = "Вы тратите слишком много когнитивного ресурса на самоконтроль. Это мешает ясности и убедительности.";
         }
 
-        function showQuestion(index) {
-            currentQuestionIndex = index;
-            const question = questions[index];
-            
-            // Update progress
-            document.getElementById('current-question').textContent = index + 1;
-            const progress = ((index + 1) / questions.length) * 100;
-            document.getElementById('progress-bar').style.width = progress + '%';
-            
-            // Update question content
-            document.getElementById('question-label').textContent = `ВОПРОС ${index + 1}`;
-            document.getElementById('question-text').textContent = question.text;
-            document.getElementById('question-helper').textContent = question.helper;
-            
-            // Render options
-            const optionsContainer = document.getElementById('options-container');
-            optionsContainer.innerHTML = '';
-            
-            question.options.forEach((option, i) => {
-                const button = document.createElement('button');
-                button.className = 'option-button';
-                button.textContent = option.text;
-                button.onclick = () => selectOption(index, i);
-                
-                // Restore selection if exists
-                if (userAnswers[index] === i) {
-                    button.classList.add('selected');
-                }
-                
-                optionsContainer.appendChild(button);
-            });
-            
-            // Update navigation
-            document.getElementById('prev-btn').style.display = index > 0 ? 'block' : 'none';
-            updateNextButton();
-        }
+        document.getElementById('severity-label').textContent = label;
+        document.getElementById('severity-interpretation').innerHTML = `<p>${text}</p>`;
 
-        function selectOption(questionIndex, optionIndex) {
-            const question = questions[questionIndex];
-            const option = question.options[optionIndex];
-            
-            // Store answer
-            userAnswers[questionIndex] = optionIndex;
-            answers[question.id] = {
-                value: option.value,
-                category: question.category,
-                type: option.type || null
-            };
-            
-            // Update UI
-            const buttons = document.querySelectorAll('.option-button');
-            buttons.forEach((btn, i) => {
-                if (i === optionIndex) {
-                    btn.classList.add('selected');
-                } else {
-                    btn.classList.remove('selected');
-                }
-            });
-            
-            updateNextButton();
-        }
+        let pattern = acc > freeze ? "Паттерн: Гиперконтроль точности" : "Паттерн: Физиологическое замирание";
+        if (Math.abs(acc - freeze) <= 1) pattern = "Смешанный паттерн";
+        
+        document.getElementById('pattern-analysis').innerHTML = `
+            <h4>${pattern}</h4>
+            <p style="font-size: 14px; margin-top: 8px;">Точный механизм определяется при разборе конкретных ситуаций на сессии. Паттерны определяют стратегию тренировок.</p>
+        `;
 
-        function updateNextButton() {
-            const nextBtn = document.getElementById('next-btn');
-            nextBtn.disabled = userAnswers[currentQuestionIndex] === undefined;
-        }
+        const tgLink = document.getElementById('tg-link');
+        tgLink.href = `https://t.me/unblock_eng?text=Результат%20теста:%20${score}/33.%20Паттерн:%20${pattern}.`;
+    }
+</script>
 
-        function previousQuestion() {
-            if (currentQuestionIndex > 0) {
-                showQuestion(currentQuestionIndex - 1);
-            }
-        }
-
-        function nextQuestion() {
-            if (currentQuestionIndex < questions.length - 1) {
-                showQuestion(currentQuestionIndex + 1);
-            } else {
-                showResults();
-            }
-        }
-
-        function showResults() {
-            document.getElementById('questions-screen').classList.add('hidden');
-            document.getElementById('results-screen').classList.remove('hidden');
-            
-            calculateResults();
-        }
-
-        function calculateResults() {
-            // Calculate total score
-            let totalScore = 0;
-            let accuracyCount = 0;
-            let freezeCount = 0;
-            
-            Object.values(answers).forEach(answer => {
-                totalScore += answer.value;
-                if (answer.type === 'accuracy') accuracyCount++;
-                if (answer.type === 'freeze') freezeCount++;
-            });
-            
-            // Determine severity
-            let severityLabel = '';
-            let severityText = '';
-            
-            if (totalScore <= 8) {
-                severityLabel = 'Легкая тревога или её отсутствие';
-                severityText = `
-                    <p>Ваш результат (${totalScore} из 33) указывает на легкую тревогу или её отсутствие.</p>
-                    <p>Это означает, что языковая тревожность либо не проявляется, либо проявляется редко 
-                    и не мешает профессиональной коммуникации. Возможно, вам нужна просто разговорная практика, 
-                    а не работа с блоком.</p>
-                `;
-            } else if (totalScore <= 16) {
-                severityLabel = 'Умеренная тревога';
-                severityText = `
-                    <p>Ваш результат (${totalScore} из 33) указывает на умеренную языковую тревожность.</p>
-                    <p>Это означает, что блок проявляется в некоторых ситуациях и влияет на коммуникацию, 
-                    но не полностью парализует речь. На этом уровне обычно помогает системная работа 
-                    с инструментами управления стрессом.</p>
-                `;
-            } else {
-                severityLabel = 'Выраженная тревога';
-                severityText = `
-                    <p>Ваш результат (${totalScore} из 33) указывает на выраженную языковую тревожность.</p>
-                    <p>Это означает, что блок проявляется регулярно и существенно влияет на профессиональные 
-                    возможности. Речь может полностью блокироваться в ситуациях высокого давления. 
-                    Рекомендуется индивидуальная работа с точным определением триггеров.</p>
-                `;
-            }
-            
-            // Determine pattern type
-            let patternText = '';
-            if (accuracyCount > freezeCount) {
-                patternText = `
-                    <h4>Вероятный паттерн: Тревога точности</h4>
-                    <p>По вашим ответам можно предположить, что вы больше боитесь сказать неправильно, 
-                    чем потерять доступ к языку. Это "тревога точности" — перфекционизм блокирует речь 
-                    до того, как вы начинаете говорить.</p>
-                    <p>Однако точный тип определяется только при разборе конкретных ситуаций на аудите. 
-                    Часто оба типа присутствуют одновременно.</p>
-                `;
-            } else if (freezeCount > accuracyCount) {
-                patternText = `
-                    <h4>Вероятный паттерн: Замирание под давлением</h4>
-                    <p>По вашим ответам можно предположить, что под давлением вы теряете доступ к языку — 
-                    слова просто не приходят, даже те, которые вы знаете. Это "замирание" — 
-                    физиологическая реакция на стресс.</p>
-                    <p>Однако точный тип определяется только при разборе конкретных ситуаций на аудите. 
-                    Часто оба типа присутствуют одновременно.</p>
-                `;
-            } else {
-                patternText = `
-                    <h4>Смешанный паттерн</h4>
-                    <p>По вашим ответам сложно выделить преобладающий тип — вероятно, присутствуют 
-                    элементы и тревоги точности, и замирания под давлением.</p>
-                    <p>Точный паттерн определяется только при разборе конкретных ситуаций на аудите. 
-                    Это нормально — большинство случаев не укладываются в чистые категории.</p>
-                `;
-            }
-            
-            // Update DOM
-            document.getElementById('total-score').textContent = `${totalScore} / 33`;
-            document.getElementById('severity-label').textContent = severityLabel;
-            document.getElementById('severity-interpretation').innerHTML = severityText;
-            document.getElementById('pattern-type').innerHTML = patternText;
-        }
-
-        function restartDiagnostic() {
-            currentQuestionIndex = 0;
-            answers = {};
-            userAnswers = [];
-            
-            document.getElementById('results-screen').classList.add('hidden');
-            document.getElementById('intro-screen').classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
