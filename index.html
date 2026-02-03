@@ -524,12 +524,33 @@
                 text-align: left;
             }
         }
+        /* Логотип */
+.logo-wrapper { padding-top: 40px; margin-bottom: 64px; }
+.logo { text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+.logo:hover { opacity: 0.8; }
+.logo-main { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--navy); line-height: 1; }
+.logo-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gray-400); margin-top: 4px; font-weight: 500; }
+
+/* Новый футер */
+.site-footer { background: var(--white); padding: 80px 0 40px; border-top: 1px solid var(--gray-100); margin-top: 100px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 64px; }
+.footer-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); margin-bottom: 20px; display: block; }
+.footer-link { display: block; color: var(--navy); text-decoration: none; font-size: 14px; margin-bottom: 12px; }
+.footer-text { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+.footer-bottom { padding-top: 32px; border-top: 1px solid var(--gray-100); display: flex; justify-content: space-between; align-items: flex-start; }
+.footer-legal { font-size: 11px; color: var(--gray-400); line-height: 1.5; }
     </style>
 </head>
 <body>
 
     <section class="hero">
         <div class="container">
+            <div class="logo-wrapper">
+    <a href="index.html" class="logo">
+        <div class="logo-main">UNBLOCK <span style="font-weight:300;color:var(--gray-400);">ENGLISH</span></div>
+        <div class="logo-tag">Communication Protocol</div>
+    </a>
+</div>
             <div class="sector-tag" style="text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-600); margin-bottom: 8px;">
                 Для IT и Finance специалистов
             </div>
@@ -980,40 +1001,37 @@
     </div>
 </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3 style="color: var(--navy); margin-bottom: var(--space-md);">Unblock English</h3>
-                    <p style="max-width: 400px; color: var(--gray-600);">
-                        Специализированная работа с языковой тревожностью для IT и Finance 
-                        профессионалов.
-                    </p>
-                </div>
-                <div class="footer-info">
-                    <h4>Контакты</h4>
-                    <ul>
-                        <li><a href="https://t.me/unblock_eng" target="_blank">Telegram</a></li>
-                        <li><a href="mailto:hello@unblock-english.ru">Email</a></li>
-                    </ul>
-                    
-                    <p class="footer-location">
-                        Работаю с русскоязычными специалистами<br>
-                        независимо от страны проживания.<br>
-                        Сессии проходят онлайн.
-                    </p>
-                </div>
+   <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-main">UNBLOCK <span style="font-weight:300;color:var(--gray-400);">ENGLISH</span></div>
+                <div class="logo-tag">Communication Protocol</div>
+                <p class="footer-text" style="margin-top: 24px;">Работа с языковой тревожностью в профессиональной ELF-среде.</p>
             </div>
-            
-            <div class="footer-bottom">
-                <p class="footer-legal">© 2026 Unblock English. Все права защищены.</p>
-                <p class="footer-disclaimer">
-                    Это не медицинская услуга. Не является заменой терапии или лечения. 
-                    При серьёзных тревожных расстройствах обратитесь к психотерапевту.
-                </p>
+            <div>
+                <span class="footer-label">Навигация</span>
+                <a href="index.html" class="footer-link">Главная</a>
+                <a href="diagnostics.html" class="footer-link">Самодиагностика</a>
+                <a href="intake.html" class="footer-link">Формат аудита</a>
+            </div>
+            <div>
+                <span class="footer-label">Контакт</span>
+                <a href="https://t.me/unblock_eng" class="footer-link">Telegram</a>
+                <a href="mailto:hello@unblock-english.ru" class="footer-link">Email</a>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                © 2026 Unblock English. Все права защищены.<br>
+                Не является образовательной или медицинской услугой.
+            </div>
+            <div class="footer-legal" style="text-align: right;">
+                NYC Experience: Brown Harris Stevens & Halstead<br>Manhattan, NY (2018—2022)
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script>
         function toggleTestimonial(id, button) {
