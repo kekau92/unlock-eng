@@ -525,11 +525,37 @@
             }
         }
         /* Логотип */
-.logo-wrapper { padding-top: 40px; margin-bottom: 64px; }
-.logo { text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+.logo-wrapper { 
+    padding-top: 40px; 
+    margin-bottom: 64px; 
+    text-align: left; /* Гарантирует выравнивание контейнера влево */
+}
+.logo { 
+    text-decoration: none; 
+    display: flex;       /* Меняем на flex для контроля выравнивания */
+    flex-direction: column; 
+    align-items: flex-start; /* Выравнивает обе строки лого по левому краю */
+    transition: opacity 0.2s; 
+}
 .logo:hover { opacity: 0.8; }
-.logo-main { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--navy); line-height: 1; }
-.logo-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gray-400); margin-top: 4px; font-weight: 500; }
+.logo-main { 
+    font-weight: 700; 
+    font-size: 20px; 
+    letter-spacing: -0.02em; 
+    color: var(--navy); 
+    line-height: 1;
+    text-align: left;
+}
+.logo-tag { 
+    font-size: 9px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.3em; /* Убедитесь, что здесь именно 0.3em */
+    color: var(--gray-400); 
+    margin-top: 4px; 
+    font-weight: 500;
+    text-align: left;      /* Убирает визуальное смещение */
+    white-space: nowrap;   /* Запрещает перенос строки */
+}
 
 /* Новый футер */
 .site-footer { background: var(--white); padding: 80px 0 40px; border-top: 1px solid var(--gray-100); margin-top: 100px; }
@@ -539,6 +565,15 @@
 .footer-text { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
 .footer-bottom { padding-top: 32px; border-top: 1px solid var(--gray-100); display: flex; justify-content: space-between; align-items: flex-start; }
 .footer-legal { font-size: 11px; color: var(--gray-400); line-height: 1.5; }
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Принудительно выравнивает логотип в футере влево */
+}
+
+.footer-brand .logo-tag {
+    letter-spacing: 0.3em; /* Такое же значение, как в шапке */
+}
     </style>
 </head>
 <body>
@@ -1005,10 +1040,9 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <div class="logo-main">UNBLOCK <span style="font-weight:300;color:var(--gray-400);">ENGLISH</span></div>
-                <div class="logo-tag">Communication Protocol</div>
-                <p class="footer-text" style="margin-top: 24px;">Работа с языковой тревожностью в профессиональной ELF-среде.</p>
-            </div>
+    <div class="logo-main">UNBLOCK <span style="font-weight:300;color:var(--gray-400);">ENGLISH</span></div>
+    <div class="logo-tag">Communication Protocol</div>
+    </div>
             <div>
                 <span class="footer-label">Навигация</span>
                 <a href="index.html" class="footer-link">Главная</a>
