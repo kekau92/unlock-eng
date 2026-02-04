@@ -126,66 +126,127 @@
         }
 
         /* FOOTER FULL ANCHOR */
-        .site-footer {
-            background: var(--gray-50);
-            padding: 80px 0 40px;
-            border-top: 1px solid var(--gray-100);
-            margin-top: 100px;
-        }
+.site-footer {
+    background: var(--gray-50);
+    padding: 100px 0 60px;
+    border-top: 1px solid var(--gray-100);
+    margin-top: 120px;
+    font-size: 12px;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 48px;
-            margin-bottom: 64px;
-        }
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 48px;
+}
 
-        .footer-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gray-400);
-            margin-bottom: 20px;
-            display: block;
-        }
+.footer-left {
+    max-width: 360px;
+}
 
-        .footer-link {
-            display: block;
-            color: var(--navy);
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 12px;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-        }
+.footer-brand {
+    text-decoration: none;
+    display: block;
+    pointer-events: auto; /* still clickable, but visually quiet */
+}
 
-        .footer-link:hover {
-            text-decoration: underline;
-        }
+.footer-brand .brand-name-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
 
-        .footer-bottom {
-            padding-top: 32px;
-            border-top: 1px solid var(--gray-100);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+.footer-brand .brand-primary,
+.footer-brand .brand-secondary {
+    font-size: 20px !important;
+    line-height: 1.1;
+}
 
-        .footer-legal {
-            font-size: 11px;
-            color: var(--gray-400);
-            line-height: 1.6;
-        }
+.footer-brand .brand-primary {
+    font-weight: 700;
+    color: var(--navy);
+}
 
-        .footer-tagline {
-            font-size: 13px;
-            color: var(--gray-600);
-            margin-top: 24px;
-            max-width: 300px;
-        }
+.footer-brand .brand-secondary {
+    font-weight: 400;
+    color: var(--gray-600);
+}
 
+.footer-tagline {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--gray-600);
+    max-width: 320px;
+}
+
+.footer-right {
+    max-width: 420px;
+    text-align: right;
+}
+
+.footer-contacts {
+    margin-bottom: 24px;
+}
+
+.footer-contact-link {
+    display: block;
+    color: var(--gray-400);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.footer-contact-link:hover {
+    color: var(--navy);
+}
+
+.footer-legal-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-legal,
+.footer-nyc {
+    font-size: 11px;
+    color: var(--gray-400);
+}
+
+.footer-nyc {
+    color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+    .footer-flex {
+        flex-direction: column;
+        gap: 48px;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-tagline {
+        margin: 12px auto 0;
+    }
+
+    .footer-contacts {
+        margin: 0 auto 24px;
+    }
+
+    .footer-legal-block {
+        align-items: center;
+    }
+}
         /* Hero Section */
         .hero {
             padding: var(--space-3xl) 0;
@@ -1087,42 +1148,38 @@
     </div>
 
     <!-- Полный футер -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="index.html" class="brand-signature" style="margin-bottom: 0;">
-                        <div class="brand-name-wrapper">
-                            <span class="brand-primary" style="font-size:20px !important;">UNBLOCK</span>
-                            <span class="brand-secondary" style="font-size:20px !important;">ENGLISH</span>
-                        </div>
-                        <span class="brand-descriptor" style="font-size:10px;">Communication Protocol</span>
-                    </a>
-                    <p class="footer-tagline">Работа с языковой тревожностью и речевыми блоками в профессиональной ELF-среде.</p>
-                </div>
-                <div>
-                    <span class="footer-label">Навигация</span>
-                    <a href="diagnostic.html" class="footer-link">Самодиагностика</a>
-                    <a href="intake.html" class="footer-link">Формат аудита</a>
-                </div>
-                <div>
-                    <span class="footer-label">Контакт</span>
-                    <a href="https://t.me/unblock_eng" class="footer-link">Telegram (@unblock_eng)</a>
-                    <a href="mailto:hello@unblock-english.ru" class="footer-link">Email (hello@unblock-english.ru)</a>
-                </div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-flex">
+            <div class="footer-left">
+                <a href="index.html" class="footer-brand">
+                    <div class="brand-name-wrapper">
+                        <span class="brand-primary">UNBLOCK</span>
+                        <span class="brand-secondary">ENGLISH</span>
+                    </div>
+                    <span class="footer-tagline">Работа с языковой тревожностью и речевыми блоками в профессиональной ELF-среде.</span>
+                </a>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-legal">
-                    © 2026 Unblock English.<br>
-                    Не является образовательной или медицинской услугой. При серьёзных тревожных расстройствах обратитесь к психотерапевту.
+
+            <div class="footer-right">
+                <div class="footer-contacts">
+                    <a href="https://t.me/unblock_eng" class="footer-contact-link">Telegram: @unblock_eng</a>
+                    <a href="mailto:hello@unblock-english.ru" class="footer-contact-link">hello@unblock-english.ru</a>
                 </div>
-                <div class="footer-legal" style="text-align: right;">
-                    NYC Experience: Brown Harris Stevens & Halstead<br>
-                    Manhattan, NY (2018—2022)
+                <div class="footer-legal-block">
+                    <div class="footer-legal">
+                        © 2026 Unblock English.<br>
+                        Не является образовательной или медицинской услугой. При серьёзных тревожных расстройствах обратитесь к психотерапевту.
+                    </div>
+                    <div class="footer-nyc">
+                        NYC Experience: Brown Harris Stevens & Halstead<br>
+                        Manhattan, NY (2018—2022)
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <script>
         function toggleTestimonial(id, button) {
