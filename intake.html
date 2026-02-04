@@ -30,22 +30,19 @@
             --red-border: #FFE4E4;
             --red-text: #991B1B;
         }
-
-        body { 
-            font-family: 'Inter', sans-serif; 
-            line-height: 1.6; 
-            color: var(--gray-700); 
-            background: var(--white); 
-            margin: 0; 
-            -webkit-font-smoothing: antialiased; 
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background: var(--white);
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
         }
-
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 0 24px; 
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
-
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -58,78 +55,68 @@
             transition: color 0.2s;
             min-height: 44px;
         }
-
         .back-link:hover { color: var(--navy); }
-
         header { margin-bottom: 32px; }
         h1 { font-size: 32px; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.02em; }
         .subtitle { font-size: 18px; color: var(--gray-600); }
-
         section { margin-bottom: 64px; }
-        h2 { 
-            font-size: 12px; 
-            text-transform: uppercase; 
-            letter-spacing: 1.5px; 
-            color: var(--gray-400); 
-            margin-bottom: 32px; 
-            border-bottom: 1px solid var(--gray-200); 
-            padding-bottom: 8px; 
+        h2 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gray-400);
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--gray-200);
+            padding-bottom: 8px;
         }
-
         .step { margin-bottom: 32px; }
         .step h3 { font-size: 18px; color: var(--navy); margin: 0 0 12px 0; }
         .step p { margin: 0; font-size: 16px; color: var(--gray-600); }
-
         .faq-item { margin-bottom: 32px; }
         .faq-item h4 { font-size: 16px; color: var(--navy); margin-bottom: 8px; }
         .faq-item p { font-size: 15px; color: var(--gray-600); margin: 0; }
-
-        .refusal-box { 
-            background: var(--red-pale); 
-            border: 1px solid var(--red-border); 
-            padding: 32px; 
-            margin-top: 40px; 
+        .refusal-box {
+            background: var(--red-pale);
+            border: 1px solid var(--red-border);
+            padding: 32px;
+            margin-top: 40px;
         }
         .refusal-box h3 { color: var(--red-text); font-size: 18px; margin-bottom: 24px; }
-
-        .price-box { 
-            background: var(--gray-50); 
-            padding: 40px; 
-            border-radius: 2px; 
-            margin-top: 64px; 
-            text-align: center; 
+        .price-box {
+            background: var(--gray-50);
+            padding: 40px;
+            border-radius: 2px;
+            margin-top: 64px;
+            text-align: center;
         }
-        .price-value { 
-            font-size: 28px; 
-            font-weight: 700; 
-            color: var(--navy); 
-            display: block; 
-            margin-bottom: 8px; 
+        .price-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+            display: block;
+            margin-bottom: 8px;
         }
-        .price-note { 
-            font-size: 14px; 
-            color: var(--gray-400); 
-            margin-bottom: 32px; 
-            display: block; 
+        .price-note {
+            font-size: 14px;
+            color: var(--gray-400);
+            margin-bottom: 32px;
+            display: block;
         }
-
-        .cta-button { 
+        .cta-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: var(--navy); 
-            color: var(--white); 
-            padding: 18px 40px; 
-            text-decoration: none; 
-            font-weight: 600; 
-            border-radius: 2px; 
-            transition: opacity 0.2s; 
+            background: var(--navy);
+            color: var(--white);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: opacity 0.2s;
             min-height: 56px;
             width: auto;
         }
-
         .cta-button:hover { opacity: 0.9; }
-
         /* MINIMAL FOOTER — no border-top */
         .site-footer {
             margin-top: 100px;
@@ -138,7 +125,6 @@
             font-size: 11px;
             color: var(--gray-400);
         }
-
         .footer-minimal {
             display: flex;
             justify-content: space-between;
@@ -146,85 +132,54 @@
             gap: 20px;
             line-height: 1.6;
         }
-
         .footer-minimal a {
             color: var(--gray-400);
             text-decoration: none;
         }
-
         .footer-minimal a:hover {
             color: var(--navy);
         }
-
         .footer-disclaimer-en {
             text-transform: uppercase;
             font-size: 10px;
             letter-spacing: 0.5px;
         }
-
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
             h1 { font-size: 28px; }
             .price-box, .refusal-box { padding: 30px; }
             .site-footer { margin-top: 80px; }
         }
-
-@media (max-width: 600px) {
-    .cta-button {
-        width: 100%;
-        padding: 16px 20px;
-        font-size: 15px;
-        line-height: 1.4;
-        white-space: normal;
-        text-align: center;
-        box-sizing: border-box;
-    }
-}
-
+        @media (max-width: 600px) {
+            .cta-button {
+                width: 100%;
+                padding: 16px 20px;
+                font-size: 15px;
+                line-height: 1.4;
+                white-space: normal;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .footer-minimal {
+                flex-direction: column;
+                gap: 16px;
+            }
             .footer-minimal div:last-child {
                 text-align: center;
             }
-            .cta-button { 
-                width: 100%; 
-                padding: 16px 32px; 
-            }
         }
-
         @media (max-width: 480px) {
             .container { padding: 0 16px; }
             h1 { font-size: 24px; }
             .subtitle { font-size: 16px; }
             .price-value { font-size: 24px; }
         }
-        /* Consistent subtle hovers – no movement, only color/light feedback */
-
-.btn:hover,
-.btn-primary:hover,
-.btn-secondary:hover {
-    opacity: 0.92;               /* very light dim */
-    background: var(--navy-light); /* for primary, very subtle shift */
-}
-
-.toggle-btn:hover {
-    color: var(--navy);          /* slight color lift */
-    text-decoration: underline;  /* optional – very light cue */
-}
-
-.footer-brand:hover {
-    opacity: 0.85;               /* match header logo feel */
-}
-
-/* Optional: make all text links consistent if you add more */
-a:hover:not(.brand-signature):not(.footer-brand):not(.cta-button) {
-    color: var(--navy-light);
-    text-decoration: underline;  /* only if needed – currently none have it */
-}
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Умная навигационная ссылка -->
+    <!-- Умная навигационная ссылка (заменяет логотип) -->
     <div id="navigation-container"></div>
 
     <!-- Контент -->
@@ -303,51 +258,46 @@ a:hover:not(.brand-signature):not(.footer-brand):not(.cta-button) {
 </footer>
 
 <script>
-    // Функция для определения источника перехода
+    // Улучшенная версия логики навигации «Назад» (только для intake.html)
     function getNavigationLink() {
-        const referrer = document.referrer;
-        const hostname = window.location.hostname;
-        
+        const referrer = document.referrer || ''; // защита от пустого referrer
+
+        // Если пришли именно с diagnostics.html
         if (referrer.includes('diagnostics.html')) {
             return {
-                text: '← Вернуться к результатам',
-                action: 'javascript:history.back()',
+                text: '← К результатам теста',
+                action: 'history.back()',
                 isBack: true
             };
-        } else if (referrer.includes('index.html') || referrer.endsWith('/') || referrer === '') {
-            return {
-                text: '← На главную',
-                action: 'index.html',
-                isBack: false
-            };
-        } else {
-            return {
-                text: '← На главную',
-                action: 'index.html',
-                isBack: false
-            };
         }
+
+        // Все остальные случаи: прямая загрузка, с главной, закладка, внешний источник
+        return {
+            text: '← На главную',
+            action: 'index.html',
+            isBack: false
+        };
     }
 
     function createNavigationLink() {
-        const navData = getNavigationLink();
+        const nav = getNavigationLink();
         const container = document.getElementById('navigation-container');
-        
-        let linkHTML = '';
-        
-        if (navData.isBack) {
-            linkHTML = `<a class="back-link" onclick="${navData.action}">${navData.text}</a>`;
+
+        let html = '';
+
+        if (nav.isBack) {
+            html = `<a class="back-link" onclick="${nav.action}">${nav.text}</a>`;
         } else {
-            linkHTML = `<a href="${navData.action}" class="back-link">${navData.text}</a>`;
+            html = `<a href="${nav.action}" class="back-link">${nav.text}</a>`;
         }
-        
-        container.innerHTML = linkHTML;
+
+        container.innerHTML = html;
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        createNavigationLink();
-    });
+    // Запуск при загрузке страницы
+    document.addEventListener('DOMContentLoaded', createNavigationLink);
 
+    // Поддержка bfcache (возврат через кнопку браузера «Назад»)
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
             createNavigationLink();
