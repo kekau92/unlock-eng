@@ -69,8 +69,7 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 24px;
-            box-sizing: border-box;
+            padding: 0 var(--space-lg);
         }
 
         /* BRAND SIGNATURE - FIXED SIZE PARITY */
@@ -117,24 +116,17 @@
         .site-header { 
             display: flex; 
             justify-content: flex-start; 
-            padding: 24px 0; 
-            margin-bottom: 32px; 
+            padding: 40px 0; 
+            margin-bottom: 56px; 
         }
 
         /* FOOTER FULL ANCHOR */
         .site-footer {
-            background-color: var(--white);
+            background: var(--gray-50);
             padding: 80px 0 40px;
-            border-top: 1px solid var(--gray-200);
-            margin-top: 80px;
+            border-top: 1px solid var(--gray-100);
+            margin-top: 100px;
         }
-
-    .footer-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px;
-    margin-bottom: 60px;
-}
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -159,19 +151,14 @@
         .footer-link:hover {
             text-decoration: underline;
         }
-.footer-bottom {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 32px;
-    border-top: 1px solid var(--gray-100);
-    align-items: flex-start;
-}
-        .footer-legal-right {
-    text-align: right;
-    font-size: 13px;
-    color: var(--gray-400);
-    line-height: 1.6;
-}
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
         .footer-legal {
             font-size: 11px;
             color: var(--gray-400);
@@ -668,7 +655,7 @@
             </div>
             
             <div class="hero-cta-link">
-                <a href="diagnostic.html" class="link-arrow">
+                <a href="diagnostics.html" class="link-arrow">
                     Проверить, есть ли у вас этот тип блока →
                 </a>
                 <p class="cta-note">2 минуты, результат сразу</p>
@@ -1068,7 +1055,7 @@
                 
                 <div style="margin-bottom: 2.5rem;">
                     <p style="font-size: 12px; color: #9CA3AF; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1.5px;">1. Для экспресс-проверки (2 минуты)</p>
-                    <a href="diagnostic.html" class="cta-button" style="display: inline-block; background: #1A3A52; color: #FFFFFF; padding: 18px 48px; text-decoration: none; font-weight: 600; border-radius: 2px;">Пройти самодиагностику</a>
+                    <a href="diagnostics.html" class="cta-button" style="display: inline-block; background: #1A3A52; color: #FFFFFF; padding: 18px 48px; text-decoration: none; font-weight: 600; border-radius: 2px;">Пройти самодиагностику</a>
                 </div>
 
                 <div style="margin-top: 3rem; border-top: 1px solid #F3F4F6; padding-top: 2rem;">
@@ -1082,36 +1069,42 @@
     </div>
 
     <!-- Полный футер -->
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-nav">
-                <a href="index.html#protocol" class="footer-link">Методика</a>
-                <a href="diagnostic.html" class="footer-link">Диагностика</a>
-                <a href="intake.html" class="footer-link">Формат аудита</a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="brand-signature" style="margin-bottom: 0;">
+                        <div class="brand-name-wrapper">
+                            <span class="brand-primary" style="font-size:20px !important;">UNBLOCK</span>
+                            <span class="brand-secondary" style="font-size:20px !important;">ENGLISH</span>
+                        </div>
+                        <div class="brand-descriptor" style="font-size:10px;">Communication Protocol</div>
+                    </a>
+                    <p class="footer-tagline">Работа с языковой тревожностью и речевыми блоками в профессиональной ELF-среде.</p>
+                </div>
+                <div>
+                    <span class="footer-label">Навигация</span>
+                    <a href="diagnostics.html" class="footer-link">Самодиагностика</a>
+                    <a href="intake.html" class="footer-link">Формат аудита</a>
+                </div>
+                <div>
+                    <span class="footer-label">Контакт</span>
+                    <a href="https://t.me/unblock_eng" class="footer-link">Telegram (@unblock_eng)</a>
+                    <a href="mailto:hello@unblock-english.ru" class="footer-link">Email (hello@unblock-english.ru)</a>
+                </div>
             </div>
-            
-            <div class="footer-contact">
-                <a href="https://t.me/unblock_eng" target="_blank" class="footer-link">Telegram</a>
-                <a href="mailto:hello@unblock-english.ru" class="footer-link">hello@unblock-english.ru</a>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    © 2026 Unblock English.<br>
+                    Не является образовательной или медицинской услугой. При серьёзных тревожных расстройствах обратитесь к психотерапевту.
+                </div>
+                <div class="footer-legal" style="text-align: right;">
+                    NYC Experience: Brown Harris Stevens & Halstead<br>
+                    Manhattan, NY (2018—2022)
+                </div>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <div class="footer-legal">
-                <p>© 2026 Unblock English. Все права защищены.</p>
-                <p class="disclaimer-text">
-                    Это не медицинская услуга. Не является заменой терапии или лечения. 
-                    При серьёзных тревожных расстройствах обратитесь к психотерапевту.
-                </p>
-            </div>
-            <div class="footer-nyc">
-                NYC Experience: Brown Harris Stevens & Halstead<br>
-                Manhattan, NY (2018—2022)
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script>
         function toggleTestimonial(id, button) {
