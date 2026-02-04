@@ -31,18 +31,34 @@
             --red-text: #991B1B;
         }
 
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--gray-700); background: var(--white); margin: 0; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-        
-        .back-link { 
-            display: inline-block; 
-            margin-bottom: 48px; 
-            color: var(--gray-400); 
-            text-decoration: none; 
-            font-size: 14px; 
-            transition: color 0.2s; 
-            cursor: pointer;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: var(--gray-700); 
+            background: var(--white); 
+            margin: 0; 
+            -webkit-font-smoothing: antialiased; 
         }
+
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 24px; 
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin: 40px 0 48px;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+            min-height: 44px;
+        }
+
         .back-link:hover { color: var(--navy); }
 
         header { margin-bottom: 32px; }
@@ -50,7 +66,15 @@
         .subtitle { font-size: 18px; color: var(--gray-600); }
 
         section { margin-bottom: 64px; }
-        h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-400); margin-bottom: 32px; border-bottom: 1px solid var(--gray-200); padding-bottom: 8px; }
+        h2 { 
+            font-size: 12px; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            color: var(--gray-400); 
+            margin-bottom: 32px; 
+            border-bottom: 1px solid var(--gray-200); 
+            padding-bottom: 8px; 
+        }
 
         .step { margin-bottom: 32px; }
         .step h3 { font-size: 18px; color: var(--navy); margin: 0 0 12px 0; }
@@ -60,25 +84,61 @@
         .faq-item h4 { font-size: 16px; color: var(--navy); margin-bottom: 8px; }
         .faq-item p { font-size: 15px; color: var(--gray-600); margin: 0; }
 
-        .refusal-box { background: var(--red-pale); border: 1px solid var(--red-border); padding: 32px; margin-top: 40px; }
+        .refusal-box { 
+            background: var(--red-pale); 
+            border: 1px solid var(--red-border); 
+            padding: 32px; 
+            margin-top: 40px; 
+        }
         .refusal-box h3 { color: var(--red-text); font-size: 18px; margin-bottom: 24px; }
 
-        .price-box { background: var(--gray-50); padding: 40px; border-radius: 2px; margin-top: 64px; text-align: center; }
-        .price-value { font-size: 28px; font-weight: 700; color: var(--navy); display: block; margin-bottom: 8px; }
-        .price-note { font-size: 14px; color: var(--gray-400); margin-bottom: 32px; display: block; }
+        .price-box { 
+            background: var(--gray-50); 
+            padding: 40px; 
+            border-radius: 2px; 
+            margin-top: 64px; 
+            text-align: center; 
+        }
+        .price-value { 
+            font-size: 28px; 
+            font-weight: 700; 
+            color: var(--navy); 
+            display: block; 
+            margin-bottom: 8px; 
+        }
+        .price-note { 
+            font-size: 14px; 
+            color: var(--gray-400); 
+            margin-bottom: 32px; 
+            display: block; 
+        }
 
-        .cta-button { display: inline-block; background: var(--navy); color: var(--white); padding: 18px 40px; text-decoration: none; font-weight: 600; border-radius: 2px; transition: opacity 0.2s; }
+        .cta-button { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy); 
+            color: var(--white); 
+            padding: 18px 40px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            border-radius: 2px; 
+            transition: opacity 0.2s; 
+            min-height: 56px;
+            width: auto;
+        }
+
         .cta-button:hover { opacity: 0.9; }
 
-        /* MINIMAL FOOTER */
+        /* MINIMAL FOOTER — no border-top */
         .site-footer {
             margin-top: 100px;
             padding: 30px 0;
-            border-top: 1px solid var(--gray-100);
             opacity: 0.7;
             font-size: 11px;
             color: var(--gray-400);
         }
+
         .footer-minimal {
             display: flex;
             justify-content: space-between;
@@ -86,13 +146,16 @@
             gap: 20px;
             line-height: 1.6;
         }
+
         .footer-minimal a {
             color: var(--gray-400);
             text-decoration: none;
         }
+
         .footer-minimal a:hover {
             color: var(--navy);
         }
+
         .footer-disclaimer-en {
             text-transform: uppercase;
             font-size: 10px;
@@ -102,33 +165,36 @@
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
             h1 { font-size: 28px; }
-            .price-box { padding: 30px; }
-            .refusal-box { padding: 24px; }
-            .site-footer {
-                margin-top: 80px;
-            }
+            .price-box, .refusal-box { padding: 30px; }
+            .site-footer { margin-top: 80px; }
         }
-        
-        @media (max-width: 600px) {
-            .footer-minimal {
-                flex-direction: column;
-                gap: 16px;
-            }
+
+@media (max-width: 600px) {
+    .cta-button {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 15px;
+        line-height: 1.4;
+        white-space: normal;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
             .footer-minimal div:last-child {
-                text-align: left;
+                text-align: center;
+            }
+            .cta-button { 
+                width: 100%; 
+                padding: 16px 32px; 
             }
         }
-        
+
         @media (max-width: 480px) {
             .container { padding: 0 16px; }
             h1 { font-size: 24px; }
             .subtitle { font-size: 16px; }
             .price-value { font-size: 24px; }
-            .cta-button { padding: 16px 32px; width: 100%; }
-            .site-footer {
-                margin-top: 60px;
-                padding: 20px 0;
-            }
         }
     </style>
 </head>
@@ -144,7 +210,7 @@
             <h1>Диагностическая сессия</h1>
             <p class="subtitle">Глубокая проверка речевого контроля в условиях профессионального давления.</p>
             <p style="font-size:14px;color:var(--gray-400);margin-top:24px;">
-                Внутри проекта эта сессия рассматривается как аудит — в инженерном, а не маркетинговом смысле. 
+                Внутри проекта эта сессия рассматривается как аудит — в инженерном, а не маркетинговом смысле.
                 Это проверка того, теряет ли система контроль под нагрузкой и имеет ли смысл её перенастройка.
             </p>
         </header>
@@ -197,7 +263,7 @@
     </div>
 </div>
 
-<!-- Минимальный футер -->
+<!-- Минимальный футер — без border-top -->
 <footer class="site-footer">
     <div class="container">
         <div class="footer-minimal">
@@ -219,24 +285,19 @@
         const referrer = document.referrer;
         const hostname = window.location.hostname;
         
-        // Проверяем, пришел ли пользователь с диагностической страницы
-        if (referrer.includes('diagnostic.html')) {
+        if (referrer.includes('diagnostics.html')) {
             return {
                 text: '← Вернуться к результатам',
                 action: 'javascript:history.back()',
                 isBack: true
             };
-        } 
-        // Проверяем, пришел ли с главной страницы
-        else if (referrer.includes('index.html') || referrer.endsWith('/') || referrer === '') {
+        } else if (referrer.includes('index.html') || referrer.endsWith('/') || referrer === '') {
             return {
                 text: '← На главную',
                 action: 'index.html',
                 isBack: false
             };
-        }
-        // Если открыто напрямую или с другого сайта
-        else {
+        } else {
             return {
                 text: '← На главную',
                 action: 'index.html',
@@ -245,7 +306,6 @@
         }
     }
 
-    // Функция для создания навигационной ссылки
     function createNavigationLink() {
         const navData = getNavigationLink();
         const container = document.getElementById('navigation-container');
@@ -253,22 +313,18 @@
         let linkHTML = '';
         
         if (navData.isBack) {
-            // Используем history.back() для сохранения состояния теста
             linkHTML = `<a class="back-link" onclick="${navData.action}">${navData.text}</a>`;
         } else {
-            // Обычная ссылка на главную
             linkHTML = `<a href="${navData.action}" class="back-link">${navData.text}</a>`;
         }
         
         container.innerHTML = linkHTML;
     }
 
-    // Инициализация при загрузке страницы
     document.addEventListener('DOMContentLoaded', function() {
         createNavigationLink();
     });
 
-    // Также обрабатываем кнопку "Назад" браузера
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
             createNavigationLink();
