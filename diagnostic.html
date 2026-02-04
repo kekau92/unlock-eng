@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Протокол диагностики — Unblock English</title>
+    
+    <!-- Favicon -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --navy: #1A3A52;
@@ -23,6 +28,12 @@
             --gray-700: #374151;
         }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -32,9 +43,74 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 680px; margin: 0 auto; padding: 60px 24px; }
-        
-        .hidden { display: none !important; }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* BRAND SIGNATURE - FIXED SIZE PARITY */
+        .brand-signature {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1;
+        }
+
+        .brand-name-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .brand-primary, .brand-secondary {
+            font-size: 22px !important;
+            line-height: 1.1;
+        }
+
+        .brand-primary {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .brand-secondary {
+            font-weight: 400;
+            color: var(--gray-600);
+        }
+
+        .brand-descriptor {
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray-400);
+            margin-top: 6px;
+            white-space: nowrap;
+        }
+
+        /* HEADER */
+        .site-header { 
+            display: flex; 
+            justify-content: flex-start; 
+            padding: 40px 0; 
+            margin-bottom: 40px; 
+        }
+
+        .hidden { 
+            display: none !important; 
+        }
+
+        .validation-error {
+            color: #DC2626;
+            font-size: 12px;
+            margin-top: 8px;
+            display: none;
+            padding: 8px 12px;
+            background: #FEF2F2;
+            border-radius: 2px;
+            border-left: 3px solid #DC2626;
+        }
 
         /* Progress Bar */
         .progress-container { margin-bottom: 40px; }
@@ -48,7 +124,11 @@
         p { margin-bottom: 16px; color: var(--gray-600); }
 
         /* Options */
-        .options-list { list-style: none; padding: 0; }
+        .options-list { 
+            list-style: none; 
+            padding: 0; 
+            margin-bottom: 24px;
+        }
         .option-item {
             background: var(--white);
             border: 1px solid var(--gray-200);
@@ -85,12 +165,89 @@
         
         .cta-stack { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
         
-        footer { margin-top: 80px; font-size: 12px; color: var(--gray-400); text-align: center; }
+        /* FOOTER - Level B: Reduced */
+        .site-footer {
+            padding: 40px 0 30px 0;
+            border-top: 1px solid var(--gray-100);
+            margin-top: 60px;
+        }
+        .footer-reduced {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 11px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+        .footer-reduced a {
+            color: var(--navy);
+            text-decoration: none;
+        }
+        .footer-reduced a:hover {
+            text-decoration: underline;
+        }
+        .footer-disclaimer {
+            max-width: 320px;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            h1 { font-size: 24px; }
+            h2 { font-size: 18px; }
+            .option-item { padding: 14px 18px; }
+            .score-display { font-size: 36px; }
+            .interpretation-box { padding: 24px; }
+            .brand-primary, .brand-secondary {
+                font-size: 20px !important;
+            }
+            .site-header { padding: 30px 0; margin-bottom: 30px; }
+            .footer-reduced {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .footer-disclaimer {
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .brand-signature {
+                align-items: center;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .brand-descriptor {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            h1 { font-size: 22px; }
+            .btn { padding: 14px 24px; font-size: 15px; }
+            .cta-stack { gap: 12px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- Логотип -->
+    <header class="site-header">
+        <a href="index.html" class="brand-signature">
+            <div class="brand-name-wrapper">
+                <span class="brand-primary">UNBLOCK</span>
+                <span class="brand-secondary">ENGLISH</span>
+            </div>
+            <div class="brand-descriptor">Communication Protocol</div>
+        </a>
+    </header>
+
+    <!-- Диагностический контент -->
     <div id="intro-screen">
         <h1>Протокол диагностики</h1>
         <p>Этот тест предназначен для выявления паттернов языковой тревожности (FLA) у профессионалов. Он оценивает не уровень английского, а механизм потери контроля над речью в стрессовых ситуациях.</p>
@@ -106,6 +263,9 @@
         <div id="question-container">
             <h2 id="question-title">Загрузка...</h2>
             <div id="options-container" class="options-list"></div>
+            <div id="validation-error" class="validation-error">
+                Пожалуйста, выберите ответ, прежде чем продолжить
+            </div>
         </div>
         <div style="margin-top: 40px; display: flex; justify-content: space-between;">
             <button id="prev-btn" onclick="prevQuestion()" class="btn btn-secondary" style="visibility: hidden;">Назад</button>
@@ -128,8 +288,19 @@
         </div>
     </div>
 
-    <footer>
-        © 2025 Unblock English. Это не медицинская услуга. Восстановление контроля над речевой системой.
+    <!-- Сокращенный футер -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-reduced">
+                <div>
+                    © 2026 Unblock English.<br>
+                    <a href="https://t.me/unblock_eng">Telegram: @unblock_eng</a>
+                </div>
+                <div class="footer-disclaimer">
+                    Результаты теста носят ознакомительный характер. Не является медицинской диагностикой. При наличии клинических симптомов обратитесь к специалисту.
+                </div>
+            </div>
+        </div>
     </footer>
 </div>
 
@@ -150,10 +321,28 @@
 
     let currentIndex = 0;
     let answers = {};
+    let totalScore = 0;
+    let accuracyScore = 0;
+    let freezeScore = 0;
+    let impact = 0;
+    let urgency = 0;
+    let pattern = "";
 
     function startDiagnostic() {
+        // Сброс данных при повторном прохождении
+        currentIndex = 0;
+        answers = {};
+        totalScore = 0;
+        accuracyScore = 0;
+        freezeScore = 0;
+        impact = 0;
+        urgency = 0;
+        pattern = "";
+        
         document.getElementById('intro-screen').classList.add('hidden');
         document.getElementById('diagnostic-screen').classList.remove('hidden');
+        document.getElementById('results-screen').classList.add('hidden');
+        
         showQuestion();
     }
 
@@ -177,14 +366,25 @@
         document.getElementById('prev-btn').style.visibility = currentIndex > 0 ? 'visible' : 'hidden';
         document.getElementById('next-btn').disabled = answers[currentIndex] === undefined;
         document.getElementById('next-btn').textContent = currentIndex === questions.length - 1 ? "Завершить" : "Далее";
+        
+        // Скрываем ошибку валидации
+        document.getElementById('validation-error').style.display = 'none';
     }
 
     function selectOption(index) {
         answers[currentIndex] = index;
+        document.getElementById('next-btn').disabled = false;
         showQuestion();
     }
 
     function nextQuestion() {
+        // Валидация: проверяем, выбран ли ответ на текущий вопрос
+        if (answers[currentIndex] === undefined) {
+            document.getElementById('validation-error').style.display = 'block';
+            document.getElementById('validation-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
         if (currentIndex < questions.length - 1) {
             currentIndex++;
             showQuestion();
@@ -200,35 +400,98 @@
         }
     }
 
-    function finish() {
-        document.getElementById('diagnostic-screen').classList.add('hidden');
-        document.getElementById('results-screen').classList.remove('hidden');
-
-        let totalScore = 0;
-        let accuracyScore = 0;
-        let freezeScore = 0;
-        let impact = 0;
-        let urgency = 0;
+    function calculateScores() {
+        totalScore = 0;
+        accuracyScore = 0;
+        freezeScore = 0;
+        impact = 0;
+        urgency = 0;
 
         questions.forEach((q, i) => {
-            const val = q.values[answers[i]];
-            totalScore += val;
-            if (q.cat === 'accuracy') accuracyScore += val;
-            if (q.cat === 'freeze') freezeScore += val;
-            if (q.id === 'impact') impact = val;
-            if (q.id === 'urgency') urgency = val;
+            const answerIndex = answers[i];
+            // Проверяем, что ответ был дан
+            if (answerIndex !== undefined) {
+                const val = q.values[answerIndex];
+                totalScore += val;
+                if (q.cat === 'accuracy') accuracyScore += val;
+                if (q.cat === 'freeze') freezeScore += val;
+                if (q.id === 'impact') impact = val;
+                if (q.id === 'urgency') urgency = val;
+            }
         });
 
-        // БЕЗЖАЛОСТНЫЙ ГЕЙТ
-        if (impact <= 1 && urgency <= 1) {
-            renderLowPriority(totalScore);
+        // Определяем паттерн
+        if (Math.abs(accuracyScore - freezeScore) <= 1) {
+            pattern = "Смешанный паттерн";
+        } else if (accuracyScore > freezeScore) {
+            pattern = "Гиперконтроль точности";
         } else {
-            renderHighPriority(totalScore, accuracyScore, freezeScore);
+            pattern = "Физиологическое замирание";
         }
     }
 
-    function renderLowPriority(score) {
-        document.getElementById('total-score').textContent = `${score} / 33`;
+    function finish() {
+        // Проверяем, что все вопросы отвечены
+        const unansweredQuestions = [];
+        for (let i = 0; i < questions.length; i++) {
+            if (answers[i] === undefined) {
+                unansweredQuestions.push(i + 1);
+            }
+        }
+
+        if (unansweredQuestions.length > 0) {
+            const errorMsg = `Пожалуйста, ответьте на все вопросы.\nНе отвеченные вопросы: ${unansweredQuestions.join(', ')}`;
+            document.getElementById('validation-error').textContent = errorMsg;
+            document.getElementById('validation-error').style.display = 'block';
+            document.getElementById('validation-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Переходим к первому неотвеченному вопросу
+            currentIndex = unansweredQuestions[0] - 1;
+            showQuestion();
+            return;
+        }
+
+        document.getElementById('diagnostic-screen').classList.add('hidden');
+        document.getElementById('results-screen').classList.remove('hidden');
+
+        calculateScores();
+
+        // БЕЗЖАЛОСТНЫЙ ГЕЙТ
+        if (impact <= 1 && urgency <= 1) {
+            renderLowPriority();
+        } else {
+            renderHighPriority();
+        }
+
+        // ОПТИМИЗАЦИЯ: Обновляем Telegram ссылку с детальной информацией
+        const tgLink = document.getElementById('tg-link');
+        const severityLabel = document.getElementById('severity-label').textContent;
+        
+        const tgMessage = encodeURIComponent(
+            `Результат диагностики Unblock English:\n\n` +
+            `📊 Счет: ${totalScore}/33\n` +
+            `🎯 Уровень: ${severityLabel}\n` +
+            `🧩 Паттерн: ${pattern}\n` +
+            `📈 Влияние на карьеру: ${getImpactText(impact)}\n` +
+            `⏰ Срочность решения: ${getUrgencyText(urgency)}\n\n` +
+            `Хочу обсудить результат и возможную работу над этим.`
+        );
+        
+        tgLink.href = `https://t.me/unblock_eng?text=${tgMessage}`;
+    }
+
+    function getImpactText(impactValue) {
+        const impactTexts = ["Не мешает", "Мешает слегка", "Заметно ограничивает", "Критически блокирует рост"];
+        return impactTexts[impactValue] || "Не определено";
+    }
+
+    function getUrgencyText(urgencyValue) {
+        const urgencyTexts = ["Просто интересуюсь", "В ближайшие полгода", "Нужно было вчера", "Критический дедлайн"];
+        return urgencyTexts[urgencyValue] || "Не определено";
+    }
+
+    function renderLowPriority() {
+        document.getElementById('total-score').textContent = `${totalScore} / 33`;
         document.getElementById('severity-label').textContent = "Низкий приоритет для коррекции";
         document.getElementById('severity-interpretation').innerHTML = `
             <p>Ваш результат указывает на то, что текущий уровень дискомфорта не является критическим для вашей карьеры.</p>
@@ -241,34 +504,35 @@
         `;
     }
 
-    function renderHighPriority(score, acc, freeze) {
-        document.getElementById('total-score').textContent = `${score} / 33`;
+    function renderHighPriority() {
+        document.getElementById('total-score').textContent = `${totalScore} / 33`;
         
         let label = "Легкая тревога";
         let text = "Ваш уровень тревожности не блокирует речь полностью, но создает лишний шум.";
         
-        if (score > 16) {
+        if (totalScore > 16) {
             label = "Выраженная тревожность";
             text = "Ситуация требует глубокого разбора. Блок носит системный характер и вряд ли исчезнет от простой «практики». Требуется проверка на совместимость с методикой.";
-        } else if (score > 8) {
+        } else if (totalScore > 8) {
             label = "Умеренная тревожность";
             text = "Вы тратите слишком много когнитивного ресурса на самоконтроль. Это мешает ясности и убедительности.";
         }
 
         document.getElementById('severity-label').textContent = label;
         document.getElementById('severity-interpretation').innerHTML = `<p>${text}</p>`;
-
-        let pattern = acc > freeze ? "Паттерн: Гиперконтроль точности" : "Паттерн: Физиологическое замирание";
-        if (Math.abs(acc - freeze) <= 1) pattern = "Смешанный паттерн";
         
         document.getElementById('pattern-analysis').innerHTML = `
-            <h4>${pattern}</h4>
+            <h4>Паттерн: ${pattern}</h4>
             <p style="font-size: 14px; margin-top: 8px;">Точный механизм определяется при разборе конкретных ситуаций на сессии. Паттерны определяют стратегию тренировок.</p>
         `;
-
-        const tgLink = document.getElementById('tg-link');
-        tgLink.href = `https://t.me/unblock_eng?text=Результат%20теста:%20${score}/33.%20Паттерн:%20${pattern}.`;
     }
+
+    // Инициализация при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        // Сброс состояния при перезагрузке
+        currentIndex = 0;
+        answers = {};
+    });
 </script>
 
 </body>
