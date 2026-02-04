@@ -461,6 +461,29 @@
                 text-align: center;
             }
         }
+     /* Consistent subtle hovers – no movement, only color/light feedback */
+
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover {
+    opacity: 0.92;               /* very light dim */
+    background: var(--navy-light); /* for primary, very subtle shift */
+}
+
+.toggle-btn:hover {
+    color: var(--navy);          /* slight color lift */
+    text-decoration: underline;  /* optional – very light cue */
+}
+
+.footer-brand:hover {
+    opacity: 0.85;               /* match header logo feel */
+}
+
+/* Optional: make all text links consistent if you add more */
+a:hover:not(.brand-signature):not(.footer-brand):not(.cta-button) {
+    color: var(--navy-light);
+    text-decoration: underline;  /* only if needed – currently none have it */
+}
     </style>
 </head>
 <body>
