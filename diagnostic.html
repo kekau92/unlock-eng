@@ -471,7 +471,7 @@
         }
     }
 
-    function finish() {
+   function finish() {
         const unansweredQuestions = [];
         for (let i = 0; i < questions.length; i++) {
             if (answers[i] === undefined) {
@@ -489,31 +489,50 @@
             return;
         }
 
+        // 1. Фиксируем завершение теста
+        ym(106635328, 'reachGoal', 'DIAGNOSTIC_COMPLETE');
+
         document.getElementById('diagnostic-screen').classList.add('hidden');
         document.getElementById('results-screen').classList.remove('hidden');
 
         calculateScores();
 
+        // 2. Логика отображения результата
         if (impact <= 1 && urgency <= 1) {
             renderLowPriority();
         } else {
             renderHighPriority();
         }
 
+        // 3. Настройка кнопок связи (после того как они отрисовались)
         const tgLink = document.getElementById('tg-link');
-        const severityLabel = document.getElementById('severity-label').textContent;
-        
-        const tgMessage = encodeURIComponent(
-            `Результат диагностики Unblock English:\n\n` +
-            `📊 Счет: ${totalScore}/33\n` +
-            `🎯 Уровень: ${severityLabel}\n` +
-            `🧩 Паттерн: ${pattern}\n` +
-            `📈 Влияние на карьеру: ${getImpactText(impact)}\n` +
-            `⏰ Срочность решения: ${getUrgencyText(urgency)}\n\n` +
-            `Хочу обсудить результат и возможную работу над этим.`
-        );
-        
-        tgLink.href = `https://t.me/unblock_eng?text=${tgMessage}`;
+        const intakeLink = document.querySelector('a[href="intake.html"]');
+
+        if (tgLink) {
+            const severityLabel = document.getElementById('severity-label').textContent;
+            const tgMessage = encodeURIComponent(
+                `Результат диагностики Unblock English:\n\n` +
+                `📊 Счет: ${totalScore}/33\n` +
+                `🎯 Уровень: ${severityLabel}\n` +
+                `🧩 Паттерн: ${pattern}\n` +
+                `📈 Влияние на карьеру: ${getImpactText(impact)}\n` +
+                `⏰ Срочность решения: ${getUrgencyText(urgency)}\n\n` +
+                `Хочу обсудить результат и возможную работу над этим.`
+            );
+            tgLink.href = `https://t.me/unblock_eng?text=${tgMessage}`;
+
+            // Цель для клика в Telegram
+            tgLink.onclick = function() {
+                ym(106635328, 'reachGoal', 'CLICK_TELEGRAM');
+            };
+        }
+
+        if (intakeLink) {
+            // Цель для клика на Intake
+            intakeLink.onclick = function() {
+                ym(106635328, 'reachGoal', 'CLICK_INTAKE');
+            };
+        }
     }
 
     function getImpactText(impactValue) {
