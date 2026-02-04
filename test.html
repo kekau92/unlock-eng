@@ -1,963 +1,1112 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Работа с языковой тревожностью для IT и Finance профессионалов.">
-<title>Unblock English — Устранение языковой тревожности</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
---navy: #1A3A52;
---navy-light: #2C5F7C;
---navy-dark: #0F2537;
---white: #FFFFFF;
---gray-50: #F9FAFB;
---gray-100: #F3F4F6;
---gray-200: #E5E7EB;
---gray-400: #9CA3AF;
---gray-600: #4B5563;
---gray-700: #374151;
---space-xs: 0.5rem;
---space-sm: 1rem;
---space-md: 1.5rem;
---space-lg: 2rem;
---space-xl: 3rem;
---space-2xl: 4rem;
---space-3xl: 6rem;
---text-xs: 0.75rem;
---text-sm: 0.875rem;
---text-base: 1rem;
---text-lg: 1.125rem;
---text-xl: 1.25rem;
---text-2xl: 1.5rem;
---text-3xl: 2rem;
---text-4xl: 2.5rem;
---leading-tight: 1.2;
---leading-base: 1.5;
---leading-relaxed: 1.625;
-}
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-body {
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-color: var(--gray-700);
-line-height: var(--leading-base);
-background: var(--white);
--webkit-font-smoothing: antialiased;
-}
-.container {
-max-width: 1100px;
-margin: 0 auto;
-padding: 0 var(--space-lg);
-}
-/* Header */
-header {
-padding: var(--space-lg) 0;
-}
-/* Brand Signature */
-.brand-signature {
-display: inline-block;
-text-decoration: none;
-cursor: pointer;
-transition: opacity 0.2s;
-}
-.brand-signature:hover {
-opacity: 0.85;
-}
-.brand-signature .brand-primary {
-font-weight: 700;
-color: var(--navy);
-}
-.brand-signature .brand-secondary {
-font-weight: 400;
-color: var(--navy);
-margin-left: 8px;
-}
-.brand-signature .brand-descriptor {
-display: block;
-font-size: 11px;
-font-weight: 500;
-letter-spacing: 0.2em;
-color: var(--gray-400);
-margin-top: 4px;
-max-width: 180px;
-}
-@media (max-width: 600px) {
-.brand-signature {
-display: block;
-margin: 0 auto;
-text-align: center;
-}
-header {
-text-align: center;
-}
-}
-/* Hero Section */
-.hero {
-padding: var(--space-3xl) 0;
-text-align: center;
-}
-.hero-credential {
-font-size: 11px;
-font-weight: 600;
-letter-spacing: 2px;
-color: var(--gray-400);
-margin-bottom: var(--space-lg);
-line-height: 1.8;
-}
-.hero-headline {
-font-size: var(--text-4xl);
-font-weight: 700;
-color: var(--navy);
-line-height: 1.1;
-margin-bottom: var(--space-xl);
-letter-spacing: -0.02em;
-}
-.hero-subheadline {
-max-width: 720px;
-margin: 0 auto var(--space-2xl);
-color: var(--gray-600);
-font-size: var(--text-lg);
-}
-.hero-subheadline p {
-margin-bottom: var(--space-md);
-}
-.hero-outcome {
-font-weight: 500;
-color: var(--navy);
-margin-top: var(--space-lg);
-}
-.hero-cta-link {
-display: inline-block;
-}
-.link-arrow {
-display: inline-flex;
-align-items: center;
-font-size: var(--text-lg);
-font-weight: 600;
-color: var(--navy);
-text-decoration: none;
-border-bottom: 2px solid var(--navy);
-padding-bottom: 4px;
-transition: color 0.2s;
-}
-.link-arrow:hover {
-color: var(--navy-light);
-border-color: var(--navy-light);
-}
-.cta-note {
-font-size: var(--text-xs);
-color: var(--gray-400);
-margin-top: var(--space-sm);
-}
-/* Paradox Grid */
-.paradox-section {
-padding: var(--space-3xl) 0;
-background: var(--gray-50);
-}
-.paradox-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: var(--space-xl);
-}
-.paradox-item {
-background: var(--white);
-padding: var(--space-xl);
-border: 1px solid var(--gray-200);
-}
-.paradox-label {
-font-size: 11px;
-font-weight: 700;
-text-transform: uppercase;
-letter-spacing: 1px;
-margin-bottom: var(--space-md);
-display: block;
-}
-.label-red { color: #DC2626; }
-.label-navy { color: var(--navy); }
-.paradox-item h3 {
-font-size: var(--text-xl);
-margin-bottom: var(--space-md);
-color: var(--navy);
-}
-.paradox-item p {
-font-size: var(--text-base);
-color: var(--gray-600);
-}
-/* Process Section */
-.process-section {
-padding: var(--space-3xl) 0;
-}
-.process-header {
-max-width: 800px;
-margin-bottom: var(--space-3xl);
-}
-.process-header h2 {
-font-size: var(--text-3xl);
-color: var(--navy);
-margin-bottom: var(--space-md);
-}
-.process-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: var(--space-xl);
-}
-.process-step-num {
-font-size: var(--text-sm);
-font-weight: 700;
-color: var(--gray-400);
-margin-bottom: var(--space-sm);
-display: block;
-}
-.process-step h3 {
-font-size: var(--text-lg);
-margin-bottom: var(--space-md);
-color: var(--navy);
-}
-.process-step p {
-font-size: var(--text-sm);
-color: var(--gray-600);
-}
-/* Testimonials */
-.testimonials-section {
-padding: var(--space-3xl) 0;
-background: var(--gray-50);
-}
-.testimonial-card {
-background: var(--white);
-padding: var(--space-xl);
-margin-bottom: var(--space-lg);
-border-left: 4px solid var(--navy);
-}
-.testimonial-header {
-margin-bottom: var(--space-md);
-}
-.testimonial-name {
-font-weight: 700;
-display: block;
-color: var(--navy);
-}
-.testimonial-role {
-font-size: var(--text-sm);
-color: var(--gray-400);
-}
-.testimonial-body {
-font-size: var(--text-base);
-color: var(--gray-700);
-}
-.testimonial-excerpt {
-margin-bottom: var(--space-md);
-}
-.testimonial-full {
-display: none;
-padding-top: var(--space-md);
-border-top: 1px solid var(--gray-100);
-margin-top: var(--space-md);
-}
-.toggle-btn {
-background: none;
-border: none;
-color: var(--navy-light);
-font-weight: 600;
-cursor: pointer;
-padding: 0;
-font-size: var(--text-sm);
-}
-/* About Section */
-.about-section {
-padding: var(--space-3xl) 0;
-}
-.about-content {
-display: grid;
-grid-template-columns: 320px 1fr;
-gap: var(--space-2xl);
-align-items: start;
-}
-.about-photo img {
-width: 100%;
-height: auto;
-filter: grayscale(100%);
-border-radius: 2px;
-}
-.about-bio h2 {
-font-size: var(--text-3xl);
-color: var(--navy);
-margin-bottom: var(--space-xl);
-}
-.about-bio p {
-margin-bottom: var(--space-md);
-font-size: var(--text-base);
-}
-.about-intro {
-font-size: var(--text-lg);
-color: var(--navy);
-font-weight: 500;
-margin-bottom: var(--space-xl);
-}
-.about-yandex {
-background: var(--gray-50);
-padding: var(--space-lg);
-margin: var(--space-xl) 0;
-border-left: 2px solid var(--gray-200);
-}
-.about-approach {
-font-style: italic;
-color: var(--gray-600);
-}
-/* Pricing Section */
-.pricing-section {
-padding: var(--space-3xl) 0;
-background: var(--navy);
-color: var(--white);
-}
-.pricing-header {
-text-align: center;
-margin-bottom: var(--space-3xl);
-}
-.pricing-header h2 {
-font-size: var(--text-3xl);
-margin-bottom: var(--space-md);
-}
-.fees-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: var(--space-lg);
-}
-.fee-item {
-background: var(--white);
-color: var(--navy);
-padding: var(--space-xl);
-display: flex;
-flex-direction: column;
-}
-.fee-header {
-margin-bottom: var(--space-lg);
-min-height: 80px;
-}
-.fee-header h3 {
-font-size: var(--text-lg);
-margin-bottom: var(--space-xs);
-}
-.fee-meta {
-font-size: var(--text-sm);
-color: var(--gray-400);
-}
-.fee-price {
-font-size: var(--text-2xl);
-font-weight: 700;
-margin-bottom: var(--space-xl);
-}
-.fee-description {
-font-size: var(--text-sm);
-color: var(--gray-600);
-margin-bottom: var(--space-xl);
-flex-grow: 1;
-}
-.fee-description ul {
-list-style: none;
-padding: 0;
-}
-.fee-description li {
-margin-bottom: 8px;
-padding-left: 18px;
-position: relative;
-}
-.fee-description li::before {
-content: "→";
-position: absolute;
-left: 0;
-color: var(--gray-400);
-}
-/* Next Steps */
-.next-steps-section {
-padding: var(--space-3xl) 0;
-text-align: center;
-}
-.next-steps-content {
-max-width: 600px;
-margin: 0 auto;
-}
-.next-steps-content h2 {
-font-size: var(--text-3xl);
-color: var(--navy);
-margin-bottom: var(--space-lg);
-}
-.next-steps-content p {
-margin-bottom: var(--space-2xl);
-color: var(--gray-600);
-}
-.cta-button {
-display: inline-block;
-background: var(--navy);
-color: var(--white);
-padding: var(--space-md) var(--space-2xl);
-text-decoration: none;
-font-weight: 600;
-border-radius: 2px;
-transition: background 0.2s;
-}
-.cta-button:hover {
-background: var(--navy-light);
-}
-/* Footer */
-footer {
-padding: var(--space-xl) 0;
-background: var(--gray-50);
-border-top: 1px solid var(--gray-200);
-font-size: var(--text-sm);
-}
-footer .container {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: var(--space-xl);
-align-items: start;
-}
-footer .brand-block {
-margin-bottom: var(--space-lg);
-}
-footer .brand-block .brand-signature {
-display: block;
-margin-bottom: var(--space-sm);
-}
-footer .brand-block .brand-signature .brand-descriptor {
-display: inline-block;
-margin-top: 4px;
-max-width: none;
-}
-footer .nav-block h4 {
-font-size: var(--text-sm);
-font-weight: 600;
-color: var(--navy);
-margin-bottom: var(--space-md);
-text-transform: uppercase;
-letter-spacing: 1px;
-}
-footer .nav-block ul {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-footer .nav-block ul li {
-margin-bottom: 8px;
-}
-footer .nav-block ul li a {
-color: var(--gray-600);
-text-decoration: none;
-font-size: 14px;
-transition: color 0.2s;
-}
-footer .nav-block ul li a:hover {
-color: var(--navy);
-}
-footer .contact-block {
-margin-top: var(--space-lg);
-font-size: 13px;
-color: var(--gray-600);
-line-height: 1.6;
-}
-footer .contact-block a {
-color: var(--gray-600);
-text-decoration: none;
-}
-footer .contact-block a:hover {
-color: var(--navy);
-}
-footer .disclaimer {
-margin-top: var(--space-xl);
-padding-top: var(--space-md);
-border-top: 1px solid var(--gray-200);
-font-size: 12px;
-color: var(--gray-400);
-line-height: 1.6;
-}
-@media (max-width: 900px) {
-.paradox-grid, .process-grid, .fees-grid {
-grid-template-columns: 1fr;
-}
-.about-content {
-grid-template-columns: 1fr;
-}
-.about-photo {
-max-width: 300px;
-margin: 0 auto;
-}
-.hero-headline {
-font-size: var(--text-3xl);
-}
-footer .container {
-grid-template-columns: 1fr;
-text-align: center;
-}
-footer .brand-block .brand-signature {
-margin: 0 auto;
-}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Работа с языковой тревожностью для IT и Finance профессионалов.">
+    <title>Unblock English — Устранение языковой тревожности</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #1A3A52;
+            --navy-light: #2C5F7C;
+            --navy-dark: #0F2537;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-400: #9CA3AF;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 2rem;
+            --text-4xl: 2.5rem;
+            
+            --leading-tight: 1.2;
+            --leading-base: 1.5;
+            --leading-relaxed: 1.625;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-700);
+            line-height: var(--leading-base);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* BRAND SIGNATURE */
+        .brand-signature {
+            text-decoration: none;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: opacity 0.2s;
+            max-width: 100%;
+        }
+        .brand-signature:hover {
+            opacity: 0.85;
+        }
+        .brand-primary {
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 0;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+        .brand-secondary {
+            font-weight: 400;
+            color: var(--gray-600);
+        }
+        .brand-descriptor {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray-400);
+            margin-top: 6px;
+            white-space: nowrap;
+            max-width: 280px;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        .site-header { 
+            display: flex; 
+            justify-content: flex-start; 
+            padding: 40px 0; 
+            margin-bottom: 56px; 
+        }
+
+        /* FOOTER FULL ANCHOR */
+        .site-footer {
+            background: var(--gray-50);
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--gray-100);
+            margin-top: 100px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+        .footer-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-400);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .footer-link {
+            display: block;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-legal {
+            font-size: 11px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+        .footer-tagline {
+            font-size: 13px;
+            color: var(--gray-600);
+            margin-top: 24px;
+            max-width: 300px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .hero-credential {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--gray-400);
+            margin-bottom: var(--space-lg);
+            line-height: 1.8;
+        }
+
+        .hero-headline {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.1;
+            margin-bottom: var(--space-xl);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subheadline {
+            max-width: 720px;
+            margin: 0 auto var(--space-2xl);
+            color: var(--gray-600);
+            font-size: var(--text-lg);
+        }
+
+        .hero-subheadline p {
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-outcome {
+            font-weight: 500;
+            color: var(--navy);
+            margin-top: var(--space-lg);
+        }
+
+        .hero-cta-link {
+            display: inline-block;
+        }
+
+        .link-arrow {
+            display: inline-flex;
+            align-items: center;
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            border-bottom: 2px solid var(--navy);
+            padding-bottom: 4px;
+            transition: color 0.2s;
+        }
+
+        .link-arrow:hover {
+            color: var(--navy-light);
+            border-color: var(--navy-light);
+        }
+
+        .cta-note {
+            font-size: var(--text-xs);
+            color: var(--gray-400);
+            margin-top: var(--space-sm);
+        }
+
+        /* Paradox Grid */
+        .paradox-section {
+            padding: var(--space-3xl) 0;
+            background: var(--gray-50);
+        }
+
+        .paradox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+        }
+
+        .paradox-item {
+            background: var(--white);
+            padding: var(--space-xl);
+            border: 1px solid var(--gray-200);
+        }
+
+        .paradox-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-md);
+            display: block;
+        }
+
+        .label-red { color: #DC2626; }
+        .label-navy { color: var(--navy); }
+
+        .paradox-item h3 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-md);
+            color: var(--navy);
+        }
+
+        .paradox-item p {
+            font-size: var(--text-base);
+            color: var(--gray-600);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .process-header {
+            max-width: 800px;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .process-header h2 {
+            font-size: var(--text-3xl);
+            color: var(--navy);
+            margin-bottom: var(--space-md);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .process-step-num {
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: var(--gray-400);
+            margin-bottom: var(--space-sm);
+            display: block;
+        }
+
+        .process-step h3 {
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-md);
+            color: var(--navy);
+        }
+
+        .process-step p {
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: var(--space-3xl) 0;
+            background: var(--gray-50);
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+            border-left: 4px solid var(--navy);
+        }
+
+        .testimonial-header {
+            margin-bottom: var(--space-md);
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            display: block;
+            color: var(--navy);
+        }
+
+        .testimonial-role {
+            font-size: var(--text-sm);
+            color: var(--gray-400);
+        }
+
+        .testimonial-body {
+            font-size: var(--text-base);
+            color: var(--gray-700);
+        }
+
+        .testimonial-excerpt {
+            margin-bottom: var(--space-md);
+        }
+
+        .testimonial-full {
+            display: none;
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--gray-100);
+            margin-top: var(--space-md);
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--navy-light);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            font-size: var(--text-sm);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            border-radius: 2px;
+        }
+
+        .about-bio h2 {
+            font-size: var(--text-3xl);
+            color: var(--navy);
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-bio p {
+            margin-bottom: var(--space-md);
+            font-size: var(--text-base);
+        }
+
+        .about-intro {
+            font-size: var(--text-lg);
+            color: var(--navy);
+            font-weight: 500;
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-yandex {
+            background: var(--gray-50);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+            border-left: 2px solid var(--gray-200);
+        }
+
+        .about-approach {
+            font-style: italic;
+            color: var(--gray-600);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: var(--space-3xl) 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .pricing-header h2 {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .fees-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .fee-item {
+            background: var(--white);
+            color: var(--navy);
+            padding: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fee-header {
+            margin-bottom: var(--space-lg);
+            min-height: 80px;
+        }
+
+        .fee-header h3 {
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-xs);
+        }
+
+        .fee-meta {
+            font-size: var(--text-sm);
+            color: var(--gray-400);
+        }
+
+        .fee-price {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-xl);
+        }
+
+        .fee-description {
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+            margin-bottom: var(--space-xl);
+            flex-grow: 1;
+        }
+
+        .fee-description ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fee-description li {
+            margin-bottom: 8px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .fee-description li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--gray-400);
+        }
+
+        /* Next Steps */
+        .next-steps-section {
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .next-steps-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .next-steps-content h2 {
+            font-size: var(--text-3xl);
+            color: var(--navy);
+            margin-bottom: var(--space-lg);
+        }
+
+        .next-steps-content p {
+            margin-bottom: var(--space-2xl);
+            color: var(--gray-600);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--white);
+            padding: var(--space-md) var(--space-2xl);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: var(--navy-light);
+        }
+
+        @media (max-width: 900px) {
+            .paradox-grid, .process-grid, .fees-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .about-photo {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            .hero-headline {
+                font-size: var(--text-3xl);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-lg);
+            }
+            .footer-legal {
+                text-align: left;
+            }
+            .site-header {
+                padding: 30px 0 20px;
+                margin-bottom: 40px;
+            }
+            .logo-main {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .brand-signature {
+                align-items: center;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .brand-descriptor {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+            .hero-headline {
+                font-size: var(--text-2xl);
+            }
+            .hero-subheadline {
+                font-size: var(--text-base);
+            }
+            .process-step {
+                padding: var(--space-md);
+            }
+            .testimonial-card {
+                padding: var(--space-lg);
+            }
+            .fee-item {
+                padding: var(--space-lg);
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-<div class="container">
-<a href="index.html" class="brand-signature">
-<span class="brand-primary">UNBLOCK</span>
-<span class="brand-secondary">ENGLISH</span>
-<span class="brand-descriptor">Communication Protocol</span>
-</a>
-</div>
-</header>
-<section class="hero">
-<div class="container">
-<div class="sector-tag" style="text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-600); margin-bottom: 8px;">
-Для IT и Finance специалистов
-</div>
-<p class="hero-credential">
-20+ ЛЕТ РАБОТЫ С АНГЛИЙСКИМ В СИТУАЦИЯХ ВЫСОКИХ СТАВОК<br>
-ЯНДЕКС ПРАКТИКУМ ENGLISH
-</p>
-<h1 class="hero-headline">
-Пишу на английском свободно.<br>
-Говорить — теряю слова.
-</h1>
-<div class="hero-subheadline">
-<p>
-Это происходит, когда мозг под давлением переводит
-речевую систему в режим защиты. Доступ к знакомым
-фразам временно блокируется.
-</p>
-<p class="hero-outcome">
-Это блокирует доступ к международным позициям и крупным контрактам.
-В большинстве случаев проблема поддаётся коррекции
-при системной работе с механизмом стресса.
-</p>
-</div>
-<div class="hero-elf-context" style="max-width: 680px; margin: var(--space-xl) auto var(--space-lg); text-align: center;">
-<p style="font-size: var(--text-base); color: var(--gray-600); line-height: var(--leading-relaxed); margin-bottom: 0;">
-Индийский тимлид. Вьетнамский разработчик. Сингапурский клиент.
-<strong style="color: var(--navy);">Они тоже не носители языка.
-Но они контролируют диалог.</strong>
-</p>
-</div>
-<div class="hero-cta-link">
-<a href="diagnostic.html" class="link-arrow">
-Проверить, есть ли у вас этот тип блока →
-</a>
-<p class="cta-note">2 минуты, результат сразу</p>
-</div>
-</div>
-</section>
-<section class="paradox-section">
-<div class="container">
-<div class="paradox-grid">
-<div class="paradox-item">
-<span class="paradox-label label-red">Парадокс 1</span>
-<h3>Чем больше вы учите слова, тем сильнее блок</h3>
-<p>
-При языковой тревожности (FLA) проблема не в нехватке знаний,
-а в ограничении доступа к ним. Новые курсы грамматики только
-усиливают внутренний контроль, что еще больше сковывает речь.
-</p>
-</div>
-<div class="paradox-item">
-<span class="paradox-label label-navy">Решение</span>
-<h3>Снижение когнитивной нагрузки</h3>
-<p>
-Мы не учим новый язык. Мы перестраиваем способ использования
-текущего. Задача — сделать речь настолько автоматической,
-чтобы стресс не мог её заблокировать.
-</p>
-</div>
-</div>
-</div>
-</section>
-<section class="process-section">
-<div class="container">
-<div class="process-header">
-<h2>Как работает методика</h2>
-<p>
-Это не классические уроки. Это тренировка системы управления речью
-в условиях, имитирующих реальное давление.
-</p>
-</div>
-<div class="process-grid">
-<div class="process-step">
-<span class="process-step-num">01</span>
-<h3>Десенсибилизация</h3>
-<p>
-Снижаем чувствительность к ошибкам и «неидеальности» речи.
-Мозг перестает воспринимать запинку как угрозу выживанию.
-</p>
-</div>
-<div class="process-step">
-<span class="process-step-num">02</span>
-<h3>Речевые протоколы</h3>
-<p>
-Внедряем готовые конструкции для критических моментов:
-стратегии удержания контроля в критических моментах диалога.
-</p>
-</div>
-<div class="process-step">
-<span class="process-step-num">03</span>
-<h3>Экспозиция</h3>
-<p>
-Постепенно увеличиваем уровень социального давления в упражнениях,
-пока навык управления речью не станет стабильным.
-</p>
-</div>
-</div>
-</div>
-</section>
-<section class="testimonials-section">
-<div class="container">
-<h2 style="margin-bottom: var(--space-2xl); color: var(--navy);">Результаты</h2>
-<div class="testimonial-card">
-<div class="testimonial-header">
-<span class="testimonial-name">Алексей</span>
-<span class="testimonial-role">Senior Software Engineer</span>
-</div>
-<div class="testimonial-body">
-<p class="testimonial-excerpt">
-«Раньше перед дейли у меня потели ладони. Я знал, что сказать, но как только
-наставала моя очередь — слова исчезали. После 6 недель работы я перестал
-готовиться к каждому звонку по часу...»
-</p>
-<div id="test-1" class="testimonial-full">
-«...Самое важное — я перестал бояться момента, когда я чего-то не понимаю.
-Раньше я просто кивал и надеялся, что меня не спросят. Сейчас я спокойно
-останавливаю собеседника и прошу пояснить, используя отработанные фразы.
-Это дало мне контроль над ситуацией, которого никогда не было.»
-</div>
-<button onclick="toggleTestimonial('test-1', this)" class="toggle-btn">Читать полностью →</button>
-</div>
-</div>
-<div class="testimonial-card">
-<div class="testimonial-header">
-<span class="testimonial-name">Марина</span>
-<span class="testimonial-role">Finance Director</span>
-</div>
-<div class="testimonial-body">
-<p class="testimonial-excerpt">
-«В переписке я бог английского, но на встречах с советом директоров
-чувствовала себя школьницей. Мой английский казался мне слишком примитивным...»
-</p>
-<div id="test-2" class="testimonial-full">
-«...Кирилл помог мне понять, что моя "примитивность" — это на самом деле
-инструмент ясности. Мы работали над тем, чтобы я не пыталась строить
-сложные русские конструкции в голове, а сразу переходила к сути.
-Блок ушел не потому, что я выучила новые слова, а потому что разрешила
-себе говорить проще и увереннее.»
-</div>
-<button onclick="toggleTestimonial('test-2', this)" class="toggle-btn">Читать полностью →</button>
-</div>
-</div>
-</div>
-</section>
-<section class="about-section" id="about">
-<div class="container">
-<div class="about-content">
-<div class="about-photo">
-<img src="images/profile.jpg" alt="Кирилл — специалист по устранению языковой тревожности">
-</div>
-<div class="about-bio">
-<h2>Кто работает с вами</h2>
-<p class="about-intro" style="font-size: var(--text-lg); color: var(--navy); font-weight: 500; margin-bottom: var(--space-xl);">
-Оператор протокола коммуникации в ELF-среде<br>
-<span style="font-size: var(--text-base); font-weight: 400; color: var(--gray-600);">
-(English as a Lingua Franca — английский как общий язык международных команд)
-</span>
-</p>
-<p>
-25 лет в Нью-Йорке и опыт работы в элитной недвижимости
-<strong>(Brown Harris Stevens, Halstead Manhattan LLC, 2018-2022)</strong>
-дали мне уникальный прикладной опыт.
-</p>
-<p>
-Кросс-культурные сделки, высокие ставки, английский как рабочий инструмент.
-</p>
-<p>
-<strong>Общий язык — английский.</strong>
-Но не "американский". Не "британский".
-<strong>English as a Lingua Franca (ELF).</strong>
-</p>
-<div class="about-yandex">
-<p style="margin-bottom: var(--space-sm);"><strong>Критический инсайт</strong></p>
-<p>
-Я не видел ни одной сделки, где все говорили "идеально".
-Но я видел тысячи ситуаций, где человек с сильным акцентом
-<strong>контролировал переговоры лучше носителя языка</strong>.
-</p>
-<p style="margin-bottom: 0;">
-Разница? <strong>Не грамматика. Управление тревожностью.</strong>
-</p>
-</div>
-<p>
-Когда китайский покупатель задаёт прямой вопрос,
-а арабский инвестор требует объяснить расхождения —
-<strong>никого не волнует ваш акцент</strong>.
-Все ждут: ясность, контроль, результат.
-</p>
-<div class="about-yandex">
-<p>
-Работал со студентами <strong>Яндекс Практикум English</strong> —
-помогал устранять речевые блоки у профессионалов, которые уже знали
-грамматику, но не могли применить английский в реальных рабочих ситуациях.
-</p>
-</div>
-<p class="about-approach">
-Я не беру всех подряд. В 30-40% случаев отказываю после диагностики —
-когда вижу, что задача не соответствует методике или человеку нужен
-другой специалист. Это не массовый продукт. Это точечная работа
-с конкретным блоком.
-</p>
-</div>
-</div>
-</div>
-</section>
-<section class="pricing-section">
-<div class="container">
-<div class="pricing-header">
-<h2>Форматы работы</h2>
-<p>Все программы начинаются только после прохождения диагностики.</p>
-</div>
-<div class="fees-grid">
-<div class="fee-item">
-<div class="fee-header">
-<h3>Foundation Protocol · 8 weeks</h3>
-<p class="fee-meta" style="font-size: 14px; color: var(--gray-600); margin-bottom: 4px; font-style: normal;">
-Speech Control Reset
-</p>
-<p class="fee-meta" style="font-size: 14px; font-style: italic; color: var(--gray-600); margin-bottom: var(--space-md);">
-Управление речью в стрессовых ситуациях
-</p>
-<p class="fee-meta" style="font-size: 14px; color: var(--gray-600);">Встречи 1 раз в неделю</p>
-</div>
-<p class="fee-price">₽68,000–₽92,000</p>
-<div class="fee-description">
-<p>Для тех, кому нужно быстро вернуть доступ к уже имеющимся знаниям и перестать бояться звонков.</p>
-</div>
-</div>
-<div class="fee-item">
-<div class="fee-header">
-<h3>Mastery Protocol · 12-16 weeks</h3>
-<p class="fee-meta" style="font-size: 14px; color: var(--gray-600); margin-bottom: 4px; font-style: normal;">
-Multisituational Communication Control
-</p>
-<p class="fee-meta" style="font-size: 14px; font-style: italic; color: var(--gray-600); margin-bottom: var(--space-md);">
-Системное управление коммуникацией
-</p>
-<p class="fee-meta" style="font-size: 14px; color: var(--gray-600);">Встречи 1-2 раза в неделю</p>
-</div>
-<p class="fee-price">От ₽128,000</p>
-<div class="fee-description">
-<p>Глубокая работа с речевыми привычками, сложными переговорами и долгосрочной уверенностью.</p>
-</div>
-</div>
-<div class="fee-item">
-<div class="fee-header">
-<h3>Emergency Protocol · 2 weeks intensive</h3>
-<p class="fee-meta" style="font-size: 14px; color: var(--gray-600); margin-bottom: 4px; font-style: normal;">
-Event-Specific Speech Control
-</p>
-<p class="fee-meta" style="font-size: 14px; font-style: italic; color: var(--gray-600); margin-bottom: var(--space-md);">
-Тактический контроль под давлением
-</p>
-<p class="fee-meta" style="font-size: 14px; color: var(--gray-600);">Интенсив, 2-3 раза в неделю</p>
-</div>
-<p class="fee-price">От ₽72,000</p>
-<div class="emergency-warning" style="margin: var(--space-lg) 0; padding: var(--space-md); background: #FEF2F2; border-left: 3px solid #DC2626; border-radius: 2px;">
-<h4 style="font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: var(--space-sm);">
-⚠️ Что важно понимать
-</h4>
-<p style="font-size: 14px; line-height: 1.6; margin-bottom: var(--space-sm);">
-<strong>За 2 недели нельзя устранить речевой блок полностью.</strong>
-</p>
-<p style="font-size: 14px; line-height: 1.6; margin-bottom: 0;">
-Emergency Protocol — это кризисное вмешательство.
-Мы даём инструменты для управления паникой в конкретном событии,
-но корневая причина остаётся.
-После события рекомендуется Foundation для устранения корня проблемы.
-</p>
-<p style="font-size: 13px; color: var(--gray-600); margin-top: 8px;">
-Это не альтернатива системной работе и не устраняет первопричину блока.
-</p>
-</div>
-<div class="fee-description">
-<p>
-Если событие через 10-14 дней. Тактическая подготовка
-под конкретную ситуацию.
-</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="faq-section" style="padding: var(--space-3xl) 0; background: var(--white); border-top: 1px solid var(--gray-100);">
-<div class="container">
-<h2 style="text-align: center; margin-bottom: var(--space-2xl); color: var(--navy);">Частые вопросы</h2>
-<div class="faq-grid" style="max-width: 860px; margin: 0 auto; display: grid; gap: var(--space-xl);">
-<div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
-<h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
-Какой уровень английского нужен?
-</h3>
-<p style="margin-bottom: var(--space-md);">
-<strong>Минимум: B1 (Intermediate)</strong>
-</p>
-<p style="margin-bottom: var(--space-md);">
-Вы должны понимать письменный английский (электронные письма, документацию),
-знать базовую грамматику, иметь словарный запас для вашей области.
-</p>
-<p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600);">
-Если уровень ниже B1 — сначала нужен обычный преподаватель.
-Моя специализация — устранение блока у тех, кто знает язык,
-но теряет к нему доступ под давлением.
-</p>
-</div>
-<div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
-<h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
-Мне 40 лет. Это не слишком поздно?
-</h3>
-<p style="margin-bottom: var(--space-md);">
-<strong>Нет, это не поздно.</strong> Но работаем по-другому, чем с 25-летними.
-</p>
-<p style="margin-bottom: var(--space-md);">
-После ~32 лет мозг "закрепляет" наиболее используемые пути.
-Требуется больше повторений для создания новых маршрутов.
-</p>
-<p style="margin-bottom: var(--space-md); font-weight: 500; color: var(--navy);">
-Мы не ускоряем мозг. Мы меняем маршрут.
-</p>
-<p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600);">
-Ваш профессиональный опыт компенсирует возрастные факторы.
-Если вам 35+, обычно рекомендуется Mastery Protocol (12-16 недель)
-для стабильного результата.
-</p>
-</div>
-<div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
-<h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
-Чем вы отличаетесь от обычного преподавателя?
-</h3>
-<p style="margin-bottom: var(--space-sm);">
-<strong>Преподаватель решает проблему недостатка знаний.</strong><br>
-Учит грамматике, расширяет словарный запас, даёт разговорную практику.
-</p>
-<p style="margin-bottom: var(--space-sm);">
-<strong>Я работаю с блокировкой доступа к знаниям под давлением.</strong><br>
-Использую техники CBT/ACT, соматическую регуляцию, экспозиционную терапию.
-</p>
-<p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600); font-style: italic;">
-Если проблема "я не знаю слов" → преподаватель.<br>
-Если проблема "я знаю слова, но не могу сказать под давлением" → протокол.
-</p>
-</div>
-<div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
-<h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
-Вы гарантируете результат?
-</h3>
-<p style="margin-bottom: var(--space-md);">
-<strong>Нет, я не гарантирую полное излечение FLA навсегда.</strong>
-Это было бы нечестно.
-</p>
-<p style="margin-bottom: var(--space-md);">
-Большинство клиентов достигают поставленных целей при соблюдении протокола.
-</p>
-<p style="margin-bottom: var(--space-md);">
-<strong>15% не достигают результата — почему?</strong>
-</p>
-<ul style="list-style: none; padding: 0; margin: 0 0 var(--space-md) 0; font-size: 14px; line-height: 1.6;">
-<li style="margin-bottom: 6px;">– Уровень английского ниже B1</li>
-<li style="margin-bottom: 6px;">– Тяжёлые клинические расстройства (нужен психотерапевт)</li>
-<li style="margin-bottom: 6px;">– Недостаток вовлечённости (пропуски, нет практики)</li>
-<li>– Нереалистичные ожидания ("излечение за 3 сессии")</li>
-</ul>
-<p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600); font-style: italic;">
-Я не продаю "волшебную таблетку".
-Я оператор клинически проверенного протокола.
-</p>
-</div>
-<div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
-<h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
-Насколько эффективна онлайн-работа?
-</h3>
-<p style="margin-bottom: var(--space-md);">
-<strong>Для вмешательства при FLA онлайн так же эффективен, как очная работа.</strong>
-</p>
-<p style="margin-bottom: var(--space-md);">
-Большинство ваших стрессовых ситуаций происходят в Zoom или Teams.
-Мы тренируемся в той же среде, где будет реальное применение навыков.
-</p>
-<p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600);">
-Исследования: интернет-ориентированная CBT для социальной тревожности
-показывает сопоставимые результаты с очной терапией.
-</p>
-</div>
-</div>
-</div>
-</section>
-<section class="next-steps-section">
-<div class="container">
-<div class="next-steps-content" style="max-width: 600px; margin: 0 auto; text-align: center;">
-<h2 style="font-size: 2.5rem; color: #1A3A52; margin-bottom: 1.5rem; letter-spacing: -0.02em;">С чего начать?</h2>
-<p style="margin-bottom: 3rem; color: #4B5563; line-height: 1.6; font-size: 1.125rem;">
-Проблема языковой тревожности требует точной настройки. <br>Для этого предусмотрено два формата входа:
-</p>
-<div style="margin-bottom: 2.5rem;">
-<p style="font-size: 12px; color: #9CA3AF; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1.5px;">1. Для экспресс-проверки (2 минуты)</p>
-<a href="diagnostic.html" class="cta-button" style="display: inline-block; background: #1A3A52; color: #FFFFFF; padding: 18px 48px; text-decoration: none; font-weight: 600; border-radius: 2px;">Пройти самодиагностику</a>
-</div>
-<div style="margin-top: 3rem; border-top: 1px solid #F3F4F6; padding-top: 2rem;">
-<p style="font-size: 12px; color: #9CA3AF; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1.5px;">2. Для глубокой работы</p>
-<a href="intake.html" style="color: #1A3A52; font-weight: 600; text-decoration: underline; font-size: 1.125rem; transition: color 0.2s;">Ознакомиться с условиями сессии (90 мин) →</a>
-</div>
-</div>
-</div>
-</section>
-<footer>
-<div class="container">
-<div class="brand-block">
-<a href="index.html" class="brand-signature">
-<span class="brand-primary">UNBLOCK</span>
-<span class="brand-secondary">ENGLISH</span>
-<span class="brand-descriptor">Communication Protocol</span>
-</a>
-<div class="contact-block">
-<p>
-Telegram: <a href="https://t.me/unblock_eng">@unblock_eng</a><br>
-Email: <a href="mailto:hello@unblock-english.ru">hello@unblock-english.ru</a>
-</p>
-</div>
-</div>
-<div class="nav-block">
-<h4>Навигация</h4>
-<ul>
-<li><a href="index.html">Главная</a></li>
-<li><a href="diagnostic.html">Диагностика</a></li>
-<li><a href="intake.html">Диагностическая сессия</a></li>
-</ul>
-</div>
-<div class="disclaimer">
-<p>© 2026 Unblock English<br>This is not a medical service. Not a substitute for therapy or treatment.</p>
-</div>
-</div>
-</footer>
-<script>
-function toggleTestimonial(id, button) {
-const content = document.getElementById(id);
-if (content.style.display === 'none' || content.style.display === '') {
-content.style.display = 'block';
-button.textContent = 'Свернуть ↑';
-} else {
-content.style.display = 'none';
-button.textContent = 'Читать полностью →';
-}
-}
-</script>
+
+    <div class="container">
+        <!-- Логотип -->
+        <header class="site-header">
+            <a href="index.html" class="brand-signature">
+                <div><span class="brand-primary">UNBLOCK</span> <span class="brand-secondary">ENGLISH</span></div>
+                <div class="brand-descriptor">Communication Protocol</div>
+            </a>
+        </header>
+
+        <section class="hero">
+            <div class="sector-tag" style="text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-600); margin-bottom: 8px;">
+                Для IT и Finance специалистов
+            </div>
+            
+            <p class="hero-credential">
+                20+ ЛЕТ РАБОТЫ С АНГЛИЙСКИМ В СИТУАЦИЯХ ВЫСОКИХ СТАВОК<br>
+                ЯНДЕКС ПРАКТИКУМ ENGLISH
+            </p>
+            
+            <h1 class="hero-headline">
+                Пишу на английском свободно.<br>
+                Говорить — теряю слова.
+            </h1>
+            
+            <div class="hero-subheadline">
+                <p>
+                    Это происходит, когда мозг под давлением переводит 
+                    речевую систему в режим защиты. Доступ к знакомым 
+                    фразам временно блокируется.
+                </p>
+                
+                <p class="hero-outcome">
+                    Это блокирует доступ к международным позициям и крупным контрактам. 
+                    В большинстве случаев проблема поддаётся коррекции 
+                    при системной работе с механизмом стресса.
+
+                </p>
+            </div>
+
+            <div class="hero-elf-context" style="max-width: 680px; margin: var(--space-xl) auto var(--space-lg); text-align: center;">
+                <p style="font-size: var(--text-base); color: var(--gray-600); line-height: var(--leading-relaxed); margin-bottom: 0;">
+                    Индийский тимлид. Вьетнамский разработчик. Сингапурский клиент. 
+                    <strong style="color: var(--navy);">Они тоже не носители языка. 
+                    Но они контролируют диалог.</strong>
+                </p>
+            </div>
+            
+            <div class="hero-cta-link">
+                <a href="diagnostics.html" class="link-arrow">
+                    Проверить, есть ли у вас этот тип блока →
+                </a>
+                <p class="cta-note">2 минуты, результат сразу</p>
+            </div>
+        </section>
+
+        <section class="paradox-section">
+            <div class="container">
+                <div class="paradox-grid">
+                    <div class="paradox-item">
+                        <span class="paradox-label label-red">Парадокс 1</span>
+                        <h3>Чем больше вы учите слова, тем сильнее блок</h3>
+                        <p>
+                            При языковой тревожности (FLA) проблема не в нехватке знаний, 
+                            а в ограничении доступа к ним. Новые курсы грамматики только 
+                            усиливают внутренний контроль, что еще больше сковывает речь.
+                        </p>
+                    </div>
+                    
+                    <div class="paradox-item">
+                        <span class="paradox-label label-navy">Решение</span>
+                        <h3>Снижение когнитивной нагрузки</h3>
+                        <p>
+                            Мы не учим новый язык. Мы перестраиваем способ использования 
+                            текущего. Задача — сделать речь настолько автоматической, 
+                            чтобы стресс не мог её заблокировать.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="container">
+                <div class="process-header">
+                    <h2>Как работает методика</h2>
+                    <p>
+                        Это не классические уроки. Это тренировка системы управления речью 
+                        в условиях, имитирующих реальное давление.
+                    </p>
+                </div>
+                
+                <div class="process-grid">
+                    <div class="process-step">
+                        <span class="process-step-num">01</span>
+                        <h3>Десенсибилизация</h3>
+                        <p>
+                            Снижаем чувствительность к ошибкам и «неидеальности» речи. 
+                            Мозг перестает воспринимать запинку как угрозу выживанию.
+                        </p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <span class="process-step-num">02</span>
+                        <h3>Речевые протоколы</h3>
+                        <p>
+                            Внедряем готовые конструкции для критических моментов: 
+                            стратегии удержания контроля в критических моментах диалога.
+                        </p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <span class="process-step-num">03</span>
+                        <h3>Экспозиция</h3>
+                        <p>
+                            Постепенно увеличиваем уровень социального давления в упражнениях, 
+                            пока навык управления речью не станет стабильным.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 style="margin-bottom: var(--space-2xl); color: var(--navy);">Результаты</h2>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-name">Алексей</span>
+                        <span class="testimonial-role">Senior Software Engineer</span>
+                    </div>
+                    <div class="testimonial-body">
+                        <p class="testimonial-excerpt">
+                            «Раньше перед дейли у меня потели ладони. Я знал, что сказать, но как только 
+                            наставала моя очередь — слова исчезали. После 6 недель работы я перестал 
+                            готовиться к каждому звонку по часу...»
+                        </p>
+                        <div id="test-1" class="testimonial-full">
+                            «...Самое важное — я перестал бояться момента, когда я чего-то не понимаю. 
+                            Раньше я просто кивал и надеялся, что меня не спросят. Сейчас я спокойно 
+                            останавливаю собеседника и прошу пояснить, используя отработанные фразы. 
+                            Это дало мне контроль над ситуацией, которого никогда не было.»
+                        </div>
+                        <button onclick="toggleTestimonial('test-1', this)" class="toggle-btn">Читать полностью →</button>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-name">Марина</span>
+                        <span class="testimonial-role">Finance Director</span>
+                    </div>
+                    <div class="testimonial-body">
+                        <p class="testimonial-excerpt">
+                            «В переписке я бог английского, но на встречах с советом директоров 
+                            чувствовала себя школьницей. Мой английский казался мне слишком примитивным...»
+                        </p>
+                        <div id="test-2" class="testimonial-full">
+                            «...Кирилл помог мне понять, что моя "примитивность" — это на самом деле 
+                            инструмент ясности. Мы работали над тем, чтобы я не пыталась строить 
+                            сложные русские конструкции в голове, а сразу переходила к сути. 
+                            Блок ушел не потому, что я выучила новые слова, а потому что разрешила 
+                            себе говорить проще и увереннее.»
+                        </div>
+                        <button onclick="toggleTestimonial('test-2', this)" class="toggle-btn">Читать полностью →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-photo">
+                        <img src="images/profile.jpg" alt="Кирилл — специалист по устранению языковой тревожности">
+                    </div>
+                    
+                    <div class="about-bio">
+                        <h2>Кто работает с вами</h2>
+                        
+                        <p class="about-intro" style="font-size: var(--text-lg); color: var(--navy); font-weight: 500; margin-bottom: var(--space-xl);">
+                            Оператор протокола коммуникации в ELF-среде<br>
+                            <span style="font-size: var(--text-base); font-weight: 400; color: var(--gray-600);">
+                                (English as a Lingua Franca — английский как общий язык международных команд)
+                            </span>
+                        </p>
+                        
+                       <p>
+                            25 лет в Нью-Йорке и опыт работы в элитной недвижимости 
+                            <strong>(Brown Harris Stevens, Halstead Manhattan LLC, 2018-2022)</strong> 
+                            дали мне уникальный прикладной опыт.
+                        </p>
+                        
+                        <p>
+                            Кросс-культурные сделки, высокие ставки, английский как рабочий инструмент.
+                        </p>
+                        
+                        <p>
+                            <strong>Общий язык — английский.</strong> 
+                            Но не "американский". Не "британский". 
+                            <strong>English as a Lingua Franca (ELF).</strong>
+                        </p>
+                        
+                        <div class="about-yandex">
+                            <p style="margin-bottom: var(--space-sm);"><strong>Критический инсайт</strong></p>
+                            <p>
+                                Я не видел ни одной сделки, где все говорили "идеально". 
+                                Но я видел тысячи ситуаций, где человек с сильным акцентом 
+                                <strong>контролировал переговоры лучше носителя языка</strong>.
+                            </p>
+                            <p style="margin-bottom: 0;">
+                                Разница? <strong>Не грамматика. Управление тревожностью.</strong>
+                            </p>
+                        </div>
+                        
+                        <p>
+                            Когда китайский покупатель задаёт прямой вопрос, 
+                            а арабский инвестор требует объяснить расхождения — 
+                            <strong>никого не волнует ваш акцент</strong>. 
+                            Все ждут: ясность, контроль, результат.
+                        </p>
+
+                        <div class="about-yandex">
+                            <p>
+                                Работал со студентами <strong>Яндекс Практикум English</strong> — 
+                                помогал устранять речевые блоки у профессионалов, которые уже знали 
+                                грамматику, но не могли применить английский в реальных рабочих ситуациях.
+                            </p>
+                        </div>
+                        
+                        <p class="about-approach">
+                            Я не беру всех подряд. В 30-40% случаев отказываю после диагностики — 
+                            когда вижу, что задача не соответствует методике или человеку нужен 
+                            другой специалист. Это не массовый продукт. Это точечная работа 
+                            с конкретным блоком.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="container">
+                <div class="pricing-header">
+                    <h2>Форматы работы</h2>
+                    <p>Все программы начинаются только после прохождения диагностики.</p>
+                </div>
+                
+                <div class="fees-grid">
+                    <div class="fee-item">
+                        <div class="fee-header">
+                            <h3>Foundation Protocol · 8 weeks</h3>
+                            <p class="fee-meta" style="font-size: 14px; color: var(--gray-600); margin-bottom: 4px; font-style: normal;">
+                                Speech Control Reset
+                            </p>
+                            <p class="fee-meta" style="font-size: 14px; font-style: italic; color: var(--gray-600); margin-bottom: var(--space-md);">
+                                Управление речью в стрессовых ситуациях
+                            </p>
+                            <p class="fee-meta" style="font-size: 14px; color: var(--gray-600);">Встречи 1 раз в неделю</p>
+                        </div>
+                        <p class="fee-price">₽68,000–₽92,000</p>
+                        <div class="fee-description">
+                            <p>Для тех, кому нужно быстро вернуть доступ к уже имеющимся знаниям и перестать бояться звонков.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fee-item">
+                        <div class="fee-header">
+                            <h3>Mastery Protocol · 12-16 weeks</h3>
+                            <p class="fee-meta" style="font-size: 14px; color: var(--gray-600); margin-bottom: 4px; font-style: normal;">
+                                Multisituational Communication Control
+                            </p>
+                            <p class="fee-meta" style="font-size: 14px; font-style: italic; color: var(--gray-600); margin-bottom: var(--space-md);">
+                                Системное управление коммуникацией
+                            </p>
+                            <p class="fee-meta" style="font-size: 14px; color: var(--gray-600);">Встречи 1-2 раза в неделю</p>
+                        </div>
+                        <p class="fee-price">От ₽128,000</p>
+                        <div class="fee-description">
+                            <p>Глубокая работа с речевыми привычками, сложными переговорами и долгосрочной уверенностью.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fee-item">
+                        <div class="fee-header">
+                            <h3>Emergency Protocol · 2 weeks intensive</h3>
+                            <p class="fee-meta" style="font-size: 14px; color: var(--gray-600); margin-bottom: 4px; font-style: normal;">
+                                Event-Specific Speech Control
+                            </p>
+                            <p class="fee-meta" style="font-size: 14px; font-style: italic; color: var(--gray-600); margin-bottom: var(--space-md);">
+                                Тактический контроль под давлением
+                            </p>
+                            <p class="fee-meta" style="font-size: 14px; color: var(--gray-600);">Интенсив, 2-3 раза в неделю</p>
+                        </div>
+                        <p class="fee-price">От ₽72,000</p>
+                        
+                        <div class="emergency-warning" style="margin: var(--space-lg) 0; padding: var(--space-md); background: #FEF2F2; border-left: 3px solid #DC2626; border-radius: 2px;">
+                            <h4 style="font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: var(--space-sm);">
+                                ⚠️ Что важно понимать
+                            </h4>
+                            <p style="font-size: 14px; line-height: 1.6; margin-bottom: var(--space-sm);">
+                                <strong>За 2 недели нельзя устранить речевой блок полностью.</strong>
+                            </p>
+                            <p style="font-size: 14px; line-height: 1.6; margin-bottom: 0;">
+                                Emergency Protocol — это кризисное вмешательство. 
+                                Мы даём инструменты для управления паникой в конкретном событии, 
+                                но корневая причина остаётся. 
+                                После события рекомендуется Foundation для устранения корня проблемы.
+                            </p>
+                            <p style="font-size: 13px; color: var(--gray-600); margin-top: 8px;">
+                            Это не альтернатива системной работе и не устраняет первопричину блока.
+                            </p>
+
+                        </div>
+                        
+                        <div class="fee-description">
+                            <p>
+                                Если событие через 10-14 дней. Тактическая подготовка 
+                                под конкретную ситуацию.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section" style="padding: var(--space-3xl) 0; background: var(--white); border-top: 1px solid var(--gray-100);">
+            <div class="container">
+                
+                <h2 style="text-align: center; margin-bottom: var(--space-2xl); color: var(--navy);">Частые вопросы</h2>
+                
+                <div class="faq-grid" style="max-width: 860px; margin: 0 auto; display: grid; gap: var(--space-xl);">
+                    
+                    <div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
+                        <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
+                            Какой уровень английского нужен?
+                        </h3>
+                        <p style="margin-bottom: var(--space-md);">
+                            <strong>Минимум: B1 (Intermediate)</strong>
+                        </p>
+                        <p style="margin-bottom: var(--space-md);">
+                            Вы должны понимать письменный английский (электронные письма, документацию), 
+                            знать базовую грамматику, иметь словарный запас для вашей области.
+                        </p>
+                        <p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600);">
+                            Если уровень ниже B1 — сначала нужен обычный преподаватель. 
+                            Моя специализация — устранение блока у тех, кто знает язык, 
+                            но теряет к нему доступ под давлением.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
+                        <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
+                            Мне 40 лет. Это не слишком поздно?
+                        </h3>
+                        <p style="margin-bottom: var(--space-md);">
+                            <strong>Нет, это не поздно.</strong> Но работаем по-другому, чем с 25-летними.
+                        </p>
+                        <p style="margin-bottom: var(--space-md);">
+                            После ~32 лет мозг "закрепляет" наиболее используемые пути. 
+                            Требуется больше повторений для создания новых маршрутов.
+                        </p>
+                        <p style="margin-bottom: var(--space-md); font-weight: 500; color: var(--navy);">
+                            Мы не ускоряем мозг. Мы меняем маршрут.
+                        </p>
+                        <p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600);">
+                            Ваш профессиональный опыт компенсирует возрастные факторы. 
+                            Если вам 35+, обычно рекомендуется Mastery Protocol (12-16 недель) 
+                            для стабильного результата.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
+                        <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
+                            Чем вы отличаетесь от обычного преподавателя?
+                        </h3>
+                        <p style="margin-bottom: var(--space-sm);">
+                            <strong>Преподаватель решает проблему недостатка знаний.</strong><br>
+                            Учит грамматике, расширяет словарный запас, даёт разговорную практику.
+                        </p>
+                        <p style="margin-bottom: var(--space-sm);">
+                            <strong>Я работаю с блокировкой доступа к знаниям под давлением.</strong><br>
+                            Использую техники CBT/ACT, соматическую регуляцию, экспозиционную терапию.
+                        </p>
+                        <p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600); font-style: italic;">
+                            Если проблема "я не знаю слов" → преподаватель.<br>
+                            Если проблема "я знаю слова, но не могу сказать под давлением" → протокол.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
+                        <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
+                            Вы гарантируете результат?
+                        </h3>
+                        <p style="margin-bottom: var(--space-md);">
+                            <strong>Нет, я не гарантирую полное излечение FLA навсегда.</strong> 
+                            Это было бы нечестно.
+                        </p>
+                        <p style="margin-bottom: var(--space-md);">
+                           Большинство клиентов достигают поставленных целей при соблюдении протокола.
+                        </p>
+                        <p style="margin-bottom: var(--space-md);">
+                            <strong>15% не достигают результата — почему?</strong>
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-md) 0; font-size: 14px; line-height: 1.6;">
+                            <li style="margin-bottom: 6px;">– Уровень английского ниже B1</li>
+                            <li style="margin-bottom: 6px;">– Тяжёлые клинические расстройства (нужен психотерапевт)</li>
+                            <li style="margin-bottom: 6px;">– Недостаток вовлечённости (пропуски, нет практики)</li>
+                            <li>– Нереалистичные ожидания ("излечение за 3 сессии")</li>
+                        </ul>
+                        <p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600); font-style: italic;">
+                            Я не продаю "волшебную таблетку". 
+                            Я оператор клинически проверенного протокола.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item" style="padding: var(--space-lg); background: var(--gray-50); border-radius: 4px;">
+                        <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--navy); margin-bottom: var(--space-md);">
+                            Насколько эффективна онлайн-работа?
+                        </h3>
+                        <p style="margin-bottom: var(--space-md);">
+                            <strong>Для вмешательства при FLA онлайн так же эффективен, как очная работа.</strong>
+                        </p>
+                        <p style="margin-bottom: var(--space-md);">
+                            Большинство ваших стрессовых ситуаций происходят в Zoom или Teams. 
+                            Мы тренируемся в той же среде, где будет реальное применение навыков.
+                        </p>
+                        <p style="margin-bottom: 0; font-size: 14px; color: var(--gray-600);">
+                            Исследования: интернет-ориентированная CBT для социальной тревожности 
+                            показывает сопоставимые результаты с очной терапией.
+                        </p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="next-steps-section">
+        <div class="container">
+            <div class="next-steps-content" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 2.5rem; color: #1A3A52; margin-bottom: 1.5rem; letter-spacing: -0.02em;">С чего начать?</h2>
+                <p style="margin-bottom: 3rem; color: #4B5563; line-height: 1.6; font-size: 1.125rem;">
+                    Проблема языковой тревожности требует точной настройки. <br>Для этого предусмотрено два формата входа:
+                </p>
+                
+                <div style="margin-bottom: 2.5rem;">
+                    <p style="font-size: 12px; color: #9CA3AF; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1.5px;">1. Для экспресс-проверки (2 минуты)</p>
+                    <a href="diagnostics.html" class="cta-button" style="display: inline-block; background: #1A3A52; color: #FFFFFF; padding: 18px 48px; text-decoration: none; font-weight: 600; border-radius: 2px;">Пройти самодиагностику</a>
+                </div>
+
+                <div style="margin-top: 3rem; border-top: 1px solid #F3F4F6; padding-top: 2rem;">
+                    <p style="font-size: 12px; color: #9CA3AF; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1.5px;">2. Для глубокой работы</p>
+                    <a href="intake.html" style="color: #1A3A52; font-weight: 600; text-decoration: underline; font-size: 1.125rem; transition: color 0.2s;">Ознакомиться с условиями сессии (90 мин) →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+
+    <!-- Полный футер -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="brand-signature" style="margin-bottom: 0;">
+                        <div><span class="brand-primary" style="font-size:20px;">UNBLOCK</span> <span class="brand-secondary">ENGLISH</span></div>
+                        <div class="brand-descriptor" style="font-size:11px;">Communication Protocol</div>
+                    </a>
+                    <p class="footer-tagline">Работа с языковой тревожностью и речевыми блоками в профессиональной ELF-среде.</p>
+                </div>
+                <div>
+                    <span class="footer-label">Навигация</span>
+                    <a href="diagnostics.html" class="footer-link">Самодиагностика</a>
+                    <a href="intake.html" class="footer-link">Формат аудита</a>
+                </div>
+                <div>
+                    <span class="footer-label">Контакт</span>
+                    <a href="https://t.me/unblock_eng" class="footer-link">Telegram (@unblock_eng)</a>
+                    <a href="mailto:hello@unblock-english.ru" class="footer-link">Email (hello@unblock-english.ru)</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    © 2026 Unblock English.<br>
+                    Не является образовательной или медицинской услугой. При серьёзных тревожных расстройствах обратитесь к психотерапевту.
+                </div>
+                <div class="footer-legal" style="text-align: right;">
+                    NYC Experience: Brown Harris Stevens & Halstead<br>
+                    Manhattan, NY (2018—2022)
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTestimonial(id, button) {
+            const content = document.getElementById(id);
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                button.textContent = 'Свернуть ↑';
+            } else {
+                content.style.display = 'none';
+                button.textContent = 'Читать полностью →';
+            }
+        }
+    </script>
+
 </body>
 </html>
