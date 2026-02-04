@@ -34,7 +34,15 @@
         body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--gray-700); background: var(--white); margin: 0; -webkit-font-smoothing: antialiased; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         
-        .back-link { display: inline-block; margin-bottom: 48px; color: var(--gray-400); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+        .back-link { 
+            display: inline-block; 
+            margin-bottom: 48px; 
+            color: var(--gray-400); 
+            text-decoration: none; 
+            font-size: 14px; 
+            transition: color 0.2s; 
+            cursor: pointer;
+        }
         .back-link:hover { color: var(--navy); }
 
         header { margin-bottom: 32px; }
@@ -127,9 +135,10 @@
 <body>
 
 <div class="container">
-    <!-- BACK LINK ONLY (No Logo) -->
-    <a href="diagnostics.html" class="back-link">← Вернуться к результатам</a>
+    <!-- Умная навигационная ссылка -->
+    <div id="navigation-container"></div>
 
+    <!-- Контент -->
     <div style="max-width: 680px; margin: 0 auto;">
         <header>
             <h1>Диагностическая сессия</h1>
@@ -181,9 +190,9 @@
         <div class="price-box">
             <span class="price-value">8 000 ₽</span>
             <span class="price-note">90 минут. Оплата — после согласования слота.</span>
-            <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AОзнакомился%20с%20форматом%20диагностической%20сессии.%0AЗапрос%20—%20профессиональная%20коммуникация%20под%20давлением.%0AГотов%20обсудить%20доступные%20слоты.
-    " class="cta-button">Согласовать дату диагностической сессии
-    </a>
+            <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AОзнакомился%20с%20форматом%20диагностической%20сессии.%0AЗапрос%20—%20профессиональная%20коммуникация%20под%20давлением.%0AГотов%20обсудить%20доступные%20слоты." class="cta-button">
+                Согласовать дату диагностической сессии
+            </a>
         </div>
     </div>
 </div>
@@ -203,5 +212,69 @@
         </div>
     </div>
 </footer>
+
+<script>
+    // Функция для определения источника перехода
+    function getNavigationLink() {
+        const referrer = document.referrer;
+        const hostname = window.location.hostname;
+        
+        // Проверяем, пришел ли пользователь с диагностической страницы
+        if (referrer.includes('diagnostic.html')) {
+            return {
+                text: '← Вернуться к результатам',
+                action: 'javascript:history.back()',
+                isBack: true
+            };
+        } 
+        // Проверяем, пришел ли с главной страницы
+        else if (referrer.includes('index.html') || referrer.endsWith('/') || referrer === '') {
+            return {
+                text: '← На главную',
+                action: 'index.html',
+                isBack: false
+            };
+        }
+        // Если открыто напрямую или с другого сайта
+        else {
+            return {
+                text: '← На главную',
+                action: 'index.html',
+                isBack: false
+            };
+        }
+    }
+
+    // Функция для создания навигационной ссылки
+    function createNavigationLink() {
+        const navData = getNavigationLink();
+        const container = document.getElementById('navigation-container');
+        
+        let linkHTML = '';
+        
+        if (navData.isBack) {
+            // Используем history.back() для сохранения состояния теста
+            linkHTML = `<a class="back-link" onclick="${navData.action}">${navData.text}</a>`;
+        } else {
+            // Обычная ссылка на главную
+            linkHTML = `<a href="${navData.action}" class="back-link">${navData.text}</a>`;
+        }
+        
+        container.innerHTML = linkHTML;
+    }
+
+    // Инициализация при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        createNavigationLink();
+    });
+
+    // Также обрабатываем кнопку "Назад" браузера
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            createNavigationLink();
+        }
+    });
+</script>
+
 </body>
 </html>
