@@ -50,13 +50,18 @@
             box-sizing: border-box;
         }
 
-        /* BRAND SIGNATURE - FIXED SIZE PARITY */
+        /* BRAND SIGNATURE - FIXED + HOVER */
         .brand-signature {
             text-decoration: none;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             line-height: 1;
+            transition: opacity 0.2s ease;
+        }
+
+        .brand-signature:hover {
+            opacity: 0.7;
         }
 
         .brand-name-wrapper {
@@ -90,46 +95,49 @@
             white-space: nowrap;
         }
 
-        /* HEADER */
-        .site-header { 
-            display: flex; 
-            justify-content: flex-start; 
-            padding: 40px 0; 
-            margin-bottom: 24px; 
+        .site-header {
+            display: flex;
+            justify-content: flex-start;
+            padding: 40px 0;
+            margin-bottom: 24px;
         }
 
-        .hidden { 
-            display: none !important; 
+        .hidden {
+            display: none !important;
         }
 
         .validation-error {
             color: #DC2626;
             font-size: 12px;
             margin-top: 8px;
-            display: none;
             padding: 8px 12px;
             background: #FEF2F2;
             border-radius: 2px;
             border-left: 3px solid #DC2626;
+            display: none;
         }
 
-        /* Progress Bar */
         .progress-container { margin-bottom: 40px; }
         .progress-bar { height: 4px; background: var(--gray-100); width: 100%; }
         .progress-fill { height: 100%; background: var(--navy); width: 0%; transition: width 0.3s; }
-        .progress-text { font-size: 12px; color: var(--gray-400); margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .progress-text { 
+            font-size: 12px; 
+            color: var(--gray-400); 
+            margin-top: 8px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
 
-        /* Typography */
         h1 { font-size: 28px; color: var(--navy); margin-bottom: 24px; letter-spacing: -0.02em; }
         h2 { font-size: 20px; color: var(--navy); margin-bottom: 32px; line-height: 1.4; }
         p { margin-bottom: 16px; color: var(--gray-600); }
 
-        /* Options */
-        .options-list { 
-            list-style: none; 
-            padding: 0; 
+        .options-list {
+            list-style: none;
+            padding: 0;
             margin-bottom: 24px;
         }
+
         .option-item {
             background: var(--white);
             border: 1px solid var(--gray-200);
@@ -138,18 +146,38 @@
             cursor: pointer;
             transition: all 0.2s;
             border-radius: 2px;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
         }
+
         .option-item:hover { border-color: var(--navy); background: var(--gray-50); }
         .option-item.selected { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
-        /* Results Screen */
         .score-display { font-size: 48px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-        .severity-badge { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); margin-bottom: 32px; display: block; }
+        .severity-badge { 
+            font-size: 14px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            color: var(--gray-400); 
+            margin-bottom: 32px; 
+            display: block; 
+        }
         
-        .interpretation-box { padding: 32px; background: var(--gray-50); border-radius: 2px; margin-bottom: 40px; }
-        .pattern-analysis { border-top: 1px solid var(--gray-200); padding-top: 32px; margin-top: 32px; }
+        .interpretation-box { 
+            padding: 32px; 
+            background: var(--gray-50); 
+            border-radius: 2px; 
+            margin-bottom: 40px; 
+        }
 
-        /* Buttons */
+        .pattern-analysis { 
+            border-top: 1px solid var(--gray-200); 
+            padding-top: 32px; 
+            margin-top: 32px; 
+        }
+
         .btn {
             display: inline-block;
             padding: 16px 32px;
@@ -160,18 +188,28 @@
             transition: opacity 0.2s;
             font-size: 16px;
             border: none;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         .btn-primary { background: var(--navy); color: var(--white); }
         .btn-secondary { background: var(--white); color: var(--navy); border: 1px solid var(--navy); }
         
-        .cta-stack { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+        .cta-stack { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 16px; 
+            margin-top: 40px; 
+        }
         
-        /* FOOTER - Level B: Reduced */
         .site-footer {
-            padding: 40px 0 30px 0;
+            padding: 40px 0 30px;
             border-top: 1px solid var(--gray-100);
             margin-top: 60px;
         }
+
         .footer-reduced {
             display: flex;
             justify-content: space-between;
@@ -181,22 +219,26 @@
             color: var(--gray-400);
             line-height: 1.6;
         }
+
         .footer-reduced a {
             color: var(--navy);
             text-decoration: none;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
         }
+
         .footer-reduced a:hover {
             text-decoration: underline;
         }
+
         .footer-disclaimer {
             max-width: 320px;
             text-align: right;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
+            .container { padding: 0 20px; }
             h1 { font-size: 24px; }
             h2 { font-size: 18px; }
             .option-item { padding: 14px 18px; }
@@ -244,7 +286,7 @@
                 <span class="brand-primary">UNBLOCK</span>
                 <span class="brand-secondary">ENGLISH</span>
             </div>
-            <div class="brand-descriptor">Communication Protocol</div>
+            <span class="brand-descriptor">Communication Protocol</span>
         </a>
     </header>
 
@@ -298,7 +340,8 @@
                     <a href="https://t.me/unblock_eng">Telegram: @unblock_eng</a>
                 </div>
                 <div class="footer-disclaimer">
-                    Результаты теста носят ознакомительный характер. Не является медицинской диагностикой. При наличии клинических симптомов обратитесь к специалисту.
+                    Результаты теста носят информационный характер.<br>
+                    При клинической тревоге обратитесь к специалисту.
                 </div>
             </div>
         </div>
@@ -330,7 +373,6 @@
     let pattern = "";
 
     function startDiagnostic() {
-        // Сброс данных при повторном прохождении
         currentIndex = 0;
         answers = {};
         totalScore = 0;
@@ -352,7 +394,6 @@
         document.getElementById('question-title').textContent = q.title;
         const optContainer = document.getElementById('options-container');
         optContainer.innerHTML = '';
-
         q.options.forEach((opt, i) => {
             const div = document.createElement('div');
             div.className = 'option-item' + (answers[currentIndex] === i ? ' selected' : '');
@@ -360,7 +401,6 @@
             div.onclick = () => selectOption(i);
             optContainer.appendChild(div);
         });
-
         const progress = ((currentIndex + 1) / questions.length) * 100;
         document.getElementById('progress-fill').style.width = `${progress}%`;
         document.getElementById('progress-text').textContent = `Вопрос ${currentIndex + 1} из ${questions.length}`;
@@ -368,7 +408,6 @@
         document.getElementById('next-btn').disabled = answers[currentIndex] === undefined;
         document.getElementById('next-btn').textContent = currentIndex === questions.length - 1 ? "Завершить" : "Далее";
         
-        // Скрываем ошибку валидации
         document.getElementById('validation-error').style.display = 'none';
     }
 
@@ -379,13 +418,11 @@
     }
 
     function nextQuestion() {
-        // Валидация: проверяем, выбран ли ответ на текущий вопрос
         if (answers[currentIndex] === undefined) {
             document.getElementById('validation-error').style.display = 'block';
             document.getElementById('validation-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
             return;
         }
-
         if (currentIndex < questions.length - 1) {
             currentIndex++;
             showQuestion();
@@ -407,10 +444,8 @@
         freezeScore = 0;
         impact = 0;
         urgency = 0;
-
         questions.forEach((q, i) => {
             const answerIndex = answers[i];
-            // Проверяем, что ответ был дан
             if (answerIndex !== undefined) {
                 const val = q.values[answerIndex];
                 totalScore += val;
@@ -420,8 +455,6 @@
                 if (q.id === 'urgency') urgency = val;
             }
         });
-
-        // Определяем паттерн
         if (Math.abs(accuracyScore - freezeScore) <= 1) {
             pattern = "Смешанный паттерн";
         } else if (accuracyScore > freezeScore) {
@@ -432,21 +465,18 @@
     }
 
     function finish() {
-        // Проверяем, что все вопросы отвечены
         const unansweredQuestions = [];
         for (let i = 0; i < questions.length; i++) {
             if (answers[i] === undefined) {
                 unansweredQuestions.push(i + 1);
             }
         }
-
         if (unansweredQuestions.length > 0) {
             const errorMsg = `Пожалуйста, ответьте на все вопросы.\nНе отвеченные вопросы: ${unansweredQuestions.join(', ')}`;
             document.getElementById('validation-error').textContent = errorMsg;
             document.getElementById('validation-error').style.display = 'block';
             document.getElementById('validation-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
             
-            // Переходим к первому неотвеченному вопросу
             currentIndex = unansweredQuestions[0] - 1;
             showQuestion();
             return;
@@ -457,14 +487,12 @@
 
         calculateScores();
 
-        // БЕЗЖАЛОСТНЫЙ ГЕЙТ
         if (impact <= 1 && urgency <= 1) {
             renderLowPriority();
         } else {
             renderHighPriority();
         }
 
-        // ОПТИМИЗАЦИЯ: Обновляем Telegram ссылку с детальной информацией
         const tgLink = document.getElementById('tg-link');
         const severityLabel = document.getElementById('severity-label').textContent;
         
@@ -528,9 +556,7 @@
         `;
     }
 
-    // Инициализация при загрузке страницы
     document.addEventListener('DOMContentLoaded', function() {
-        // Сброс состояния при перезагрузке
         currentIndex = 0;
         answers = {};
     });
