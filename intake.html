@@ -262,7 +262,7 @@
     function getNavigationLink() {
         const referrer = document.referrer || '';
 
-        if (referrer.includes('diagnostics.html')) {
+        if (referrer.includes('diagnostic.html')) {
             return {
                 text: '← К результатам теста',
                 action: 'history.back()',
