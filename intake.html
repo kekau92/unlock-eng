@@ -258,11 +258,10 @@
 </footer>
 
 <script>
-    // Улучшенная версия логики навигации «Назад» (только для intake.html)
+    // Фиксированная версия логики навигации «Назад»
     function getNavigationLink() {
-        const referrer = document.referrer || ''; // защита от пустого referrer
+        const referrer = document.referrer || '';
 
-        // Если пришли именно с diagnostics.html
         if (referrer.includes('diagnostics.html')) {
             return {
                 text: '← К результатам теста',
@@ -271,7 +270,6 @@
             };
         }
 
-        // Все остальные случаи: прямая загрузка, с главной, закладка, внешний источник
         return {
             text: '← На главную',
             action: 'index.html',
@@ -282,22 +280,28 @@
     function createNavigationLink() {
         const nav = getNavigationLink();
         const container = document.getElementById('navigation-container');
+        container.innerHTML = ''; // очистка на случай повторного вызова
 
-        let html = '';
+        const link = document.createElement('a');
+        link.className = 'back-link';
+        link.textContent = nav.text;
 
         if (nav.isBack) {
-            html = `<a class="back-link" onclick="${nav.action}">${nav.text}</a>`;
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                history.back();
+            });
         } else {
-            html = `<a href="${nav.action}" class="back-link">${nav.text}</a>`;
+            link.href = nav.action;
         }
 
-        container.innerHTML = html;
+        container.appendChild(link);
     }
 
-    // Запуск при загрузке страницы
+    // Запуск при загрузке
     document.addEventListener('DOMContentLoaded', createNavigationLink);
 
-    // Поддержка bfcache (возврат через кнопку браузера «Назад»)
+    // Поддержка bfcache (возврат через кнопку браузера)
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
             createNavigationLink();
