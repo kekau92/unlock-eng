@@ -327,5 +327,19 @@
     });
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Находим вашу главную кнопку по классу
+        const finalBtn = document.querySelector('.cta-button');
+        
+        if (finalBtn) {
+            finalBtn.onclick = function() {
+                // Отправляем цель в Метрику
+                ym(106635328,'reachGoal','FINAL_SALE_CONTACT')
+            };
+        }
+    });
+</script>
+    
 </body>
 </html>
