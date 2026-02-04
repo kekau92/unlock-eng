@@ -337,68 +337,62 @@
     }
 }
 
-    @media (max-width: 600px) {
-    /* Force full-width centering for the whole footer content */
+ @media (max-width: 600px) {
+    .site-footer,
     .site-footer .container {
-        padding-left: 0;
-        padding-right: 0;
         text-align: center;
     }
 
-    /* Make grid behave as centered stack */
-    .site-footer .footer-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 24px;
-    }
-
-    /* Logo block — explicit centering */
+    /* Footer logo block */
     .site-footer .brand-signature {
         align-items: center;
-        margin: 0 auto;
+        margin: 0 auto 16px;
+    }
+
+    .site-footer .brand-name-wrapper {
+        justify-content: center;
+    }
+
+    .site-footer .brand-descriptor {
+        text-align: center;
     }
 
     /* Tagline under logo */
     .site-footer .footer-tagline {
+        display: block;
         margin: 12px auto 24px;
-        max-width: 90%;
+        max-width: 280px;
     }
 
-    /* Contact links row */
+    /* Contact links (Telegram + Email) */
     .site-footer .footer-grid > div:last-child {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
+        margin: 0 auto;
     }
 
     .site-footer .footer-link {
-        margin: 0;
+        display: inline-block;
+        margin: 0 12px;
     }
 
-    /* Bottom legal + NYC — centered stack */
+    /* Bottom legal row */
     .site-footer .footer-bottom {
         flex-direction: column;
         align-items: center;
         gap: 12px;
         text-align: center;
-        margin-top: 16px;
     }
 
-    .site-footer .footer-legal,
+    .site-footer .footer-legal {
+        text-align: center;
+    }
+
+    /* NYC line — make it quieter */
     .site-footer .footer-legal[style*="text-align: right"] {
         text-align: center !important;
-        margin: 0 auto;
-    }
-
-    /* NYC line — even quieter */
-    .site-footer .footer-legal[style*="text-align: right"] {
         font-size: 10px;
         opacity: 0.65;
         letter-spacing: 0.03em;
+        margin-top: 8px;
     }
 }
 </style>
