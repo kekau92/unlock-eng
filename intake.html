@@ -6,6 +6,8 @@
     <title>Диагностическая сессия | Речевой аудит в условиях профессионального давления</title>
     <meta name="description" content="Условия и формат индивидуальной диагностической сессии. Речевой аудит в условиях стресса.">
     <meta name="robots" content="noindex">
+    
+    <!-- Favicon -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,6 +15,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
     <style>
         :root {
             --navy: #1A3A52;
@@ -29,7 +32,7 @@
         }
 
         body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--gray-700); background: var(--white); margin: 0; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 680px; margin: 0 auto; padding: 80px 24px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         
         .back-link { display: inline-block; margin-bottom: 48px; color: var(--gray-400); text-decoration: none; font-size: 14px; transition: color 0.2s; }
         .back-link:hover { color: var(--navy); }
@@ -59,76 +62,146 @@
         .cta-button { display: inline-block; background: var(--navy); color: var(--white); padding: 18px 40px; text-decoration: none; font-weight: 600; border-radius: 2px; transition: opacity 0.2s; }
         .cta-button:hover { opacity: 0.9; }
 
-        footer { margin-top: 100px; padding: 40px 0; border-top: 1px solid var(--gray-200); font-size: 12px; color: var(--gray-400); text-align: center; }
+        /* MINIMAL FOOTER */
+        .site-footer {
+            margin-top: 100px;
+            padding: 30px 0;
+            border-top: 1px solid var(--gray-100);
+            opacity: 0.7;
+            font-size: 11px;
+            color: var(--gray-400);
+        }
+        .footer-minimal {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            line-height: 1.6;
+        }
+        .footer-minimal a {
+            color: var(--gray-400);
+            text-decoration: none;
+        }
+        .footer-minimal a:hover {
+            color: var(--navy);
+        }
+        .footer-disclaimer-en {
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            h1 { font-size: 28px; }
+            .price-box { padding: 30px; }
+            .refusal-box { padding: 24px; }
+            .site-footer {
+                margin-top: 80px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-minimal {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .footer-minimal div:last-child {
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            h1 { font-size: 24px; }
+            .subtitle { font-size: 16px; }
+            .price-value { font-size: 24px; }
+            .cta-button { padding: 16px 32px; width: 100%; }
+            .site-footer {
+                margin-top: 60px;
+                padding: 20px 0;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html" class="back-link">← Вернуться на главную</a>
+    <!-- BACK LINK ONLY (No Logo) -->
+    <a href="diagnostics.html" class="back-link">← Вернуться к результатам</a>
 
-    <header>
-        <h1>Диагностическая сессия</h1>
-        <p class="subtitle">Глубокая проверка речевого контроля в условиях профессионального давления.</p>
-        <p style="font-size:14px;color:var(--gray-400);margin-top:24px;">
-            Внутри проекта эта сессия рассматривается как аудит — в инженерном, а не маркетинговом смысле. 
-            Это проверка того, теряет ли система контроль под нагрузкой и имеет ли смысл её перенастройка.
-        </p>
-    </header>
-
-    <section>
-        <h2>Методология</h2>
-        <div class="step">
-            <p>
-                Диагностика опирается на клиническую модель языковой тревожности (FLA), адаптированную под корпоративные и управленческие контексты. Задача — определить, нарушается ли доступ к уже существующим знаниям под нагрузкой.
+    <div style="max-width: 680px; margin: 0 auto;">
+        <header>
+            <h1>Диагностическая сессия</h1>
+            <p class="subtitle">Глубокая проверка речевого контроля в условиях профессионального давления.</p>
+            <p style="font-size:14px;color:var(--gray-400);margin-top:24px;">
+                Внутри проекта эта сессия рассматривается как аудит — в инженерном, а не маркетинговом смысле. 
+                Это проверка того, теряет ли система контроль под нагрузкой и имеет ли смысл её перенастройка.
             </p>
-        </div>
-        <div class="step">
-            <h3>Формат</h3>
-            <p>Имитация критических ситуаций: спонтанная аргументация, ответы на вопросы без подготовки, защита позиции. Мы фиксируем моменты потери речевого контроля под нагрузкой.</p>
-        </div>
-        <div class="step">
-            <h3>Результат</h3>
-            <p>По результатам сессии вы получаете интерпретацию вашего паттерна и понимание, подлежит ли он коррекции в рамках моей методики.</p>
-        </div>
-    </section>
+        </header>
 
-    <section>
-        <h2>Критерии отказа</h2>
-        <div class="refusal-box">
-            <div class="faq-item">
-                <h4>Несоответствие уровня (Ниже B1)</h4>
-                <p>Если вам нужно учить слова — вам нужен преподаватель. Я занимаюсь только восстановлением доступа к уже имеющимся знаниям.</p>
+        <section>
+            <h2>Методология</h2>
+            <div class="step">
+                <p>
+                    Диагностика опирается на клиническую модель языковой тревожности (FLA), адаптированную под корпоративные и управленческие контексты. Задача — определить, нарушается ли доступ к уже существующим знаниям под нагрузкой.
+                </p>
             </div>
-            <div class="faq-item">
-                <h4>Отсутствие профессиональных ставок</h4>
-                <p>Протокол разработан для среды ELF (IT, Finance, Management). Я не работаю с запросами «английский для туризма» или бытовых целей.</p>
+            <div class="step">
+                <h3>Формат</h3>
+                <p>Имитация критических ситуаций: спонтанная аргументация, ответы на вопросы без подготовки, защита позиции. Мы фиксируем моменты потери речевого контроля под нагрузкой.</p>
             </div>
-            <div class="faq-item">
-                <h4>Поиск эмоциональной поддержки</h4>
-                <p>Если вам важнее психологическое облегчение, чем восстановление функции речи, этот формат будет фрустрирующим. Это коррекция навыка, а не терапия.</p>
+            <div class="step">
+                <h3>Результат</h3>
+                <p>По результатам сессии вы получаете интерпретацию вашего паттерна и понимание, подлежит ли он коррекции в рамках моей методики.</p>
             </div>
-            <p style="font-size:14px;color:#7F1D1D;margin-top:24px;">
-                Отказ — нормальный и частый исход диагностики. Он означает, что в вашем случае требуется другой формат работы.
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <div class="price-box">
-        <span class="price-value">8 000 ₽</span>
-        <span class="price-note">90 минут. Оплата — после согласования слота.</span>
-        <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AОзнакомился%20с%20форматом%20диагностической%20сессии.%0AЗапрос%20—%20профессиональная%20коммуникация%20под%20давлением.%0AГотов%20обсудить%20доступные%20слоты.
-" class="cta-button">Согласовать дату диагностической сессии
-</a>
+        <section>
+            <h2>Критерии отказа</h2>
+            <div class="refusal-box">
+                <div class="faq-item">
+                    <h4>Несоответствие уровня (Ниже B1)</h4>
+                    <p>Если вам нужно учить слова — вам нужен преподаватель. Я занимаюсь только восстановлением доступа к уже имеющимся знаниям.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Отсутствие профессиональных ставок</h4>
+                    <p>Протокол разработан для среды ELF (IT, Finance, Management). Я не работаю с запросами «английский для туризма» или бытовых целей.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Поиск эмоциональной поддержки</h4>
+                    <p>Если вам важнее психологическое облегчение, чем восстановление функции речи, этот формат будет фрустрирующим. Это коррекция навыка, а не терапия.</p>
+                </div>
+                <p style="font-size:14px;color:#7F1D1D;margin-top:24px;">
+                    Отказ — нормальный и частый исход диагностики. Он означает, что в вашем случае требуется другой формат работы.
+                </p>
+            </div>
+        </section>
+
+        <div class="price-box">
+            <span class="price-value">8 000 ₽</span>
+            <span class="price-note">90 минут. Оплата — после согласования слота.</span>
+            <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AОзнакомился%20с%20форматом%20диагностической%20сессии.%0AЗапрос%20—%20профессиональная%20коммуникация%20под%20давлением.%0AГотов%20обсудить%20доступные%20слоты.
+    " class="cta-button">Согласовать дату диагностической сессии
+    </a>
+        </div>
     </div>
-
-    <footer>
-        <p>
-            © 2026 Unblock English. Речевой аудит в профессиональной ELF-среде.<br>
-            Не является образовательной или медицинской услугой. Не заменяет психотерапию.
-        </p>
-    </footer>
 </div>
 
+<!-- Минимальный футер -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-minimal">
+            <div>
+                © 2026 Unblock English.<br>
+                <a href="mailto:hello@unblock-english.ru">hello@unblock-english.ru</a>
+            </div>
+            <div style="text-align: right; max-width: 300px;">
+                <span class="footer-disclaimer-en">PROFESSIONAL COMMUNICATION PROTOCOL ONLY</span><br>
+                Не является медицинской или образовательной услугой. При серьёзных тревожных расстройствах обратитесь к психотерапевту.
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
