@@ -69,16 +69,21 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 var(--space-lg);
+            padding: 0 24px;
         }
 
-        /* BRAND SIGNATURE - FIXED SIZE PARITY */
+        /* BRAND SIGNATURE - FIXED SIZE PARITY + HOVER */
         .brand-signature {
             text-decoration: none;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             line-height: 1;
+            transition: opacity 0.2s ease;
+        }
+
+        .brand-signature:hover {
+            opacity: 0.7;
         }
 
         .brand-name-wrapper {
@@ -88,7 +93,7 @@
         }
 
         .brand-primary, .brand-secondary {
-            font-size: 22px !important; /* FORCES ABSOLUTE SIZE PARITY */
+            font-size: 22px !important;
             line-height: 1.1;
         }
 
@@ -113,11 +118,11 @@
         }
 
         /* HEADER */
-        .site-header { 
-            display: flex; 
-            justify-content: flex-start; 
-            padding: 40px 0; 
-            margin-bottom: 56px; 
+        .site-header {
+            display: flex;
+            justify-content: flex-start;
+            padding: 40px 0;
+            margin-bottom: 56px;
         }
 
         /* FOOTER FULL ANCHOR */
@@ -127,12 +132,14 @@
             border-top: 1px solid var(--gray-100);
             margin-top: 100px;
         }
+
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 48px;
             margin-bottom: 64px;
         }
+
         .footer-label {
             font-size: 11px;
             text-transform: uppercase;
@@ -141,16 +148,22 @@
             margin-bottom: 20px;
             display: block;
         }
+
         .footer-link {
             display: block;
             color: var(--navy);
             text-decoration: none;
             font-size: 14px;
             margin-bottom: 12px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
         }
+
         .footer-link:hover {
             text-decoration: underline;
         }
+
         .footer-bottom {
             padding-top: 32px;
             border-top: 1px solid var(--gray-100);
@@ -159,11 +172,13 @@
             flex-wrap: wrap;
             gap: 20px;
         }
+
         .footer-legal {
             font-size: 11px;
             color: var(--gray-400);
             line-height: 1.6;
         }
+
         .footer-tagline {
             font-size: 13px;
             color: var(--gray-600);
@@ -226,6 +241,7 @@
             border-bottom: 2px solid var(--navy);
             padding-bottom: 4px;
             transition: color 0.2s;
+            min-height: 44px;
         }
 
         .link-arrow:hover {
@@ -373,6 +389,7 @@
             cursor: pointer;
             padding: 0;
             font-size: var(--text-sm);
+            min-height: 44px;
         }
 
         /* About Section */
@@ -532,6 +549,10 @@
             font-weight: 600;
             border-radius: 2px;
             transition: background 0.2s;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .cta-button:hover {
@@ -612,7 +633,7 @@
                     <span class="brand-primary">UNBLOCK</span>
                     <span class="brand-secondary">ENGLISH</span>
                 </div>
-                <div class="brand-descriptor">Communication Protocol</div>
+                <span class="brand-descriptor">Communication Protocol</span>
             </a>
         </header>
 
@@ -642,7 +663,6 @@
                     Это блокирует доступ к международным позициям и крупным контрактам. 
                     В большинстве случаев проблема поддаётся коррекции 
                     при системной работе с механизмом стресса.
-
                 </p>
             </div>
 
@@ -655,7 +675,7 @@
             </div>
             
             <div class="hero-cta-link">
-                <a href="diagnostics.html" class="link-arrow">
+                <a href="diagnostic.html" class="link-arrow">
                     Проверить, есть ли у вас этот тип блока →
                 </a>
                 <p class="cta-note">2 минуты, результат сразу</p>
@@ -919,7 +939,6 @@
                             <p style="font-size: 13px; color: var(--gray-600); margin-top: 8px;">
                             Это не альтернатива системной работе и не устраняет первопричину блока.
                             </p>
-
                         </div>
                         
                         <div class="fee-description">
@@ -1055,7 +1074,7 @@
                 
                 <div style="margin-bottom: 2.5rem;">
                     <p style="font-size: 12px; color: #9CA3AF; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1.5px;">1. Для экспресс-проверки (2 минуты)</p>
-                    <a href="diagnostics.html" class="cta-button" style="display: inline-block; background: #1A3A52; color: #FFFFFF; padding: 18px 48px; text-decoration: none; font-weight: 600; border-radius: 2px;">Пройти самодиагностику</a>
+                    <a href="diagnostic.html" class="cta-button" style="display: inline-block; background: #1A3A52; color: #FFFFFF; padding: 18px 48px; text-decoration: none; font-weight: 600; border-radius: 2px;">Пройти самодиагностику</a>
                 </div>
 
                 <div style="margin-top: 3rem; border-top: 1px solid #F3F4F6; padding-top: 2rem;">
@@ -1065,7 +1084,6 @@
             </div>
         </div>
     </section>
-
     </div>
 
     <!-- Полный футер -->
@@ -1078,13 +1096,13 @@
                             <span class="brand-primary" style="font-size:20px !important;">UNBLOCK</span>
                             <span class="brand-secondary" style="font-size:20px !important;">ENGLISH</span>
                         </div>
-                        <div class="brand-descriptor" style="font-size:10px;">Communication Protocol</div>
+                        <span class="brand-descriptor" style="font-size:10px;">Communication Protocol</span>
                     </a>
                     <p class="footer-tagline">Работа с языковой тревожностью и речевыми блоками в профессиональной ELF-среде.</p>
                 </div>
                 <div>
                     <span class="footer-label">Навигация</span>
-                    <a href="diagnostics.html" class="footer-link">Самодиагностика</a>
+                    <a href="diagnostic.html" class="footer-link">Самодиагностика</a>
                     <a href="intake.html" class="footer-link">Формат аудита</a>
                 </div>
                 <div>
