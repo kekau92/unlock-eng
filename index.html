@@ -338,129 +338,63 @@
 }
 
  @media (max-width: 600px) {
-    .site-footer,
-    .site-footer .container {
-        text-align: center;
-    }
-
-    /* Footer logo block */
-    .site-footer .brand-signature {
-        align-items: center;
-        margin: 0 auto 16px;
-    }
-
-    .site-footer .brand-name-wrapper {
-        justify-content: center;
-    }
-
-    .site-footer .brand-descriptor {
-        text-align: center;
-    }
-
-    /* Tagline under logo */
-    .site-footer .footer-tagline {
-        display: block;
-        margin: 12px auto 24px;
-        max-width: 280px;
-    }
-
-    /* Contact links (Telegram + Email) */
-    .site-footer .footer-grid > div:last-child {
-        margin: 0 auto;
-    }
-
-    .site-footer .footer-link {
-        display: inline-block;
-        margin: 0 12px;
-    }
-
-    /* Bottom legal row */
-    .site-footer .footer-bottom {
+    /* Центрируем основной контейнер футера */
+    .site-footer .footer-flex {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
         text-align: center;
+        gap: 40px;
     }
 
-    .site-footer .footer-legal {
-        text-align: center;
-    }
-
-    /* NYC line — make it quieter */
-    .site-footer .footer-legal[style*="text-align: right"] {
-        text-align: center !important;
-        font-size: 10px;
-        opacity: 0.65;
-        letter-spacing: 0.03em;
-        margin-top: 8px;
-    }
-}
-
-    @media (max-width: 600px) {
-    /* Force full-width centering for the whole footer content */
-    .site-footer .container {
-        padding-left: 0;
-        padding-right: 0;
-        text-align: center;
-    }
-
-    /* Make grid behave as centered stack */
-    .site-footer .footer-grid {
+    /* Логотип и подпись */
+    .footer-left {
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 24px;
     }
 
-    /* Logo block — explicit centering */
-    .site-footer .brand-signature {
-        align-items: center;
-        margin: 0 auto;
-    }
-
-    /* Tagline under logo */
-    .site-footer .footer-tagline {
-        margin: 12px auto 24px;
-        max-width: 90%;
-    }
-
-    /* Contact links row */
-    .site-footer .footer-grid > div:last-child {
+    .footer-brand {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
     }
 
-    .site-footer .footer-link {
-        margin: 0;
+    .footer-tagline {
+        margin: 12px auto 0;
     }
 
-    /* Bottom legal + NYC — centered stack */
-    .site-footer .footer-bottom {
+    /* Контакты (Telegram и Email) — исправляем выравнивание */
+    .footer-right {
+        max-width: 100%;
+        text-align: center;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+    }
+
+    .footer-contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .footer-contact-link {
         text-align: center;
-        margin-top: 16px;
+        width: 100%;
     }
 
-    .site-footer .footer-legal,
-    .site-footer .footer-legal[style*="text-align: right"] {
-        text-align: center !important;
-        margin: 0 auto;
+    /* Юридический блок и NYC */
+    .footer-legal-block {
+        align-items: center;
     }
 
-    /* NYC line — even quieter */
-    .site-footer .footer-legal[style*="text-align: right"] {
-        font-size: 10px;
-        opacity: 0.65;
-        letter-spacing: 0.03em;
+    .footer-legal, .footer-nyc {
+        text-align: center;
     }
 }
-</style>
+    </style>
 </head>
 <body>
 
