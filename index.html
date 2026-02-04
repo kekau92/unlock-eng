@@ -867,6 +867,26 @@
         max-width: 90%;
     }
 }
+
+        /* Tighten desktop/laptop spacing — keeps premium feel without excess air */
+.site-header {
+    margin-bottom: 2rem;          /* 32px instead of 36px */
+}
+
+.hero {
+    padding-top: 3rem;            /* 48px instead of 64px */
+}
+
+/* Optional: subtle centering alignment for better flow on wide screens */
+@media (min-width: 601px) {
+    .hero .sector-tag,
+    .hero-credential {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
