@@ -123,11 +123,18 @@
 
         /* FOOTER FULL ANCHOR */
         .site-footer {
-            background: var(--gray-50);
+            background-color: var(--white);
             padding: 80px 0 40px;
-            border-top: 1px solid var(--gray-100);
-            margin-top: 100px;
+            border-top: 1px solid var(--gray-200);
+            margin-top: 80px;
         }
+
+    .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    margin-bottom: 60px;
+}
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -152,14 +159,19 @@
         .footer-link:hover {
             text-decoration: underline;
         }
-        .footer-bottom {
-            padding-top: 32px;
-            border-top: 1px solid var(--gray-100);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 32px;
+    border-top: 1px solid var(--gray-100);
+    align-items: flex-start;
+}
+        .footer-legal-right {
+    text-align: right;
+    font-size: 13px;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
         .footer-legal {
             font-size: 11px;
             color: var(--gray-400);
@@ -1070,42 +1082,36 @@
     </div>
 
     <!-- Полный футер -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="index.html" class="brand-signature" style="margin-bottom: 0;">
-                        <div class="brand-name-wrapper">
-                            <span class="brand-primary" style="font-size:20px !important;">UNBLOCK</span>
-                            <span class="brand-secondary" style="font-size:20px !important;">ENGLISH</span>
-                        </div>
-                        <div class="brand-descriptor" style="font-size:10px;">Communication Protocol</div>
-                    </a>
-                    <p class="footer-tagline">Работа с языковой тревожностью и речевыми блоками в профессиональной ELF-среде.</p>
-                </div>
-                <div>
-                    <span class="footer-label">Навигация</span>
-                    <a href="diagnostic.html" class="footer-link">Самодиагностика</a>
-                    <a href="intake.html" class="footer-link">Формат аудита</a>
-                </div>
-                <div>
-                    <span class="footer-label">Контакт</span>
-                    <a href="https://t.me/unblock_eng" class="footer-link">Telegram (@unblock_eng)</a>
-                    <a href="mailto:hello@unblock-english.ru" class="footer-link">Email (hello@unblock-english.ru)</a>
-                </div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-nav">
+                <a href="index.html#protocol" class="footer-link">Методика</a>
+                <a href="diagnostic.html" class="footer-link">Диагностика</a>
+                <a href="intake.html" class="footer-link">Формат аудита</a>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-legal">
-                    © 2026 Unblock English.<br>
-                    Не является образовательной или медицинской услугой. При серьёзных тревожных расстройствах обратитесь к психотерапевту.
-                </div>
-                <div class="footer-legal" style="text-align: right;">
-                    NYC Experience: Brown Harris Stevens & Halstead<br>
-                    Manhattan, NY (2018—2022)
-                </div>
+            
+            <div class="footer-contact">
+                <a href="https://t.me/unblock_eng" target="_blank" class="footer-link">Telegram</a>
+                <a href="mailto:hello@unblock-english.ru" class="footer-link">hello@unblock-english.ru</a>
             </div>
         </div>
-    </footer>
+
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <p>© 2026 Unblock English. Все права защищены.</p>
+                <p class="disclaimer-text">
+                    Это не медицинская услуга. Не является заменой терапии или лечения. 
+                    При серьёзных тревожных расстройствах обратитесь к психотерапевту.
+                </p>
+            </div>
+            <div class="footer-nyc">
+                NYC Experience: Brown Harris Stevens & Halstead<br>
+                Manhattan, NY (2018—2022)
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script>
         function toggleTestimonial(id, button) {
