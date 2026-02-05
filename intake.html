@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Admittance Protocol | Речевой аудит под нагрузкой</title>
-  <meta name="description" content="Условия и формат индивидуального речевого аудита. Проверка системы контроля речи в условиях стресса.">
-  <meta name="robots" content="noindex">
+  <title>Личный аудит речевого контроля | Unblock English</title>
+  <meta name="description" content="90-минутный личный аудит под нагрузкой для руководителей и ключевых специалистов.">
 
   <!-- Favicon & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
-  <!-- Yandex.Metrika counter -->
+  <!-- Yandex.Metrika -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
       m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -26,14 +24,14 @@
       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106635328','ym');
 
-    ym(106635328, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    ym(106635328, 'init', {webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true});
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/106635328" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
 
   <style>
     :root {
       --navy: #1A3A52;
+      --navy-light: #2C5F7C;
       --white: #FFFFFF;
       --gray-50: #F9FAFB;
       --gray-100: #F3F4F6;
@@ -44,6 +42,8 @@
       --red-pale: #FFF9F9;
       --red-border: #FFE4E4;
       --red-text: #991B1B;
+      --yellow-pale: #FEFCE8;
+      --yellow-border: #CA8A04;
     }
 
     body {
@@ -52,7 +52,6 @@
       color: var(--gray-700);
       background: var(--white);
       margin: 0;
-      -webkit-font-smoothing: antialiased;
     }
 
     .container {
@@ -71,15 +70,9 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: color 0.2s;
-      min-height: 44px;
-      cursor: pointer;
     }
+    .back-link:hover { color: var(--navy); }
 
-    .back-link:hover {
-      color: var(--navy);
-    }
-
-    /* Status Bar */
     .status-bar {
       font-size: 11px;
       color: var(--gray-400);
@@ -89,21 +82,15 @@
       border-bottom: 1px solid var(--gray-100);
       margin-bottom: 32px;
     }
+    .status-label { font-weight: 600; color: var(--navy); }
 
-    .status-label {
-      font-weight: 600;
-      color: var(--navy);
-    }
-
-    /* Header & Typography */
     h1 {
       font-size: clamp(24px, 5vw, 32px);
       color: var(--navy);
       letter-spacing: -0.02em;
-      position: relative;
       padding-left: 28px;
+      position: relative;
     }
-
     h1::before {
       content: ">";
       position: absolute;
@@ -111,20 +98,8 @@
       color: var(--gray-400);
     }
 
-    header {
-      margin-bottom: 32px;
-    }
+    .subtitle { font-size: 18px; color: var(--gray-600); }
 
-    .subtitle {
-      font-size: 18px;
-      color: var(--gray-600);
-    }
-
-    section {
-      margin-bottom: 64px;
-    }
-
-    /* Section headers with L2 */
     .section-header {
       font-size: 12px;
       text-transform: uppercase;
@@ -134,7 +109,6 @@
       border-bottom: 1px solid var(--gray-200);
       padding-bottom: 8px;
     }
-
     .section-header-l2 {
       font-weight: 600;
       color: var(--navy);
@@ -142,50 +116,42 @@
       letter-spacing: 0;
     }
 
-    /* Boxes & Containers */
-    .audit-box {
+    .audit-box, .deliverables-box, .limits-box {
       padding: 32px;
       background: var(--gray-50);
       border: 1px solid var(--gray-200);
       border-left: 4px solid var(--navy);
+      margin: 24px 0;
+      border-radius: 2px;
     }
 
     .refusal-box {
-      background: var(--red-pale);
-      border: 1px solid var(--red-border);
-      border-left: 4px solid var(--red-text);
+      background: #FEF9F9;
+      border: 1px solid #FEE2E2;
+      border-left: 4px solid #DC2626;
       padding: 32px;
-      margin-top: 40px;
+      margin: 40px 0;
+      border-radius: 2px;
     }
 
-    /* Pipeline phases - Audit Trail */
     .pipeline-container {
       position: relative;
       padding-left: 30px;
     }
-
     .pipeline-container::before {
       content: "";
       position: absolute;
       left: 9px;
-      top: 0;
-      bottom: 0;
+      top: 0; bottom: 0;
       width: 2px;
       background: var(--gray-200);
-      z-index: 1;
     }
-
     .pipeline-phase {
       margin-bottom: 40px;
       padding-bottom: 24px;
       border-bottom: 1px solid var(--gray-100);
       position: relative;
     }
-
-    .pipeline-phase:last-child {
-      border-bottom: none;
-    }
-
     .pipeline-phase::before {
       content: "";
       position: absolute;
@@ -196,8 +162,6 @@
       border: 2px solid var(--navy);
       background: var(--white);
       border-radius: 50%;
-      z-index: 2;
-      box-sizing: border-box;
     }
 
     .phase-label {
@@ -208,194 +172,9 @@
       color: var(--gray-400);
       margin-bottom: 8px;
     }
+    .phase-title { font-size: 18px; color: var(--navy); margin: 0 0 16px; font-weight: 600; }
+    .phase-description { font-size: 16px; color: var(--gray-600); margin: 0; line-height: 1.7; }
 
-    .phase-title {
-      font-size: 18px;
-      color: var(--navy);
-      margin: 0 0 16px 0;
-      font-weight: 600;
-    }
-
-    .phase-description {
-      font-size: 16px;
-      color: var(--gray-600);
-      margin: 0;
-      line-height: 1.7;
-    }
-
-    /* System Limits */
-    .limits-box {
-      background: var(--gray-50);
-      border-left: 4px solid var(--navy);
-      padding: 32px;
-      margin-top: 24px;
-      border: 1px solid var(--gray-200);
-    }
-
-    .limits-item {
-      margin-bottom: 24px;
-      padding-left: 24px;
-      position: relative;
-    }
-
-    .limits-item h4 {
-      font-size: 16px;
-      color: var(--navy);
-      margin-bottom: 8px;
-      position: relative;
-    }
-
-    .limits-item h4::before {
-      content: "ⓘ";
-      position: absolute;
-      left: -24px;
-      font-size: 14px;
-      color: var(--navy);
-    }
-
-    .limits-item p {
-      font-size: 15px;
-      color: var(--gray-600);
-      margin: 0;
-    }
-
-    /* FAQ items */
-    .faq-item {
-      margin-bottom: 32px;
-      padding-left: 24px;
-      position: relative;
-    }
-
-    .faq-item h4 {
-      font-size: 16px;
-      color: var(--navy);
-      margin-bottom: 8px;
-      position: relative;
-    }
-
-    .faq-item h4::before {
-      content: "✕";
-      position: absolute;
-      left: -24px;
-      font-size: 14px;
-      color: var(--red-text);
-      font-weight: 600;
-    }
-
-    .faq-item p {
-      font-size: 15px;
-      color: var(--gray-600);
-      margin: 0;
-    }
-
-    /* Key Deliverables */
-    .deliverables-box {
-      background: var(--gray-50);
-      border-left: 4px solid var(--navy);
-      padding: 32px;
-      border: 1px solid var(--gray-200);
-    }
-
-    .deliverable-item {
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--gray-200);
-      padding-left: 24px;
-      position: relative;
-    }
-
-    .deliverable-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-
-    .deliverable-item h4 {
-      font-size: 16px;
-      color: var(--navy);
-      margin-bottom: 12px;
-      position: relative;
-    }
-
-    .deliverable-item h4::before {
-      content: "→";
-      position: absolute;
-      left: -24px;
-      font-size: 14px;
-      color: var(--navy);
-      font-weight: 600;
-    }
-
-    .deliverable-item p {
-      font-size: 15px;
-      color: var(--gray-600);
-      margin: 0;
-    }
-
-    /* MINIMAL FOOTER --- no border-top */
-    .site-footer {
-      margin-top: 100px;
-      padding: 30px 0;
-      opacity: 0.7;
-      font-size: 11px;
-      color: var(--gray-400);
-    }
-
-    .footer-minimal {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-      line-height: 1.6;
-    }
-
-    .footer-minimal a {
-      color: var(--gray-400);
-      text-decoration: none;
-    }
-
-    .footer-minimal a:hover {
-      color: var(--navy);
-    }
-
-    .footer-disclaimer-en {
-      text-transform: uppercase;
-      font-size: 10px;
-      letter-spacing: 0.5px;
-    }
-
-    /* Admittance Section - Structural Foundation */
-    .admittance-section {
-      margin-top: 80px;
-      padding-bottom: 80px;
-    }
-
-    .admittance-stack {
-      display: flex;
-      flex-direction: column;
-      max-width: 600px; /* Forces professional narrow alignment on laptop */
-      margin: 0 auto;
-    }
-
-    .protocol-block {
-      padding: 32px 0;
-      border-bottom: 1px solid var(--gray-100); /* Systematic dividers */
-    }
-
-    .protocol-block:last-child {
-      border-bottom: none; /* Clean finish */
-    }
-
-    .protocol-label {
-      font-family: 'Consolas', monospace;
-      font-size: 11px;
-      color: var(--gray-400);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    /* CTA Button - Clean V1.0 */
     .contact-link {
       display: flex;
       align-items: center;
@@ -412,15 +191,30 @@
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
       margin-top: 16px;
-      box-sizing: border-box;
+      opacity: 0.4;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+    .contact-link.active {
+      opacity: 1;
+      pointer-events: auto;
       cursor: pointer;
     }
-
-    .contact-link:hover {
+    .contact-link:hover.active {
       background: var(--navy);
       color: var(--white);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(26, 58, 82, 0.15);
+      box-shadow: 0 4px 12px rgba(26,58,82,0.15);
+    }
+    .contact-link:not(.active):hover {
+      opacity: 0.55;
+      transform: none;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 0.6; }
+      100% { opacity: 0.4; }
     }
 
     .agreement-box {
@@ -428,10 +222,14 @@
       gap: 16px;
       cursor: pointer;
       align-items: flex-start;
-      user-select: none; /* Prevents blue highlight on fast clicks */
-      -webkit-user-select: none;
+      user-select: none;
+      padding: 16px;
+      background: var(--gray-50);
+      border-radius: 4px;
+      border: 1px solid var(--gray-200);
+      transition: border-color 0.2s;
     }
-
+    .agreement-box:hover { border-color: var(--navy-light); }
     .agreement-box input[type="checkbox"] {
       width: 20px;
       height: 20px;
@@ -445,383 +243,278 @@
       margin-top: 12px;
       padding: 16px;
       background: var(--gray-50);
-      border-left: 3px solid var(--gray-200);
+      border-left: 3px solid var(--navy-light);
       font-size: 13px;
       color: var(--gray-600);
       line-height: 1.6;
+      border-radius: 2px;
     }
 
-    /* Адаптивность для грида параметров */
+    .referrer-warning {
+      background: var(--yellow-pale);
+      border-left: 4px solid var(--yellow-border);
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 2px;
+      font-size: 14px;
+      color: #713F12;
+    }
+
     @media (max-width: 768px) {
-      .admittance-stack .protocol-block > div > div {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 20px;
-      }
-
-      .limits-box,
-      .refusal-box,
-      .deliverables-box {
-        padding: 30px;
-      }
-
-      .site-footer {
-        margin-top: 80px;
-      }
-
-      .pipeline-container {
-        padding-left: 24px;
-      }
-
-      .pipeline-container::before {
-        left: 7px;
-      }
-
-      .pipeline-phase::before {
-        left: -24px;
-      }
-
-      .admittance-section {
-        margin-top: 60px;
-        padding-bottom: 60px;
-      }
-
-      .protocol-block {
-        padding: 24px 0;
-      }
-
-      .contact-link {
-        padding: 20px;
-        font-size: 18px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .footer-minimal {
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .footer-minimal div:last-child {
-        text-align: center;
-      }
-
-      h1 {
-        padding-left: 20px;
-      }
-
-      .subtitle {
-        font-size: 16px;
-      }
-
-      .admittance-section {
-        margin-top: 48px;
-        padding-bottom: 48px;
-      }
-
-      .admittance-stack {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 16px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      .subtitle {
-        font-size: 16px;
-      }
-
-      .limits-item,
-      .faq-item,
-      .deliverable-item {
-        padding-left: 20px;
-      }
-
-      .limits-item h4::before,
-      .faq-item h4::before,
-      .deliverable-item h4::before {
-        left: -20px;
-      }
-
-      .contact-link {
-        font-size: 16px;
-        padding: 18px;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .protocol-label {
-        font-size: 10px;
-        letter-spacing: 1px;
-      }
+      .container { padding: 0 20px; }
+      .audit-box, .refusal-box, .deliverables-box { padding: 24px; }
+      .pipeline-container { padding-left: 24px; }
+      .pipeline-container::before { left: 7px; }
+      .pipeline-phase::before { left: -24px; }
+      .contact-link { padding: 20px; font-size: 17px; }
+      .grid-cost { grid-template-columns: 1fr !important; gap: 16px !important; }
     }
   </style>
 </head>
-
 <body>
+
   <div class="container">
-    <!-- Навигация через JavaScript -->
+
     <div id="navigation-container"></div>
 
-    <!-- Status Bar -->
     <div class="status-bar">
-      <span class="status-label">STATUS:</span> Admittance Protocol // Речевой аудит под нагрузкой
+      <span class="status-label">STATUS:</span> Личный аудит речевого контроля
     </div>
 
-    <!-- Контент -->
     <div style="max-width: 680px; margin: 0 auto;">
       <header>
-        <h1>Речевой аудит под нагрузкой</h1>
-        <p class="subtitle">Глубокая проверка системы контроля речи в условиях профессионального давления.</p>
-        <p style="font-size:14px;color:var(--gray-400);margin-top:24px;">
-          Внутри проекта эта процедура рассматривается как аудит — в инженерном, а не маркетинговом смысле.
-          Это проверка того, теряет ли система контроль под нагрузкой и имеет ли смысл её перенастройка.
+        <h1>Личный аудит речевого контроля</h1>
+        <p class="subtitle">90-минутная сессия под нагрузкой — глубокая проверка того, как вы управляете речью в профессиональных ситуациях высокого давления.</p>
+        <p style="font-size:14px; color:var(--gray-400); margin-top:24px;">
+          Это не урок языка и не общий коучинг. Это точечный разбор вашего текущего паттерна + конкретные рекомендации, стоит ли и как дальше работать.
         </p>
       </header>
 
-      <!-- Session Pipeline -->
+      <!-- Referrer Warning -->
+      <div id="referrer-warning" class="referrer-warning" style="display:none;">
+        Для максимально точного разбора вашей ситуации рекомендуем сначала пройти краткую самодиагностику (2 минуты).  
+        Это поможет нам сразу сфокусироваться на самом важном и сэкономит ваше время на аудите.
+        <br><br>
+        <a href="diagnostic.html" id="diagnostic-from-intake" style="color:var(--navy); font-weight:600; text-decoration:underline;">Пройти самодиагностику →</a>
+      </div>
+
       <section>
-        <h2 class="section-header">Audit Pipeline <span class="section-header-l2">(Методология)</span></h2>
+        <h2 class="section-header">Что происходит на аудите <span class="section-header-l2">(Процесс)</span></h2>
         <div class="pipeline-container">
           <div class="pipeline-phase">
-            <div class="phase-label">Phase 1</div>
-            <h3 class="phase-title">Stress Test</h3>
+            <div class="phase-label">Этап 1</div>
+            <h3 class="phase-title">Симуляция реальной нагрузки</h3>
             <p class="phase-description">
-              Диагностика опирается на клиническую модель языковой тревожности (FLA), адаптированную под корпоративные и управленческие контексты. Задача — определить, нарушается ли доступ к уже существующим знаниям под нагрузкой. Имитация критических ситуаций: спонтанная аргументация, ответы на вопросы без подготовки, защита позиции.
+              Моделируем типичные для вас рабочие ситуации: спонтанные вопросы, неожиданные повороты темы, давление времени.  
+              Цель — увидеть, в какой именно момент и почему происходит блок.
             </p>
           </div>
 
           <div class="pipeline-phase">
-            <div class="phase-label">Phase 2</div>
-            <h3 class="phase-title">Pattern Identification</h3>
+            <div class="phase-label">Этап 2</div>
+            <h3 class="phase-title">Анализ паттерна</h3>
             <p class="phase-description">
-              Мы фиксируем моменты потери речевого контроля под нагрузкой. Анализируем, как и когда система "замирает": в начале коммуникации, при переходе на сложную тему, при ответах на неожиданные вопросы, в моментах переключения между языками.
+              Фиксируем ключевые триггеры и тип блокировки.  
+              Вы получаете ясную картину: что именно происходит и насколько это типично для вашей роли и ответственности.
             </p>
           </div>
 
           <div class="pipeline-phase">
-            <div class="phase-label">Phase 3</div>
-            <h3 class="phase-title">Protocol Design</h3>
+            <div class="phase-label">Этап 3</div>
+            <h3 class="phase-title">Рекомендация и первые шаги</h3>
             <p class="phase-description">
-              Определяем тип вашего блока и формируем гипотезу восстановления контроля.
-              По результатам аудита вы получаете интерпретацию вашего паттерна и понимание,
-              подлежит ли он коррекции в рамках моей методологии.
+              Чёткий ответ: подходит ли мой протокол именно вам и какой формат даст максимальный результат.  
+              Если идём дальше — получаете первые конкретные шаги на 1–2 недели.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- System Limits -->
       <section>
-        <h2 class="section-header">System Limits <span class="section-header-l2">(Что это НЕ)</span></h2>
+        <h2 class="section-header">Что это НЕ <span class="section-header-l2">(Границы)</span></h2>
         <div class="limits-box">
-          <div class="limits-item">
-            <h4>Не занятия английским языком</h4>
-            <p>Мы не учим грамматику и не расширяем словарный запас. Это аудит контроля над уже имеющимися знаниями.</p>
+          <div style="margin-bottom:24px;">
+            <h4 style="font-size:16px; color:var(--navy); margin-bottom:8px;">Не обучение языку</h4>
+            <p style="font-size:15px; color:var(--gray-600);">Мы не расширяем словарный запас и не ставим произношение. Работаем только с доступом к уже имеющимся ресурсам.</p>
           </div>
-
-          <div class="limits-item">
-            <h4>Не психотерапия</h4>
-            <p>Хотя используются элементы CBT/ACT, это коррекция навыка, а не лечение тревожных расстройств.</p>
+          <div style="margin-bottom:24px;">
+            <h4 style="font-size:16px; color:var(--navy); margin-bottom:8px;">Не психотерапия</h4>
+            <p style="font-size:15px; color:var(--gray-600);">Используем проверенные техники управления тревогой, но это не лечение клинических расстройств.</p>
           </div>
-
-          <div class="limits-item">
-            <h4>Не коучинг</h4>
-            <p>Мы работаем с конкретным физиологическим механизмом блокировки речи, а не с общим развитием soft skills.</p>
+          <div>
+            <h4 style="font-size:16px; color:var(--navy); margin-bottom:8px;">Не общий коучинг</h4>
+            <p style="font-size:15px; color:var(--gray-600);">Фокус исключительно на речевом контроле в профессиональных контекстах высокого давления.</p>
           </div>
         </div>
       </section>
 
-      <!-- Exclusion Criteria -->
       <section>
-        <h2 class="section-header">Exclusion Criteria <span class="section-header-l2">(Критерии отказа)</span></h2>
+        <h2 class="section-header">Кому я отказываю <span class="section-header-l2">(Критерии)</span></h2>
         <div class="refusal-box">
-          <div class="faq-item">
-            <h4>Несоответствие уровня (Ниже B1)</h4>
-            <p>Если вам нужно учить слова — вам нужен преподаватель. Я занимаюсь только восстановлением доступа к уже имеющимся знаниям.</p>
+          <div style="margin-bottom:24px; display:flex; align-items:flex-start; gap:12px;">
+            <span style="font-size:20px; color:#DC2626; line-height:1;">✕</span>
+            <div>
+              <h4 style="font-size:16px; color:var(--navy); margin-bottom:4px;">Базовый доступ ниже B1</h4>
+              <p style="font-size:15px; color:var(--gray-600);">Если нужно сначала пополнить базу — лучше начать с поставщика базовых ресурсов.</p>
+            </div>
           </div>
-
-          <div class="faq-item">
-            <h4>Отсутствие профессиональных ставок</h4>
-            <p>Протокол разработан для среды ELF (IT, Finance, Management). Я не работаю с запросами «английский для туризма» или бытовых целей.</p>
+          <div style="margin-bottom:24px; display:flex; align-items:flex-start; gap:12px;">
+            <span style="font-size:20px; color:#DC2626; line-height:1;">✕</span>
+            <div>
+              <h4 style="font-size:16px; color:var(--navy); margin-bottom:4px;">Нет рабочих ставок</h4>
+              <p style="font-size:15px; color:var(--gray-600);">Я не работаю с туристической коммуникацией или общими целями — только высокие ставки в профессии.</p>
+            </div>
           </div>
-
-          <div class="faq-item">
-            <h4>Поиск эмоциональной поддержки</h4>
-            <p>Если вам важнее психологическое облегчение, чем восстановление функции речи, этот формат будет фрустрирующим. Это коррекция навыка, а не терапия.</p>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <span style="font-size:20px; color:#DC2626; line-height:1;">✕</span>
+            <div>
+              <h4 style="font-size:16px; color:var(--navy); margin-bottom:4px;">Ищут эмоциональную поддержку</h4>
+              <p style="font-size:15px; color:var(--gray-600);">Если важнее просто почувствовать себя лучше, а не получить инструмент контроля — это не мой формат.</p>
+            </div>
           </div>
-
-          <p style="font-size:14px;color:#7F1D1D;margin-top:24px;">
-            Отказ — нормальный и частый исход диагностики. Он означает, что в вашем случае требуется другой формат работы.
+          <p style="margin-top:32px; font-size:14px; color:#7F1D1D; font-weight:500; text-align:center;">
+            Отказ после аудита — нормальный и частый результат.<br>
+            Это значит, что человеку нужен другой специалист или подход.
           </p>
         </div>
       </section>
 
-      <!-- Key Deliverables -->
       <section>
-        <h2 class="section-header">Key Deliverables <span class="section-header-l2">(Итоги процедуры)</span></h2>
+        <h2 class="section-header">Что вы получаете <span class="section-header-l2">(Итог)</span></h2>
         <div class="deliverables-box">
-          <div class="deliverable-item">
-            <h4>Диагностический отчет</h4>
-            <p>Анализ вашего типа речевого блока, триггеров потери контроля и текущего уровня доступности языковых ресурсов под давлением.</p>
+          <div style="margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--gray-200);">
+            <h4 style="font-size:16px; color:var(--navy); margin-bottom:8px;">→ Чёткая картина вашего паттерна</h4>
+            <p style="font-size:15px; color:var(--gray-600);">Тип блокировки, ключевые триггеры и степень влияния на профессиональную эффективность.</p>
           </div>
-
-          <div class="deliverable-item">
-            <h4>Рекомендация по формату работы</h4>
-            <p>Конкретный ответ: подходит ли ваш случай для работы по моему протоколу, и если да — какой формат будет оптимальным.</p>
+          <div style="margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--gray-200);">
+            <h4 style="font-size:16px; color:var(--navy); margin-bottom:8px;">→ Рекомендация по дальнейшей работе</h4>
+            <p style="font-size:15px; color:var(--gray-600);">Подходит ли мой протокол именно вам и какой формат даст максимальный результат.</p>
           </div>
-
-          <div class="deliverable-item">
-            <h4>Протокол первых шагов</h4>
-            <p>Если мы идём дальше — техническое задание на первые 2 недели работы с фокусом на самой болезненной точке.</p>
+          <div>
+            <h4 style="font-size:16px; color:var(--navy); margin-bottom:8px;">→ Первые шаги (если идём дальше)</h4>
+            <p style="font-size:15px; color:var(--gray-600);">Конкретные шаги на 1–2 недели с фокусом на самой болезненной точке.</p>
           </div>
         </div>
       </section>
 
-      <!-- Admittance Section - V1.0 Implementation -->
-      <div class="admittance-section">
-        <h2 class="section-header" style="max-width:600px; margin: 0 auto 20px auto;">
-          Admittance Protocol
-          <span class="section-header-l2">Речевой аудит под нагрузкой</span>
+      <div class="section-padding" style="padding-top:80px; padding-bottom:80px;">
+        <h2 class="section-header" style="max-width:600px; margin:0 auto 20px auto;">
+          Личный аудит
+          <span class="section-header-l2">90 минут · 1-на-1</span>
         </h2>
-        
-        <div class="admittance-stack">
-          
-          <!-- Секция 1: Параметры аудита -->
-          <div class="protocol-block">
-            <span class="protocol-label">[AUDIT_PARAMETERS]</span>
-            <div style="margin-top: 16px;">
-              <div style="font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 12px;">
-                Формат: речевой аудит под нагрузкой
-              </div>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 24px;">
-                <div style="padding: 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px;">
-                  <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
-                    Стоимость аудита
-                  </div>
-                  <div style="font-size: 28px; font-weight: 700; color: var(--navy);">8 000 ₽</div>
-                </div>
-                <div style="padding: 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px;">
-                  <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
-                    Формат
-                  </div>
-                  <div style="font-size: 16px; color: var(--navy); font-weight: 500;">90 минут (live, 1-to-1)</div>
-                </div>
-                <div style="padding: 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px;">
-                  <div style="font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
-                    Условие
-                  </div>
-                  <div style="font-size: 14px; color: var(--gray-600); line-height: 1.4;">
-                    Проводится при подтверждённом соответствии критериям допуска.
-                  </div>
-                </div>
+
+        <div style="max-width:600px; margin:0 auto;">
+          <div style="margin-bottom:32px;" class="grid-cost" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px;">
+            <div style="padding:16px; background:var(--white); border:1px solid var(--gray-200); border-radius:2px;">
+              <div style="font-size:12px; color:var(--gray-400); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Стоимость</div>
+              <div style="font-size:28px; font-weight:700; color:var(--navy);">8 000 ₽</div>
+            </div>
+            <div style="padding:16px; background:var(--white); border:1px solid var(--gray-200); border-radius:2px;">
+              <div style="font-size:12px; color:var(--gray-400); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Формат</div>
+              <div style="font-size:16px; color:var(--navy); font-weight:500;">90 минут онлайн (Zoom / Telegram)</div>
+            </div>
+            <div style="padding:16px; background:var(--white); border:1px solid var(--gray-200); border-radius:2px;">
+              <div style="font-size:12px; color:var(--gray-400); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Условие</div>
+              <div style="font-size:14px; color:var(--gray-600); line-height:1.4;">
+                Только после подтверждения профессионального контекста и базового доступа.
               </div>
             </div>
           </div>
-          
-          <!-- Секция 2: Верификация критериев (ритуал) -->
-          <div class="protocol-block">
-            <span class="protocol-label">[CRITERIA_VERIFICATION]</span>
+          <p class="credit-note">
+            Стоимость аудита полностью зачисляется в счёт любого выбранного вами формата работы.
+          </p>
+
+          <div style="margin:32px 0;">
             <label class="agreement-box">
               <input type="checkbox" id="criteria-checkbox">
-              <span style="font-size: 14px; color: var(--gray-600); line-height: 1.5;">
-                Мой запрос соответствует критериям допуска (B1+, профессиональный контекст).<br>
-                <em style="font-size: 13px; color: var(--gray-400);">Подтверждение необходимо для корректной подготовки аудита.</em>
+              <span style="font-size:14px; color:var(--gray-600); line-height:1.5;">
+                Подтверждаю, что мой запрос носит профессиональный характер (B1+, высокие ставки в работе).<br>
+                <em style="font-size:13px; color:var(--gray-400);">Это помогает мне заранее адаптировать сессию именно под вашу ситуацию.</em>
               </span>
             </label>
           </div>
-          
-          <!-- Секция 3: Инициация аудита -->
-          <div class="protocol-block">
-            <span class="protocol-label">[AUDIT_INITIATION]</span>
-            <div style="text-align: center; margin-top: 8px;">
-              <p style="font-size: 15px; color: var(--gray-600); margin-bottom: 24px;">
-                Для инициации речевого аудита:
-              </p>
-              
-              <a href="https://t.me/unblock_eng?text=Запрос речевого аудита.%0AКритериям допуска соответствую.%0AЗапрашиваю доступный слот."
-                 id="audit-initiation-btn"
-                 class="contact-link">
-                Инициировать речевой аудит
-              </a>
-              
-              <p class="procedural-note" style="margin-top: 24px; font-size: 13px; color: var(--gray-400); line-height: 1.5; border-top: 1px solid var(--gray-100); padding-top: 16px;">
-                <strong>Процедурный нюанс:</strong> Аудит является самостоятельным форматом.<br>
-                Дальнейшие действия (при необходимости) определяются по его результатам.
-              </p>
-            </div>
+
+          <div style="text-align:center;">
+            <p style="font-size:15px; color:var(--gray-600); margin-bottom:24px;">
+              Чтобы зарезервировать время для личного аудита:
+            </p>
+
+            <a href="https://t.me/unblock_eng?text=Хочу%20записаться%20на%20аудит%20речевого%20контроля.%0AКонтекст%3A%20B1%2B%2C%20профессиональный%20запрос.%0AЖду%20ближайшие%20доступные%20слоты."
+               id="audit-initiation-btn"
+               class="contact-link">
+              Запланировать личный аудит
+            </a>
+
+            <p style="margin-top:24px; font-size:13px; color:var(--gray-400); line-height:1.5; border-top:1px solid var(--gray-100); padding-top:16px;">
+              <strong>Важно:</strong> Аудит — самостоятельный формат.<br>
+              Дальнейшие шаги определяются исключительно по его результатам.
+            </p>
           </div>
-          
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Минимальный футер -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-minimal">
-        <div>
-          © 2026 Unblock English.<br>
-          <a href="mailto:hello@unblock-english.ru">hello@unblock-english.ru</a>
-        </div>
-        <div style="text-align: right; max-width: 300px;">
-          <span class="footer-disclaimer-en">PROFESSIONAL COMMUNICATION AUDIT ONLY</span><br>
-          Не является медицинской или образовательной услугой. При серьёзных тревожных расстройствах обратитесь к психотерапевту.
-        </div>
-      </div>
-    </div>
+  <footer class="site-footer" style="margin-top:100px; padding:30px 0; opacity:0.8; font-size:11px; color:var(--gray-400); text-align:center;">
+    © 2026 Unblock English. Консультационная практика.<br>
+    Не является медицинской или образовательной услугой.
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Интеллектуальная навигация
+      // Referrer warning
+      const referrer = document.referrer;
+      if (!referrer.includes('diagnostic.html')) {
+        document.getElementById('referrer-warning').style.display = 'block';
+      }
+
+      // Back link
       const navContainer = document.getElementById('navigation-container');
       if (navContainer) {
-        const isFromTest = document.referrer.includes('diagnostic.html');
         const link = document.createElement('a');
         link.className = 'back-link';
-        if (isFromTest) {
-          link.innerHTML = '← К результатам теста';
+        if (referrer.includes('diagnostic.html')) {
+          link.innerHTML = '← К результатам самодиагностики';
+          link.href = '#';
           link.onclick = (e) => { e.preventDefault(); history.back(); };
         } else {
-          link.innerHTML = '← Back to Index';
+          link.innerHTML = '← На главную';
           link.href = 'index.html';
         }
         navContainer.appendChild(link);
       }
 
-      // 2. Отслеживание инициации аудита (ЕДИНСТВЕННАЯ логика)
-      const auditInitiationBtn = document.getElementById('audit-initiation-btn');
-      if (auditInitiationBtn) {
-        auditInitiationBtn.addEventListener('click', (e) => {
-          // Всегда разрешаем клик, НО отслеживаем метрику
-          if (typeof ym === 'function') {
-            ym(106635328, 'reachGoal', 'AUDIT_INITIATION');
-            console.log('Metric Sent: AUDIT_INITIATION');
+      // Чекбокс + кнопка
+      const checkbox = document.getElementById('criteria-checkbox');
+      const btn = document.getElementById('audit-initiation-btn');
+
+      if (checkbox && btn) {
+        const updateButton = () => {
+          if (checkbox.checked) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
           }
-          // Продолжаем стандартное поведение ссылки
+        };
+        checkbox.addEventListener('change', updateButton);
+        updateButton(); // initial state
+      }
+
+      // Yandex.Metrika goals — identical to version A
+      if (btn) {
+        btn.addEventListener('click', () => {
+          if (typeof ym === 'function' && btn.classList.contains('active')) {
+            ym(106635328, 'reachGoal', 'AUDIT_BOOKING_CLICK');
+          }
         });
       }
 
-      // 3. Чекбокс - чисто ритуальный, без логики
-      const checkbox = document.getElementById('criteria-checkbox');
-      if (checkbox) {
-        // Никакой логики при изменении
-        checkbox.addEventListener('change', () => {
-          // НИЧЕГО не делаем - это ритуальный элемент
+      const diagnosticLink = document.getElementById('diagnostic-from-intake');
+      if (diagnosticLink) {
+        diagnosticLink.addEventListener('click', () => {
+          if (typeof ym === 'function') {
+            ym(106635328, 'reachGoal', 'CLICK_DIAGNOSTIC_FROM_INTAKE');
+          }
         });
       }
     });
