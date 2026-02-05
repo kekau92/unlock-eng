@@ -362,37 +362,79 @@
             letter-spacing: 0.5px;
         }
         
-        /* Admittance Section Logic */
+        /* Admittance Section - Refined Single Column Layout */
         .admittance-section {
-            margin-top: 64px;
+            margin-top: 80px;
             padding: 48px 0;
+            border-top: 1px solid var(--gray-200); /* Single clean separator */
         }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 48px;
-            border-top: 1px solid var(--gray-200);
-            padding-top: 48px;
+
+        .admittance-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 40px; /* Consistent spacing between protocol steps */
+            max-width: 600px; /* Keeps lines readable on wide screens */
+            margin: 0 auto;
         }
-        
+
+        .protocol-block {
+            padding-bottom: 24px;
+            border-bottom: 1px dashed var(--gray-100); /* Subtle internal dividers */
+        }
+
+        .protocol-block:last-child {
+            border-bottom: none;
+        }
+
         .protocol-label {
             font-family: 'Consolas', monospace;
             font-size: 11px;
             color: var(--gray-400);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
         }
-        
+
+        .contact-link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 24px; /* Slightly larger for the primary CTA */
+            border-bottom: 2px solid var(--navy);
+            opacity: 0.2;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .contact-link.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .contact-link.active:hover {
+            opacity: 0.7;
+        }
+
+        .credit-note {
+            margin-top: 16px;
+            padding: 16px;
+            background: var(--gray-50);
+            border-left: 3px solid var(--gray-200);
+            font-size: 13px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
         .agreement-box {
             display: flex;
             gap: 16px;
             cursor: pointer;
             align-items: flex-start;
-            margin-bottom: 24px;
         }
-        
+
         .agreement-box input[type="checkbox"] {
             width: 20px;
             height: 20px;
@@ -400,37 +442,6 @@
             flex-shrink: 0;
             cursor: pointer;
             margin-top: 2px;
-        }
-        
-        /* CONTACT LINK - CRITICAL FIX APPLIED */
-        .contact-link {
-            display: inline-block;
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 700;
-            font-size: 20px;
-            border-bottom: 2px solid var(--navy);
-            opacity: 0.2;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-link.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        
-        .contact-link.active:hover {
-            opacity: 0.7;
-        }
-        
-        .credit-note {
-            padding: 16px;
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            font-size: 13px;
-            color: var(--gray-600);
-            line-height: 1.5;
         }
         
         /* RESPONSIVE DESIGN */
@@ -461,9 +472,17 @@
                 left: -24px; 
             }
             
-            .contact-grid { 
-                grid-template-columns: 1fr; 
-                gap: 40px; 
+            .admittance-section { 
+                margin-top: 60px; 
+                padding: 40px 0; 
+            }
+            
+            .admittance-stack {
+                gap: 32px;
+            }
+            
+            .contact-link {
+                font-size: 20px;
             }
         }
         
@@ -488,6 +507,10 @@
             .admittance-section { 
                 margin-top: 48px; 
                 padding: 32px 0; 
+            }
+            
+            .admittance-stack {
+                gap: 28px;
             }
         }
         
@@ -518,6 +541,11 @@
             
             .contact-link { 
                 font-size: 18px; 
+            }
+            
+            .protocol-label {
+                font-size: 10px;
+                letter-spacing: 1px;
             }
         }
     </style>
@@ -638,46 +666,43 @@
             </div>
         </section>
 
-        <!-- Admittance Section -->
+        <!-- Admittance Section - Single Column Protocol -->
         <div class="admittance-section">
-            <h2 class="section-header">Admittance <span class="section-header-l2">(Вход в протокол)</span></h2>
-            
-            <div class="contact-grid">
-                <div>
-                    <div class="protocol-label">[SERVICE_IDENTIFIER]</div>
-                    <div style="font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 4px;">Diagnostic Audit / Первичная диагностика</div>
-                    <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 20px;">Duration: 90 минут</div>
+            <div class="admittance-stack">
+                <h2 class="section-header">Admittance <span class="section-header-l2">(Вход в протокол)</span></h2>
+                
+                <div class="protocol-block">
+                    <span class="protocol-label">[SERVICE_IDENTIFIER]</span>
+                    <div style="font-size: 20px; font-weight: 600; color: var(--navy);">Diagnostic Audit // Первичная диагностика</div>
+                    <div style="font-size: 14px; color: var(--gray-400); margin-top: 4px;">Standard Duration: 90 минут</div>
+                </div>
 
-                    <div class="protocol-label">[FEE_STRUCTURE]</div>
-                    <div style="font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">8 000 ₽</div>
-                    
+                <div class="protocol-block">
+                    <span class="protocol-label">[FEE_STRUCTURE]</span>
+                    <div style="font-size: 28px; font-weight: 700; color: var(--navy);">8 000 ₽</div>
                     <div class="credit-note">
                         <strong>ⓘ Условие зачета:</strong> Стоимость диагностики полностью вычитается из стоимости программы (Foundation / Mastery). Для клиентов программы этап является бесшовным и не увеличивает итоговый бюджет.
                     </div>
                 </div>
 
-                <div>
-                    <div class="protocol-label">[CONFIRM_CRITERIA]</div>
-                    
+                <div class="protocol-block">
+                    <span class="protocol-label">[CONFIRM_CRITERIA]</span>
                     <label class="agreement-box">
                         <input type="checkbox" id="agree-checkbox">
-                        <span style="font-size: 13px; color: var(--gray-600); line-height: 1.5;">
+                        <span style="font-size: 14px; color: var(--gray-600); line-height: 1.5;">
                             Я подтверждаю, что мой запрос соответствует критериям допуска (уровень B1+, наличие профессиональных ставок) и я ознакомлен с условиями зачета стоимости сессии.
                         </span>
                     </label>
+                </div>
 
-                    <div style="margin-top: 32px;">
-                        <div class="protocol-label">[CONTACT_CHANNEL]</div>
-                        <p style="margin: 0 0 16px 0; font-size: 14px; color: var(--gray-400);">
-                            Связь для согласования слота (Telegram):
-                        </p>
-                        
-                        <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AОзнакомился%20с%20условиями%20Diagnostic%20Audit.%0AКритериям%20допуска%20соответствую.%0AГотов%20согласовать%20время." 
-                           id="contact-trigger"
-                           class="contact-link">
-                            @unblock_eng
-                        </a>
-                    </div>
+                <div class="protocol-block">
+                    <span class="protocol-label">[CONTACT_CHANNEL]</span>
+                    <p style="margin: 0; font-size: 14px; color: var(--gray-400);">Связь для согласования слота (Telegram):</p>
+                    <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AОзнакомился%20с%20условиями%20Diagnostic%20Audit.%0AКритериям%20допуска%20соответствую.%0AГотов%20согласовать%20время." 
+                       id="contact-trigger" 
+                       class="contact-link">
+                        @unblock_eng
+                    </a>
                 </div>
             </div>
         </div>
