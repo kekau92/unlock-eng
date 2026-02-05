@@ -362,28 +362,26 @@
             letter-spacing: 0.5px;
         }
         
-        /* Admittance Section - Refined Single Column Layout */
+        /* Admittance Section - Structural Foundation */
         .admittance-section {
             margin-top: 80px;
-            padding: 48px 0;
-            border-top: 1px solid var(--gray-200); /* Single clean separator */
+            padding-bottom: 80px;
         }
 
         .admittance-stack {
             display: flex;
             flex-direction: column;
-            gap: 40px; /* Consistent spacing between protocol steps */
-            max-width: 600px; /* Keeps lines readable on wide screens */
+            max-width: 600px; /* Forces professional narrow alignment on laptop */
             margin: 0 auto;
         }
 
         .protocol-block {
-            padding-bottom: 24px;
-            border-bottom: 1px dashed var(--gray-100); /* Subtle internal dividers */
+            padding: 32px 0;
+            border-bottom: 1px solid var(--gray-100); /* Systematic dividers */
         }
 
         .protocol-block:last-child {
-            border-bottom: none;
+            border-bottom: none; /* Clean finish */
         }
 
         .protocol-label {
@@ -392,40 +390,53 @@
             color: var(--gray-400);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             display: block;
         }
 
+        /* Full Width CTA Command Block */
         .contact-link {
-            display: inline-block;
+            display: flex; /* Changed from inline to flex for full-width control */
+            align-items: center;
+            justify-content: center;
+            width: 100%; /* Spans full stack width */
+            padding: 24px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 4px;
             text-decoration: none;
             color: var(--navy);
             font-weight: 700;
-            font-size: 24px; /* Slightly larger for the primary CTA */
-            border-bottom: 2px solid var(--navy);
-            opacity: 0.2;
-            pointer-events: none;
+            font-size: 20px;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
-            margin-top: 8px;
+            margin-top: 16px;
+            opacity: 0.1; /* Locked state */
+            pointer-events: none;
+            box-sizing: border-box;
         }
 
         .contact-link.active {
             opacity: 1;
             pointer-events: auto;
+            border: 1px solid var(--navy);
+            background: var(--white);
+            box-shadow: 0 4px 12px rgba(26, 58, 82, 0.1);
         }
 
         .contact-link.active:hover {
-            opacity: 0.7;
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
         }
 
-        .credit-note {
-            margin-top: 16px;
-            padding: 16px;
-            background: var(--gray-50);
-            border-left: 3px solid var(--gray-200);
-            font-size: 13px;
-            color: var(--gray-600);
-            line-height: 1.6;
+        /* Adds a 'Terminal' feel to the CTA */
+        .contact-link::before {
+            content: "COMMAND // CONNECT:";
+            font-family: 'Consolas', monospace;
+            font-size: 10px;
+            margin-right: 12px;
+            opacity: 0.6;
         }
 
         .agreement-box {
@@ -433,6 +444,8 @@
             gap: 16px;
             cursor: pointer;
             align-items: flex-start;
+            user-select: none; /* Prevents blue highlight on fast clicks */
+            -webkit-user-select: none;
         }
 
         .agreement-box input[type="checkbox"] {
@@ -442,6 +455,16 @@
             flex-shrink: 0;
             cursor: pointer;
             margin-top: 2px;
+        }
+        
+        .credit-note {
+            margin-top: 12px;
+            padding: 16px;
+            background: var(--gray-50);
+            border-left: 3px solid var(--gray-200);
+            font-size: 13px;
+            color: var(--gray-600);
+            line-height: 1.6;
         }
         
         /* RESPONSIVE DESIGN */
@@ -474,15 +497,16 @@
             
             .admittance-section { 
                 margin-top: 60px; 
-                padding: 40px 0; 
+                padding-bottom: 60px; 
             }
             
-            .admittance-stack {
-                gap: 32px;
+            .protocol-block {
+                padding: 24px 0;
             }
             
             .contact-link {
-                font-size: 20px;
+                padding: 20px;
+                font-size: 18px;
             }
         }
         
@@ -506,11 +530,17 @@
             
             .admittance-section { 
                 margin-top: 48px; 
-                padding: 32px 0; 
+                padding-bottom: 48px; 
             }
             
             .admittance-stack {
-                gap: 28px;
+                max-width: 100%;
+            }
+            
+            .contact-link::before {
+                content: "COMMAND:";
+                font-size: 9px;
+                margin-right: 8px;
             }
         }
         
@@ -540,7 +570,15 @@
             }
             
             .contact-link { 
-                font-size: 18px; 
+                font-size: 16px;
+                padding: 18px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .contact-link::before {
+                margin-right: 0;
+                margin-bottom: 4px;
             }
             
             .protocol-label {
@@ -666,23 +704,25 @@
             </div>
         </section>
 
-        <!-- Admittance Section - Single Column Protocol -->
+        <!-- Admittance Section - Professional Single Column Protocol -->
         <div class="admittance-section">
+            <h2 class="section-header" style="max-width:600px; margin: 0 auto 20px auto;">
+                Admittance <span class="section-header-l2">(Вход в протокол)</span>
+            </h2>
+            
             <div class="admittance-stack">
-                <h2 class="section-header">Admittance <span class="section-header-l2">(Вход в протокол)</span></h2>
-                
                 <div class="protocol-block">
                     <span class="protocol-label">[SERVICE_IDENTIFIER]</span>
-                    <div style="font-size: 20px; font-weight: 600; color: var(--navy);">Diagnostic Audit // Первичная диагностика</div>
-                    <div style="font-size: 14px; color: var(--gray-400); margin-top: 4px;">Standard Duration: 90 минут</div>
+                    <div style="font-size: 20px; font-weight: 600; color: var(--navy);">Diagnostic Audit</div>
+                    <div style="font-size: 14px; color: var(--gray-400);">90 минут</div>
+                    <div class="credit-note">
+                        <strong>ⓘ Условие зачета:</strong> Стоимость диагностики полностью вычитается из стоимости программы (Foundation / Mastery). Для клиентов программы этап является бесшовным и не увеличивает итоговый бюджет.
+                    </div>
                 </div>
 
                 <div class="protocol-block">
                     <span class="protocol-label">[FEE_STRUCTURE]</span>
                     <div style="font-size: 28px; font-weight: 700; color: var(--navy);">8 000 ₽</div>
-                    <div class="credit-note">
-                        <strong>ⓘ Условие зачета:</strong> Стоимость диагностики полностью вычитается из стоимости программы (Foundation / Mastery). Для клиентов программы этап является бесшовным и не увеличивает итоговый бюджет.
-                    </div>
                 </div>
 
                 <div class="protocol-block">
@@ -690,14 +730,13 @@
                     <label class="agreement-box">
                         <input type="checkbox" id="agree-checkbox">
                         <span style="font-size: 14px; color: var(--gray-600); line-height: 1.5;">
-                            Я подтверждаю, что мой запрос соответствует критериям допуска (уровень B1+, наличие профессиональных ставок) и я ознакомлен с условиями зачета стоимости сессии.
+                            Я подтверждаю соответствие критериям допуска (B1+, проф. ставки) и ознакомлен с условиями зачета стоимости сессии.
                         </span>
                     </label>
                 </div>
 
                 <div class="protocol-block">
                     <span class="protocol-label">[CONTACT_CHANNEL]</span>
-                    <p style="margin: 0; font-size: 14px; color: var(--gray-400);">Связь для согласования слота (Telegram):</p>
                     <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AОзнакомился%20с%20условиями%20Diagnostic%20Audit.%0AКритериям%20допуска%20соответствую.%0AГотов%20согласовать%20время." 
                        id="contact-trigger" 
                        class="contact-link">
@@ -736,7 +775,6 @@
             
             if (isFromTest) {
                 link.innerHTML = '← К результатам теста';
-                link.style.cursor = 'pointer';
                 link.onclick = (e) => { e.preventDefault(); history.back(); };
             } else {
                 link.innerHTML = '← Back to Index';
@@ -745,18 +783,23 @@
             navContainer.appendChild(link);
         }
 
-        // 2. Admittance Logic
+        // 2. Admittance Logic & State Recovery
         const checkbox = document.getElementById('agree-checkbox');
         const contactTrigger = document.getElementById('contact-trigger');
 
+        function updateLinkState() {
+            if (checkbox.checked) {
+                contactTrigger.classList.add('active');
+            } else {
+                contactTrigger.classList.remove('active');
+            }
+        }
+
         if (checkbox && contactTrigger) {
-            checkbox.addEventListener('change', () => {
-                if (checkbox.checked) {
-                    contactTrigger.classList.add('active');
-                } else {
-                    contactTrigger.classList.remove('active');
-                }
-            });
+            // Run once on load in case the browser cached the checkbox state
+            updateLinkState();
+
+            checkbox.addEventListener('change', updateLinkState);
 
             // 3. Metrics Tracking
             contactTrigger.addEventListener('click', (e) => {
@@ -764,8 +807,10 @@
                     e.preventDefault();
                     return;
                 }
+                // Send Goal to Yandex
                 if (typeof ym === 'function') {
                     ym(106635328, 'reachGoal', 'FINAL_SALE_CONTACT');
+                    console.log('Metric Sent: FINAL_SALE_CONTACT'); // Useful for debugging
                 }
             });
         }
