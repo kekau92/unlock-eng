@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Диагностическая сессия | Речевой аудит в условиях профессионального давления</title>
+    <title>Diagnostic Session | Речевой аудит в условиях профессионального давления</title>
     <meta name="description" content="Условия и формат индивидуальной диагностической сессии. Речевой аудит в условиях стресса.">
     <meta name="robots" content="noindex">
     
-    <!-- Favicon -->
+    <!-- Favicon & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -70,11 +70,29 @@
             min-height: 44px;
         }
         .back-link:hover { color: var(--navy); }
+        
+        /* Status Bar */
+        .status-bar {
+            font-size: 11px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 0 32px;
+            border-bottom: 1px solid var(--gray-100);
+            margin-bottom: 32px;
+        }
+        .status-label {
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
         header { margin-bottom: 32px; }
         h1 { font-size: 32px; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.02em; }
         .subtitle { font-size: 18px; color: var(--gray-600); }
         section { margin-bottom: 64px; }
-        h2 {
+        
+        /* Section headers with L2 */
+        .section-header {
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -83,12 +101,60 @@
             border-bottom: 1px solid var(--gray-200);
             padding-bottom: 8px;
         }
-        .step { margin-bottom: 32px; }
-        .step h3 { font-size: 18px; color: var(--navy); margin: 0 0 12px 0; }
-        .step p { margin: 0; font-size: 16px; color: var(--gray-600); }
-        .faq-item { margin-bottom: 32px; }
-        .faq-item h4 { font-size: 16px; color: var(--navy); margin-bottom: 8px; }
-        .faq-item p { font-size: 15px; color: var(--gray-600); margin: 0; }
+        .section-header-l2 {
+            font-weight: 600;
+            color: var(--navy);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        
+        /* Pipeline phases */
+        .pipeline-phase {
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .pipeline-phase:last-child {
+            border-bottom: none;
+        }
+        .phase-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-400);
+            margin-bottom: 8px;
+        }
+        .phase-title {
+            font-size: 18px;
+            color: var(--navy);
+            margin: 0 0 16px 0;
+            font-weight: 600;
+        }
+        .phase-description {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        /* System Limits */
+        .limits-box {
+            background: var(--gray-50);
+            border-left: 4px solid var(--gray-400);
+            padding: 32px;
+            margin-top: 24px;
+        }
+        .limits-box h3 {
+            color: var(--gray-700);
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+        .limits-item { margin-bottom: 24px; }
+        .limits-item h4 { font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+        .limits-item p { font-size: 15px; color: var(--gray-600); margin: 0; }
+        
+        /* Exclusion Criteria */
         .refusal-box {
             background: var(--red-pale);
             border: 1px solid var(--red-border);
@@ -96,6 +162,36 @@
             margin-top: 40px;
         }
         .refusal-box h3 { color: var(--red-text); font-size: 18px; margin-bottom: 24px; }
+        .faq-item { margin-bottom: 32px; }
+        .faq-item h4 { font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+        .faq-item p { font-size: 15px; color: var(--gray-600); margin: 0; }
+        
+        /* Key Deliverables */
+        .deliverables-box {
+            background: var(--gray-50);
+            padding: 32px;
+            border-left: 4px solid var(--navy);
+        }
+        .deliverable-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .deliverable-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .deliverable-item h4 {
+            font-size: 16px;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+        .deliverable-item p {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin: 0;
+        }
+        
         .price-box {
             background: var(--gray-50);
             padding: 40px;
@@ -131,6 +227,7 @@
             width: auto;
         }
         .cta-button:hover { opacity: 0.9; }
+        
         /* MINIMAL FOOTER — no border-top */
         .site-footer {
             margin-top: 100px;
@@ -158,10 +255,11 @@
             font-size: 10px;
             letter-spacing: 0.5px;
         }
+        
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
             h1 { font-size: 28px; }
-            .price-box, .refusal-box { padding: 30px; }
+            .price-box, .refusal-box, .limits-box, .deliverables-box { padding: 30px; }
             .site-footer { margin-top: 80px; }
         }
         @media (max-width: 600px) {
@@ -190,15 +288,20 @@
         }
 
         .back-link {
-    cursor: pointer; /* hand/finger on hover */
-}
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Умная навигационная ссылка (заменяет логотип) -->
+    <!-- Умная навигационная ссылка -->
     <div id="navigation-container"></div>
+    
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <span class="status-label">STATUS:</span> Admittance Protocol // Individual Audit Session
+    </div>
 
     <!-- Контент -->
     <div style="max-width: 680px; margin: 0 auto;">
@@ -211,25 +314,59 @@
             </p>
         </header>
 
+        <!-- Session Pipeline -->
         <section>
-            <h2>Методология</h2>
-            <div class="step">
-                <p>
-                    Диагностика опирается на клиническую модель языковой тревожности (FLA), адаптированную под корпоративные и управленческие контексты. Задача — определить, нарушается ли доступ к уже существующим знаниям под нагрузкой.
+            <h2 class="section-header">Session Pipeline <span class="section-header-l2">(Методология)</span></h2>
+            
+            <div class="pipeline-phase">
+                <div class="phase-label">Phase 1</div>
+                <h3 class="phase-title">Stress Test</h3>
+                <p class="phase-description">
+                    Диагностика опирается на клиническую модель языковой тревожности (FLA), адаптированную под корпоративные и управленческие контексты. Задача — определить, нарушается ли доступ к уже существующим знаниям под нагрузкой. Имитация критических ситуаций: спонтанная аргументация, ответы на вопросы без подготовки, защита позиции.
                 </p>
             </div>
-            <div class="step">
-                <h3>Формат</h3>
-                <p>Имитация критических ситуаций: спонтанная аргументация, ответы на вопросы без подготовки, защита позиции. Мы фиксируем моменты потери речевого контроля под нагрузкой.</p>
+            
+            <div class="pipeline-phase">
+                <div class="phase-label">Phase 2</div>
+                <h3 class="phase-title">Pattern Identification</h3>
+                <p class="phase-description">
+                    Мы фиксируем моменты потери речевого контроля под нагрузкой. Анализируем, как и когда система "замирает": в начале коммуникации, при переходе на сложную тему, при ответах на неожиданные вопросы, в моменты переключения между языками.
+                </p>
             </div>
-            <div class="step">
-                <h3>Результат</h3>
-                <p>По результатам сессии вы получаете интерпретацию вашего паттерна и понимание, подлежит ли он коррекции в рамках моей методики.</p>
+            
+            <div class="pipeline-phase">
+                <div class="phase-label">Phase 3</div>
+                <h3 class="phase-title">Protocol Design</h3>
+                <p class="phase-description">
+                    Определяем тип вашего блока и разрабатываем стратегию восстановления контроля. По результатам сессии вы получаете интерпретацию вашего паттерна и понимание, подлежит ли он коррекции в рамках моей методики.
+                </p>
             </div>
         </section>
 
+        <!-- System Limits -->
         <section>
-            <h2>Критерии отказа</h2>
+            <h2 class="section-header">System Limits <span class="section-header-l2">(Что это НЕ)</span></h2>
+            
+            <div class="limits-box">
+                <div class="limits-item">
+                    <h4>Не занятия английским языком</h4>
+                    <p>Мы не учим грамматику и не расширяем словарный запас. Это аудит контроля над уже имеющимися знаниями.</p>
+                </div>
+                <div class="limits-item">
+                    <h4>Не психотерапия</h4>
+                    <p>Хотя используются элементы CBT/ACT, это коррекция навыка, а не лечение тревожных расстройств.</p>
+                </div>
+                <div class="limits-item">
+                    <h4>Не коучинг</h4>
+                    <p>Мы работаем с конкретным физиологическим механизмом блокировки речи, а не с общим развитием soft skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exclusion Criteria -->
+        <section>
+            <h2 class="section-header">Exclusion Criteria <span class="section-header-l2">(Критерии отказа)</span></h2>
+            
             <div class="refusal-box">
                 <div class="faq-item">
                     <h4>Несоответствие уровня (Ниже B1)</h4>
@@ -249,40 +386,25 @@
             </div>
         </section>
 
-        <section style="margin-bottom: 64px;">
-    <h2 style="font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-400); margin-bottom: 32px; border-bottom: 1px solid var(--gray-200); padding-bottom: 8px;">
-        System Limits (What this is NOT)
-    </h2>
-    <div style="background: var(--gray-50); padding: 32px; border-left: 2px solid var(--navy); border-radius: 0 4px 4px 0;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px;">
+        <!-- Key Deliverables -->
+        <section>
+            <h2 class="section-header">Key Deliverables <span class="section-header-l2">(Итоги сессии)</span></h2>
             
-            <div style="display: flex; gap: 16px;">
-                <span style="color: var(--navy); font-weight: bold; font-size: 18px; line-height: 1;">✕</span>
-                <div>
-                    <h4 style="margin: 0 0 8px 0; font-size: 15px; color: var(--navy); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Это не обучение</h4>
-                    <p style="margin: 0; font-size: 14px; color: var(--gray-600); line-height: 1.6;">Здесь не будет пополнения словарного запаса или разбора грамматики. Протокол работает только с тем английским, который у вас уже есть.</p>
+            <div class="deliverables-box">
+                <div class="deliverable-item">
+                    <h4>Диагностический отчет</h4>
+                    <p>Анализ вашего типа речевого блока, триггеров потери контроля и текущего уровня доступности языковых ресурсов под давлением.</p>
+                </div>
+                <div class="deliverable-item">
+                    <h4>Рекомендация по формату работы</h4>
+                    <p>Конкретный ответ: подходит ли ваш случай для работы по моему протоколу, и если да — какой формат (Foundation, Mastery, Emergency) будет оптимальным.</p>
+                </div>
+                <div class="deliverable-item">
+                    <h4>Протокол первых шагов</h4>
+                    <p>Если мы идём дальше — техническое задание на первые 2 недели работы с фокусом на самой болезненной точке.</p>
                 </div>
             </div>
-
-            <div style="display: flex; gap: 16px;">
-                <span style="color: var(--navy); font-weight: bold; font-size: 18px; line-height: 1;">✕</span>
-                <div>
-                    <h4 style="margin: 0 0 8px 0; font-size: 15px; color: var(--navy); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Это не терапия</h4>
-                    <p style="margin: 0; font-size: 14px; color: var(--gray-600); line-height: 1.6;">Мы не ищем психологические причины страха. Наша задача — дебаггинг речевой функции и восстановление контроля в условиях нагрузки.</p>
-                </div>
-            </div>
-
-            <div style="display: flex; gap: 16px;">
-                <span style="color: var(--navy); font-weight: bold; font-size: 18px; line-height: 1;">✕</span>
-                <div>
-                    <h4 style="margin: 0 0 8px 0; font-size: 15px; color: var(--navy); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Это не практика</h4>
-                    <p style="margin: 0; font-size: 14px; color: var(--gray-600); line-height: 1.6;">У сессии нет цели «просто пообщаться». Формат подразумевает провокацию и давление для выявления точек отказа системы речи.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 
         <div class="price-box">
             <span class="price-value">8 000 ₽</span>
@@ -294,7 +416,7 @@
     </div>
 </div>
 
-<!-- Минимальный футер — без border-top -->
+<!-- Минимальный футер -->
 <footer class="site-footer">
     <div class="container">
         <div class="footer-minimal">
@@ -311,7 +433,7 @@
 </footer>
 
 <script>
-    // Фиксированная версия логики навигации «Назад»
+    // Обновленная навигация
     function getNavigationLink() {
         const referrer = document.referrer || '';
 
@@ -324,7 +446,7 @@
         }
 
         return {
-            text: '← На главную',
+            text: '← Back to Project Index',
             action: 'index.html',
             isBack: false
         };
@@ -333,7 +455,7 @@
     function createNavigationLink() {
         const nav = getNavigationLink();
         const container = document.getElementById('navigation-container');
-        container.innerHTML = ''; // очистка на случай повторного вызова
+        container.innerHTML = '';
 
         const link = document.createElement('a');
         link.className = 'back-link';
@@ -351,10 +473,7 @@
         container.appendChild(link);
     }
 
-    // Запуск при загрузке
     document.addEventListener('DOMContentLoaded', createNavigationLink);
-
-    // Поддержка bfcache (возврат через кнопку браузера)
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
             createNavigationLink();
@@ -364,12 +483,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Находим вашу главную кнопку по классу
         const finalBtn = document.querySelector('.cta-button');
         
         if (finalBtn) {
             finalBtn.onclick = function() {
-                // Отправляем цель в Метрику
                 ym(106635328,'reachGoal','FINAL_SALE_CONTACT')
             };
         }
