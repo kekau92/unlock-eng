@@ -363,7 +363,7 @@
                     <p style="font-size:14px; color:var(--gray-600);">Встречи 1–2 раза в неделю</p>
                     <p style="font-size:var(--text-2xl); font-weight:700; margin:var(--space-xl) 0;">От ₽128,000</p>
                     <p style="font-size:var(--text-sm); color:var(--gray-600); flex-grow:1; margin-top:var(--space-md);">
-                        Глубокая перестройка речевых привычек и уверенность в любой ситуации.
+                        Глубокая перестройка речевых привычек и долгосрочным контролем в любой ситуации.
                     </p>
                 </div>
 
@@ -415,7 +415,7 @@
                 <p style="font-size:12px; color:var(--gray-400); margin-bottom:16px; text-transform:uppercase; letter-spacing:1.5px;">
                     2. Глубокая работа
                 </p>
-                <a href="intake.html" style="color:var(--navy); font-weight:600; text-decoration:underline; font-size:var(--text-lg);">
+                <a href="intake.html" id="intake-link" style="color:var(--navy); font-weight:600; text-decoration:underline; font-size:var(--text-lg);">
                     Ознакомиться с условиями личного аудита →
                 </a>
             </div>
@@ -439,7 +439,7 @@
 
                 <div style="text-align:right;">
                     <div style="margin-bottom:24px;">
-                        <a href="https://t.me/unblock_eng" style="color:var(--gray-400); display:block; margin-bottom:8px;">Telegram: @unblock_eng</a>
+                        <a href="https://t.me/unblock_eng" id="tg-link" style="color:var(--gray-400); display:block; margin-bottom:8px;">Telegram: @unblock_eng</a>
                         <a href="mailto:hello@unblock-english.ru" style="color:var(--gray-400); display:block;">hello@unblock-english.ru</a>
                     </div>
                     <div style="font-size:11px;">
@@ -465,6 +465,33 @@
             button.textContent = 'Читать полностью →';
         }
     }
+
+    // Yandex.Metrika goals — identical to version A
+    document.addEventListener('DOMContentLoaded', () => {
+        // Goal: click on diagnostic CTA from hero
+        const diagnosticLink = document.querySelector('a[href="diagnostic.html"]');
+        if (diagnosticLink) {
+            diagnosticLink.addEventListener('click', () => {
+                ym(106635328, 'reachGoal', 'CLICK_DIAGNOSTIC_HERO');
+            });
+        }
+
+        // Goal: click on intake link
+        const intakeLink = document.getElementById('intake-link');
+        if (intakeLink) {
+            intakeLink.addEventListener('click', () => {
+                ym(106635328, 'reachGoal', 'CLICK_INTAKE');
+            });
+        }
+
+        // Goal: click on Telegram link in footer
+        const tgLink = document.getElementById('tg-link');
+        if (tgLink) {
+            tgLink.addEventListener('click', () => {
+                ym(106635328, 'reachGoal', 'CLICK_TELEGRAM');
+            });
+        }
+    });
 </script>
 
 </body>
