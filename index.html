@@ -112,7 +112,7 @@
             color:var(--gray-400);
         }
 
-        /* Мобильные фиксы */
+        /* Мобильные фиксы (общие) */
         @media (max-width: 900px) {
             .fees-grid, .paradox-grid { grid-template-columns:1fr !important; gap:var(--space-lg) !important; }
             .about-content { grid-template-columns:1fr; }
@@ -125,6 +125,18 @@
             .hero { padding:2rem 0 4rem; }
             .hero-headline { font-size:var(--text-2xl); }
             .hero-subheadline { font-size:var(--text-base); }
+        }
+
+        /* Специальный фикс для блока "Как мы работаем" на мобильных */
+        @media (max-width: 900px) {
+            .process-grid {
+                grid-template-columns: 1fr !important;
+                gap: var(--space-lg) !important;
+            }
+            .process-grid > div {
+                padding: 1.5rem;
+                min-height: auto;
+            }
         }
     </style>
 </head>
@@ -207,7 +219,7 @@
     <section class="process-section section-padding">
         <div class="container">
             <h2 style="font-size:var(--text-3xl); color:var(--navy); margin-bottom:var(--space-3xl);">Как мы работаем</h2>
-            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-xl);">
+            <div class="process-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-xl);">
                 <div>
                     <span style="font-size:var(--text-sm); font-weight:700; color:var(--gray-400); display:block; margin-bottom:var(--space-sm);">01</span>
                     <h3 style="font-size:var(--text-lg); color:var(--navy); margin-bottom:var(--space-md);">Снижение чувствительности</h3>
@@ -327,7 +339,60 @@
         </div>
     </section>
 
-    <!-- Pricing section remains unchanged in lexical terms – already compliant -->
+    <section class="pricing-section section-padding">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:var(--space-3xl);">
+                <h2 style="font-size:var(--text-3xl); color:var(--white);">Форматы работы</h2>
+                <p style="color:var(--gray-200); margin-top:0.5rem;">Все программы начинаются только после прохождения аудита.</p>
+            </div>
+
+            <div class="fees-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-lg);">
+                <div class="fee-item" style="background:var(--white); color:var(--navy); padding:var(--space-xl); display:flex; flex-direction:column;">
+                    <h3 style="font-size:var(--text-lg); margin-bottom:var(--space-xs);">Foundation Protocol · 8 weeks</h3>
+                    <p style="font-size:14px; color:var(--gray-600);">Управление речью в стрессовых ситуациях</p>
+                    <p style="font-size:14px; color:var(--gray-600);">Встречи 1 раз в неделю</p>
+                    <p style="font-size:var(--text-2xl); font-weight:700; margin:var(--space-xl) 0;">₽68,000 – ₽92,000</p>
+                    <p style="font-size:var(--text-sm); color:var(--gray-600); flex-grow:1; margin-top:var(--space-md);">
+                        Быстрое возвращение доступа к имеющимся знаниям и снижение страха перед звонками/встречами.
+                    </p>
+                </div>
+
+                <div class="fee-item" style="background:var(--white); color:var(--navy); padding:var(--space-xl); display:flex; flex-direction:column;">
+                    <h3 style="font-size:var(--text-lg); margin-bottom:var(--space-xs);">Mastery Protocol · 12–16 weeks</h3>
+                    <p style="font-size:14px; color:var(--gray-600);">Системное управление коммуникацией</p>
+                    <p style="font-size:14px; color:var(--gray-600);">Встречи 1–2 раза в неделю</p>
+                    <p style="font-size:var(--text-2xl); font-weight:700; margin:var(--space-xl) 0;">От ₽128,000</p>
+                    <p style="font-size:var(--text-sm); color:var(--gray-600); flex-grow:1; margin-top:var(--space-md);">
+                        Глубокая перестройка речевых привычек и уверенность в любой ситуации.
+                    </p>
+                </div>
+
+                <div class="fee-item" style="background:var(--white); color:var(--navy); padding:var(--space-xl); display:flex; flex-direction:column;">
+                    <h3 style="font-size:var(--text-lg); margin-bottom:var(--space-xs);">Emergency Protocol · 2 weeks intensive</h3>
+                    <p style="font-size:14px; color:var(--gray-600);">Тактическая интервенция под давлением</p>
+                    <p style="font-size:14px; color:var(--gray-600);">Интенсив, 2–3 раза в неделю</p>
+                    <p style="font-size:var(--text-2xl); font-weight:700; margin:var(--space-xl) 0;">От ₽72,000</p>
+
+                    <div style="margin:var(--space-lg) 0; padding:var(--space-md); background:#FEF2F2; border-left:3px solid #DC2626; border-radius:2px;">
+                        <h4 style="font-size:14px; font-weight:600; color:var(--navy); margin-bottom:var(--space-sm);">⚠️ Важно понимать</h4>
+                        <p style="font-size:14px; line-height:1.6; margin-bottom:var(--space-sm);">
+                            <strong>За 2 недели нельзя устранить блок полностью.</strong>
+                        </p>
+                        <p style="font-size:14px; line-height:1.6;">
+                            Это тактическая интервенция для конкретного события.
+                            Мы обеспечиваем контроль в целевой ситуации (ключевой звонок, презентация, переговоры),
+                            но корневая причина остаётся. После события рекомендуется Foundation.
+                        </p>
+                    </div>
+
+                    <p style="font-size:var(--text-sm); color:var(--gray-600); margin-top:var(--space-md);">
+                        Срочная подготовка к критически важному событию. Когда времени на системную работу нет,
+                        мы фокусируемся на конкретном сценарии, чтобы обеспечить максимальный контроль в день X.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="next-steps-section section-padding" style="text-align:center;">
         <div class="container" style="max-width:600px;">
