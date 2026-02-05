@@ -138,13 +138,14 @@
       position: relative;
       padding-left: 30px;
     }
-    .pipeline-container::before {
+      .pipeline-container::before {
       content: "";
       position: absolute;
-      left: 9px;
+      left: 12px; /* Centered relative to the 24px circle total width */
       top: 0; bottom: 0;
       width: 2px;
       background: var(--gray-200);
+      z-index: 1; /* Keeps line behind circles */
     }
     .pipeline-phase {
       margin-bottom: 40px;
@@ -152,16 +153,17 @@
       border-bottom: 1px solid var(--gray-100);
       position: relative;
     }
-    .pipeline-phase::before {
+      .pipeline-phase::before {
       content: "";
       position: absolute;
-      left: -30px;
-      top: 4px;
+      left: -27px; /* Adjusted to sit perfectly on the line */
+      top: 0;      /* Align to top of the text block */
       width: 20px;
       height: 20px;
       border: 2px solid var(--navy);
       background: var(--white);
       border-radius: 50%;
+      z-index: 2; /* Ensures circle stays on top of the line */
     }
 
     .phase-label {
