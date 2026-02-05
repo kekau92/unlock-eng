@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Diagnostic Session | Речевой аудит в условиях профессионального давления</title>
     <meta name="description" content="Условия и формат индивидуальной диагностической сессии. Речевой аудит в условиях стресса.">
     <meta name="robots" content="noindex">
@@ -17,18 +17,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
     <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106635328', 'ym');
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106635328', 'ym');
 
-    ym(106635328, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/106635328" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+        ym(106635328, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106635328" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     
     <style>
         :root {
@@ -44,6 +44,7 @@
             --red-border: #FFE4E4;
             --red-text: #991B1B;
         }
+        
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -52,11 +53,13 @@
             margin: 0;
             -webkit-font-smoothing: antialiased;
         }
+        
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
         }
+        
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -68,8 +71,12 @@
             letter-spacing: 1px;
             transition: color 0.2s;
             min-height: 44px;
+            cursor: pointer;
         }
-        .back-link:hover { color: var(--navy); }
+        
+        .back-link:hover { 
+            color: var(--navy); 
+        }
         
         /* Status Bar */
         .status-bar {
@@ -81,15 +88,40 @@
             border-bottom: 1px solid var(--gray-100);
             margin-bottom: 32px;
         }
+        
         .status-label {
             font-weight: 600;
             color: var(--navy);
         }
         
-        header { margin-bottom: 32px; }
-        h1 { font-size: 32px; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.02em; }
-        .subtitle { font-size: 18px; color: var(--gray-600); }
-        section { margin-bottom: 64px; }
+        /* Header & Typography */
+        h1 { 
+            font-size: clamp(24px, 5vw, 32px); 
+            color: var(--navy); 
+            letter-spacing: -0.02em; 
+            position: relative;
+            padding-left: 28px;
+        }
+        
+        h1::before { 
+            content: ">"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--gray-400); 
+        }
+        
+        header { 
+            margin-bottom: 32px; 
+        }
+        
+        .subtitle { 
+            font-size: 18px; 
+            color: var(--gray-600); 
+        }
+        
+        section { 
+            margin-bottom: 64px; 
+        }
         
         /* Section headers with L2 */
         .section-header {
@@ -101,6 +133,7 @@
             border-bottom: 1px solid var(--gray-200);
             padding-bottom: 8px;
         }
+        
         .section-header-l2 {
             font-weight: 600;
             color: var(--navy);
@@ -108,15 +141,64 @@
             letter-spacing: 0;
         }
         
-        /* Pipeline phases */
+        /* Boxes & Containers */
+        .audit-box {
+            padding: 32px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-left: 4px solid var(--navy);
+        }
+        
+        .refusal-box {
+            background: var(--red-pale);
+            border: 1px solid var(--red-border);
+            border-left: 4px solid var(--red-text);
+            padding: 32px;
+            margin-top: 40px;
+        }
+        
+        /* Pipeline phases - Audit Trail */
+        .pipeline-container {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .pipeline-container::before {
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-200);
+            z-index: 1;
+        }
+        
         .pipeline-phase {
             margin-bottom: 40px;
             padding-bottom: 24px;
             border-bottom: 1px solid var(--gray-100);
+            position: relative;
         }
+        
         .pipeline-phase:last-child {
             border-bottom: none;
         }
+        
+        .pipeline-phase::before {
+            content: "";
+            position: absolute;
+            left: -30px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--navy);
+            background: var(--white);
+            border-radius: 50%;
+            z-index: 2;
+            box-sizing: border-box;
+        }
+        
         .phase-label {
             font-size: 11px;
             font-weight: 700;
@@ -125,12 +207,14 @@
             color: var(--gray-400);
             margin-bottom: 8px;
         }
+        
         .phase-title {
             font-size: 18px;
             color: var(--navy);
             margin: 0 0 16px 0;
             font-weight: 600;
         }
+        
         .phase-description {
             font-size: 16px;
             color: var(--gray-600);
@@ -141,92 +225,110 @@
         /* System Limits */
         .limits-box {
             background: var(--gray-50);
-            border-left: 4px solid var(--gray-400);
+            border-left: 4px solid var(--navy);
             padding: 32px;
             margin-top: 24px;
+            border: 1px solid var(--gray-200);
         }
-        .limits-box h3 {
-            color: var(--gray-700);
-            font-size: 18px;
-            margin-bottom: 24px;
-        }
-        .limits-item { margin-bottom: 24px; }
-        .limits-item h4 { font-size: 16px; color: var(--navy); margin-bottom: 8px; }
-        .limits-item p { font-size: 15px; color: var(--gray-600); margin: 0; }
         
-        /* Exclusion Criteria */
-        .refusal-box {
-            background: var(--red-pale);
-            border: 1px solid var(--red-border);
-            padding: 32px;
-            margin-top: 40px;
+        .limits-item { 
+            margin-bottom: 24px; 
+            padding-left: 24px;
+            position: relative;
         }
-        .refusal-box h3 { color: var(--red-text); font-size: 18px; margin-bottom: 24px; }
-        .faq-item { margin-bottom: 32px; }
-        .faq-item h4 { font-size: 16px; color: var(--navy); margin-bottom: 8px; }
-        .faq-item p { font-size: 15px; color: var(--gray-600); margin: 0; }
+        
+        .limits-item h4 { 
+            font-size: 16px; 
+            color: var(--navy); 
+            margin-bottom: 8px; 
+            position: relative;
+        }
+        
+        .limits-item h4::before {
+            content: "ⓘ";
+            position: absolute;
+            left: -24px;
+            font-size: 14px;
+            color: var(--navy);
+        }
+        
+        .limits-item p { 
+            font-size: 15px; 
+            color: var(--gray-600); 
+            margin: 0; 
+        }
+        
+        /* FAQ items */
+        .faq-item { 
+            margin-bottom: 32px; 
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .faq-item h4 { 
+            font-size: 16px; 
+            color: var(--navy); 
+            margin-bottom: 8px; 
+            position: relative;
+        }
+        
+        .faq-item h4::before {
+            content: "✕";
+            position: absolute;
+            left: -24px;
+            font-size: 14px;
+            color: var(--red-text);
+            font-weight: 600;
+        }
+        
+        .faq-item p { 
+            font-size: 15px; 
+            color: var(--gray-600); 
+            margin: 0; 
+        }
         
         /* Key Deliverables */
         .deliverables-box {
             background: var(--gray-50);
-            padding: 32px;
             border-left: 4px solid var(--navy);
+            padding: 32px;
+            border: 1px solid var(--gray-200);
         }
+        
         .deliverable-item {
             margin-bottom: 24px;
             padding-bottom: 24px;
             border-bottom: 1px solid var(--gray-200);
+            padding-left: 24px;
+            position: relative;
         }
+        
         .deliverable-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
         }
+        
         .deliverable-item h4 {
             font-size: 16px;
             color: var(--navy);
             margin-bottom: 12px;
+            position: relative;
         }
+        
+        .deliverable-item h4::before {
+            content: "→";
+            position: absolute;
+            left: -24px;
+            font-size: 14px;
+            color: var(--navy);
+            font-weight: 600;
+        }
+        
         .deliverable-item p {
             font-size: 15px;
             color: var(--gray-600);
             margin: 0;
         }
-        
-        .price-box {
-            background: var(--gray-50);
-            padding: 40px;
-            border-radius: 2px;
-            margin-top: 64px;
-            text-align: center;
-        }
-        .price-value {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--navy);
-            display: block;
-            margin-bottom: 8px;
-        }
-        .price-note {
-            font-size: 14px;
-            color: var(--gray-400);
-            margin-bottom: 32px;
-            display: block;
-        }
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--navy);
-            color: var(--white);
-            padding: 18px 40px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 2px;
-            transition: opacity 0.2s;
-            min-height: 56px;
-            width: auto;
-        }
-        .cta-button:hover { opacity: 0.9; }
         
         /* MINIMAL FOOTER — no border-top */
         .site-footer {
@@ -236,6 +338,7 @@
             font-size: 11px;
             color: var(--gray-400);
         }
+        
         .footer-minimal {
             display: flex;
             justify-content: space-between;
@@ -243,59 +346,186 @@
             gap: 20px;
             line-height: 1.6;
         }
+        
         .footer-minimal a {
             color: var(--gray-400);
             text-decoration: none;
         }
+        
         .footer-minimal a:hover {
             color: var(--navy);
         }
+        
         .footer-disclaimer-en {
             text-transform: uppercase;
             font-size: 10px;
             letter-spacing: 0.5px;
         }
         
-        @media (max-width: 768px) {
-            .container { padding: 0 20px; }
-            h1 { font-size: 28px; }
-            .price-box, .refusal-box, .limits-box, .deliverables-box { padding: 30px; }
-            .site-footer { margin-top: 80px; }
+        /* Admittance Section Logic */
+        .admittance-section {
+            margin-top: 64px;
+            padding: 48px 0;
         }
-        @media (max-width: 600px) {
-            .cta-button {
-                width: 100%;
-                padding: 16px 20px;
-                font-size: 15px;
-                line-height: 1.4;
-                white-space: normal;
-                text-align: center;
-                box-sizing: border-box;
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 48px;
+            border-top: 1px solid var(--gray-200);
+            padding-top: 48px;
+        }
+        
+        .protocol-label {
+            font-family: 'Consolas', monospace;
+            font-size: 11px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .agreement-box {
+            display: flex;
+            gap: 16px;
+            cursor: pointer;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+        
+        .agreement-box input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--navy);
+            flex-shrink: 0;
+            cursor: pointer;
+            margin-top: 2px;
+        }
+        
+        /* CONTACT LINK - CRITICAL FIX APPLIED */
+        .contact-link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 20px;
+            border-bottom: 2px solid var(--navy);
+            opacity: 0.2;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .contact-link.active:hover {
+            opacity: 0.7;
+        }
+        
+        .credit-note {
+            padding: 16px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            font-size: 13px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .container { 
+                padding: 0 20px; 
             }
+            
+            .limits-box, 
+            .refusal-box, 
+            .deliverables-box { 
+                padding: 30px; 
+            }
+            
+            .site-footer { 
+                margin-top: 80px; 
+            }
+            
+            .pipeline-container { 
+                padding-left: 24px; 
+            }
+            
+            .pipeline-container::before { 
+                left: 7px; 
+            }
+            
+            .pipeline-phase::before { 
+                left: -24px; 
+            }
+            
+            .contact-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px; 
+            }
+        }
+        
+        @media (max-width: 600px) {
             .footer-minimal {
                 flex-direction: column;
                 gap: 16px;
             }
+            
             .footer-minimal div:last-child {
                 text-align: center;
             }
+            
+            h1 { 
+                padding-left: 20px; 
+            }
+            
+            .subtitle { 
+                font-size: 16px; 
+            }
+            
+            .admittance-section { 
+                margin-top: 48px; 
+                padding: 32px 0; 
+            }
         }
+        
         @media (max-width: 480px) {
-            .container { padding: 0 16px; }
-            h1 { font-size: 24px; }
-            .subtitle { font-size: 16px; }
-            .price-value { font-size: 24px; }
-        }
-
-        .back-link {
-            cursor: pointer;
+            .container { 
+                padding: 0 16px; 
+            }
+            
+            h1 { 
+                font-size: 24px; 
+            }
+            
+            .subtitle { 
+                font-size: 16px; 
+            }
+            
+            .limits-item, 
+            .faq-item, 
+            .deliverable-item { 
+                padding-left: 20px; 
+            }
+            
+            .limits-item h4::before, 
+            .faq-item h4::before, 
+            .deliverable-item h4::before { 
+                left: -20px; 
+            }
+            
+            .contact-link { 
+                font-size: 18px; 
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Умная навигационная ссылка -->
+    <!-- Навигация через JavaScript -->
     <div id="navigation-container"></div>
     
     <!-- Status Bar -->
@@ -318,28 +548,30 @@
         <section>
             <h2 class="section-header">Session Pipeline <span class="section-header-l2">(Методология)</span></h2>
             
-            <div class="pipeline-phase">
-                <div class="phase-label">Phase 1</div>
-                <h3 class="phase-title">Stress Test</h3>
-                <p class="phase-description">
-                    Диагностика опирается на клиническую модель языковой тревожности (FLA), адаптированную под корпоративные и управленческие контексты. Задача — определить, нарушается ли доступ к уже существующим знаниям под нагрузкой. Имитация критических ситуаций: спонтанная аргументация, ответы на вопросы без подготовки, защита позиции.
-                </p>
-            </div>
-            
-            <div class="pipeline-phase">
-                <div class="phase-label">Phase 2</div>
-                <h3 class="phase-title">Pattern Identification</h3>
-                <p class="phase-description">
-                    Мы фиксируем моменты потери речевого контроля под нагрузкой. Анализируем, как и когда система "замирает": в начале коммуникации, при переходе на сложную тему, при ответах на неожиданные вопросы, в моменты переключения между языками.
-                </p>
-            </div>
-            
-            <div class="pipeline-phase">
-                <div class="phase-label">Phase 3</div>
-                <h3 class="phase-title">Protocol Design</h3>
-                <p class="phase-description">
-                    Определяем тип вашего блока и разрабатываем стратегию восстановления контроля. По результатам сессии вы получаете интерпретацию вашего паттерна и понимание, подлежит ли он коррекции в рамках моей методики.
-                </p>
+            <div class="pipeline-container">
+                <div class="pipeline-phase">
+                    <div class="phase-label">Phase 1</div>
+                    <h3 class="phase-title">Stress Test</h3>
+                    <p class="phase-description">
+                        Диагностика опирается на клиническую модель языковой тревожности (FLA), адаптированную под корпоративные и управленческие контексты. Задача — определить, нарушается ли доступ к уже существующим знаниям под нагрузкой. Имитация критических ситуаций: спонтанная аргументация, ответы на вопросы без подготовки, защита позиции.
+                    </p>
+                </div>
+                
+                <div class="pipeline-phase">
+                    <div class="phase-label">Phase 2</div>
+                    <h3 class="phase-title">Pattern Identification</h3>
+                    <p class="phase-description">
+                        Мы фиксируем моменты потери речевого контроля под нагрузкой. Анализируем, как и когда система "замирает": в начале коммуникации, при переходе на сложную тему, при ответах на неожиданные вопросы, в моменты переключения между языками.
+                    </p>
+                </div>
+                
+                <div class="pipeline-phase">
+                    <div class="phase-label">Phase 3</div>
+                    <h3 class="phase-title">Protocol Design</h3>
+                    <p class="phase-description">
+                        Определяем тип вашего блока и разрабатываем стратегию восстановления контроля. По результатам сессии вы получаете интерпретацию вашего паттерна и понимание, подлежит ли он коррекции в рамках моей методики.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -406,12 +638,48 @@
             </div>
         </section>
 
-        <div class="price-box">
-            <span class="price-value">8 000 ₽</span>
-            <span class="price-note">90 минут. Оплата — после согласования слота.</span>
-            <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AОзнакомился%20с%20форматом%20диагностической%20сессии.%0AЗапрос%20—%20профессиональная%20коммуникация%20под%20давлением.%0AГотов%20обсудить%20доступные%20слоты." class="cta-button">
-                Согласовать дату диагностической сессии
-            </a>
+        <!-- Admittance Section -->
+        <div class="admittance-section">
+            <h2 class="section-header">Admittance <span class="section-header-l2">(Вход в протокол)</span></h2>
+            
+            <div class="contact-grid">
+                <div>
+                    <div class="protocol-label">[SERVICE_IDENTIFIER]</div>
+                    <div style="font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 4px;">Diagnostic Audit / Первичная диагностика</div>
+                    <div style="font-size: 13px; color: var(--gray-400); margin-bottom: 20px;">Duration: 90 минут</div>
+
+                    <div class="protocol-label">[FEE_STRUCTURE]</div>
+                    <div style="font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">8 000 ₽</div>
+                    
+                    <div class="credit-note">
+                        <strong>ⓘ Условие зачета:</strong> Стоимость диагностики полностью вычитается из стоимости программы (Foundation / Mastery). Для клиентов программы этап является бесшовным и не увеличивает итоговый бюджет.
+                    </div>
+                </div>
+
+                <div>
+                    <div class="protocol-label">[CONFIRM_CRITERIA]</div>
+                    
+                    <label class="agreement-box">
+                        <input type="checkbox" id="agree-checkbox">
+                        <span style="font-size: 13px; color: var(--gray-600); line-height: 1.5;">
+                            Я подтверждаю, что мой запрос соответствует критериям допуска (уровень B1+, наличие профессиональных ставок) и я ознакомлен с условиями зачета стоимости сессии.
+                        </span>
+                    </label>
+
+                    <div style="margin-top: 32px;">
+                        <div class="protocol-label">[CONTACT_CHANNEL]</div>
+                        <p style="margin: 0 0 16px 0; font-size: 14px; color: var(--gray-400);">
+                            Связь для согласования слота (Telegram):
+                        </p>
+                        
+                        <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AОзнакомился%20с%20условиями%20Diagnostic%20Audit.%0AКритериям%20допуска%20соответствую.%0AГотов%20согласовать%20время." 
+                           id="contact-trigger"
+                           class="contact-link">
+                            @unblock_eng
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -433,62 +701,48 @@
 </footer>
 
 <script>
-    // Обновленная навигация
-    function getNavigationLink() {
-        const referrer = document.referrer || '';
-
-        if (referrer.includes('diagnostic.html')) {
-            return {
-                text: '← К результатам теста',
-                action: 'history.back()',
-                isBack: true
-            };
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. Intelligent Navigation
+        const navContainer = document.getElementById('navigation-container');
+        if (navContainer) {
+            const isFromTest = document.referrer.includes('diagnostic.html');
+            const link = document.createElement('a');
+            link.className = 'back-link';
+            
+            if (isFromTest) {
+                link.innerHTML = '← К результатам теста';
+                link.style.cursor = 'pointer';
+                link.onclick = (e) => { e.preventDefault(); history.back(); };
+            } else {
+                link.innerHTML = '← Back to Index';
+                link.href = 'index.html';
+            }
+            navContainer.appendChild(link);
         }
 
-        return {
-            text: '← Back to Project Index',
-            action: 'index.html',
-            isBack: false
-        };
-    }
+        // 2. Admittance Logic
+        const checkbox = document.getElementById('agree-checkbox');
+        const contactTrigger = document.getElementById('contact-trigger');
 
-    function createNavigationLink() {
-        const nav = getNavigationLink();
-        const container = document.getElementById('navigation-container');
-        container.innerHTML = '';
-
-        const link = document.createElement('a');
-        link.className = 'back-link';
-        link.textContent = nav.text;
-
-        if (nav.isBack) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                history.back();
+        if (checkbox && contactTrigger) {
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    contactTrigger.classList.add('active');
+                } else {
+                    contactTrigger.classList.remove('active');
+                }
             });
-        } else {
-            link.href = nav.action;
-        }
 
-        container.appendChild(link);
-    }
-
-    document.addEventListener('DOMContentLoaded', createNavigationLink);
-    window.addEventListener('pageshow', function(event) {
-        if (event.persisted) {
-            createNavigationLink();
-        }
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const finalBtn = document.querySelector('.cta-button');
-        
-        if (finalBtn) {
-            finalBtn.onclick = function() {
-                ym(106635328,'reachGoal','FINAL_SALE_CONTACT')
-            };
+            // 3. Metrics Tracking
+            contactTrigger.addEventListener('click', (e) => {
+                if (!checkbox.checked) {
+                    e.preventDefault();
+                    return;
+                }
+                if (typeof ym === 'function') {
+                    ym(106635328, 'reachGoal', 'FINAL_SALE_CONTACT');
+                }
+            });
         }
     });
 </script>
