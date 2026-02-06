@@ -42,6 +42,8 @@ ym(106635328, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 --red-pale: #FFF9F9;
 --red-border: #FFE4E4;
 --red-text: #991B1B;
+--yellow-pale: #FEFCE8;
+--yellow-border: #CA8A04;
 }
 body {
 font-family: 'Inter', sans-serif;
@@ -139,6 +141,22 @@ border: 1px solid var(--red-border);
 border-left: 4px solid var(--red-text);
 padding: 32px;
 margin-top: 40px;
+}
+/* Referrer Warning */
+.referrer-warning {
+background: var(--yellow-pale);
+border-left: 4px solid var(--yellow-border);
+padding: 24px;
+margin: 24px 0 32px;
+border-radius: 2px;
+font-size: 14px;
+color: #713F12;
+display: none;
+}
+.referrer-warning a {
+color: var(--navy);
+font-weight: 600;
+text-decoration: underline;
 }
 /* Pipeline phases - Audit Trail */
 .pipeline-container {
@@ -409,7 +427,8 @@ padding: 0 20px;
 }
 .limits-box,
 .refusal-box,
-.deliverables-box {
+.deliverables-box,
+.referrer-warning {
 padding: 30px;
 }
 .site-footer {
@@ -512,6 +531,14 @@ letter-spacing: 1px;
 </p>
 </header>
 
+<!-- Блок проверки прохождения диагностики (аналогично Site B) -->
+<div id="referrer-warning" class="referrer-warning" style="display:none;">
+В рамках протокола используется краткая предварительная самодиагностика (2 минуты).
+Это позволяет сразу сфокусироваться на самом важном и сэкономить время на аудите.
+<br><br>
+<a href="diagnostic.html">Пройти самодиагностику →</a>
+</div>
+
 <!-- Session Pipeline -->
 <section>
 <h2 class="section-header">Audit Pipeline <span class="section-header-l2">(Методология)</span></h2>
@@ -534,7 +561,7 @@ letter-spacing: 1px;
 <div class="phase-label">Phase 3</div>
 <h3 class="phase-title">Protocol Design</h3>
 <p class="phase-description">
-Определяется тип вашего блока и формируется гипотеза восстановления контроля.
+Определяется тип выявленного блока и формируется гипотеза восстановления контроля.
 По результатам аудита формируется интерпретация вашего паттерна и вывод о применимости коррекционного протокола.
 </p>
 </div>
@@ -547,7 +574,7 @@ letter-spacing: 1px;
 <div class="limits-box">
 <div class="limits-item">
 <h4>Не занятия английским языком</h4>
-<p>Мы не учим грамматику и не расширяем словарный запас. Это аудит контроля над уже имеющимися знаниями.</p>
+<p>Формат не предполагает обучения грамматике или расширения словарного запаса. Это аудит контроля над уже имеющимися знаниями.</p>
 </div>
 <div class="limits-item">
 <h4>Не психотерапия</h4>
@@ -555,7 +582,7 @@ letter-spacing: 1px;
 </div>
 <div class="limits-item">
 <h4>Не коучинг</h4>
-<p>Мы работаем с конкретным физиологическим механизмом блокировки речи, а не с общим развитием soft skills.</p>
+<p>Работа ведётся с конкретным физиологическим механизмом блокировки речи, а не с общим развитием soft skills.</p>
 </div>
 </div>
 </section>
@@ -657,7 +684,7 @@ Admittance Protocol
 <span class="protocol-label">[AUDIT_INITIATION]</span>
 <div style="text-align: center; margin-top: 8px;">
 <p style="font-size: 15px; color: var(--gray-600); margin-bottom: 24px;">
-Для инициации речевого аудита:
+Для инициации процедуры аудита:
 </p>
 <a href="https://t.me/unblock_eng?text=Запрос речевого аудита.%0AКритериям допуска соответствую.%0AЗапрашиваю доступный слот."
 id="audit-initiation-btn"
@@ -693,10 +720,17 @@ class="contact-link">
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-// 1. Интеллектуальная навигация
+// 1. Проверка реферера для показа предупреждения
+const referrer = document.referrer;
+const referrerWarning = document.getElementById('referrer-warning');
+if (referrerWarning && !referrer.includes('diagnostic.html')) {
+referrerWarning.style.display = 'block';
+}
+
+// 2. Интеллектуальная навигация
 const navContainer = document.getElementById('navigation-container');
 if (navContainer) {
-const isFromTest = document.referrer.includes('diagnostic.html');
+const isFromTest = referrer.includes('diagnostic.html');
 const link = document.createElement('a');
 link.className = 'back-link';
 if (isFromTest) {
@@ -709,7 +743,7 @@ link.href = 'index.html';
 navContainer.appendChild(link);
 }
 
-// 2. Отслеживание инициации аудита (ЕДИНСТВЕННАЯ логика)
+// 3. Отслеживание инициации аудита (ЕДИНСТВЕННАЯ логика)
 const auditInitiationBtn = document.getElementById('audit-initiation-btn');
 if (auditInitiationBtn) {
 auditInitiationBtn.addEventListener('click', (e) => {
@@ -722,7 +756,7 @@ console.log('Metric Sent: AUDIT_INITIATION');
 });
 }
 
-// 3. Чекбокс - чисто ритуальный, без логики
+// 4. Чекбокс - чисто ритуальный, без логики
 const checkbox = document.getElementById('criteria-checkbox');
 if (checkbox) {
 // Никакой логики при изменении
