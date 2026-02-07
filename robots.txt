@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unblock-english.ru/sitemap.xml
+
+# Disallow crawling of non-existent or system paths (optional but clean)
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
