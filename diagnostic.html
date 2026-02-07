@@ -40,7 +40,7 @@
         --gray-400: #9CA3AF;
         --gray-600: #4B5563;
         --gray-700: #374151;
-        --navy-light: #2C5F7C; /* added for safe hover contrast */
+        --navy-light: #2C5F7C;
     }
 
     * {
@@ -241,7 +241,6 @@
         text-align: right;
     }
 
-    /* Consistent subtle hovers – fixed disappearing bug */
     .btn:hover,
     .btn-primary:hover,
     .btn-secondary:hover {
@@ -249,7 +248,7 @@
     }
 
     .btn-secondary:hover {
-        color: var(--white); /* ensures text stays visible on dark bg */
+        color: var(--white);
     }
 
     /* Mobile adjustments */
@@ -489,7 +488,7 @@
             return;
         }
 
-        // 1. Фиксируем завершение теста
+        // Metrika: diagnostic complete
         ym(106635328, 'reachGoal', 'DIAGNOSTIC_COMPLETE');
 
         document.getElementById('diagnostic-screen').classList.add('hidden');
@@ -497,14 +496,14 @@
 
         calculateScores();
 
-        // 2. Логика отображения результата
+        // Render results
         if (impact <= 1 && urgency <= 1) {
             renderLowPriority();
         } else {
             renderHighPriority();
         }
 
-        // 3. Настройка кнопок связи (после того как они отрисовались)
+        // Setup CTA tracking
         const tgLink = document.getElementById('tg-link');
         const intakeLink = document.querySelector('a[href="intake.html"]');
 
@@ -520,17 +519,22 @@
                 `Хочу обсудить результат и возможную работу над этим.`
             );
             tgLink.href = `https://t.me/unblock_eng?text=${tgMessage}`;
-
-            // Цель для клика в Telegram
             tgLink.onclick = function() {
                 ym(106635328, 'reachGoal', 'CLICK_TELEGRAM');
             };
         }
 
         if (intakeLink) {
-            // Цель для клика на Intake
             intakeLink.onclick = function() {
                 ym(106635328, 'reachGoal', 'CLICK_INTAKE');
+            };
+        }
+
+        // FAQ Reference tracking
+        const faqLink = document.getElementById('faq-from-diagnostic');
+        if (faqLink) {
+            faqLink.onclick = function() {
+                ym(106635328, 'reachGoal', 'FAQ_FROM_DIAGNOSTIC');
             };
         }
     }
@@ -579,6 +583,18 @@
         document.getElementById('pattern-analysis').innerHTML = `
             <h4>Паттерн: ${pattern}</h4>
             <p style="font-size: 14px; margin-top: 8px;">Точный механизм определяется при разборе конкретных ситуаций на сессии. Паттерны определяют стратегию тренировок.</p>
+            
+            <div style="background:#f7f7f7; border-left:3px solid #555; padding:1.25rem; margin-top:2rem;">
+                <p style="font-size:0.9rem; color:#333; margin-bottom:0.75rem;">
+                    <strong>Дополнительный контекст</strong>
+                </p>
+                <p style="font-size:0.9rem; color:#555; margin-bottom:0;">
+                    Подробнее о механизме языковой тревожности можно прочитать в 
+                    <a href="fla-reference.html" id="faq-from-diagnostic" style="color:#1a1a1a; text-decoration:underline;">
+                        справочном материале
+                    </a>.
+                </p>
+            </div>
         `;
     }
 
