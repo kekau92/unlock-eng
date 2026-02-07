@@ -919,7 +919,18 @@
                 button.textContent = 'Читать полностью →';
             }
         }
-    </script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Track FAQ link from footer
+        const faqLink = document.getElementById('faq-link-footer');
+        if (faqLink) {
+            faqLink.addEventListener('click', () => {
+                ym(106635328, 'reachGoal', 'FAQ_FROM_INDEX');
+            });
+        }
+    });
+</script>
+
+    
 
 </body>
 </html>
