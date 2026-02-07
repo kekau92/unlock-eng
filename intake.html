@@ -158,6 +158,31 @@ color: var(--navy);
 font-weight: 600;
 text-decoration: underline;
 }
+/* FAQ Reference Block */
+.faq-reference-block {
+background: #f7f7f7;
+border-left: 3px solid #555;
+padding: 1.25rem;
+margin: 2rem 0 3rem 0;
+border-radius: 2px;
+}
+.faq-reference-block p {
+font-size: 0.9rem;
+color: #333;
+margin-bottom: 0.75rem;
+}
+.faq-reference-block p:last-child {
+margin-bottom: 0;
+color: #555;
+}
+.faq-reference-block a {
+color: #1a1a1a;
+text-decoration: underline;
+font-weight: 500;
+}
+.faq-reference-block a:hover {
+color: var(--navy);
+}
 /* Pipeline phases - Audit Trail */
 .pipeline-container {
 position: relative;
@@ -246,6 +271,13 @@ font-size: 15px;
 color: var(--gray-600);
 margin: 0;
 }
+.limits-item a {
+color: #1a1a1a;
+text-decoration: underline;
+}
+.limits-item a:hover {
+color: var(--navy);
+}
 /* FAQ items */
 .faq-item {
 margin-bottom: 32px;
@@ -308,7 +340,7 @@ font-size: 15px;
 color: var(--gray-600);
 margin: 0;
 }
-/* MINIMAL FOOTER --- no border-top */
+/* MINIMAL FOOTER */
 .site-footer {
 margin-top: 100px;
 padding: 30px 0;
@@ -335,7 +367,7 @@ text-transform: uppercase;
 font-size: 10px;
 letter-spacing: 0.5px;
 }
-/* Admittance Section - Structural Foundation */
+/* Admittance Section */
 .admittance-section {
 margin-top: 80px;
 padding-bottom: 80px;
@@ -343,15 +375,15 @@ padding-bottom: 80px;
 .admittance-stack {
 display: flex;
 flex-direction: column;
-max-width: 600px; /* Forces professional narrow alignment on laptop */
+max-width: 600px;
 margin: 0 auto;
 }
 .protocol-block {
 padding: 32px 0;
-border-bottom: 1px solid var(--gray-100); /* Systematic dividers */
+border-bottom: 1px solid var(--gray-100);
 }
 .protocol-block:last-child {
-border-bottom: none; /* Clean finish */
+border-bottom: none;
 }
 .protocol-label {
 font-family: 'Consolas', monospace;
@@ -362,7 +394,7 @@ letter-spacing: 2px;
 margin-bottom: 12px;
 display: block;
 }
-/* CTA Button - Clean V1.0 */
+/* CTA Button */
 .contact-link {
 display: flex;
 align-items: center;
@@ -393,7 +425,7 @@ display: flex;
 gap: 16px;
 cursor: pointer;
 align-items: flex-start;
-user-select: none; /* Prevents blue highlight on fast clicks */
+user-select: none;
 -webkit-user-select: none;
 }
 .agreement-box input[type="checkbox"] {
@@ -404,22 +436,6 @@ flex-shrink: 0;
 cursor: pointer;
 margin-top: 2px;
 }
-.credit-note {
-margin-top: 12px;
-padding: 16px;
-background: var(--gray-50);
-border-left: 3px solid var(--gray-200);
-font-size: 13px;
-color: var(--gray-600);
-line-height: 1.6;
-}
-/* Адаптивность для грида параметров */
-@media (max-width: 768px) {
-.admittance-stack .protocol-block > div > div {
-grid-template-columns: 1fr;
-gap: 16px;
-}
-}
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
 .container {
@@ -428,8 +444,9 @@ padding: 0 20px;
 .limits-box,
 .refusal-box,
 .deliverables-box,
-.referrer-warning {
-padding: 30px;
+.referrer-warning,
+.faq-reference-block {
+padding: 24px;
 }
 .site-footer {
 margin-top: 80px;
@@ -512,7 +529,7 @@ letter-spacing: 1px;
 </head>
 <body>
 <div class="container">
-<!-- Навигация через JavaScript -->
+<!-- Навигация -->
 <div id="navigation-container"></div>
 
 <!-- Status Bar -->
@@ -531,7 +548,19 @@ letter-spacing: 1px;
 </p>
 </header>
 
-<!-- Блок проверки прохождения диагностики (аналогично Site B) -->
+<!-- FAQ REFERENCE BLOCK (ПЕРВОЕ РАЗМЕЩЕНИЕ) -->
+<div class="faq-reference-block">
+<p><strong>Перед ознакомлением с условиями</strong></p>
+<p>
+Рекомендуется изучить базовую терминологию в 
+<a href="fla-reference.html" id="faq-from-intake-top">
+справочном материале
+</a>. 
+Это позволит использовать единый язык при обсуждении формата работы.
+</p>
+</div>
+
+<!-- Блок проверки диагностики -->
 <div id="referrer-warning" class="referrer-warning" style="display:none;">
 В рамках протокола используется краткая предварительная самодиагностика (2 минуты).
 Это позволяет сразу сфокусироваться на самом важном и сэкономить время на аудите.
@@ -578,7 +607,10 @@ letter-spacing: 1px;
 </div>
 <div class="limits-item">
 <h4>Не психотерапия</h4>
-<p>Хотя используются заимствованные элементы когнитивно-поведенческих моделей, это коррекция навыка, а не лечение тревожных расстройств.</p>
+<p>
+Хотя используются заимствованные элементы когнитивно-поведенческих моделей, это коррекция навыка, а не лечение тревожных расстройств. 
+<a href="fla-reference.html#section-7" id="faq-from-limits">Критерии применимости</a>.
+</p>
 </div>
 <div class="limits-item">
 <h4>Не коучинг</h4>
@@ -628,14 +660,14 @@ letter-spacing: 1px;
 </div>
 </section>
 
-<!-- Admittance Section - V1.0 Implementation -->
+<!-- Admittance Section -->
 <div class="admittance-section">
 <h2 class="section-header" style="max-width:600px; margin: 0 auto 20px auto;">
 Admittance Protocol
 <span class="section-header-l2">Речевой аудит под нагрузкой</span>
 </h2>
 <div class="admittance-stack">
-<!-- Секция 1: Параметры аудита -->
+<!-- Параметры аудита -->
 <div class="protocol-block">
 <span class="protocol-label">[AUDIT_PARAMETERS]</span>
 <div style="margin-top: 16px;">
@@ -667,7 +699,7 @@ Admittance Protocol
 </div>
 </div>
 
-<!-- Секция 2: Верификация критериев (ритуал) -->
+<!-- Верификация критериев -->
 <div class="protocol-block">
 <span class="protocol-label">[CRITERIA_VERIFICATION]</span>
 <label class="agreement-box">
@@ -679,7 +711,7 @@ Admittance Protocol
 </label>
 </div>
 
-<!-- Секция 3: Инициация аудита -->
+<!-- Инициация аудита -->
 <div class="protocol-block">
 <span class="protocol-label">[AUDIT_INITIATION]</span>
 <div style="text-align: center; margin-top: 8px;">
@@ -720,14 +752,14 @@ class="contact-link">
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-// 1. Проверка реферера для показа предупреждения
+// 1. Проверка реферера
 const referrer = document.referrer;
 const referrerWarning = document.getElementById('referrer-warning');
 if (referrerWarning && !referrer.includes('diagnostic.html')) {
 referrerWarning.style.display = 'block';
 }
 
-// 2. Интеллектуальная навигация
+// 2. Навигация
 const navContainer = document.getElementById('navigation-container');
 if (navContainer) {
 const isFromTest = referrer.includes('diagnostic.html');
@@ -743,25 +775,41 @@ link.href = 'index.html';
 navContainer.appendChild(link);
 }
 
-// 3. Отслеживание инициации аудита (ЕДИНСТВЕННАЯ логика)
+// 3. Метрика: Инициация аудита
 const auditInitiationBtn = document.getElementById('audit-initiation-btn');
 if (auditInitiationBtn) {
-auditInitiationBtn.addEventListener('click', (e) => {
-// Всегда разрешаем клик, НО отслеживаем метрику
+auditInitiationBtn.addEventListener('click', () => {
 if (typeof ym === 'function') {
 ym(106635328, 'reachGoal', 'AUDIT_INITIATION');
-console.log('Metric Sent: AUDIT_INITIATION');
 }
-// Продолжаем стандартное поведение ссылки
 });
 }
 
-// 4. Чекбокс - чисто ритуальный, без логики
+// 4. Метрика: FAQ Reference (верхний блок)
+const faqTopLink = document.getElementById('faq-from-intake-top');
+if (faqTopLink) {
+faqTopLink.addEventListener('click', () => {
+if (typeof ym === 'function') {
+ym(106635328, 'reachGoal', 'FAQ_FROM_INTAKE');
+}
+});
+}
+
+// 5. Метрика: FAQ Reference (из limits блока)
+const faqLimitsLink = document.getElementById('faq-from-limits');
+if (faqLimitsLink) {
+faqLimitsLink.addEventListener('click', () => {
+if (typeof ym === 'function') {
+ym(106635328, 'reachGoal', 'FAQ_FROM_INTAKE');
+}
+});
+}
+
+// 6. Чекбокс (ритуальный, без логики)
 const checkbox = document.getElementById('criteria-checkbox');
 if (checkbox) {
-// Никакой логики при изменении
 checkbox.addEventListener('change', () => {
-// НИЧЕГО не делаем - это ритуальный элемент
+// Ритуальный элемент, без функциональности
 });
 }
 });
