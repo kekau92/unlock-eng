@@ -29,8 +29,209 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* COPY ALL CSS FROM index.html HERE */
-        /* (Same styles - omitted for brevity, but include everything from :root to @media) */
+        :root {
+            --navy: #1A3A52;
+            --navy-light: #2C5F7C;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-400: #9CA3AF;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --offwhite: #F7F7F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background: var(--offwhite);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        .site-header {
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        .brand-signature {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+        }
+
+        /* ARTICLE STYLES */
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        article h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        article h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+
+        article h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        article h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        article p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--gray-700);
+            margin-bottom: 16px;
+        }
+
+        article section {
+            margin-bottom: 60px;
+        }
+
+        article ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        article li {
+            padding: 8px 0;
+            color: var(--gray-700);
+            font-size: 16px;
+        }
+
+        /* BUTTON */
+        .btn-primary {
+            display: inline-block;
+            padding: 18px 48px;
+            background: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: background 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--navy-light);
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+
+        .footer-contact {
+            font-size: 15px;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .footer-contact a {
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-notes {
+            margin-top: 32px;
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            article {
+                padding: 40px 0;
+            }
+
+            article h1 {
+                font-size: 28px;
+            }
+
+            article h2 {
+                font-size: 22px;
+            }
+
+            .btn-primary {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+
+            /* Stack grids on mobile */
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                display: block !important;
+            }
+
+            div[style*="grid-template-columns: 1fr 1fr"] > div {
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -44,11 +245,9 @@
     </header>
 
     <!-- ARTICLE CONTENT -->
-    <article style="max-width: 800px; margin: 0 auto; padding: 60px 0;">
+    <article>
         
-        <h1 style="font-size: 36px; font-weight: 700; color: var(--navy); margin-bottom: 24px; line-height: 1.2;">
-        Почему после онлайн-курсов сложно говорить
-        </h1>
+        <h1>Почему после онлайн-курсов сложно говорить</h1>
 
         <div style="font-size: 18px; color: var(--gray-600); line-height: 1.7; margin-bottom: 60px;">
             <p>Многие проходят крупные образовательные платформы, получают сертификаты, набирают лексику — и всё равно замирают на рабочих встречах.</p>
@@ -56,13 +255,11 @@
         </div>
 
         <!-- SECTION 1 -->
-        <section style="margin-bottom: 60px;">
-            <h2 style="font-size: 24px; font-weight: 600; color: var(--navy); margin-bottom: 24px;">
-            Платформенная модель оптимизирована для:
-            </h2>
+        <section>
+            <h2>Платформенная модель оптимизирована для:</h2>
 
             <div style="background: var(--gray-50); border-left: 4px solid #10B981; padding: 32px; margin-bottom: 24px;">
-                <ul style="list-style: none; padding: 0;">
+                <ul>
                     <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✓ Передачи знаний</li>
                     <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✓ Грамматической точности</li>
                     <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✓ Контролируемой практики</li>
@@ -70,12 +267,10 @@
                 </ul>
             </div>
 
-            <h3 style="font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 16px;">
-            Но она не оптимизирована для:
-            </h3>
+            <h3>Но она не оптимизирована для:</h3>
 
             <div style="background: var(--gray-50); border-left: 4px solid #EF4444; padding: 32px;">
-                <ul style="list-style: none; padding: 0;">
+                <ul>
                     <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✗ Выступления под давлением</li>
                     <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✗ Живых непредсказуемых диалогов</li>
                     <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✗ Переноса навыка в реальные сценарии</li>
@@ -85,46 +280,34 @@
         </section>
 
         <!-- SECTION 2 -->
-        <section style="margin-bottom: 60px;">
-            <h2 style="font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 24px; text-align: center;">
-            Знания ≠ выступление
-            </h2>
+        <section>
+            <h2 style="text-align: center;">Знания ≠ выступление</h2>
 
-            <p style="font-size: 17px; line-height: 1.7; color: var(--gray-700); margin-bottom: 16px;">
-            Вы можете знать 5000 слов и все времена глаголов.
-            </p>
+            <p>Вы можете знать 5000 слов и все времена глаголов.</p>
 
-            <p style="font-size: 17px; line-height: 1.7; color: var(--gray-700); margin-bottom: 16px;">
-            Но если у вас нет опыта речевой реализации в условиях вашей рабочей среды — навык не активируется.
-            </p>
+            <p>Но если у вас нет опыта речевой реализации в условиях вашей рабочей среды — навык не активируется.</p>
 
-            <p style="font-size: 17px; line-height: 1.7; color: var(--gray-700); margin-bottom: 32px; font-weight: 600;">
-            Это не вопрос "больше практики".<br>
-            Это вопрос переноса под давлением.
-            </p>
+            <p style="font-weight: 600;">Это не вопрос "больше практики".<br>
+            Это вопрос переноса под давлением.</p>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;">
                 <div style="background: var(--white); border: 1px solid var(--gray-200); padding: 24px; border-radius: 4px;">
-                    <h4 style="font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 16px;">
-                    Платформенная практика:
-                    </h4>
-                    <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--gray-600);">
-                        <li style="padding: 6px 0;">• Предсказуемые диалоги</li>
-                        <li style="padding: 6px 0;">• Заранее известные темы</li>
-                        <li style="padding: 6px 0;">• Время на подготовку</li>
-                        <li style="padding: 6px 0;">• Нет реальных ставок</li>
+                    <h4>Платформенная практика:</h4>
+                    <ul style="font-size: 14px; color: var(--gray-600);">
+                        <li>• Предсказуемые диалоги</li>
+                        <li>• Заранее известные темы</li>
+                        <li>• Время на подготовку</li>
+                        <li>• Нет реальных ставок</li>
                     </ul>
                 </div>
 
                 <div style="background: var(--white); border: 1px solid var(--gray-200); padding: 24px; border-radius: 4px;">
-                    <h4 style="font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 16px;">
-                    Реальная среда:
-                    </h4>
-                    <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--gray-600);">
-                        <li style="padding: 6px 0;">• Спонтанные вопросы</li>
-                        <li style="padding: 6px 0;">• Неизвестный контекст</li>
-                        <li style="padding: 6px 0;">• Ожидание быстрого ответа</li>
-                        <li style="padding: 6px 0;">• Последствия за ошибку</li>
+                    <h4>Реальная среда:</h4>
+                    <ul style="font-size: 14px; color: var(--gray-600);">
+                        <li>• Спонтанные вопросы</li>
+                        <li>• Неизвестный контекст</li>
+                        <li>• Ожидание быстрого ответа</li>
+                        <li>• Последствия за ошибку</li>
                     </ul>
                 </div>
             </div>
@@ -135,34 +318,30 @@
         </section>
 
         <!-- SECTION 3 -->
-        <section style="margin-bottom: 60px;">
-            <h2 style="font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 24px; text-align: center;">
-            Учебные диалоги ≠ живые звонки
-            </h2>
+        <section>
+            <h2 style="text-align: center;">Учебные диалоги ≠ живые звонки</h2>
 
-            <p style="font-size: 17px; line-height: 1.7; color: var(--gray-700); margin-bottom: 24px;">
-            Практика по скриптам с другими студентами не переносится в ситуацию, где от вас ждут быстрого технического объяснения на 15-минутном созвоне с зарубежным клиентом.
-            </p>
+            <p>Практика по скриптам с другими студентами не переносится в ситуацию, где от вас ждут быстрого технического объяснения на 15-минутном созвоне с зарубежным клиентом.</p>
 
-            <h3 style="font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 20px;">Почему?</h3>
+            <h3>Почему?</h3>
 
             <div style="background: var(--gray-50); padding: 32px; border-left: 4px solid var(--navy); margin-bottom: 20px;">
-                <p style="font-size: 16px; line-height: 1.7; color: var(--gray-700); margin-bottom: 20px;">
+                <p style="margin-bottom: 20px;">
                 <strong>→ В учебной ситуации все знают, что это "учёба"</strong><br>
                 Снисходительность встроена в контекст. Ошибка не имеет последствий.
                 </p>
 
-                <p style="font-size: 16px; line-height: 1.7; color: var(--gray-700); margin-bottom: 20px;">
+                <p style="margin-bottom: 20px;">
                 <strong>→ В рабочей ситуации ждут результата</strong><br>
                 От вас ожидают компетентности. Непонимание стоит денег или репутации.
                 </p>
 
-                <p style="font-size: 16px; line-height: 1.7; color: var(--gray-700); margin-bottom: 20px;">
+                <p style="margin-bottom: 20px;">
                 <strong>→ Учебные партнёры терпеливы</strong><br>
                 Реальные собеседники нетерпеливы.
                 </p>
 
-                <p style="font-size: 16px; line-height: 1.7; color: var(--gray-700); margin-bottom: 0;">
+                <p style="margin-bottom: 0;">
                 <strong>→ В учебной практике вы контролируете тему</strong><br>
                 В реальности тему контролирует собеседник.
                 </p>
@@ -170,41 +349,31 @@
         </section>
 
         <!-- SECTION 4 -->
-        <section style="margin-bottom: 60px;">
-            <h2 style="font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 24px; text-align: center;">
-            Комфорт ≠ адаптация к давлению
-            </h2>
+        <section>
+            <h2 style="text-align: center;">Комфорт ≠ адаптация к давлению</h2>
 
-            <p style="font-size: 17px; line-height: 1.7; color: var(--gray-700); margin-bottom: 16px;">
-            Образовательные среды созданы для снижения стресса.<br>
-            Рабочие среды созданы для результата.
-            </p>
+            <p>Образовательные среды созданы для снижения стресса.<br>
+            Рабочие среды созданы для результата.</p>
 
-            <p style="font-size: 17px; line-height: 1.7; color: var(--gray-700); margin-bottom: 32px; font-weight: 600;">
-            Если вы тренируетесь только в комфорте,<br>
-            вы не готовитесь к давлению.
-            </p>
+            <p style="font-weight: 600;">Если вы тренируетесь только в комфорте,<br>
+            вы не готовитесь к давлению.</p>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;">
                 <div style="background: var(--gray-50); border: 1px solid var(--gray-200); padding: 24px; border-radius: 4px;">
-                    <h4 style="font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 16px;">
-                    Комфортная среда учит вас:
-                    </h4>
-                    <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--gray-600);">
-                        <li style="padding: 6px 0;">• Говорить, когда спокойны</li>
-                        <li style="padding: 6px 0;">• Формулировать без спешки</li>
-                        <li style="padding: 6px 0;">• Исправляться без стыда</li>
+                    <h4>Комфортная среда учит вас:</h4>
+                    <ul style="font-size: 14px; color: var(--gray-600);">
+                        <li>• Говорить, когда спокойны</li>
+                        <li>• Формулировать без спешки</li>
+                        <li>• Исправляться без стыда</li>
                     </ul>
                 </div>
 
                 <div style="background: var(--gray-50); border: 1px solid var(--gray-200); padding: 24px; border-radius: 4px;">
-                    <h4 style="font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 16px;">
-                    Реальная среда требует:
-                    </h4>
-                    <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--gray-600);">
-                        <li style="padding: 6px 0;">• Говорить под давлением</li>
-                        <li style="padding: 6px 0;">• Формулировать быстро</li>
-                        <li style="padding: 6px 0;">• Продолжать при ошибке</li>
+                    <h4>Реальная среда требует:</h4>
+                    <ul style="font-size: 14px; color: var(--gray-600);">
+                        <li>• Говорить под давлением</li>
+                        <li>• Формулировать быстро</li>
+                        <li>• Продолжать при ошибке</li>
                     </ul>
                 </div>
             </div>
@@ -219,19 +388,15 @@
 
         <!-- CTA SECTION -->
         <section style="background: var(--gray-50); padding: 48px; text-align: center; border-radius: 4px; border: 1px solid var(--gray-200);">
-            <h2 style="font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 24px;">
-            Что дальше?
-            </h2>
+            <h2>Что дальше?</h2>
 
             <p style="font-size: 17px; color: var(--gray-700); margin-bottom: 32px;">
             Если вы узнали эту ситуацию — пройдите профессиональную оценку.
             </p>
 
             <div style="background: var(--white); padding: 32px; margin-bottom: 32px; border-radius: 4px;">
-                <h3 style="font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 20px;">
-                Оценка покажет:
-                </h3>
-                <ul style="list-style: none; padding: 0; font-size: 16px; color: var(--gray-700); text-align: left; max-width: 400px; margin: 0 auto;">
+                <h3>Оценка покажет:</h3>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
                     <li style="padding: 8px 0; padding-left: 24px; position: relative;">
                         <span style="position: absolute; left: 0; color: var(--navy); font-weight: 700;">•</span>
                         Ваш текущий паттерн
@@ -251,7 +416,7 @@
             10-12 минут. Без обязательств.
             </p>
 
-            <a href="/assessment.html" class="btn-primary" onclick="ym(XXXXXXXX, 'reachGoal', 'after_platforms_cta'); return true;" style="display: inline-block; padding: 18px 48px; background: var(--navy); color: var(--white); text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 18px;">Пройти оценку</a>
+            <a href="/assessment.html" class="btn-primary" onclick="ym(XXXXXXXX, 'reachGoal', 'after_platforms_cta'); return true;">Пройти оценку</a>
 
             <div style="background: var(--gray-100); padding: 24px; margin-top: 40px; border-radius: 4px; border-left: 4px solid var(--gray-400);">
                 <p style="font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 0;">
