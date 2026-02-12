@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оценка формата работы | Unblock English</title>
+    <meta name="description" content="5-7 минут. Помогает определить подходящий формат работы с английским и избежать лишних затрат времени.">
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(XXXXXXXX, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* COPY SAME CSS AS INDEX.HTML + ADD ASSESSMENT-SPECIFIC STYLES */
+        
+        :root {
+            --navy: #1A3A52;
+            --navy-light: #2C5F7C;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-400: #9CA3AF;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --offwhite: #F7F7F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background: var(--offwhite);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .site-header {
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* ASSESSMENT STYLES */
+        .assessment-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .assessment-intro h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .assessment-intro p {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .privacy-note {
+            font-size: 13px;
+            color: var(--gray-400);
+            background: var(--gray-50);
+            padding: 16px;
+            border-radius: 4px;
+            margin-top: 24px;
+        }
+
+        .step-indicator {
+            text-align: center;
+            font-size: 14px;
+            color: var(--gray-400);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .question-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .question-section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+
+        .question {
+            margin-bottom: 32px;
+        }
+
+        .question:last-child {
+            margin-bottom: 0;
+        }
+
+        .question label {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 16px;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: var(--gray-50);
+            border: 2px solid var(--gray-200);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .radio-option:hover, .checkbox-option:hover {
+            background: var(--white);
+            border-color: var(--navy-light);
+        }
+
+        .radio-option input[type="radio"],
+        .checkbox-option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .radio-option label,
+        .checkbox-option label {
+            flex: 1;
+            cursor: pointer;
+            margin: 0;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .btn-next, .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: var(--navy);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-next:hover, .btn-submit:hover {
+            background: var(--navy-light);
+        }
+
+        .btn-next:disabled, .btn-submit:disabled {
+            background: var(--gray-400);
+            cursor: not-allowed;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        /* RESULT PAGES */
+        .result-page {
+            display: none;
+        }
+
+        .result-page.active {
+            display: block;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .result-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .result-header h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 24px;
+        }
+
+        .result-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--gray-200);
+            margin-bottom: 32px;
+        }
+
+        .result-content h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .result-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .result-content li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 15px;
+            color: var(--gray-700);
+        }
+
+        .result-content li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: 700;
+        }
+
+        .investment-box {
+            background: var(--gray-50);
+            border-left: 4px solid var(--navy);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .investment-box p {
+            font-size: 15px;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .investment-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cta-telegram {
+            display: inline-block;
+            padding: 18px 48px;
+            background: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: background 0.2s;
+        }
+
+        .cta-telegram:hover {
+            background: var(--navy-light);
+        }
+
+        .warning-banner {
+            background: #FEF2F2;
+            border: 1px solid #FCA5A5;
+            border-left: 4px solid #EF4444;
+            padding: 20px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--gray-700);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .question-section {
+                padding: 24px;
+            }
+
+            .result-content {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="/" class="brand-name">UNBLOCK ENGLISH</a>
+    </header>
+
+    <!-- INTRO (shown initially) -->
+    <div id="intro-screen">
+        <div class="assessment-intro">
+            <h1>Оценка формата работы</h1>
+            <p>5–7 минут.</p>
+            <p>Помогает определить подходящий формат и избежать лишних затрат времени.</p>
+            
+            <div class="privacy-note">
+                Ответы используются только для определения формата работы.<br>
+                Ничего не публикуется.
+            </div>
+
+            <button onclick="startAssessment()" class="btn-next" style="max-width: 400px; margin: 40px auto;">
+                Начать оценку
+            </button>
+        </div>
+    </div>
+
+    <!-- ASSESSMENT FORM -->
+    <form id="assessment-form" style="display: none;">
+        
+        <!-- STEP 1: Опыт -->
+        <div class="step active" data-step="1">
+            <div class="step-indicator">Шаг 1 из 4</div>
+            
+            <div class="question-section">
+                <h2>Ваш опыт</h2>
+
+                <!-- Q1 -->
+                <div class="question">
+                    <label>1. Где вы используете английский сейчас?</label>
+                    <div class="checkbox-group" id="q1">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="q1_work" name="q1" value="работа">
+                            <label for="q1_work">На работе</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="q1_study" name="q1" value="учёба">
+                            <label for="q1_study">В учёбе</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="q1_travel" name="q1" value="путешествия">
+                            <label for="q1_travel">В путешествиях</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="q1_online" name="q1" value="онлайн">
+                            <label for="q1_online">В онлайн-общении</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="q1_none" name="q1" value="не использую">
+                            <label for="q1_none">Практически не использую</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="question">
+                    <label>2. Какой у вас уровень английского?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="q2_a0" name="q2" value="A0-A1">
+                            <label for="q2_a0">A0-A1 (начальный)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q2_a2" name="q2" value="A2">
+                            <label for="q2_a2">A2 (базовый)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q2_b1" name="q2" value="B1">
+                            <label for="q2_b1">B1 (средний)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q2_b2" name="q2" value="B2">
+                            <label for="q2_b2">B2 (выше среднего)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q2_c1" name="q2" value="C1">
+                            <label for="q2_c1">C1+</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q2_unsure" name="q2" value="не уверен">
+                            <label for="q2_unsure">Точно не уверен(а)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" onclick="nextStep(2)" class="btn-next">Далее</button>
+        </div>
+
+        <!-- STEP 2: Речевая ситуация -->
+        <div class="step" data-step="2">
+            <div class="step-indicator">Шаг 2 из 4</div>
+            
+            <div class="question-section">
+                <h2>Речевая ситуация</h2>
+
+                <!-- Q3 -->
+                <div class="question">
+                    <label>3. Как обычно проходит разговор на английском?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="q3_ok" name="q3" value="справляюсь">
+                            <label for="q3_ok">В целом справляюсь, но хочу лучше</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q3_slow" name="q3" value="думаю дольше">
+                            <label for="q3_slow">Думаю дольше, чем хотелось бы</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q3_lost" name="q3" value="теряюсь">
+                            <label for="q3_lost">Иногда теряюсь в формулировках</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q3_tension" name="q3" value="напряжение">
+                            <label for="q3_tension">Чувствую заметное напряжение</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q3_avoid" name="q3" value="избегать">
+                            <label for="q3_avoid">Стараюсь избегать таких ситуаций</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="question">
+                    <label>4. После разговора чаще всего вы думаете:</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="q4_ok" name="q4" value="нормально">
+                            <label for="q4_ok">Всё прошло нормально</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q4_better" name="q4" value="можно лучше">
+                            <label for="q4_better">Можно было сказать лучше</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q4_half" name="q4" value="не получилось">
+                            <label for="q4_half">Часть мыслей не получилось выразить</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q4_freeze" name="q4" value="сложно собраться">
+                            <label for="q4_freeze">В моменте сложно было собраться</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="question">
+                    <label>5. Если нужно объяснить что-то сложное на английском:</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="q5_structure" name="q5" value="могу объяснить">
+                            <label for="q5_structure">Могу структурировать и объяснить</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q5_tempo" name="q5" value="теряю темп">
+                            <label for="q5_tempo">Теряю темп</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q5_simplify" name="q5" value="упрощаю">
+                            <label for="q5_simplify">Упрощаю мысль</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q5_lost" name="q5" value="сбиваюсь">
+                            <label for="q5_lost">Сбиваюсь и теряю уверенность</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" onclick="nextStep(3)" class="btn-next">Далее</button>
+        </div>
+
+        <!-- STEP 3: Цели -->
+        <div class="step" data-step="3">
+            <div class="step-indicator">Шаг 3 из 4</div>
+            
+            <div class="question-section">
+                <h2>Цели</h2>
+
+                <!-- Q6 -->
+                <div class="question">
+                    <label>6. Зачем вам английский сейчас?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="q6_work" name="q6" value="для работы">
+                            <label for="q6_work">Для работы</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q6_career" name="q6" value="для карьеры">
+                            <label for="q6_career">Для будущей карьеры</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q6_relocation" name="q6" value="для переезда">
+                            <label for="q6_relocation">Для переезда</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q6_communication" name="q6" value="для общения">
+                            <label for="q6_communication">Для свободного общения</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q6_general" name="q6" value="для развития">
+                            <label for="q6_general">Для общего развития</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q7 -->
+                <div class="question">
+                    <label>7. Есть ли конкретная задача в ближайшие 3 месяца?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="q7_concrete" name="q7" value="конкретная">
+                            <label for="q7_concrete">Да, конкретная (интервью, проект, переезд)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q7_direction" name="q7" value="направление">
+                            <label for="q7_direction">Есть направление, но без срочности</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q7_none" name="q7" value="пока нет">
+                            <label for="q7_none">Пока нет, хочу постепенно улучшать уровень</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" onclick="nextStep(4)" class="btn-next">Далее</button>
+        </div>
+
+        <!-- STEP 4: Формат работы -->
+        <div class="step" data-step="4">
+            <div class="step-indicator">Шаг 4 из 4</div>
+            
+            <div class="question-section">
+                <h2>Формат работы</h2>
+
+                <!-- Q8 -->
+                <div class="question">
+                    <label>8. Какой формат вам ближе?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="q8_1on1" name="q8" value="1:1">
+                            <label for="q8_1on1">Индивидуальная работа 1:1</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q8_group" name="q8" value="группа">
+                            <label for="q8_group">Небольшая группа</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q8_self" name="q8" value="самостоятельно">
+                            <label for="q8_self">Самостоятельное обучение</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q8_budget" name="q8" value="доступный">
+                            <label for="q8_budget">Ищу максимально доступный вариант</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q9 -->
+                <div class="question">
+                    <label>9. Рассматриваете ли вы системную работу в течение 1–2 месяцев?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="q9_yes" name="q9" value="да">
+                            <label for="q9_yes">Да</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q9_maybe" name="q9" value="скорее да">
+                            <label for="q9_maybe">Скорее да</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q9_thinking" name="q9" value="думаю">
+                            <label for="q9_thinking">Пока думаю</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q9_no" name="q9" value="нет">
+                            <label for="q9_no">Нет</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q10 -->
+                <div class="question">
+                    <label>10. Сколько времени вы готовы уделять английскому в неделю?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="q10_one" name="q10" value="1 сессия">
+                            <label for="q10_one">1 сессия</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q10_two" name="q10" value="1-2 сессии">
+                            <label for="q10_two">1–2 сессии + самостоятельная практика</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q10_intensive" name="q10" value="интенсивно">
+                            <label for="q10_intensive">Интенсивно под задачу</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="q10_not_ready" name="q10" value="не готов">
+                            <label for="q10_not_ready">Пока не готов(а) регулярно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" onclick="calculateResult()" class="btn-submit">Получить результат</button>
+        </div>
+
+    </form>
+
+    <!-- RESULT PAGES -->
+    
+    <!-- REJECT -->
+    <div id="result-reject" class="result-page">
+        <div class="result-header">
+            <h1>Результат оценки</h1>
+        </div>
+
+        <div class="result-content">
+            <p style="font-size: 17px; color: var(--gray-700); line-height: 1.7; margin-bottom: 20px;">
+            Сейчас формат индивидуальной работы будет преждевременным.
+            </p>
+
+            <p style="font-size: 16px; color: var(--gray-600); line-height: 1.7;">
+            Рекомендуем сначала пройти базовый курс для формирования фундаментальной базы (A2 уровень).
+            </p>
+
+            <p style="font-size: 16px; color: var(--gray-600); line-height: 1.7; margin-top: 20px;">
+            После этого можно вернуться к оценке.
+            </p>
+        </div>
+    </div>
+
+    <!-- GROWTH TRACK -->
+    <div id="result-growth" class="result-page">
+        <div class="result-header">
+            <h1>Результат оценки</h1>
+            <h2>Формат постепенного развития беглости и речевой реализации</h2>
+        </div>
+
+        <div class="result-content">
+            <h3>Работа будет строиться на:</h3>
+            <ul>
+                <li>Расширении активного словаря</li>
+                <li>Развитии скорости формулирования</li>
+                <li>Структурировании речи</li>
+                <li>Работе с реальными материалами</li>
+            </ul>
+        </div>
+
+        <div class="investment-box">
+            <p><strong>Формат:</strong> Индивидуальные рабочие сессии 1:1.</p>
+            <p>Работа строится в формате профессиональных сессий, сфокусированных на решении конкретных задач.</p>
+            <p style="margin-top: 20px;"><strong>Инвестиции:</strong> Работа начинается от 3 000 ₽ за рабочую сессию.</p>
+            <p>Точный формат и объём обсуждается индивидуально на основе ваших целей и текущего уровня.</p>
+        </div>
+
+        <div id="commitment-warning" class="warning-banner" style="display: none;">
+            ⚠️ Эта работа требует регулярности минимум 1-2 месяца. Если вы пока не готовы к системной работе — рекомендуем вернуться позже.
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://t.me/YOUR_HANDLE" class="cta-telegram" onclick="ym(XXXXXXXX, 'reachGoal', 'result_growth_contact'); return true;">Обсудить формат работы</a>
+        </div>
+    </div>
+
+    <!-- PROFESSIONAL TRACK -->
+    <div id="result-professional" class="result-page">
+        <div class="result-header">
+            <h1>Результат оценки</h1>
+            <h2>Фокус — перенос навыка в реальные профессиональные ситуации</h2>
+        </div>
+
+        <div class="result-content">
+            <h3>Работа будет строиться вокруг:</h3>
+            <ul>
+                <li>Интервью и собеседований</li>
+                <li>Рабочих встреч и презентаций</li>
+                <li>Переговоров</li>
+                <li>Профессиональной коммуникации</li>
+                <li>Ваших конкретных задач</li>
+            </ul>
+        </div>
+
+        <div class="investment-box">
+            <p><strong>Формат:</strong> 1:1 профессиональные сессии.</p>
+            <p>Работа с вашими реальными материалами и сценариями.</p>
+            <p style="margin-top: 20px;"><strong>Инвестиции:</strong> Работа начинается от 3 000 ₽ за рабочую сессию.</p>
+            <p>Точный формат определяется после обсуждения ваших конкретных задач.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://t.me/YOUR_HANDLE" class="cta-telegram" onclick="ym(XXXXXXXX, 'reachGoal', 'result_professional_contact'); return true;">Обсудить формат работы</a>
+        </div>
+    </div>
+
+    <!-- STABILIZATION TRACK -->
+    <div id="result-stabilization" class="result-page">
+        <div class="result-header">
+            <h1>Результат оценки</h1>
+            <h2>Оценка показывает признаки речевой нестабильности под давлением</h2>
+        </div>
+
+        <div class="result-content">
+            <p style="font-size: 16px; color: var(--gray-700); line-height: 1.7; margin-bottom: 20px;">
+            Перед основной работой потребуется короткая фаза стабилизации:
+            </p>
+
+            <ul>
+                <li>Восстановление темпа речи</li>
+                <li>Структурирование ответов</li>
+                <li>Снижение избыточного напряжения</li>
+                <li>Построение уверенности в формулировании</li>
+            </ul>
+
+            <p style="font-size: 16px; color: var(--gray-700); line-height: 1.7; margin-top: 20px;">
+            После этого возможен переход к основному формату.
+            </p>
+        </div>
+
+        <div class="investment-box">
+            <p><strong>Формат:</strong> Индивидуальные регуляционные сессии.</p>
+            <p>Краткосрочная фокусированная работа.</p>
+            <p style="margin-top: 20px;"><strong>Инвестиции:</strong> Работа начинается от 3 000 ₽ за сессию.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://t.me/YOUR_HANDLE" class="cta-telegram" onclick="ym(XXXXXXXX, 'reachGoal', 'result_stabilization_contact'); return true;">Обсудить формат</a>
+        </div>
+    </div>
+
+    <!-- PROTOCOL REFERRAL -->
+    <div id="result-protocol" class="result-page">
+        <div class="result-header">
+            <h1>Результат оценки</h1>
+            <h2>Оценка выявила паттерн, при котором знания присутствуют, но речь блокируется под давлением</h2>
+        </div>
+
+        <div class="result-content">
+            <p style="font-size: 17px; color: var(--gray-700); line-height: 1.7; margin-bottom: 20px;">
+            Этот паттерн — когда вы знаете, что сказать, но слова «не выходят» — требует специализированного подхода.
+            </p>
+
+            <p style="font-size: 16px; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px;">
+            В таких случаях образовательный формат не является первичным решением.
+            </p>
+
+            <p style="font-size: 16px; color: var(--gray-700); line-height: 1.7; font-weight: 600;">
+            Рекомендуется специализированный протокол, разработанный для работы с исполнительскими сбоями.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://protocol.unblock-english.ru" class="cta-telegram" onclick="ym(XXXXXXXX, 'reachGoal', 'result_protocol_referral'); return true;">Перейти к специализированному протоколу</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+// ASSESSMENT LOGIC
+let currentStep = 1;
+let scores = {
+    LEVEL: null,
+    FLA: 0,
+    URGENCY: 0,
+    COMMITMENT: 0
+};
+
+function startAssessment() {
+    document.getElementById('intro-screen').style.display = 'none';
+    document.getElementById('assessment-form').style.display = 'block';
+    ym(XXXXXXXX, 'reachGoal', 'assessment_started');
+}
+
+function nextStep(step) {
+    // Hide current step
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    
+    // Show next step
+    document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
+    
+    currentStep = step;
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+    
+    // Track step completion
+    ym(XXXXXXXX, 'reachGoal', `assessment_step_${step}`);
+}
+
+function calculateResult() {
+    // Get all answers
+    const q1 = Array.from(document.querySelectorAll('input[name="q1"]:checked')).map(el => el.value);
+    const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+    const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+    const q4 = document.querySelector('input[name="q4"]:checked')?.value;
+    const q5 = document.querySelector('input[name="q5"]:checked')?.value;
+    const q6 = document.querySelector('input[name="q6"]:checked')?.value;
+    const q7 = document.querySelector('input[name="q7"]:checked')?.value;
+    const q8 = document.querySelector('input[name="q8"]:checked')?.value;
+    const q9 = document.querySelector('input[name="q9"]:checked')?.value;
+    const q10 = document.querySelector('input[name="q10"]:checked')?.value;
+
+    // Reset scores
+    scores = {
+        LEVEL: null,
+        FLA: 0,
+        URGENCY: 0,
+        COMMITMENT: 0
+    };
+
+    // Q1: Context
+    if (q1.includes('не использую')) scores.COMMITMENT -= 1;
+
+    // Q2: Level detection (HARD REJECT for A0-A1)
+    if (q2 === 'A0-A1') {
+        showResult('reject');
+        return;
+    }
+    if (q2 === 'A2' || q2 === 'не уверен') scores.LEVEL = 'A2';
+    if (q2 === 'B1') scores.LEVEL = 'B1';
+    if (q2 === 'B2') scores.LEVEL = 'B2';
+    if (q2 === 'C1') scores.LEVEL = 'C1';
+
+    // Q3: FLA detection (INSTANT PROTOCOL on avoidance)
+    if (q3 === 'теряюсь') scores.FLA += 1;
+    if (q3 === 'напряжение') scores.FLA += 2;
+    if (q3 === 'избегать') {
+        showResult('protocol');
+        return; // instant protocol referral
+    }
+
+    // Q4: FLA accumulation
+    if (q4 === 'не получилось') scores.FLA += 2;
+    if (q4 === 'сложно собраться') scores.FLA += 3;
+
+    // Q5: FLA accumulation
+    if (q5 === 'теряю темп') scores.FLA += 1;
+    if (q5 === 'сбиваюсь') scores.FLA += 3;
+
+    // Q6: Urgency detection
+    if (q6 === 'для работы') scores.URGENCY += 2;
+    if (q6 === 'для переезда') scores.URGENCY += 2;
+
+    // Q7: Urgency boost
+    if (q7 === 'конкретная') scores.URGENCY += 3;
+
+    // Q8: Commitment (CORRECTED - specific penalties)
+    if (q8 === '1:1') scores.COMMITMENT += 1;
+    if (q8 === 'группа') scores.COMMITMENT -= 1;
+    if (q8 === 'самостоятельно') scores.COMMITMENT -= 1;
+    if (q8 === 'доступный') scores.COMMITMENT -= 1;
+
+    // Q9: Commitment scale
+    if (q9 === 'да') scores.COMMITMENT += 2;
+    if (q9 === 'скорее да') scores.COMMITMENT += 1;
+    if (q9 === 'думаю') scores.COMMITMENT += 0;
+    if (q9 === 'нет') scores.COMMITMENT -= 2;
+
+    // Q10: Commitment + Urgency bonus
+    if (q10 === '1 сессия') scores.COMMITMENT += 1;
+    if (q10 === '1-2 сессии') scores.COMMITMENT += 2;
+    if (q10 === 'интенсивно') {
+        scores.COMMITMENT += 2;
+        scores.URGENCY += 1;
+    }
+    if (q10 === 'не готов') scores.COMMITMENT -= 2;
+
+    // ROUTING LOGIC (4 Rules)
+    
+    // Rule 1: A0-A1 already rejected above
+
+    // Rule 2: FLA Protocol Referral
+    if (scores.FLA >= 5) {
+        showResult('protocol');
+        return;
+    }
+
+    // Rule 3: Professional Track (urgency + level)
+    if (scores.URGENCY >= 3 && ['B1', 'B2', 'C1'].includes(scores.LEVEL)) {
+        showResult('professional');
+        return;
+    }
+
+    // Rule 4: Default to Growth
+    // Check if commitment warning needed
+    const needsWarning = scores.COMMITMENT < 0;
+    showResult('growth', needsWarning);
+}
+
+function showResult(resultType, showWarning = false) {
+    // Hide assessment form
+    document.getElementById('assessment-form').style.display = 'none';
+
+    // Hide all result pages
+    document.querySelectorAll('.result-page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    // Show appropriate result page
+    const resultPage = document.getElementById(`result-${resultType}`);
+    if (resultPage) {
+        resultPage.classList.add('active');
+    }
+
+    // Show warning banner if needed (for growth track only)
+    if (resultType === 'growth' && showWarning) {
+        document.getElementById('commitment-warning').style.display = 'block';
+    }
+
+    // Track result
+    ym(XXXXXXXX, 'reachGoal', `assessment_result_${resultType}`);
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>
