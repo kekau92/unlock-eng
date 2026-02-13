@@ -7,187 +7,190 @@
   <title>Английский для взрослых (A2–C1) — индивидуальная работа 1:1 | UNBLOCK ENGLISH</title>
   <meta name="description" content="Английский для взрослых специалистов (A2–C1). Индивидуальная работа 1:1, развитие устной речи и речевого функционирования в профессиональной среде. Онлайн. От 3 800 ₽.">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    /* Reset & Base */
     * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       background:#F5F4F2;
       color:#2B2B2B;
       font-family:'Inter', sans-serif;
       font-size:17px;
-      line-height:1.7;
+      line-height:1.65;
       font-weight:400;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
       max-width:720px;
       margin:0 auto;
-      padding:0 24px;
+      padding:0 20px;
     }
 
-    a { color:inherit; text-decoration:none; }
-    a:hover { opacity:0.88; text-decoration:underline; }
+    a { color:inherit; text-decoration:none; transition: opacity 0.2s ease; }
+    a:hover { opacity:0.7; }
 
+    /* Header & Navigation */
     header {
       position:sticky;
       top:0;
-      background:#F5F4F2;
-      padding:36px 0 24px;
-      z-index:10;
-      border-bottom:1px solid rgba(43,43,43,0.05);
+      background:rgba(245, 244, 242, 0.95);
+      backdrop-filter: blur(8px);
+      padding:24px 0;
+      z-index:100;
+      border-bottom:1px solid rgba(43,43,43,0.08);
     }
 
     header .container {
       display:flex;
       justify-content:space-between;
-      align-items:flex-start;
+      align-items: center;
     }
 
-    .logo {
-      display:flex;
-      flex-direction:column;
-    }
-
+    .logo { display:flex; flex-direction:column; }
     .logo a {
-      font-size:23px;
+      font-size:20px;
       font-weight:600;
       letter-spacing:-0.5px;
       text-transform:uppercase;
     }
 
-    .logo-slogan {
-      font-size:14px;
-      font-weight:500;
-      margin-top:6px;
-      color:#555;
-    }
-
-    .logo-credit {
-      font-size:11px;
-      color:#888;
-      margin-top:4px;
-    }
+    .logo-slogan { font-size:13px; font-weight:500; color:#555; margin-top:2px; }
+    .logo-credit { font-size:11px; color:#888; margin-top:2px; }
 
     nav ul {
       display:flex;
-      gap:40px;
+      gap:20px;
       list-style:none;
       align-items:center;
     }
 
-    nav a { font-size:15px; font-weight:500; }
+    nav a { font-size:14px; font-weight:500; }
 
+    /* Buttons */
     .cta-outline {
-      border:1px solid #2E3A4A;
+      border:1.5px solid #2E3A4A;
       color:#2E3A4A;
-      padding:9px 22px;
-      border-radius:4px;
+      padding:8px 16px;
+      border-radius:6px;
       font-weight:500;
     }
 
     .cta-solid {
       background:#2E3A4A;
       color:#F5F4F2;
-      padding:11px 24px;
-      border-radius:4px;
+      padding:14px 28px;
+      border-radius:6px;
       font-weight:500;
       display:inline-block;
+      text-align: center;
     }
 
-    section { padding:100px 0; }
+    .cta-solid:hover { opacity: 0.9; text-decoration: none; }
+
+    /* Sections */
+    section { padding:80px 0; }
 
     .section-label {
-      font-size:12px;
-      font-weight:500;
-      letter-spacing:1.6px;
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:1.8px;
       text-transform:uppercase;
-      color:#888;
-      margin-bottom:14px;
+      color:#999;
+      margin-bottom:16px;
     }
 
     h1 {
-      font-size:42px;
-      font-weight:500;
-      line-height:1.2;
-      letter-spacing:-0.5px;
-      margin-bottom:28px;
+      font-size:40px;
+      font-weight:600;
+      line-height:1.15;
+      letter-spacing:-0.8px;
+      margin-bottom:24px;
     }
 
     h2 {
-      font-size:26px;
+      font-size:28px;
       font-weight:600;
-      margin-bottom:32px;
+      line-height:1.3;
+      margin-bottom:24px;
     }
 
     .lead {
       font-size:20px;
-      margin-bottom:28px;
+      font-weight: 500;
+      margin-bottom:24px;
+      color: #1a1a1a;
     }
 
-    ul, ol {
-      margin-bottom:28px;
-      padding-left:28px;
-    }
+    p { margin-bottom: 20px; }
 
+    ul, ol { margin-bottom:28px; padding-left:22px; }
     li { margin-bottom:12px; }
 
-    .clean-list {
-      list-style:none;
-      padding-left:0;
-    }
-
+    .clean-list { list-style:none; padding-left:0; }
     .clean-list li::before {
       content:"— ";
-      margin-right:10px;
-      color:#999;
+      margin-right:8px;
+      color:#bbb;
     }
 
     .hero-actions {
       display:flex;
-      gap:32px;
+      gap:24px;
       align-items:center;
+      margin-top: 32px;
     }
 
-    .secondary-link {
-      font-size:15px;
-      color:#555;
-    }
+    .secondary-link { font-size:15px; color:#555; font-weight: 500; }
 
+    /* Footer */
     footer {
-      padding:80px 0 100px;
-      text-align:left;
-      font-size:15px;
-      color:#555;
+      padding:60px 0 80px;
+      font-size:14px;
+      color:#666;
       border-top:1px solid rgba(43,43,43,0.05);
-      background:#F5F4F2;
     }
 
-    footer .footer-brand {
-      font-size:19px;
+    .footer-brand {
+      font-size:18px;
       font-weight:600;
       color:#2B2B2B;
-      margin-bottom:20px;
+      margin-bottom:16px;
     }
 
-    .subtle-link {
-      font-size:14px;
-      display:block;
-      margin-top:24px;
-    }
+    .subtle-link { font-size:14px; display:block; margin-top:20px; }
 
+    /* Colors */
     #hero, #experience, #conditions { background:#F8F6F3; }
     #format, #audience, #tasks, #process { background:#FFFFFF; }
 
+    /* Mobile Optimization */
     @media (max-width:768px) {
-      h1 { font-size:34px; }
+      h1 { font-size:32px; }
       h2 { font-size:24px; }
-      section { padding:80px 0; }
-      nav ul { gap:24px; flex-wrap:wrap; justify-content:flex-end; }
-      .hero-actions { flex-direction:column; align-items:flex-start; gap:20px; }
+      section { padding:60px 0; }
+      
+      header { padding: 16px 0; }
+      .logo-slogan, .logo-credit { display: none; } /* Упрощаем для мобильных */
+      
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .secondary-link { text-align: center; }
     }
 
+    @media (max-width:480px) {
+      nav ul { gap: 12px; }
+      nav a { font-size: 13px; }
+      .cta-outline { padding: 6px 10px; }
+    }
   </style>
 </head>
 
@@ -204,8 +207,7 @@
     <nav role="navigation" aria-label="Основная навигация">
       <ul>
         <li><a href="#format">Формат</a></li>
-        <li><a href="/after-platforms.html">После платформ</a></li>
-        <li><a href="/assessment.html" class="cta-outline">Пройти оценку</a></li>
+        <li><a href="/assessment.html" class="cta-outline">Оценка</a></li>
       </ul>
     </nav>
   </div>
@@ -222,12 +224,11 @@
     </p>
 
     <p>
-      Если чтение и письмо уже доступны, но в живом разговоре возникает сбой — это не вопрос знаний. Это вопрос функционирования в среде.  
-      Именно с этим мы работаем системно.
+      Если чтение и письмо уже доступны, но в живом разговоре возникает сбой — это не вопрос знаний. Это вопрос функционирования в среде. Именно с этим мы работаем системно.
     </p>
 
     <div class="hero-actions">
-      <a href="/assessment.html" class="cta-solid">Пройти оценку</a>
+      <a href="/assessment.html" class="cta-solid" role="button">Пройти оценку</a>
       <a href="#format" class="secondary-link">Узнать о формате работы →</a>
     </div>
   </div>
@@ -235,21 +236,16 @@
 
 <section id="format">
   <div class="container">
-    <p class="section-label">FORMAT</p>
+    <p class="section-label">Format</p>
     <h2>Формат индивидуальной работы</h2>
 
     <p>
-      Это формат профессиональных рабочих сессий 1:1.
-    </p>
-
-    <p>
-      Фокус — не на изучении правил, а на формировании устойчивого речевого функционирования в реальных задачах.
+      Это формат профессиональных рабочих сессий 1:1. Фокус — не на изучении правил, а на формировании навыка в реальных задачах:
     </p>
 
     <ul class="clean-list">
       <li>Формулирование и структурирование мысли</li>
-      <li>Скорость реакции</li>
-      <li>Ясность формулировок</li>
+      <li>Скорость реакции и ясность формулировок</li>
       <li>Работа под умеренным давлением</li>
       <li>Перенос знаний в живую коммуникацию</li>
     </ul>
@@ -258,29 +254,25 @@
 
 <section id="experience">
   <div class="container">
-    <p class="section-label">ОПЫТ</p>
+    <p class="section-label">Опыт</p>
     <h2>Профессиональный опыт</h2>
-
     <p>
-      За 25 лет жизни и работы в Нью-Йорке я наблюдал сотни реальных рабочих и академических разговоров.
+      За 25 лет жизни и работы в Нью-Йорке я наблюдал сотни реальных рабочих и академических разговоров. 
     </p>
-
     <p>
-      Разница между «знать язык» и «функционировать в среде» становится очевидной только изнутри.  
-      Именно этот разрыв чаще всего мешает профессионалам.
+      Разница между «знать язык» и «функционировать в среде» становится очевидной только изнутри. Именно этот разрыв чаще всего мешает профессионалам.
     </p>
   </div>
 </section>
 
 <section id="audience">
   <div class="container">
-    <p class="section-label">АУДИТОРИЯ</p>
+    <p class="section-label">Аудитория</p>
     <h2>Для кого подходит формат</h2>
-
     <ul>
       <li>Взрослые профессионалы (A2–C1)</li>
-      <li>Специалисты с реальными задачами</li>
-      <li>Те, у кого уже есть база</li>
+      <li>Специалисты с реальными рабочими задачами</li>
+      <li>Те, у кого уже есть база, но нет беглости</li>
       <li>Те, кто готов к регулярной системной работе</li>
     </ul>
   </div>
@@ -288,9 +280,8 @@
 
 <section id="tasks">
   <div class="container">
-    <p class="section-label">ЗАДАЧИ</p>
+    <p class="section-label">Задачи</p>
     <h2>Примеры рабочих задач</h2>
-
     <ul class="clean-list">
       <li>Подготовка к интервью</li>
       <li>Устойчивость на рабочих встречах</li>
@@ -298,26 +289,23 @@
       <li>Переход от письменной уверенности к устной</li>
       <li>Адаптация к англоязычной среде</li>
     </ul>
-
     <p class="subtle-link">
       Подробнее о работе с последствиями платформ — 
-      <a href="/after-platforms.html">отдельная страница</a>.
+      <a href="/after-platforms.html" style="text-decoration: underline;">отдельная страница</a>.
     </p>
   </div>
 </section>
 
 <section id="process">
   <div class="container">
-    <p class="section-label">ПРОЦЕСС</p>
+    <p class="section-label">Процесс</p>
     <h2>Как строится процесс</h2>
-
     <ol>
       <li>Профессиональная оценка уровня и задач</li>
       <li>Определение приоритетов</li>
       <li>Регулярные рабочие сессии</li>
       <li>Постепенное усложнение среды</li>
     </ol>
-
     <p>
       В большинстве случаев ощутимые изменения проявляются в течение 1–2 месяцев при регулярной работе.
     </p>
@@ -326,21 +314,15 @@
 
 <section id="conditions">
   <div class="container">
-    <p class="section-label">УСЛОВИЯ</p>
+    <p class="section-label">Условия</p>
     <h2>Формат и условия</h2>
-
     <ul class="clean-list">
       <li>Индивидуальные онлайн-сессии 1:1 (60 минут)</li>
       <li>Регулярность — по согласованию</li>
       <li>Стоимость: от 3 800 ₽ за сессию</li>
     </ul>
-
-    <p>
-      Работа начинается после профессиональной оценки уровня и задач.
-    </p>
-
-    <div style="margin-top:40px;">
-      <a href="/assessment.html" class="cta-solid">Пройти оценку</a>
+    <div style="margin-top:32px;">
+      <a href="/assessment.html" class="cta-solid" role="button">Записаться на оценку</a>
     </div>
   </div>
 </section>
@@ -351,7 +333,7 @@
   <div class="container">
     <p class="footer-brand">UNBLOCK ENGLISH</p>
     <p>Индивидуальная работа по развитию английской речи (A2–C1)</p>
-    <p>Связь: <a href="https://t.me/unblock_eng">@unblock_eng</a></p>
+    <p style="margin-top: 8px;">Связь: <a href="https://t.me/unblock_eng" style="text-decoration: underline;">@unblock_eng</a></p>
   </div>
 </footer>
 
