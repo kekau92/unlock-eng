@@ -1,980 +1,296 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO -->
-    <title>Индивидуальный английский онлайн для взрослых — Unblock English</title>
-    <meta name="description" content="Индивидуальные профессиональные сессии для взрослых (A2–C1). Английский для работы, интервью и реального общения. От 3 000 ₽ за сессию.">
-    <meta name="keywords" content="английский для взрослых, английский для работы, английский для интервью, индивидуальный английский онлайн">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Индивидуальный английский для взрослых | Unblock English">
-    <meta property="og:description" content="Профессиональные сессии для взрослых A2–C1. Для работы, интервью, реального общения.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://unblock-english.ru">
-    
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    
-       ym(XXXXXXXX, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --navy: #1A3A52;
-            --navy-light: #2C5F7C;
-            --white: #FFFFFF;
-            --gray-50: #F9FAFB;
-            --gray-100: #F3F4F6;
-            --gray-200: #E5E7EB;
-            --gray-400: #9CA3AF;
-            --gray-600: #4B5563;
-            --gray-700: #374151;
-            --offwhite: #F7F7F5;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--gray-700);
-            background: var(--offwhite);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* HEADER */
-        .site-header {
-            padding: 40px 0;
-            margin-bottom: 60px;
-        }
-
-        .brand-signature {
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .brand-name {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--navy);
-            letter-spacing: -0.5px;
-        }
-
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 80px 0;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: clamp(28px, 5vw, 42px);
-            font-weight: 700;
-            color: var(--navy);
-            letter-spacing: -0.02em;
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 20px;
-            color: var(--gray-600);
-            margin-bottom: 16px;
-            line-height: 1.5;
-        }
-
-        .hero-context {
-            font-size: 16px;
-            color: var(--gray-600);
-            margin-bottom: 40px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 18px 48px;
-            background: var(--navy);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 18px;
-            transition: background 0.2s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--navy-light);
-        }
-
-        .hero-note {
-            margin-top: 24px;
-            font-size: 14px;
-            color: var(--gray-400);
-        }
-
-        /* CHECK GRID */
-        .check-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            max-width: 700px;
-            margin: 40px auto;
-            text-align: left;
-        }
-
-        .check-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 15px;
-            color: var(--gray-700);
-        }
-
-        .check-mark {
-            font-size: 18px;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .check-mark.yes { color: #10B981; }
-        .check-mark.no { color: #EF4444; }
-
-        /* SECTIONS */
-        section {
-            padding: 80px 0;
-        }
-
-        section:nth-child(even) {
-            background: var(--white);
-        }
-
-        h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 32px;
-            text-align: center;
-            letter-spacing: -0.02em;
-        }
-
-        /* RECOGNITION BOXES */
-        .recognition-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .recognition-box {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            padding: 32px;
-            border-radius: 4px;
-        }
-
-        .recognition-box h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .recognition-box p {
-            font-size: 15px;
-            color: var(--gray-600);
-            line-height: 1.6;
-        }
-
-        /* WHAT THIS IS */
-        .what-section {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .what-section p {
-            font-size: 18px;
-            color: var(--gray-700);
-            margin-bottom: 16px;
-            line-height: 1.7;
-        }
-
-        .process-steps {
-            background: var(--gray-50);
-            border-left: 4px solid var(--navy);
-            padding: 32px;
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .process-steps ol {
-            list-style-position: inside;
-            font-size: 16px;
-            color: var(--gray-700);
-        }
-
-        .process-steps li {
-            margin-bottom: 12px;
-        }
-
-        /* HOW IT WORKS */
-        .how-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .divider-line {
-            border-top: 2px solid var(--gray-200);
-            margin: 32px 0;
-        }
-
-        .how-item {
-            margin-bottom: 40px;
-        }
-
-        .how-item h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .how-item h3::before {
-            content: "→";
-            font-size: 16px;
-            color: var(--navy);
-        }
-
-        .how-item p {
-            font-size: 15px;
-            color: var(--gray-600);
-            line-height: 1.7;
-            margin-left: 28px;
-        }
-
-        .format-box {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            padding: 24px;
-            margin-top: 40px;
-            text-align: center;
-            border-radius: 4px;
-        }
-
-        .format-box p {
-            font-size: 15px;
-            color: var(--gray-700);
-            margin-bottom: 8px;
-        }
-
-        .format-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* FOR WHOM */
-        .for-whom-list {
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-
-        .for-whom-list ul {
-            list-style: none;
-            font-size: 16px;
-            color: var(--gray-700);
-        }
-
-        .for-whom-list li {
-            padding: 12px 0;
-            padding-left: 32px;
-            position: relative;
-        }
-
-        .for-whom-list li::before {
-            content: "•";
-            position: absolute;
-            left: 12px;
-            color: var(--navy);
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        .rejection-note {
-            background: var(--gray-50);
-            border-left: 4px solid var(--gray-400);
-            padding: 24px;
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 15px;
-            color: var(--gray-600);
-            line-height: 1.7;
-        }
-
-        /* SITUATIONS */
-        .situations-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .situation-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            padding: 32px;
-            border-radius: 4px;
-        }
-
-        .situation-card h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--navy);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
-        }
-
-        .situation-card ul {
-            list-style: none;
-            font-size: 14px;
-            color: var(--gray-600);
-        }
-
-        .situation-card li {
-            padding: 6px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .situation-card li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--navy);
-        }
-
-        .situations-note {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 14px;
-            color: var(--gray-600);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* NOT SECTION */
-        .not-list {
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        .not-item {
-            margin-bottom: 32px;
-        }
-
-        .not-item h3 {
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--gray-700);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .not-item h3::before {
-            content: "❌";
-            font-size: 18px;
-        }
-
-        .not-item p {
-            font-size: 15px;
-            color: var(--gray-600);
-            margin-left: 30px;
-            line-height: 1.6;
-        }
-
-        .strong-rejection {
-            background: var(--gray-50);
-            border-left: 4px solid var(--navy);
-            padding: 32px;
-            max-width: 800px;
-            margin: 40px auto;
-            font-size: 15px;
-            color: var(--gray-700);
-            line-height: 1.8;
-        }
-
-        .strong-rejection p {
-            margin-bottom: 16px;
-        }
-
-        .strong-rejection p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* NEXT STEP */
-        .next-step-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .next-step-content h2 {
-            margin-bottom: 16px;
-        }
-
-        .next-step-content > p {
-            font-size: 18px;
-            color: var(--gray-700);
-            margin-bottom: 32px;
-        }
-
-        .assessment-features {
-            text-align: left;
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            padding: 32px;
-            margin-bottom: 32px;
-            border-radius: 4px;
-        }
-
-        .assessment-features h3 {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 16px;
-        }
-
-        .assessment-features ul {
-            list-style: none;
-            font-size: 15px;
-            color: var(--gray-700);
-        }
-
-        .assessment-features li {
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-        }
-
-        .assessment-features li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--navy);
-            font-weight: 700;
-        }
-
-        .no-obligation {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            padding: 20px;
-            margin-top: 32px;
-            font-size: 14px;
-            color: var(--gray-600);
-            text-align: center;
-            border-radius: 4px;
-        }
-
-        /* FOOTER */
-        .site-footer {
-            background: var(--white);
-            border-top: 1px solid var(--gray-200);
-            padding: 60px 0 40px;
-            margin-top: 100px;
-        }
-
-        .footer-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .footer-brand {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-
-        .footer-descriptor {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gray-400);
-            margin-bottom: 24px;
-        }
-
-        .footer-contact {
-            font-size: 15px;
-            color: var(--gray-600);
-            margin-bottom: 8px;
-        }
-
-        .footer-contact a {
-            color: var(--navy);
-            text-decoration: none;
-        }
-
-        .footer-contact a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-notes {
-            margin-top: 32px;
-            font-size: 13px;
-            color: var(--gray-400);
-            line-height: 1.8;
-        }
-
-        .footer-notes p {
-            margin-bottom: 12px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-
-            .hero {
-                padding: 60px 0;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .check-grid,
-            .recognition-grid,
-            .situations-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .btn-primary {
-                padding: 16px 32px;
-                font-size: 16px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UNBLOCK ENGLISH — Английский для специалистов (B1–C1)</title>
+
+<meta name="description" content="Индивидуальная работа 1:1 для специалистов (B1–C1). Устойчивость речи в рабочих ситуациях. Работа начинается после профессиональной диагностики.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #F5F5F3;
+  --text: #1A1A1A;
+  --muted: #5A5A5A;
+  --border: #E4E4E1;
+  --accent: #1F3A5F;
+  --accent-hover: #162B47;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  max-width: 720px;
+}
+
+li {
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--accent-hover);
+}
+
+.note {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 14px;
+}
+
+footer {
+  padding: 72px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
-    <!-- HEADER -->
-    <header class="site-header">
-        <a href="/" class="brand-signature">
-            <div class="brand-name">UNBLOCK ENGLISH</div>
-        </a>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Индивидуальный английский для взрослых (A2–C1)</h1>
-        <p class="hero-subtitle">После курсов знания есть. Использовать их устойчиво — сложно.</p>
-        <p class="hero-context">Для работы, будущих возможностей и живого общения.</p>
-        
-        <a href="/assessment.html" class="btn-primary" onclick="ym(XXXXXXXX, 'reachGoal', 'hero_cta_click'); return true;">Пройти оценку</a>
-        
-        <p class="hero-note">Индивидуальная работа для взрослых, A2–C1</p>
-
-        <div class="check-grid">
-            <div class="check-item">
-                <span class="check-mark yes">✓</span>
-                <span>Читаете техническую документацию</span>
-            </div>
-            <div class="check-item">
-                <span class="check-mark yes">✓</span>
-                <span>Пишете email без проблем</span>
-            </div>
-            <div class="check-item">
-                <span class="check-mark no">✗</span>
-                <span>На созвоне теряете слова</span>
-            </div>
-            <div class="check-item">
-                <span class="check-mark no">✗</span>
-                <span>После разговора думаете "можно было лучше"</span>
-            </div>
-        </div>
-    </section>
-</div>
-
-<!-- RECOGNITION -->
-<section style="background: var(--white);">
-    <div class="container">
-        <h2>Узнали себя?</h2>
-        
-        <div class="recognition-grid">
-            <div class="recognition-box">
-                <h3>Понимаю больше, чем могу сказать</h3>
-                <p>Читаете статьи, смотрите видео, понимаете почти всё. Но когда нужно ответить — слова не выходят так, как хотелось бы.</p>
-            </div>
-
-            <div class="recognition-box">
-                <h3>Знаю грамматику — сложно говорить быстро</h3>
-                <p>Времена глаголов не проблема. Словарный запас приличный. Но в живом разговоре теряете темп и упрощаете мысли.</p>
-            </div>
-
-            <div class="recognition-box">
-                <h3>Много учился — мало реального применения</h3>
-                <p>Прошли курсы, платформы, может быть даже работали с репетиторами. Знания есть. Устойчивого применения — нет.</p>
-            </div>
-
-            <div class="recognition-box">
-                <h3>Хочу использовать английский в реальности</h3>
-                <p>Цель — не сертификат. Цель — реальное использование в работе, путешествиях, будущей карьере.</p>
-            </div>
-        </div>
+<header>
+  <div class="container">
+    <div class="logo">
+      UNBLOCK ENGLISH
+      <span>Performance-Oriented English Development</span>
     </div>
-</section>
+  </div>
+</header>
 
-<!-- AFTER PLATFORMS LINK (Soft, Contextual) -->
-<section style="background: var(--gray-50); padding: 40px 0;">
-    <div class="container">
-        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-            <p style="font-size: 16px; color: var(--gray-600); line-height: 1.7; margin-bottom: 16px;">
-            Уже пробовали платформы, но результата нет?
-            </p>
-            <a href="/after-platforms.html" style="color: var(--navy); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--navy); padding-bottom: 2px;" onclick="ym(XXXXXXXX, 'reachGoal', 'after_platforms_link'); return true;">
-            Почему так происходит →
-            </a>
-        </div>
-    </div>
-</section>
+<main>
 
-<!-- WHAT THIS IS -->
 <section>
-    <div class="container">
-        <h2>Что это</h2>
-        
-        <div class="what-section">
-            <p>Это не массовый курс.<br>
-            Не поток.<br>
-            Не "просто разговорная практика".</p>
+  <div class="container">
+    <h1>
+      Английский для специалистов,<br>
+      которые уже знают язык — но не могут на него опереться
+    </h1>
 
-            <p style="margin-top: 32px; font-size: 20px; font-weight: 600; color: var(--navy);">
-            Это индивидуальная работа,<br>
-            чтобы английский начал работать в реальной жизни.
-            </p>
+    <p>
+      Индивидуальная работа 1:1 для профессионалов (B1–C1).
+      Фокус — устойчивость речи в рабочих ситуациях.
+    </p>
 
-            <p style="margin-top: 24px;">
-            Мы работаем не по учебнику,<br>
-            а с реальными задачами и живой речью.
-            </p>
+    <p>
+      Вы понимаете английский. Читаете. Пишете. Смотрите.
+      Но в профессиональном разговоре снижается скорость,
+      формулировка требует усилия,
+      аргументация упрощается.
+    </p>
 
-            <div class="process-steps">
-                <ol>
-                    <li>Понимаем ваш уровень и цели</li>
-                    <li>Определяем слабые точки</li>
-                    <li>Работаем над речевой реализацией</li>
-                    <li>Постепенно усложняем среду</li>
-                </ol>
-            </div>
-        </div>
-    </div>
+    <p>
+      Проблема не в знаниях.
+      Проблема — в переносе.
+    </p>
+
+    <a href="/assessment.html" class="cta">Пройти профессиональную оценку</a>
+    <div class="note">Формат сотрудничества определяется после диагностики.</div>
+  </div>
 </section>
 
-<!-- PROFESSIONAL CONTEXT (NYC AUTHORITY) -->
-<section style="background: var(--gray-50);">
-    <div class="container">
-        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); margin-bottom: 24px;">
-            Профессиональный контекст
-            </h2>
-
-            <p style="font-size: 18px; color: var(--gray-700); line-height: 1.7; margin-bottom: 20px;">
-            25 лет работы и жизни в англоязычной среде (Нью-Йорк).
-            </p>
-
-            <p style="font-size: 16px; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px;">
-            Это не академический английский. Это понимание того, как строится речь в реальных рабочих и социальных ситуациях.
-            </p>
-
-            <p style="font-size: 16px; color: var(--gray-600); line-height: 1.7;">
-            Формат работы основан на практическом опыте, а не только на методиках.
-            </p>
-
-            <div style="background: var(--white); border: 1px solid var(--gray-200); padding: 32px; margin-top: 40px; border-radius: 4px;">
-                <p style="font-size: 15px; color: var(--gray-700); line-height: 1.7; margin-bottom: 16px;">
-                Многие курсы учат английскому как предмету. Но язык в рабочей среде — это поведенческий инструмент.
-                </p>
-                <p style="font-size: 15px; color: var(--navy); font-weight: 600; margin-bottom: 0;">
-                Разница между "знать язык" и "функционировать в среде" видна только тем, кто в ней жил.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section style="background: var(--white);">
-    <div class="container">
-        <h2>Как это работает</h2>
-
-        <div class="how-content">
-            <div style="text-align: center; padding: 24px 0; border-top: 2px solid var(--gray-200); border-bottom: 2px solid var(--gray-200); margin-bottom: 40px;">
-                <p style="font-size: 16px; color: var(--gray-600);">Не грамматические упражнения.<br>
-                Не учебные диалоги.<br>
-                Работа с реальными задачами.</p>
-            </div>
-
-            <div class="how-item">
-                <h3>Работа с вашими реальными материалами</h3>
-                <p>Ваши презентации, документы, рабочие сценарии. Не абстрактные темы из учебника.</p>
-            </div>
-
-            <div class="how-item">
-                <h3>Развитие скорости формулирования</h3>
-                <p>Не только "знать слова", но и извлекать их быстро. Под лёгким давлением, приближённым к реальности.</p>
-            </div>
-
-            <div class="how-item">
-                <h3>Структурирование речи</h3>
-                <p>Как организовать мысль, чтобы она была понятна собеседнику. Как держать контроль в разговоре.</p>
-            </div>
-
-            <div class="how-item">
-                <h3>Постепенное усложнение среды</h3>
-                <p>От предсказуемых ситуаций к спонтанным. От подготовленной речи к живой реакции.</p>
-            </div>
-
-            <div class="format-box">
-                <p style="font-weight: 600; color: var(--navy);">Формат: Индивидуальные сессии 1:1</p>
-                <p>Не групповые занятия. Не самостоятельная платформа.</p>
-            </div>
-
-            <div style="text-align: center; margin-top: 48px;">
-                <a href="/assessment.html" class="btn-primary" onclick="ym(XXXXXXXX, 'reachGoal', 'how_it_works_cta'); return true;">Пройти оценку</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOR WHOM -->
 <section>
-    <div class="container">
-        <h2>Для кого это</h2>
+  <div class="container">
+    <h2>Разрыв между знанием и функционированием</h2>
 
-        <div class="for-whom-list">
-            <ul>
-                <li>Специалисты, работающие с иностранными коллегами</li>
-                <li>Те, кто готовится к собеседованиям</li>
-                <li>Студенты, планирующие международную карьеру</li>
-                <li>Люди, которые хотят использовать английский устойчиво</li>
-                <li>Те, кто устал от бесконечных курсов без результата</li>
-            </ul>
-        </div>
+    <ul>
+      <li>Понимание выше активной речи</li>
+      <li>Подготовленная речь сильнее спонтанной</li>
+      <li>Письменная форма устойчивее устной</li>
+      <li>Компетентность выше звучания в разговоре</li>
+    </ul>
 
-        <div class="rejection-note">
-            <p>Не для начинающих (минимум A2).<br>
-            Не для тех, кто ищет быстрые лайфхаки.</p>
-            <p style="margin-top: 16px;">Для тех, кто готов работать системно.</p>
-        </div>
-    </div>
+    <p>
+      Этот разрыв редко закрывается повторением правил
+      или дополнительной теорией.
+    </p>
+  </div>
 </section>
 
-<!-- SITUATIONS -->
-<section style="background: var(--white);">
-    <div class="container">
-        <h2>Частые ситуации</h2>
-        <p style="text-align: center; margin-bottom: 40px; color: var(--gray-600);">Можно работать над:</p>
-
-        <div class="situations-grid">
-            <div class="situation-card">
-                <h3>Интервью</h3>
-                <ul>
-                    <li>Technical interviews на английском</li>
-                    <li>Behavioral questions</li>
-                    <li>Salary negotiations</li>
-                </ul>
-            </div>
-
-            <div class="situation-card">
-                <h3>Рабочие встречи</h3>
-                <ul>
-                    <li>Daily standups</li>
-                    <li>Презентации для команды</li>
-                    <li>Обсуждение проектов</li>
-                </ul>
-            </div>
-
-            <div class="situation-card">
-                <h3>Живое общение</h3>
-                <ul>
-                    <li>Ежедневная коммуникация</li>
-                    <li>Путешествия</li>
-                    <li>Переключение между регистрами</li>
-                </ul>
-            </div>
-
-            <div class="situation-card">
-                <h3>Переезд</h3>
-                <ul>
-                    <li>Подготовка к жизни за границей</li>
-                    <li>Адаптация к естественной среде</li>
-                    <li>Устойчивость в неформальном контексте</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="situations-note">
-            <p style="padding: 24px; background: var(--gray-50); border-radius: 4px;">
-            Тон остаётся взрослым и структурированным.<br>
-            Даже если задача — неформальное общение.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- WHAT THIS IS NOT -->
 <section>
-    <div class="container">
-        <h2>Чем это не является</h2>
+  <div class="container">
+    <h2>Формат работы</h2>
 
-        <div class="not-list">
-            <div class="not-item">
-                <h3>Не ещё одна платформа</h3>
-                <p>Платформы дают знания. Здесь фокус — перенос в реальность.</p>
-            </div>
+    <p>
+      Это не курс и не потоковая программа.
+      Работа строится индивидуально и направлена на:
+    </p>
 
-            <div class="not-item">
-                <h3>Не грамматические упражнения</h3>
-                <p>Грамматику вы уже знаете. Проблема не в правилах.</p>
-            </div>
+    <ul>
+      <li>Скорость формулирования</li>
+      <li>Структурирование аргументации</li>
+      <li>Удержание контроля в разговоре</li>
+      <li>Перенос языка в реальную профессиональную среду</li>
+    </ul>
 
-            <div class="not-item">
-                <h3>Не "комфортная среда обучения"</h3>
-                <p>Комфорт не строит навык выступления. Нужна структурированная работа, не атмосфера.</p>
-            </div>
-
-            <div class="not-item">
-                <h3>Не общее репетиторство</h3>
-                <p>Если вам нужен базовый курс — сначала пройдите платформу. Это работа для тех, у кого знания есть, но не переносятся.</p>
-            </div>
-        </div>
-
-        <div class="strong-rejection">
-            <p>Эта работа требует регулярности минимум 1-2 месяца.<br>
-            Инвестиции начинаются от 3 000 ₽ за сессию.</p>
-
-            <p>Если вы ищете максимально доступный вариант — платформы предлагают лучшее соотношение цена/объём.</p>
-
-            <p>Если вам нужна быстрая практика — есть language exchange и разговорные клубы.</p>
-
-            <p style="font-weight: 600; color: var(--navy);">Эта работа — для тех, кто готов инвестировать в системное решение конкретной задачи.</p>
-
-            <p style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--gray-200);">
-            Если вы только начинаете (A0-A1) — этот формат пока не для вас.
-            </p>
-        </div>
-    </div>
+    <p>
+      В фокусе — ваши реальные задачи:
+      интервью, встречи, презентации, переговоры.
+    </p>
+  </div>
 </section>
 
-<!-- NEXT STEP -->
-<section style="background: var(--white);">
-    <div class="container">
-        <div class="next-step-content">
-            <h2>Следующий шаг</h2>
-            <p>Пройдите оценку уровня и целей.</p>
-            <p style="font-size: 16px; color: var(--gray-600);">10-12 минут.<br>
-            Помогает понять, какой формат работы вам подойдёт.</p>
+<section>
+  <div class="container">
+    <h2>Контекст</h2>
 
-            <div class="assessment-features">
-                <h3>Оценка показывает:</h3>
-                <ul>
-                    <li>Ваш текущий паттерн</li>
-                    <li>Подходящий формат работы</li>
-                    <li>Что требуется для результата</li>
-                </ul>
-                <p style="margin-top: 20px; font-size: 14px; color: var(--gray-600);">
-                После оценки — обсуждение формата в Telegram.
-                </p>
-            </div>
+    <p>
+      25 лет жизни и работы в англоязычной среде (Нью-Йорк).
+    </p>
 
-            <a href="/assessment.html" class="btn-primary" onclick="ym(XXXXXXXX, 'reachGoal', 'next_step_cta'); return true;">Пройти оценку</a>
+    <p>
+      Разница между «знать язык» и «функционировать в среде»
+      становится очевидной только изнутри.
+    </p>
 
-            <div class="no-obligation">
-                Никаких обязательств.<br>
-                Оценка — это диагностика, не продажа.
-            </div>
-        </div>
-    </div>
+    <p>
+      Фокус — поведенческая устойчивость,
+      а не академическая правильность.
+    </p>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-brand">UNBLOCK ENGLISH</div>
-            <div class="footer-descriptor">Professional English Development</div>
-            
-            <div class="footer-contact">
-                <strong>Связь:</strong> Telegram (основной канал)<br>
-                <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AПрошёл(а)%20оценку%20на%20сайте.%0A%0AМоя%20цель:%0AУровень:%0AГотовность%20по%20времени:%0A%0AГотов(а)%20обсудить%20формат.">@unblock_eng</a>
-            </div>
+<section>
+  <div class="container">
+    <h2>Структура работы</h2>
 
-            <div class="footer-notes">
-                <p>Индивидуальная работа для взрослых (A2–C1)<br>
-                Стоимость: от 3 000 ₽ за рабочую сессию</p>
-                
-                <p style="margin-top: 16px;">Работа только по предварительной оценке<br>
-                Индивидуальный предприниматель</p>
-                
-                <p style="margin-top: 20px; font-size: 12px;">
-                → Для глубокой работы с речевыми блоками: <a href="https://protocol.unblock-english.ru" style="color: var(--navy); text-decoration: none;">protocol.unblock-english.ru</a>
-                </p>
+    <ul>
+      <li>Диагностика текущего речевого паттерна</li>
+      <li>Определение слабых зон</li>
+      <li>Контролируемая практика в усложняющейся среде</li>
+      <li>Формирование автономной устойчивости</li>
+    </ul>
 
-                <p style="margin-top: 16px; font-size: 11px; color: var(--gray-400);">
-                Данные оценки не публикуются
-                </p>
-            </div>
-        </div>
-    </div>
+    <p>
+      Работа требует регулярности и системного подхода.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Кому подходит</h2>
+
+    <ul>
+      <li>IT и инженерные специалисты</li>
+      <li>Аналитики и менеджеры</li>
+      <li>Кандидаты на международные позиции</li>
+      <li>Те, кто уже проходил курсы и платформы</li>
+    </ul>
+
+    <p>
+      Минимальный уровень — A2/B1.
+      Основная аудитория — B1–C1.
+    </p>
+
+    <p>
+      Для глубокой работы с речевыми блоками предусмотрен отдельный формат —
+      <a href="https://protocol.unblock-english.ru" style="color: var(--accent); text-decoration: none;">Protocol</a>.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Вход в работу</h2>
+
+    <p>
+      Профессиональная оценка уровня и задач
+      позволяет определить текущий паттерн,
+      объём работы и формат сотрудничества.
+    </p>
+
+    <a href="/assessment.html" class="cta">Пройти оценку</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>UNBLOCK ENGLISH</p>
+    <p>Performance-Oriented English Development</p>
+    <p>Индивидуальная работа для специалистов (B1–C1)</p>
+    <p>© 2026</p>
+  </div>
 </footer>
 
 </body>
 </html>
-```
