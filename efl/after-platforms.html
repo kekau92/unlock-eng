@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Почему после онлайн-курсов сложно говорить | Unblock English</title>
-    <meta name="description" content="Прошли курсы, знания есть, но на встречах теряете слова? Платформы дают базу, но не дают переноса. Узнайте почему и пройдите профессиональную оценку.">
+    
+    <!-- SEO -->
+    <title>Прошли курс, но не говорите свободно? Почему английский не переносится в работу</title>
+    <meta name="description" content="Прошли онлайн-курс английского, но на встречах теряете слова? Разбираем, почему знания не переходят в реальную речь и что с этим делать.">
+    <meta name="keywords" content="после курсов английского нет результата, знаю английский но не говорю, английский для работы не переносится, почему курсы не помогают">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Почему после курсов английский не переносится в работу">
+    <meta property="og:description" content="Разбираем разрыв между знанием языка и речевым выполнением под давлением">
+    <meta property="og:type" content="article">
     
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -100,6 +108,7 @@
             font-weight: 600;
             color: var(--navy);
             margin-bottom: 24px;
+            margin-top: 60px;
         }
 
         article h3 {
@@ -107,13 +116,7 @@
             font-weight: 600;
             color: var(--navy);
             margin-bottom: 16px;
-        }
-
-        article h4 {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 16px;
+            margin-top: 40px;
         }
 
         article p {
@@ -130,15 +133,70 @@
         article ul {
             list-style: none;
             padding: 0;
+            margin: 24px 0;
         }
 
         article li {
             padding: 8px 0;
+            padding-left: 24px;
             color: var(--gray-700);
             font-size: 16px;
+            position: relative;
         }
 
-        /* BUTTON */
+        article li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        /* RECOGNITION BOX */
+        .recognition-box {
+            background: var(--gray-50);
+            border-left: 4px solid var(--navy);
+            padding: 32px;
+            margin: 40px 0;
+        }
+
+        .recognition-box p {
+            margin-bottom: 12px;
+        }
+
+        .recognition-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* INSIGHT BOX */
+        .insight-box {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            padding: 32px;
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+
+        .insight-box h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--gray-50);
+            padding: 48px;
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid var(--gray-200);
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
         .btn-primary {
             display: inline-block;
             padding: 18px 48px;
@@ -149,8 +207,6 @@
             font-weight: 600;
             font-size: 18px;
             transition: background 0.2s;
-            cursor: pointer;
-            border: none;
         }
 
         .btn-primary:hover {
@@ -175,6 +231,14 @@
             font-size: 20px;
             font-weight: 700;
             color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .footer-descriptor {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-400);
             margin-bottom: 24px;
         }
 
@@ -200,6 +264,10 @@
             line-height: 1.8;
         }
 
+        .footer-notes p {
+            margin-bottom: 12px;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .container {
@@ -222,15 +290,6 @@
                 padding: 16px 32px;
                 font-size: 16px;
             }
-
-            /* Stack grids on mobile */
-            div[style*="grid-template-columns: 1fr 1fr"] {
-                display: block !important;
-            }
-
-            div[style*="grid-template-columns: 1fr 1fr"] > div {
-                margin-bottom: 20px;
-            }
         }
     </style>
 </head>
@@ -247,185 +306,164 @@
     <!-- ARTICLE CONTENT -->
     <article>
         
-        <h1>Почему после онлайн-курсов сложно говорить</h1>
+        <h1>Почему после курсов английского нет ощущения результата</h1>
 
-        <div style="font-size: 18px; color: var(--gray-600); line-height: 1.7; margin-bottom: 60px;">
-            <p>Многие проходят крупные образовательные платформы, получают сертификаты, набирают лексику — и всё равно замирают на рабочих встречах.</p>
-            <p style="margin-top: 16px; font-weight: 600; color: var(--navy);">Проблема не в платформах.<br>Проблема в модели.</p>
-        </div>
-
-        <!-- SECTION 1 -->
+        <!-- SECTION 1: RECOGNITION -->
         <section>
-            <h2>Платформенная модель оптимизирована для:</h2>
+            <p>Вы прошли курс.<br>
+            Выполняли домашние задания.<br>
+            Закрыли уровень.</p>
 
-            <div style="background: var(--gray-50); border-left: 4px solid #10B981; padding: 32px; margin-bottom: 24px;">
-                <ul>
-                    <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✓ Передачи знаний</li>
-                    <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✓ Грамматической точности</li>
-                    <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✓ Контролируемой практики</li>
-                    <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✓ Массовости</li>
+            <p>Но в рабочей встрече или на интервью всё равно:</p>
+
+            <div class="recognition-box">
+                <p>— сложно формулировать мысли</p>
+                <p>— появляются паузы</p>
+                <p>— хочется упростить сказанное</p>
+                <p>— после разговора возникает ощущение: «мог(ла) лучше»</p>
+            </div>
+
+            <p>Это распространённая ситуация.</p>
+
+            <p style="font-weight: 600;">И она не означает, что вы «плохо учились».</p>
+        </section>
+
+        <!-- SECTION 2: REFRAME -->
+        <section>
+            <h2>Большинство образовательных платформ решают одну задачу</h2>
+
+            <p style="font-size: 20px; font-weight: 600; color: var(--navy);">Передача знаний.</p>
+
+            <p>Грамматика.<br>
+            Словарь.<br>
+            Тренировка структуры языка.</p>
+
+            <p>Это работает.</p>
+
+            <p>Но реальное использование английского в работе — это другая среда.</p>
+
+            <p>Там появляются:</p>
+
+            <ul>
+                <li>давление времени</li>
+                <li>неожиданные вопросы</li>
+                <li>высокая ставка (деньги, позиция, статус)</li>
+                <li>необходимость быстро структурировать мысль</li>
+            </ul>
+
+            <p>И здесь проявляется разрыв.</p>
+        </section>
+
+        <!-- SECTION 3: THE TRANSFER GAP -->
+        <section>
+            <h2>Знание ≠ выполнение</h2>
+
+            <p>Можно понимать 80–90% речи и при этом испытывать сложности в моменте ответа.</p>
+
+            <p>Это не «плохой уровень».</p>
+
+            <p>Это разрыв между:</p>
+
+            <div class="insight-box">
+                <p style="margin-bottom: 12px;">— знанием языка</p>
+                <p style="text-align: center; margin: 16px 0; font-weight: 600;">и</p>
+                <p style="margin-bottom: 0;">— выполнением речевой задачи под давлением.</p>
+            </div>
+
+            <p>Большинство курсов не работают с этим уровнем.</p>
+
+            <p>Потому что их модель — образовательная.<br>
+            А не поведенческая.</p>
+        </section>
+
+        <!-- SECTION 4: WHY PLATFORMS DON'T TRANSFER (SEO) -->
+        <section>
+            <h2>Почему английский не переносится в работу</h2>
+
+            <p>Некоторые пользователи отмечают, что после прохождения онлайн-курсов уровень знаний повышается, но в реальном разговоре сохраняются паузы и неуверенность.</p>
+
+            <p>Это связано не с качеством курса, а с различием задач обучения и задач выполнения.</p>
+
+            <div class="insight-box">
+                <h3>Учебная среда тренирует:</h3>
+                <ul style="margin: 16px 0;">
+                    <li>Понимание структуры</li>
+                    <li>Расширение словаря</li>
+                    <li>Ответы на предсказуемые вопросы</li>
+                    <li>Работу без временного давления</li>
+                </ul>
+
+                <h3 style="margin-top: 24px;">Рабочая среда требует:</h3>
+                <ul style="margin: 16px 0 0;">
+                    <li>Быструю обработку неожиданных вопросов</li>
+                    <li>Структурирование мысли в моменте</li>
+                    <li>Сохранение контроля под давлением</li>
+                    <li>Выполнение при высоких ставках</li>
                 </ul>
             </div>
 
-            <h3>Но она не оптимизирована для:</h3>
-
-            <div style="background: var(--gray-50); border-left: 4px solid #EF4444; padding: 32px;">
-                <ul>
-                    <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✗ Выступления под давлением</li>
-                    <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✗ Живых непредсказуемых диалогов</li>
-                    <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✗ Переноса навыка в реальные сценарии</li>
-                    <li style="padding: 8px 0; color: var(--gray-700); font-size: 16px;">✗ Работы с вашими конкретными задачами</li>
-                </ul>
-            </div>
+            <p>Это разные навыки.</p>
         </section>
 
-        <!-- SECTION 2 -->
+        <!-- SECTION 5: NORMALIZE -->
         <section>
-            <h2 style="text-align: center;">Знания ≠ выступление</h2>
+            <h2>Знаю английский, но не могу свободно говорить — в чём причина</h2>
 
-            <p>Вы можете знать 5000 слов и все времена глаголов.</p>
+            <p>Если вы узнаёте себя в этом описании — вы не один.</p>
 
-            <p>Но если у вас нет опыта речевой реализации в условиях вашей рабочей среды — навык не активируется.</p>
+            <p>Чаще всего это происходит у людей:</p>
 
-            <p style="font-weight: 600;">Это не вопрос "больше практики".<br>
-            Это вопрос переноса под давлением.</p>
+            <ul>
+                <li>с уровнем B1–C1</li>
+                <li>работающих в международной среде</li>
+                <li>прошедших 1–2 курса</li>
+                <li>имеющих реальные карьерные задачи</li>
+            </ul>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;">
-                <div style="background: var(--white); border: 1px solid var(--gray-200); padding: 24px; border-radius: 4px;">
-                    <h4>Платформенная практика:</h4>
-                    <ul style="font-size: 14px; color: var(--gray-600);">
-                        <li>• Предсказуемые диалоги</li>
-                        <li>• Заранее известные темы</li>
-                        <li>• Время на подготовку</li>
-                        <li>• Нет реальных ставок</li>
-                    </ul>
-                </div>
-
-                <div style="background: var(--white); border: 1px solid var(--gray-200); padding: 24px; border-radius: 4px;">
-                    <h4>Реальная среда:</h4>
-                    <ul style="font-size: 14px; color: var(--gray-600);">
-                        <li>• Спонтанные вопросы</li>
-                        <li>• Неизвестный контекст</li>
-                        <li>• Ожидание быстрого ответа</li>
-                        <li>• Последствия за ошибку</li>
-                    </ul>
-                </div>
-            </div>
-
-            <p style="text-align: center; margin-top: 32px; font-size: 18px; font-weight: 600; color: var(--navy);">
-            Это разные навыки.
-            </p>
+            <p style="font-weight: 600; color: var(--navy);">Проблема не в объёме знаний.<br>
+            Проблема в переносе.</p>
         </section>
 
-        <!-- SECTION 3 -->
+        <!-- SECTION 6: CLARIFICATION -->
         <section>
-            <h2 style="text-align: center;">Учебные диалоги ≠ живые звонки</h2>
+            <h2>Важно различать три сценария</h2>
 
-            <p>Практика по скриптам с другими студентами не переносится в ситуацию, где от вас ждут быстрого технического объяснения на 15-минутном созвоне с зарубежным клиентом.</p>
+            <div class="insight-box">
+                <p><strong>1. Недостаток базы</strong><br>
+                Если уровень ниже A2 — нужна системная работа с грамматикой и словарём.</p>
 
-            <h3>Почему?</h3>
+                <p style="margin-top: 20px;"><strong>2. Отсутствие регулярной практики</strong><br>
+                Если знания есть, но не используются — нужна разговорная практика.</p>
 
-            <div style="background: var(--gray-50); padding: 32px; border-left: 4px solid var(--navy); margin-bottom: 20px;">
-                <p style="margin-bottom: 20px;">
-                <strong>→ В учебной ситуации все знают, что это "учёба"</strong><br>
-                Снисходительность встроена в контекст. Ошибка не имеет последствий.
-                </p>
-
-                <p style="margin-bottom: 20px;">
-                <strong>→ В рабочей ситуации ждут результата</strong><br>
-                От вас ожидают компетентности. Непонимание стоит денег или репутации.
-                </p>
-
-                <p style="margin-bottom: 20px;">
-                <strong>→ Учебные партнёры терпеливы</strong><br>
-                Реальные собеседники нетерпеливы.
-                </p>
-
-                <p style="margin-bottom: 0;">
-                <strong>→ В учебной практике вы контролируете тему</strong><br>
-                В реальности тему контролирует собеседник.
-                </p>
-            </div>
-        </section>
-
-        <!-- SECTION 4 -->
-        <section>
-            <h2 style="text-align: center;">Комфорт ≠ адаптация к давлению</h2>
-
-            <p>Образовательные среды созданы для снижения стресса.<br>
-            Рабочие среды созданы для результата.</p>
-
-            <p style="font-weight: 600;">Если вы тренируетесь только в комфорте,<br>
-            вы не готовитесь к давлению.</p>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;">
-                <div style="background: var(--gray-50); border: 1px solid var(--gray-200); padding: 24px; border-radius: 4px;">
-                    <h4>Комфортная среда учит вас:</h4>
-                    <ul style="font-size: 14px; color: var(--gray-600);">
-                        <li>• Говорить, когда спокойны</li>
-                        <li>• Формулировать без спешки</li>
-                        <li>• Исправляться без стыда</li>
-                    </ul>
-                </div>
-
-                <div style="background: var(--gray-50); border: 1px solid var(--gray-200); padding: 24px; border-radius: 4px;">
-                    <h4>Реальная среда требует:</h4>
-                    <ul style="font-size: 14px; color: var(--gray-600);">
-                        <li>• Говорить под давлением</li>
-                        <li>• Формулировать быстро</li>
-                        <li>• Продолжать при ошибке</li>
-                    </ul>
-                </div>
+                <p style="margin-top: 20px;"><strong>3. Сложности выполнения под давлением</strong><br>
+                Если знания есть, практика есть, но в моменте высокого давления речь блокируется — нужна работа с переносом навыка.</p>
             </div>
 
-            <div style="background: var(--white); border: 1px solid var(--gray-200); padding: 24px; margin-top: 32px; border-radius: 4px;">
-                <p style="font-size: 15px; color: var(--gray-600); line-height: 1.7; margin-bottom: 0;">
-                Это не значит, что платформы бесполезны. Они дают базу.<br><br>
-                <strong style="color: var(--navy);">Но они не дают переноса.</strong>
-                </p>
-            </div>
+            <p>Каждый требует разного формата работы.</p>
+
+            <p>И универсального решения здесь нет.</p>
         </section>
 
         <!-- CTA SECTION -->
-        <section style="background: var(--gray-50); padding: 48px; text-align: center; border-radius: 4px; border: 1px solid var(--gray-200);">
-            <h2>Что дальше?</h2>
+        <div class="cta-section">
+            <h2>Следующий шаг</h2>
 
             <p style="font-size: 17px; color: var(--gray-700); margin-bottom: 32px;">
-            Если вы узнали эту ситуацию — пройдите профессиональную оценку.
+            Если вы хотите понять, какой сценарий относится к вам — пройдите короткую оценку.
             </p>
 
-            <div style="background: var(--white); padding: 32px; margin-bottom: 32px; border-radius: 4px;">
-                <h3>Оценка покажет:</h3>
-                <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
-                    <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                        <span style="position: absolute; left: 0; color: var(--navy); font-weight: 700;">•</span>
-                        Ваш текущий паттерн
-                    </li>
-                    <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                        <span style="position: absolute; left: 0; color: var(--navy); font-weight: 700;">•</span>
-                        Что блокирует перенос
-                    </li>
-                    <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                        <span style="position: absolute; left: 0; color: var(--navy); font-weight: 700;">•</span>
-                        Какой формат работы подходит
-                    </li>
-                </ul>
-            </div>
-
-            <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 32px;">
-            10-12 минут. Без обязательств.
+            <p style="font-size: 15px; color: var(--gray-600); margin-bottom: 32px;">
+            Это займёт 10–12 минут и поможет определить подходящий формат работы.
             </p>
 
             <a href="/assessment.html" class="btn-primary" onclick="ym(XXXXXXXX, 'reachGoal', 'after_platforms_cta'); return true;">Пройти оценку</a>
 
             <div style="background: var(--gray-100); padding: 24px; margin-top: 40px; border-radius: 4px; border-left: 4px solid var(--gray-400);">
                 <p style="font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 0;">
-                Это не продажа. Это диагностика.<br><br>
-                В 30-40% случаев после оценки я рекомендую другой формат или другого специалиста.<br><br>
-                Не все задачи решаются одинаково.
+                Никаких обязательств. Оценка — это диагностика, не продажа.
                 </p>
             </div>
-        </section>
+        </div>
 
     </article>
 </div>
@@ -435,15 +473,27 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-brand">UNBLOCK ENGLISH</div>
+            <div class="footer-descriptor">Professional English Development</div>
             
             <div class="footer-contact">
-                Telegram: <a href="https://t.me/YOUR_HANDLE">@your_handle</a>
+                <strong>Связь:</strong> Telegram (основной канал)<br>
+                <a href="https://t.me/unblock_eng?text=Здравствуйте.%0AПрошёл(а)%20оценку%20на%20сайте.%0A%0AМоя%20цель:%0AУровень:%0AГотовность%20по%20времени:%0A%0AГотов(а)%20обсудить%20формат.">@unblock_eng</a>
             </div>
 
             <div class="footer-notes">
-                <p>Работа только по предварительной оценке<br>
+                <p>Индивидуальная работа для взрослых (A2–C1)<br>
+                Стоимость: от 3 000 ₽ за рабочую сессию</p>
+                
+                <p style="margin-top: 16px;">Работа только по предварительной оценке<br>
                 Индивидуальный предприниматель</p>
-                <p style="margin-top: 16px;">Данные оценки не публикуются</p>
+                
+                <p style="margin-top: 20px; font-size: 12px;">
+                → Для глубокой работы с речевыми блоками: <a href="https://protocol.unblock-english.ru" style="color: var(--navy); text-decoration: none;">protocol.unblock-english.ru</a>
+                </p>
+
+                <p style="margin-top: 16px; font-size: 11px; color: var(--gray-400);">
+                Данные оценки не публикуются
+                </p>
             </div>
         </div>
     </div>
