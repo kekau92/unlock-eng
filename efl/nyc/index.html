@@ -121,6 +121,82 @@ footer {
   font-size: 14px;
   color: var(--muted);
 }
+
+  .about-section {
+  padding: 100px 0;
+  border-top: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 2px;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    margin-bottom: 20px;
+  }
+}
+
+  .site-footer {
+  border-top: 1px solid var(--border);
+  padding: 60px 0;
+  font-size: 14px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-logo {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.footer-tagline {
+  color: var(--secondary);
+}
+
+.footer-contact a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-meta {
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 </style>
 </head>
 
@@ -267,6 +343,46 @@ footer {
   </div>
 </section>
 
+  <section class="about-section">
+  <div class="container">
+
+    <h2>О профессиональном контексте</h2>
+
+    <div class="about-grid">
+
+      <div class="about-photo">
+        <img src="profile.jpg" alt="Kirill Zotov — English Performance Consultant">
+      </div>
+
+      <div class="about-text">
+
+        <p>
+          25 лет жизни и профессионального опыта в англоязычной среде (Нью-Йорк).
+        </p>
+
+        <p>
+          Практический контекст — работа и взаимодействие в реальной среде,
+          где язык является инструментом, а не учебным предметом.
+        </p>
+
+        <p>
+          Профессиональный опыт включает сотрудничество с американскими языковыми институтами,
+          в том числе участие в рекрутинговых процессах
+          <strong>Pace University English Language Institute (New York)</strong>.
+        </p>
+
+        <p>
+          Фокус работы — перенос знания языка в устойчивое профессиональное функционирование.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
 <section>
   <div class="container">
     <h2>Вход в работу</h2>
@@ -283,14 +399,32 @@ footer {
 
 </main>
 
-<footer>
-  <div class="container">
-    <p>UNBLOCK ENGLISH</p>
-    <p>Performance-Oriented English Development</p>
-    <p>Индивидуальная работа для специалистов (B1–C1)</p>
-    <p>© 2026</p>
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      <div class="footer-logo">
+        UNBLOCK ENGLISH
+      </div>
+      <div class="footer-tagline">
+        Performance-Oriented English Development
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <div>Telegram: <a href="https://t.me/unblock_eng" target="_blank">@unblock_eng</a></div>
+      <div>Основной канал связи — Telegram</div>
+      <div>Ответ в течение 24 часов</div>
+    </div>
+
+    <div class="footer-meta">
+      <div>Индивидуальная работа для специалистов (B1–C1)</div>
+      <div>© 2026</div>
+    </div>
+
   </div>
 </footer>
+
 
 </body>
 </html>
