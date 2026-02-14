@@ -1,503 +1,294 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Английский для взрослых (A2–C1) — индивидуальная работа 1:1 | UNBLOCK ENGLISH</title>
-  <meta name="description" content="Английский для взрослых специалистов (A2–C1). Индивидуальная работа 1:1, восстановление речевого функционирования в профессиональной среде. Онлайн. От 3 800 ₽.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>UNBLOCK ENGLISH — Английский для специалистов (B1–C1)</title>
 
-  <style>
-    /* Reset & Base */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior: smooth; }
+<meta name="description" content="Индивидуальная работа 1:1 для специалистов (B1–C1). Устойчивость речи в рабочих ситуациях. Работа начинается после профессиональной диагностики.">
 
-    body {
-      background:#F5F4F2;
-      color:#2B2B2B;
-      font-family:'Inter', sans-serif;
-      font-size:17px;
-      line-height:1.65;
-      font-weight:400;
-      -webkit-font-smoothing: antialiased;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    .container {
-      max-width:720px;
-      margin:0 auto;
-      padding:0 24px;
-    }
+<style>
+:root {
+  --bg: #F5F5F3;
+  --text: #1A1A1A;
+  --muted: #5A5A5A;
+  --border: #E4E4E1;
+  --accent: #1F3A5F;
+  --accent-hover: #162B47;
+}
 
-    a { color:inherit; text-decoration:none; transition: all 0.2s ease; }
-    a:hover { opacity:0.7; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Header */
-    header {
-      position:sticky;
-      top:0;
-      background:rgba(245, 244, 242, 0.96);
-      backdrop-filter: blur(10px);
-      padding:24px 0;
-      z-index:100;
-      border-bottom:1px solid rgba(43,43,43,0.06);
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
 
-    header .container {
-      display:flex;
-      justify-content:space-between;
-      align-items: flex-start;
-      position: relative;
-    }
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
-    .logo { display:flex; flex-direction:column; }
-    
-    .logo a {
-      font-size:22px;
-      font-weight:600;
-      letter-spacing:-0.5px;
-      text-transform:uppercase;
-    }
+header {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+}
 
-    .logo-slogan { 
-      font-size:13px; 
-      font-weight:500; 
-      color:#555; 
-      margin-top:4px; 
-    }
+.logo {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
-    .logo-credit {
-      font-size:12px;
-      color:#888;
-      margin-top:4px;
-    }
+.logo span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 6px;
+}
 
-    nav ul {
-      display:flex;
-      gap:32px;
-      list-style:none;
-      align-items:center;
-    }
+section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border);
+}
 
-    nav a { font-size:15px; font-weight:500; }
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
 
-    /* Mobile Menu Toggle */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 28px;
-      height: 22px;
-      cursor: pointer;
-      z-index: 101;
-    }
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
 
-    .nav-toggle span {
-      height: 2px;
-      width: 100%;
-      background: #2E3A4A;
-      border-radius: 2px;
-      transition: all 0.25s ease;
-    }
+p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  max-width: 720px;
+}
 
-    .nav-toggle-checkbox {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
+ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  max-width: 720px;
+}
 
-    /* Buttons */
-    .cta-outline {
-      border:1.5px solid #2E3A4A;
-      color:#2E3A4A;
-      padding:8px 18px;
-      border-radius:5px;
-      font-weight:500;
-      font-size:14px;
-    }
+li {
+  margin-bottom: 10px;
+  color: var(--muted);
+}
 
-    .cta-solid {
-      background:#2E3A4A;
-      color:#F5F4F2;
-      padding:15px 32px;
-      border-radius:6px;
-      font-weight:500;
-      display:inline-block;
-      text-align: center;
-      font-size:16px;
-    }
+.cta {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
 
-    .cta-solid:hover { 
-      background:#1e2732; 
-      text-decoration: none; 
-      transform: translateY(-1px);
-      opacity: 1;
-    }
+.cta:hover {
+  background: var(--accent-hover);
+}
 
-    /* Sections */
-    section { padding:100px 0; }
+.note {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 14px;
+}
 
-    .section-label {
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
-      color:#999;
-      margin-bottom:16px;
-    }
-
-    h1 {
-      font-size:42px;
-      font-weight:500;
-      line-height:1.15;
-      letter-spacing:-0.5px;
-      margin-bottom:28px;
-    }
-
-    h2 {
-      font-size:26px;
-      font-weight:600;
-      line-height:1.3;
-      margin-bottom:28px;
-    }
-
-    .lead {
-      font-size:20px;
-      font-weight: 500;
-      margin-bottom:24px;
-      color: #1a1a1a;
-      line-height: 1.5;
-    }
-
-    p { margin-bottom: 20px; color: #3a3a3a; }
-
-    ul, ol { margin-bottom:28px; padding-left:24px; }
-    li { margin-bottom:14px; color: #3a3a3a; }
-
-    .clean-list { list-style:none; padding-left:0; }
-    .clean-list li { 
-      margin-bottom: 16px; 
-      position: relative; 
-      padding-left: 20px; 
-    }
-    .clean-list li::before {
-      content:"—";
-      position: absolute;
-      left: 0;
-      color:#bbb;
-    }
-
-    .hero-actions {
-      display:flex;
-      gap:24px;
-      align-items:center;
-      margin-top: 36px;
-    }
-
-    .secondary-link { 
-      font-size:15px; 
-      color:#555; 
-      font-weight: 500; 
-      border-bottom: 1px solid transparent; 
-    }
-    .secondary-link:hover { 
-      border-bottom: 1px solid #555;
-      opacity: 1;
-    }
-
-    /* Hero Photo */
-    .hero-photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 0 24px 0;
-      border: 2px solid #eee;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    /* Footer */
-    footer {
-      padding:70px 0 90px;
-      font-size:15px;
-      color:#666;
-      border-top:1px solid rgba(43,43,43,0.05);
-    }
-
-    .footer-brand {
-      font-size:19px;
-      font-weight:600;
-      color:#2B2B2B;
-      margin-bottom:18px;
-    }
-
-    /* Colors & Utilities */
-    .bg-alt { background:#F8F6F3; }
-    .bg-white { background:#FFFFFF; }
-    .text-small { font-size: 14px; color: #777; line-height: 1.6; }
-
-    .subtle-link {
-      font-size:14px;
-      display:block;
-      margin-top:24px;
-      color: #666;
-    }
-
-    /* Mobile Optimization */
-    @media (max-width: 768px) {
-      h1 { font-size:34px; letter-spacing: -0.5px; }
-      h2 { font-size:24px; }
-      section { padding:80px 0; }
-      
-      header { padding: 20px 0; }
-      header .container { align-items: flex-start; }
-      
-      .logo-credit { font-size: 11px; }
-      
-      /* Show hamburger */
-      .nav-toggle { display: flex; }
-      
-      /* Hide desktop nav */
-      header nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(245, 244, 242, 0.98);
-        backdrop-filter: blur(10px);
-        padding: 16px 24px;
-        border-bottom: 1px solid rgba(43,43,43,0.08);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      header nav ul {
-        flex-direction: column;
-        gap: 16px;
-        align-items: flex-start;
-      }
-
-      header nav a {
-        font-size: 16px;
-        font-weight: 500;
-        color: #2E3A4A;
-        padding: 8px 0;
-        display: inline-block;
-      }
-
-      /* Show nav when toggled */
-      .nav-toggle-checkbox:checked ~ nav {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-
-      /* Hamburger animation */
-      .nav-toggle-checkbox:checked + .nav-toggle span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-      }
-      .nav-toggle-checkbox:checked + .nav-toggle span:nth-child(2) {
-        opacity: 0;
-      }
-      .nav-toggle-checkbox:checked + .nav-toggle span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-      }
-      
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 16px;
-      }
-      
-      .secondary-link { 
-        text-align: center; 
-        padding: 12px 0; 
-      }
-      
-      .hero-photo {
-        width: 80px;
-        height: 80px;
-        margin: 0 0 20px 0;
-      }
-    }
-  </style>
+footer {
+  padding: 72px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+</style>
 </head>
 
 <body>
 
-<header role="banner">
+<header>
   <div class="container">
     <div class="logo">
-      <a href="/">UNBLOCK ENGLISH</a>
-      <span class="logo-slogan">Английский как рабочий инструмент</span>
-      <span class="logo-credit">Кирилл Зотов — 25 лет в Нью-Йорке</span>
+      UNBLOCK ENGLISH
+      <span>Performance-Oriented English Development</span>
     </div>
-
-    <!-- Mobile hamburger toggle -->
-    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
-    <label for="nav-toggle" class="nav-toggle" aria-label="Открыть меню навигации">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
-    <nav role="navigation" aria-label="Основная навигация">
-      <ul>
-        <li><a href="#format">Формат</a></li>
-        <li><a href="/after-platforms.html">После платформ</a></li>
-        <li><a href="/assessment.html" class="cta-outline">Диагностика</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
-<main id="main-content">
+<main>
 
-<section id="hero" class="bg-alt">
+<section>
   <div class="container">
-    <p class="section-label">Professional English</p>
-    <h1>Английский для взрослых (A2–C1)</h1>
+    <h1>
+      Английский для специалистов,<br>
+      которые уже знают язык — но не могут на него опереться
+    </h1>
 
-    <img src="profile-photo.jpg" alt="Кирилл Зотов — специалист по речевому функционированию" class="hero-photo">
-
-    <p class="lead">
-      Когда мозг «зависает» на встрече или интервью — это не недостаток знаний, а сбой в речевом функционировании. Мы его устраняем.
+    <p>
+      Индивидуальная работа 1:1 для профессионалов (B1–C1).
+      Фокус — устойчивость речи в рабочих ситуациях.
     </p>
 
     <p>
-      Если чтение и письмо уже доступны, но в живом разговоре возникает ступор — это не вопрос словарного запаса. Это вопрос способности использовать язык под давлением. Именно с этим мы работаем системно через индивидуальную диагностику и протоколы восстановления речевого контроля.
+      Вы понимаете английский. Читаете. Пишете. Смотрите.
+      Но в профессиональном разговоре снижается скорость,
+      формулировка требует усилия,
+      аргументация упрощается.
     </p>
 
-    <div class="hero-actions">
-      <a href="/assessment.html" class="cta-solid">Пройти диагностику</a>
-      <a href="#format" class="secondary-link">Узнать о формате работы →</a>
-    </div>
+    <p>
+      Проблема не в знаниях.
+      Проблема — в переносе.
+    </p>
+
+    <a href="/assessment.html" class="cta">Пройти профессиональную оценку</a>
+    <div class="note">Формат сотрудничества определяется после диагностики.</div>
   </div>
 </section>
 
-<section id="format" class="bg-white">
+<section>
   <div class="container">
-    <p class="section-label">FORMAT</p>
-    <h2>Формат индивидуальной работы</h2>
-
-    <p>
-      Это не языковые уроки. Это протоколы восстановления речевого функционирования в условиях профессионального давления.
-    </p>
-
-    <p>
-      Работаем не с грамматикой, а с нейронной системой производства речи — через диагностику блоков, снятие тревожности и тренировку устойчивости.
-    </p>
-
-    <ul class="clean-list">
-      <li>Диагностика речевых блоков и триггеров сбоя</li>
-      <li>Снятие парализующей тревожности в момент речи</li>
-      <li>Формирование устойчивости под давлением</li>
-      <li>Восстановление доступа к языку в стрессовой среде</li>
-      <li>Протоколы экстренной стабилизации перед критическими ситуациями</li>
-    </ul>
-  </div>
-</section>
-
-<section id="experience" class="bg-alt">
-  <div class="container">
-    <p class="section-label">ОПЫТ</p>
-    <h2>Профессиональный опыт</h2>
-
-    <p>
-      За 25 лет жизни и работы в Нью-Йорке я наблюдал тысячи ситуаций, где компетентные специалисты теряли речевой контроль не из-за плохого английского, а из-за неврологического сбоя под давлением.
-    </p>
-
-    <p>
-      Разница между «знать язык» и «сохранять доступ к нему в критический момент» — это разница между учебником и реальностью. Мы работаем с реальностью.
-    </p>
-  </div>
-</section>
-
-<section id="audience" class="bg-white">
-  <div class="container">
-    <p class="section-label">АУДИТОРИЯ</p>
-    <h2>Для кого подходит формат</h2>
+    <h2>Разрыв между знанием и функционированием</h2>
 
     <ul>
-      <li>Профессионалы (A2–C1), у которых есть база, но нет стабильности в речи</li>
-      <li>Те, кто «зависает» на встречах, интервью, презентациях</li>
-      <li>Те, у кого письменный английский работает, а устный — блокируется</li>
-      <li>Те, кто готов работать с причиной сбоя, а не симптомами</li>
-    </ul>
-  </div>
-</section>
-
-<section id="tasks" class="bg-alt">
-  <div class="container">
-    <p class="section-label">ЗАДАЧИ</p>
-    <h2>Примеры рабочих задач</h2>
-
-    <ul class="clean-list">
-      <li>Подготовка к интервью</li>
-      <li>Устойчивость на рабочих встречах</li>
-      <li>Повышение ясности формулирования</li>
-      <li>Переход от письменной уверенности к устной</li>
-      <li>Адаптация к англоязычной рабочей среде</li>
-    </ul>
-
-    <p class="subtle-link">
-      Подробнее о работе с последствиями платформ — 
-      <a href="/after-platforms.html" style="text-decoration: underline;">отдельная страница</a>.
-    </p>
-  </div>
-</section>
-
-<section id="process" class="bg-white">
-  <div class="container">
-    <p class="section-label">ПРОЦЕСС</p>
-    <h2>Как строится процесс</h2>
-
-    <ol>
-      <li>Психолингвистическая диагностика: выявление типа речевого блока</li>
-      <li>Протокол работы: под какие конкретно ситуации настраиваемся</li>
-      <li>Сессии 1:1: снятие тревожности, восстановление контроля, тренировка устойчивости</li>
-      <li>Экстренные инструменты: что делать за 60 секунд до критического разговора</li>
-    </ol>
-
-    <p>
-      При регулярной работе первые устойчивые изменения — снижение тревожности и восстановление базового речевого контроля — проявляются в течение 3–6 недель.
-    </p>
-  </div>
-</section>
-
-<section id="conditions" class="bg-alt">
-  <div class="container">
-    <p class="section-label">УСЛОВИЯ</p>
-    <h2>Формат и условия</h2>
-
-    <ul class="clean-list">
-      <li>Индивидуальные онлайн-сессии 1:1 (60 минут)</li>
-      <li>Регулярность — по согласованию</li>
-      <li>Стоимость: от 3 800 ₽ за сессию</li>
+      <li>Понимание выше активной речи</li>
+      <li>Подготовленная речь сильнее спонтанной</li>
+      <li>Письменная форма устойчивее устной</li>
+      <li>Компетентность выше звучания в разговоре</li>
     </ul>
 
     <p>
-      Работа начинается с психолингвистической диагностики — без неё невозможно определить тип блока и протокол восстановления.
+      Этот разрыв редко закрывается повторением правил
+      или дополнительной теорией.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Формат работы</h2>
+
+    <p>
+      Это не курс и не потоковая программа.
+      Работа строится индивидуально и направлена на:
     </p>
 
-    <div style="margin-top:40px;">
-      <a href="/assessment.html" class="cta-solid">Пройти диагностику</a>
-      <p class="text-small" style="margin-top:16px;">Первый шаг — понять причину сбоя, а не симптомы.</p>
-    </div>
+    <ul>
+      <li>Скорость формулирования</li>
+      <li>Структурирование аргументации</li>
+      <li>Удержание контроля в разговоре</li>
+      <li>Перенос языка в реальную профессиональную среду</li>
+    </ul>
+
+    <p>
+      В фокусе — ваши реальные задачи:
+      интервью, встречи, презентации, переговоры.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Контекст</h2>
+
+    <p>
+      25 лет жизни и работы в англоязычной среде (Нью-Йорк).
+    </p>
+
+    <p>
+      Разница между «знать язык» и «функционировать в среде»
+      становится очевидной только изнутри.
+    </p>
+
+    <p>
+      Фокус — поведенческая устойчивость,
+      а не академическая правильность.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Структура работы</h2>
+
+    <ul>
+      <li>Диагностика текущего речевого паттерна</li>
+      <li>Определение слабых зон</li>
+      <li>Контролируемая практика в усложняющейся среде</li>
+      <li>Формирование автономной устойчивости</li>
+    </ul>
+
+    <p>
+      Работа требует регулярности и системного подхода.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Кому подходит</h2>
+
+    <ul>
+      <li>IT и инженерные специалисты</li>
+      <li>Аналитики и менеджеры</li>
+      <li>Кандидаты на международные позиции</li>
+      <li>Те, кто уже проходил курсы и платформы</li>
+    </ul>
+
+    <p>
+      Минимальный уровень — A2/B1.
+      Основная аудитория — B1–C1.
+    </p>
+
+    <p>
+      Для глубокой работы с речевыми блоками предусмотрен отдельный формат —
+      <a href="https://protocol.unblock-english.ru" style="color: var(--accent); text-decoration: none;">Protocol</a>.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Вход в работу</h2>
+
+    <p>
+      Профессиональная оценка уровня и задач
+      позволяет определить текущий паттерн,
+      объём работы и формат сотрудничества.
+    </p>
+
+    <a href="/assessment.html" class="cta">Пройти оценку</a>
   </div>
 </section>
 
 </main>
 
-<footer role="contentinfo">
+<footer>
   <div class="container">
-    <p class="footer-brand">UNBLOCK ENGLISH</p>
-    <p>Индивидуальная работа по восстановлению речевого функционирования (A2–C1)</p>
-    <p style="margin-top: 14px;">Связь: <a href="https://t.me/unblock_eng" style="text-decoration: underline;">@unblock_eng</a></p>
+    <p>UNBLOCK ENGLISH</p>
+    <p>Performance-Oriented English Development</p>
+    <p>Индивидуальная работа для специалистов (B1–C1)</p>
+    <p>© 2026</p>
   </div>
 </footer>
 
