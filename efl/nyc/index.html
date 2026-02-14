@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>UNBLOCK ENGLISH — Английский для специалистов (B1–C1)</title>
-
 <meta name="description" content="Индивидуальная работа 1:1 для специалистов (B1–C1). Устойчивость речи в рабочих ситуациях. Работа начинается после профессиональной диагностики.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -40,24 +39,55 @@ body {
   padding: 0 24px;
 }
 
+/* HEADER */
+
 header {
-  padding: 48px 0;
+  padding: 40px 0;
   border-bottom: 1px solid var(--border);
 }
 
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .logo {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
 }
 
 .logo span {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
+  letter-spacing: 0.3px;
   color: var(--muted);
   margin-top: 6px;
 }
+
+.signature {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.nav {
+  font-size: 14px;
+}
+
+.nav a {
+  margin-left: 28px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* SECTIONS */
 
 section {
   padding: 96px 0;
@@ -65,9 +95,10 @@ section {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 600;
   line-height: 1.2;
+  letter-spacing: -0.3px;
   margin-bottom: 32px;
 }
 
@@ -94,6 +125,15 @@ li {
   color: var(--muted);
 }
 
+.text-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
 .cta {
   display: inline-block;
   margin-top: 32px;
@@ -116,15 +156,10 @@ li {
   margin-top: 14px;
 }
 
-footer {
-  padding: 72px 0;
-  font-size: 14px;
-  color: var(--muted);
-}
+/* ABOUT */
 
-  .about-section {
+.about-section {
   padding: 100px 0;
-  border-top: 1px solid var(--border);
 }
 
 .about-grid {
@@ -140,41 +175,34 @@ footer {
   border-radius: 2px;
 }
 
-.about-text p {
-  margin-bottom: 18px;
-  color: var(--secondary);
-}
+/* FOOTER */
 
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-photo {
-    margin-bottom: 20px;
-  }
-}
-
-  .site-footer {
-  border-top: 1px solid var(--border);
-  padding: 60px 0;
+.site-footer {
+  padding: 80px 0;
   font-size: 14px;
 }
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 48px;
 }
 
 .footer-logo {
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.2px;
   margin-bottom: 6px;
 }
 
 .footer-tagline {
-  color: var(--secondary);
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.footer-contact,
+.footer-meta {
+  line-height: 1.8;
 }
 
 .footer-contact a {
@@ -183,31 +211,45 @@ footer {
 }
 
 .footer-contact a:hover {
-  text-decoration: underline;
-}
-
-.footer-meta {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
 @media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .footer-inner {
     grid-template-columns: 1fr;
   }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <div class="logo">
-      UNBLOCK ENGLISH
-      <span>Performance-Oriented English Development</span>
+  <div class="container header-inner">
+
+    <div>
+      <div class="logo">
+        UNBLOCK ENGLISH
+        <span>Performance-Oriented English Development</span>
+      </div>
+      <div class="signature">Kirill Zotov</div>
     </div>
+
+    <nav class="nav">
+      <a href="assessment.html">Оценка</a>
+      <a href="after-platforms.html">После платформ</a>
+      <a href="https://t.me/unblock_eng" target="_blank">Telegram</a>
+    </nav>
+
   </div>
 </header>
 
@@ -233,11 +275,10 @@ footer {
     </p>
 
     <p>
-      Проблема не в знаниях.
-      Проблема — в переносе.
+      Проблема не в знаниях. Проблема — в переносе.
     </p>
 
-    <a href="/assessment.html" class="cta">Пройти профессиональную оценку</a>
+    <a href="assessment.html" class="cta">Пройти профессиональную оценку</a>
     <div class="note">Формат сотрудничества определяется после диагностики.</div>
   </div>
 </section>
@@ -254,26 +295,22 @@ footer {
     </ul>
 
     <p>
-      Этот разрыв редко закрывается повторением правил
-      или дополнительной теорией.
+      Этот разрыв редко закрывается повторением правил или дополнительной теорией.
     </p>
-    <p>
-Если вы уже проходили курсы или платформы и столкнулись с этим эффектом,
-подробный разбор причин описан здесь:
-<a href="after-platforms.html style="color: var(--accent); text-decoration: none;">почему возникает плато после платформ</a>.
-</p>
 
+    <p>
+      Если вы уже проходили курсы или платформы и столкнулись с этим эффектом,
+      подробный разбор причин описан здесь:
+      <a href="after-platforms.html" class="text-link">
+        почему возникает плато после платформ
+      </a>.
+    </p>
   </div>
 </section>
 
 <section>
   <div class="container">
     <h2>Формат работы</h2>
-
-    <p>
-      Это не курс и не потоковая программа.
-      Работа строится индивидуально и направлена на:
-    </p>
 
     <ul>
       <li>Скорость формулирования</li>
@@ -283,123 +320,40 @@ footer {
     </ul>
 
     <p>
-      В фокусе — ваши реальные задачи:
-      интервью, встречи, презентации, переговоры.
+      В фокусе — ваши реальные задачи: интервью, встречи, презентации, переговоры.
     </p>
   </div>
 </section>
 
-<section>
+<section class="about-section">
   <div class="container">
-    <h2>Контекст</h2>
-
-    <p>
-      25 лет жизни и работы в англоязычной среде (Нью-Йорк).
-    </p>
-
-    <p>
-      Разница между «знать язык» и «функционировать в среде»
-      становится очевидной только изнутри.
-    </p>
-
-    <p>
-      Фокус — поведенческая устойчивость,
-      а не академическая правильность.
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Структура работы</h2>
-
-    <ul>
-      <li>Диагностика текущего речевого паттерна</li>
-      <li>Определение слабых зон</li>
-      <li>Контролируемая практика в усложняющейся среде</li>
-      <li>Формирование автономной устойчивости</li>
-    </ul>
-
-    <p>
-      Работа требует регулярности и системного подхода.
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Кому подходит</h2>
-
-    <ul>
-      <li>IT и инженерные специалисты</li>
-      <li>Аналитики и менеджеры</li>
-      <li>Кандидаты на международные позиции</li>
-      <li>Те, кто уже проходил курсы и платформы</li>
-    </ul>
-
-    <p>
-      Минимальный уровень — A2/B1.
-      Основная аудитория — B1–C1.
-    </p>
-
-    <p>
-      Для глубокой работы с речевыми блоками предусмотрен отдельный формат —
-      <a href="https://protocol.unblock-english.ru" style="color: var(--accent); text-decoration: none;">Protocol</a>.
-    </p>
-  </div>
-</section>
-
-  <section class="about-section">
-  <div class="container">
-
     <h2>О профессиональном контексте</h2>
 
     <div class="about-grid">
-
       <div class="about-photo">
-        <img src="profile-photo.jpg" alt="Kirill Zotov — English Performance Consultant">
+        <img src="profile-photo.jpg" alt="Kirill Zotov">
       </div>
 
-      <div class="about-text">
-
-        <p>
-          25 лет жизни и профессионального опыта в англоязычной среде (Нью-Йорк).
-        </p>
-
-        <p>
-          Практический контекст — работа и взаимодействие в реальной среде,
-          где язык является инструментом, а не учебным предметом.
-        </p>
-
-        <p>
-          Профессиональный опыт включает сотрудничество с американскими языковыми институтами,
-          в том числе участие в рекрутинговых процессах
-          <strong>Pace University English Language Institute (New York)</strong>.
-        </p>
-
-        <p>
-          Фокус работы — перенос знания языка в устойчивое профессиональное функционирование.
-        </p>
-
+      <div>
+        <p>25 лет жизни и работы в англоязычной среде (Нью-Йорк).</p>
+        <p>Практический контекст — язык как инструмент профессиональной среды.</p>
+        <p>Опыт сотрудничества с американскими языковыми институтами, включая Pace University English Language Institute (New York).</p>
+        <p>Фокус — перенос знания языка в устойчивое профессиональное функционирование.</p>
       </div>
-
     </div>
-
   </div>
 </section>
-
 
 <section>
   <div class="container">
     <h2>Вход в работу</h2>
 
     <p>
-      Профессиональная оценка уровня и задач
-      позволяет определить текущий паттерн,
-      объём работы и формат сотрудничества.
+      Профессиональная оценка уровня и задач позволяет определить
+      текущий паттерн и формат сотрудничества.
     </p>
 
-    <a href="/assessment.html" class="cta">Пройти оценку</a>
+    <a href="assessment.html" class="cta">Пройти оценку</a>
   </div>
 </section>
 
@@ -408,13 +362,10 @@ footer {
 <footer class="site-footer">
   <div class="container footer-inner">
 
-    <div class="footer-brand">
-      <div class="footer-logo">
-        UNBLOCK ENGLISH
-      </div>
-      <div class="footer-tagline">
-        Performance-Oriented English Development
-      </div>
+    <div>
+      <div class="footer-logo">UNBLOCK ENGLISH</div>
+      <div class="footer-tagline">Performance-Oriented English Development</div>
+      <div class="signature">Kirill Zotov</div>
     </div>
 
     <div class="footer-contact">
@@ -425,13 +376,16 @@ footer {
 
     <div class="footer-meta">
       <div>Индивидуальная работа для специалистов (B1–C1)</div>
-      <div><a href="after-platforms.html style="color: var(--accent); text-decoration: none;">После платформ: аналитический разбор</a></div>
+      <div>
+        <a href="after-platforms.html" class="text-link">
+          После платформ: аналитический разбор
+        </a>
+      </div>
       <div>© 2026</div>
     </div>
 
   </div>
 </footer>
-
 
 </body>
 </html>
