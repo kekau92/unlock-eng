@@ -35,7 +35,48 @@ body {
 .container {
   max-width: 820px;
   margin: 0 auto;
-  padding: 60px 20px 100px;
+  padding: 0 20px;
+}
+
+/* HEADER */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 40px 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo-main {
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.logo-sub {
+  font-size: 12px;
+  color: var(--secondary);
+  margin-top: 6px;
+}
+
+.nav a {
+  margin-left: 28px;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* MAIN */
+
+.main-content {
+  padding: 60px 0 100px;
 }
 
 h1 {
@@ -53,18 +94,6 @@ h2 {
 p {
   margin-bottom: 16px;
   color: var(--secondary);
-}
-
-.header-link {
-  display: inline-block;
-  margin-bottom: 40px;
-  font-size: 14px;
-  color: var(--secondary);
-  text-decoration: none;
-}
-
-.header-link:hover {
-  text-decoration: underline;
 }
 
 .field-group {
@@ -120,14 +149,55 @@ button:hover {
   font-size: 13px;
   color: var(--secondary);
 }
+
+/* FOOTER */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 60px 0;
+  font-size: 14px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-inner a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.footer-inner a:hover {
+  color: var(--accent);
+}
+
+@media(max-width:768px){
+  .header-inner { flex-direction: column; gap: 20px; }
+  .footer-inner { flex-direction: column; }
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header class="site-header">
+  <div class="container header-inner">
+    <div>
+      <div class="logo-main">UNBLOCK ENGLISH</div>
+      <div class="logo-sub">Performance-Oriented English Development</div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="after-platforms.html">После платформ</a>
+      <a href="https://t.me/unblock_eng" target="_blank">Telegram</a>
+    </nav>
+  </div>
+</header>
 
-<a href="index.html" class="header-link">← Вернуться на главную</a>
+<div class="container main-content">
 
 <h1>Профессиональная оценка уровня и речевого паттерна</h1>
 
@@ -254,6 +324,19 @@ button:hover {
 </form>
 
 </div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© 2026 UNBLOCK ENGLISH</div>
+    <div>
+      <a href="index.html">Главная</a> |
+      <a href="after-platforms.html">После платформ</a>
+    </div>
+    <div>
+      <a href="https://t.me/unblock_eng" target="_blank">@unblock_eng</a>
+    </div>
+  </div>
+</footer>
 
 <script>
 function getRadioValue(name) {
