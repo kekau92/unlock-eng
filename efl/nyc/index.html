@@ -178,41 +178,71 @@ li {
 /* FOOTER */
 
 .site-footer {
-  padding: 80px 0;
-  font-size: 14px;
+  padding: 120px 0 100px;
+  border-top: 1px solid var(--border);
+  text-align: center;
 }
 
-.footer-inner {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 48px;
+.footer-minimal {
+  max-width: 640px;
+  margin: 0 auto;
 }
 
-.footer-logo {
+.footer-identity {
   font-weight: 600;
-  letter-spacing: 1.2px;
-  margin-bottom: 6px;
+  letter-spacing: 1.5px;
+  font-size: 16px;
 }
 
 .footer-tagline {
+  margin-top: 8px;
   font-size: 12px;
   color: var(--muted);
-  margin-bottom: 10px;
 }
 
-.footer-contact,
-.footer-meta {
-  line-height: 1.8;
+.footer-signature {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer-separator {
+  margin: 40px auto;
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+}
+
+.footer-structural a {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.footer-structural a:hover {
+  color: var(--accent);
+}
+
+.footer-contact {
+  margin-top: 24px;
 }
 
 .footer-contact a {
-  color: var(--text);
+  font-size: 14px;
   text-decoration: none;
+  color: var(--text);
 }
 
 .footer-contact a:hover {
   color: var(--accent);
 }
+
+.footer-meta {
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
 
 @media (max-width: 768px) {
   .header-inner {
@@ -360,31 +390,39 @@ li {
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
+  <div class="container footer-minimal">
 
-    <!-- Brand Block -->
-    <div class="footer-brand">
-      <div class="footer-logo">UNBLOCK ENGLISH</div>
-      <div class="footer-slogan">Performance-Oriented English Development</div>
+    <div class="footer-identity">
+      UNBLOCK ENGLISH
     </div>
 
-    <!-- Navigation -->
-    <div class="footer-nav">
-      <a href="index.html">Главная</a> |
-      <a href="assessment.html">Диагностика</a> |
-      <a href="after-platforms.html">После платформ</a>
+    <div class="footer-tagline">
+      Performance-Oriented English Development
     </div>
 
-    <!-- Contact + Protocol -->
-    <div class="footer-contact">
-      <a href="https://t.me/unblock_eng" target="_blank">@unblock_eng</a><br><br>
+    <div class="footer-signature">
+      Kirill Zotov
+    </div>
+
+    <div class="footer-separator"></div>
+
+    <div class="footer-structural">
       <a href="https://protocol.unblock-english.ru" target="_blank">
-        Работа на уровне речевых конструкций → protocol.unblock-english.ru
+        Работа на уровне речевых конструкций
       </a>
+    </div>
+
+    <div class="footer-contact">
+      <a href="https://t.me/unblock_eng" target="_blank">@unblock_eng</a>
+    </div>
+
+    <div class="footer-meta">
+      © 2026
     </div>
 
   </div>
 </footer>
+
 
 
 </body>
