@@ -4,216 +4,230 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Почему после платформ возникает плато — UNBLOCK ENGLISH</title>
-<meta name="description" content="Почему знание английского не переходит в устойчивую речь после курсов и платформ. Анализ и следующий шаг.">
+<title>После платформ — аналитический разбор</title>
+<meta name="description" content="Почему после курсов и платформ возникает плато в английском языке.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #F7F7F5;
-  --text: #1C1C1C;
-  --secondary: #555;
-  --accent: #1F3A5F;
-  --accent-hover: #162B47;
-  --border: #E3E3DF;
+  --bg:#F5F5F3;
+  --text:#1A1A1A;
+  --muted:#5A5A5A;
+  --border:#E4E4E1;
+  --accent:#1F3A5F;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.65;
+.container{
+  max-width:800px;
+  margin:0 auto;
+  padding:0 24px;
 }
 
-.container {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 60px 20px 100px;
+header{
+  padding:40px 0;
+  border-bottom:1px solid var(--border);
 }
 
-.header-link {
-  display: inline-block;
-  margin-bottom: 40px;
-  font-size: 14px;
-  color: var(--secondary);
-  text-decoration: none;
+.header-inner{
+  display:flex;
+  justify-content:space-between;
 }
 
-.header-link:hover {
-  text-decoration: underline;
+.logo{
+  font-size:17px;
+  font-weight:600;
+  letter-spacing:1.5px;
 }
 
-h1 {
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 24px;
+.logo span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:6px;
 }
 
-h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 60px 0 20px;
+.signature{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:8px;
 }
 
-p {
-  margin-bottom: 18px;
-  color: var(--secondary);
+.nav a{
+  margin-left:28px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
 }
 
-ul {
-  margin-left: 18px;
-  margin-bottom: 20px;
+.nav a:hover{color:var(--accent);}
+
+section{
+  padding:96px 0;
 }
 
-li {
-  margin-bottom: 8px;
-  color: var(--secondary);
+.page-label{
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:16px;
 }
 
-.cta {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-  background: var(--accent);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.2s ease;
+h1{
+  font-size:34px;
+  margin-bottom:24px;
 }
 
-.cta:hover {
-  background: var(--accent-hover);
+h2{
+  font-size:22px;
+  margin:60px 0 20px;
 }
 
-.section-divider {
-  border-top: 1px solid var(--border);
-  margin: 60px 0;
+p, li{
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+ul{margin-left:20px;}
+
+.text-link{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+.text-link:hover{text-decoration:underline;}
+
+.site-footer{
+  border-top:1px solid var(--border);
+  padding:80px 0;
+  font-size:14px;
+  margin-top:80px;
+}
+
+.footer-inner{
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:48px;
+}
+
+.footer-logo{
+  font-weight:600;
+  letter-spacing:1.2px;
+}
+
+.footer-tagline{
+  font-size:12px;
+  color:var(--muted);
+  margin:6px 0;
+}
+
+.footer-contact a{
+  text-decoration:none;
+  color:var(--text);
+}
+
+.footer-contact a:hover{color:var(--accent);}
+
+@media(max-width:768px){
+  .header-inner{flex-direction:column;gap:20px;}
+  .footer-inner{grid-template-columns:1fr;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+  <div class="container header-inner">
+    <div>
+      <div class="logo">
+        UNBLOCK ENGLISH
+        <span>Performance-Oriented English Development</span>
+      </div>
+      <div class="signature">Kirill Zotov</div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="assessment.html">Оценка</a>
+      <a href="https://t.me/unblock_eng" target="_blank">Telegram</a>
+    </nav>
+  </div>
+</header>
 
-<a href="index.html" class="header-link">← Вернуться на главную</a>
+<section>
+  <div class="container">
 
-<h1>Почему после платформ возникает плато</h1>
+    <div class="page-label">Раздел: Аналитика</div>
 
-<p>
-Многие специалисты проходят онлайн-курсы, 
-занимаются на платформах, 
-регулярно выполняют упражнения —
-но в реальной рабочей среде продолжают испытывать сложности.
-</p>
+    <h1>Почему после платформ возникает плато</h1>
 
-<p>
-Возникает ощущение:
-знаний стало больше,  
-а устойчивости — нет.
-</p>
+    <p>
+      Курсы и онлайн-платформы эффективно восстанавливают базу,
+      расширяют словарь и систематизируют грамматику.
+    </p>
 
-<div class="section-divider"></div>
+    <p>
+      Однако при переходе в рабочую среду
+      часто сохраняется нестабильность речи.
+    </p>
 
-<h2>Проблема не в количестве знаний</h2>
+    <h2>Где возникает разрыв</h2>
 
-<p>
-Платформы хорошо работают на этапе:
-</p>
+    <ul>
+      <li>Понимание выше активной речи</li>
+      <li>Подготовленная речь сильнее спонтанной</li>
+      <li>Письменная форма устойчивее устной</li>
+      <li>Компетентность выше звучания</li>
+    </ul>
 
-<ul>
-<li>восстановления базы</li>
-<li>повторения грамматики</li>
-<li>расширения словарного запаса</li>
-<li>контролируемой практики</li>
-</ul>
+    <p>
+      Этот разрыв связан не с объёмом знаний,
+      а с переносом языка в поведенческую среду.
+    </p>
 
-<p>
-Но большинство специалистов сталкиваются с другим типом задачи:
-функционирование под реальным давлением.
-</p>
+    <h2>Когда имеет смысл менять формат</h2>
 
-<p>
-Это требует иной модели работы.
-</p>
+    <ul>
+      <li>Уровень B1–C1, но нет устойчивости</li>
+      <li>Язык нужен для интервью, встреч, переговоров</li>
+      <li>Платформы не дают ощутимого прогресса</li>
+    </ul>
 
-<div class="section-divider"></div>
+    <p>
+      В этом случае применяется индивидуальная диагностика:
+      <a href="assessment.html" class="text-link">перейти к оценке</a>.
+    </p>
 
-<h2>Где возникает разрыв</h2>
+  </div>
+</section>
 
-<ul>
-<li>понимание выше активной речи</li>
-<li>подготовленная речь сильнее спонтанной</li>
-<li>письменная форма устойчивее устной</li>
-<li>компетентность выше звучания</li>
-</ul>
+<footer class="site-footer">
+  <div class="container footer-inner">
 
-<p>
-Этот разрыв редко закрывается повторением правил.
-</p>
+    <div>
+      <div class="footer-logo">UNBLOCK ENGLISH</div>
+      <div class="footer-tagline">Performance-Oriented English Development</div>
+      <div class="signature">Kirill Zotov</div>
+    </div>
 
-<div class="section-divider"></div>
+    <div class="footer-contact">
+      Telegram: <a href="https://t.me/unblock_eng" target="_blank">@unblock_eng</a>
+    </div>
 
-<h2>Что не учитывают массовые форматы</h2>
+    <div>
+      © 2026
+    </div>
 
-<p>
-Массовая модель строится вокруг программы.
-</p>
-
-<p>
-Но профессиональная среда требует:
-</p>
-
-<ul>
-<li>быстрой формулировки мысли</li>
-<li>структурирования аргументации в реальном времени</li>
-<li>удержания контроля в обсуждении</li>
-<li>устойчивости под умеренным давлением</li>
-</ul>
-
-<p>
-Это поведенческий аспект языка.
-</p>
-
-<div class="section-divider"></div>
-
-<h2>Когда имеет смысл переходить к индивидуальной работе</h2>
-
-<ul>
-<li>Если вы уже прошли несколько форматов</li>
-<li>Если уровень B1–C1, но нет стабильности</li>
-<li>Если английский нужен для реальной профессиональной среды</li>
-<li>Если задача — не “учить”, а функционировать</li>
-</ul>
-
-<div class="section-divider"></div>
-
-<h2>Следующий шаг</h2>
-
-<p>
-Перед началом индивидуальной работы проводится диагностика текущего речевого паттерна.
-</p>
-
-<p>
-Это позволяет определить:
-</p>
-
-<ul>
-<li>характер разрыва</li>
-<li>объём работы</li>
-<li>целесообразность сотрудничества</li>
-</ul>
-
-<a href="assessment.html" class="cta">Пройти профессиональную оценку</a>
-
-</div>
+  </div>
+</footer>
 
 </body>
 </html>
