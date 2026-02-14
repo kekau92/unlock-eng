@@ -19,91 +19,154 @@
   --border: #E3E3DF;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.65;
+  font-family:'Inter', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
 }
 
 .container {
   max-width: 860px;
   margin: 0 auto;
-  padding: 60px 20px 100px;
+  padding: 0 20px;
 }
 
-.header-link {
-  display: inline-block;
-  margin-bottom: 40px;
-  font-size: 14px;
-  color: var(--secondary);
-  text-decoration: none;
+/* HEADER */
+
+.site-header {
+  border-bottom:1px solid var(--border);
+  padding:40px 0;
 }
 
-.header-link:hover {
-  text-decoration: underline;
+.header-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+
+.logo-main {
+  font-weight:600;
+  letter-spacing:1.5px;
+}
+
+.logo-sub {
+  font-size:12px;
+  color:var(--secondary);
+  margin-top:6px;
+}
+
+.nav a {
+  margin-left:28px;
+  font-size:14px;
+  text-decoration:none;
+  color:var(--text);
+}
+
+.nav a:hover { color:var(--accent); }
+
+/* CONTENT */
+
+.main-content {
+  padding:60px 0 100px;
 }
 
 h1 {
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 24px;
+  font-size:30px;
+  font-weight:600;
+  margin-bottom:24px;
 }
 
 h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 60px 0 20px;
+  font-size:20px;
+  font-weight:600;
+  margin:60px 0 20px;
 }
 
 p {
-  margin-bottom: 18px;
-  color: var(--secondary);
+  margin-bottom:18px;
+  color:var(--secondary);
 }
 
 ul {
-  margin-left: 18px;
-  margin-bottom: 20px;
+  margin-left:18px;
+  margin-bottom:20px;
 }
 
 li {
-  margin-bottom: 8px;
-  color: var(--secondary);
+  margin-bottom:8px;
+  color:var(--secondary);
 }
 
 .cta {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-  background: var(--accent);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.2s ease;
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 28px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
 }
 
 .cta:hover {
-  background: var(--accent-hover);
+  background:var(--accent-hover);
 }
 
 .section-divider {
-  border-top: 1px solid var(--border);
-  margin: 60px 0;
+  border-top:1px solid var(--border);
+  margin:60px 0;
+}
+
+/* FOOTER */
+
+.site-footer {
+  border-top:1px solid var(--border);
+  padding:60px 0;
+  font-size:14px;
+}
+
+.footer-inner {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.footer-inner a {
+  color:var(--text);
+  text-decoration:none;
+}
+
+.footer-inner a:hover {
+  color:var(--accent);
+}
+
+@media(max-width:768px){
+  .header-inner { flex-direction:column; gap:20px; }
+  .footer-inner { flex-direction:column; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header class="site-header">
+  <div class="container header-inner">
+    <div>
+      <div class="logo-main">UNBLOCK ENGLISH</div>
+      <div class="logo-sub">Performance-Oriented English Development</div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="assessment.html">Диагностика</a>
+      <a href="https://t.me/unblock_eng" target="_blank">Telegram</a>
+    </nav>
+  </div>
+</header>
 
-<a href="index.html" class="header-link">← Вернуться на главную</a>
+<div class="container main-content">
 
 <h1>Почему после платформ возникает плато</h1>
 
@@ -124,9 +187,7 @@ li {
 
 <h2>Проблема не в количестве знаний</h2>
 
-<p>
-Платформы хорошо работают на этапе:
-</p>
+<p>Платформы хорошо работают на этапе:</p>
 
 <ul>
 <li>восстановления базы</li>
@@ -140,9 +201,7 @@ li {
 функционирование под реальным давлением.
 </p>
 
-<p>
-Это требует иной модели работы.
-</p>
+<p>Это требует иной модели работы.</p>
 
 <div class="section-divider"></div>
 
@@ -155,21 +214,15 @@ li {
 <li>компетентность выше звучания</li>
 </ul>
 
-<p>
-Этот разрыв редко закрывается повторением правил.
-</p>
+<p>Этот разрыв редко закрывается повторением правил.</p>
 
 <div class="section-divider"></div>
 
 <h2>Что не учитывают массовые форматы</h2>
 
-<p>
-Массовая модель строится вокруг программы.
-</p>
+<p>Массовая модель строится вокруг программы.</p>
 
-<p>
-Но профессиональная среда требует:
-</p>
+<p>Но профессиональная среда требует:</p>
 
 <ul>
 <li>быстрой формулировки мысли</li>
@@ -178,9 +231,7 @@ li {
 <li>устойчивости под умеренным давлением</li>
 </ul>
 
-<p>
-Это поведенческий аспект языка.
-</p>
+<p>Это поведенческий аспект языка.</p>
 
 <div class="section-divider"></div>
 
@@ -201,9 +252,7 @@ li {
 Перед началом индивидуальной работы проводится диагностика текущего речевого паттерна.
 </p>
 
-<p>
-Это позволяет определить:
-</p>
+<p>Это позволяет определить:</p>
 
 <ul>
 <li>характер разрыва</li>
@@ -214,6 +263,19 @@ li {
 <a href="assessment.html" class="cta">Пройти профессиональную оценку</a>
 
 </div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© 2026 UNBLOCK ENGLISH</div>
+    <div>
+      <a href="index.html">Главная</a> |
+      <a href="assessment.html">Диагностика</a>
+    </div>
+    <div>
+      <a href="https://t.me/unblock_eng" target="_blank">@unblock_eng</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
