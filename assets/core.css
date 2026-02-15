@@ -3,7 +3,6 @@
 ==================================== */
 
 /* ===== COLOR SYSTEM ===== */
-
 :root {
   --bg: #F7F7F6;
   --text: #181818;
@@ -11,12 +10,16 @@
   --border: #E6E6E3;
   --accent: #223247;
   --accent-hover: #162331;
+  --white: #ffffff;
 }
 
 /* ===== BASE ===== */
-
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,18 +34,17 @@ body {
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover {
   color: var(--accent-hover);
 }
 
-/* ===== GRID ===== */
-
+/* ===== GRID & LAYOUT ===== */
 .container {
   max-width: 1000px;
-  margin-left: 12%;
+  margin-left: 12%; /* Editorial asymmetrical layout */
   margin-right: auto;
   padding-right: 40px;
 }
@@ -52,7 +54,6 @@ section {
 }
 
 /* ===== TYPOGRAPHY ===== */
-
 h1, h2 {
   font-family: 'EB Garamond', serif;
   font-weight: 600;
@@ -67,7 +68,11 @@ h1 {
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  display: inline-block;
+  margin-bottom: 40px;
 }
 
 p {
@@ -78,12 +83,15 @@ p {
 
 .statement {
   font-family: 'EB Garamond', serif;
-  font-size: 20px;
+  font-size: 22px;
   font-style: italic;
+  color: var(--accent);
+  border-left: 2px solid var(--accent);
+  padding-left: 24px;
+  margin: 40px 0;
 }
 
-/* ===== NAV ===== */
-
+/* ===== NAVIGATION ===== */
 .navbar {
   padding: 40px 0;
 }
@@ -92,6 +100,7 @@ p {
   font-weight: 600;
   letter-spacing: 1.5px;
   font-size: 14px;
+  text-transform: uppercase;
 }
 
 .nav {
@@ -99,14 +108,19 @@ p {
 }
 
 .nav a {
-  font-size: 13px;
-  letter-spacing: 0.6px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-  margin-right: 24px;
+  margin-right: 32px;
+  color: var(--muted);
 }
 
-/* ===== LIST ===== */
+.nav a:hover {
+  color: var(--accent);
+}
 
+/* ===== LISTS (The Audit Look) ===== */
 ul {
   list-style: none;
   padding-left: 0;
@@ -114,9 +128,14 @@ ul {
 
 li {
   position: relative;
-  padding-left: 18px;
-  margin-bottom: 12px;
+  padding-left: 24px;
+  margin-bottom: 16px;
   max-width: 640px;
+  transition: transform 0.2s ease;
+}
+
+li:hover {
+  transform: translateX(5px);
 }
 
 li::before {
@@ -126,70 +145,56 @@ li::before {
   color: var(--muted);
 }
 
-/* ===== CTA ===== */
-
+/* ===== CTA (Quiet Luxury Style) ===== */
 .cta {
   display: inline-block;
   margin-top: 36px;
-  padding: 14px 28px;
+  padding: 16px 32px;
   border: 1px solid var(--accent);
   background: transparent;
   color: var(--accent);
   font-weight: 500;
-  letter-spacing: 0.3px;
-  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
 }
 
 .cta:hover {
   background: var(--accent);
-  color: #ffffff;
-}
-
-/* ===== FORM ===== */
-
-input, textarea {
-  width: 100%;
-  border: 1px solid var(--border);
-  padding: 14px;
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  background: #ffffff;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border-color: var(--accent);
+  color: var(--white);
+  box-shadow: 0 10px 20px rgba(34, 50, 71, 0.1);
 }
 
 /* ===== FOOTER ===== */
-
 .site-footer {
   padding: 140px 0 100px;
+  border-top: 1px solid var(--border);
 }
 
 .footer-name {
   font-weight: 600;
   letter-spacing: 1.5px;
   font-size: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .footer-line {
   font-size: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .footer-small {
   font-size: 13px;
   color: var(--muted);
   margin-bottom: 12px;
+  display: block;
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE RESPONSIVENESS & RE-ORDERING ===== */
 
 @media (max-width: 768px) {
-
   .container {
     margin-left: 24px;
     margin-right: 24px;
@@ -201,16 +206,31 @@ input:focus, textarea:focus {
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
-  p {
-    font-size: 15px;
+  h2 {
+    font-size: 20px;
+  }
+
+  /* PHOTO ON TOP LOGIC:
+     Reverses the flex order in the Professional Context section 
+     where inline display:flex was used in the HTML */
+  section div[style*="display: flex"] {
+    flex-direction: column-reverse !important;
+    gap: 32px !important;
+  }
+
+  /* Adjusts the Image Container on Mobile */
+  section div[style*="flex: 0 0 240px"] {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 280px; 
+    margin: 0 auto;
   }
 
   .nav a {
-    display: block;
-    margin: 10px 0;
+    display: inline-block;
+    margin: 10px 24px 10px 0;
   }
-
 }
