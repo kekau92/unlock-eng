@@ -1,76 +1,114 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Assessment — Unblock English</title>
+<title>Оценка речевого состояния — Unblock English</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=EB+Garamond:wght@500;600&display=swap" rel="stylesheet">
-   
 <link rel="stylesheet" href="assets/core.css">
 
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <div class="container navbar">
   <div class="logo">UNBLOCK ENGLISH</div>
   <div class="nav">
-    <a href="index.html">Home</a>
-    <a href="after-platforms.html">Plateau</a>
+    <a href="index.html">Главная</a>
+    <a href="after-platforms.html">Плато</a>
   </div>
 </div>
 
-<!-- CONTENT -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section>
   <div class="container">
 
-    <h1>Структурная диагностика речевого паттерна</h1>
+    <h1>Оценка текущего состояния речи</h1>
 
-    <p>Диагностика направлена на выявление операционной структуры речи и характера разрыва между знанием и функционированием.</p>
+    <p>Короткий структурированный разбор помогает понять,
+    где именно возникает напряжение и потеря устойчивости.</p>
 
-    <p class="statement">Оценка носит аналитический, а не тестовый характер.</p>
-
-    <h2>В рамках анализа оцениваются:</h2>
-
-    <ul>
-      <li>Скорость формулирования</li>
-      <li>Структурирование аргументации</li>
-      <li>Устойчивость под когнитивной нагрузкой</li>
-      <li>Соответствие речи профессиональной задаче</li>
-    </ul>
-
-    <p>Работа возможна только после структурного анализа. Формат сотрудничества не определяется заранее.</p>
-
-    <!-- FORM -->
-
-    <div class="form-block">
-
-      <label>Имя</label>
-      <input type="text" id="name">
-
-      <label>Профессиональный контекст</label>
-      <input type="text" id="context">
-
-      <label>Где проявляется основной разрыв?</label>
-      <textarea id="gap" rows="4"></textarea>
-
-      <label>Цель работы</label>
-      <textarea id="goal" rows="4"></textarea>
-
-      <button class="cta" onclick="sendToTelegram()">Отправить на анализ</button>
-
-    </div>
-
-    <p class="footer-small">Решение принимается на основе анализа.</p>
+    <p class="statement">Это не тест.  
+    И не проверка уровня.</p>
 
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- =========================
+     WHAT WE ANALYZE
+========================= -->
+
+<section>
+  <div class="container">
+
+    <h2>В фокусе оценки</h2>
+
+    <ul>
+      <li>Скорость формулировки мысли</li>
+      <li>Устойчивость речи в спонтанном формате</li>
+      <li>Наличие внутреннего перевода</li>
+      <li>Сохранение аргументации под нагрузкой</li>
+    </ul>
+
+    <p>Оценка занимает 10–15 минут и позволяет понять,
+    в каком направлении имеет смысл двигаться дальше.</p>
+
+  </div>
+</section>
+
+<!-- =========================
+     FORM
+========================= -->
+
+<section>
+  <div class="container">
+
+    <h2>Краткое описание ситуации</h2>
+
+    <form id="assessmentForm">
+
+      <p>
+        <label>Имя</label><br>
+        <input type="text" id="name" required>
+      </p>
+
+      <p>
+        <label>Профессиональный контекст (сфера, формат работы)</label><br>
+        <input type="text" id="context" required>
+      </p>
+
+      <p>
+        <label>В каких ситуациях речь теряет устойчивость?</label><br>
+        <textarea id="problem" rows="4" required></textarea>
+      </p>
+
+      <p>
+        <label>Что хотелось бы изменить?</label><br>
+        <textarea id="goal" rows="4"></textarea>
+      </p>
+
+      <button type="button" class="cta" onclick="sendToTelegram()">Отправить через Telegram</button>
+
+      <p class="footer-small">После нажатия откроется диалог в Telegram.</p>
+
+      <p class="footer-small">После получения информации я свяжусь с вами и предложу формат дальнейшей работы, если он целесообразен.</p>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer class="site-footer">
   <div class="container">
@@ -83,28 +121,33 @@
 
     <div class="footer-small">Telegram: @unblock_eng</div>
 
-    <div class="footer-small">© 2026 Kirill Zotov — All rights reserved.</div>
+    <div class="footer-small">© 2026 Kirill Zotov</div>
 
   </div>
 </footer>
 
-<!-- TELEGRAM SCRIPT -->
+<!-- =========================
+     TELEGRAM SCRIPT
+========================= -->
 
 <script>
 function sendToTelegram() {
-  const name = document.getElementById("name").value;
-  const context = document.getElementById("context").value;
-  const gap = document.getElementById("gap").value;
-  const goal = document.getElementById("goal").value;
 
-  const message =
-    "Assessment Request:%0A%0A" +
-    "Name: " + name + "%0A" +
-    "Context: " + context + "%0A%0A" +
-    "Gap: " + gap + "%0A%0A" +
-    "Goal: " + goal;
+  var name = document.getElementById("name").value;
+  var context = document.getElementById("context").value;
+  var problem = document.getElementById("problem").value;
+  var goal = document.getElementById("goal").value;
 
-  window.open("https://t.me/unblock_eng?text=" + message, "_blank");
+  var message =
+    "Оценка речевого состояния:%0A%0A" +
+    "Имя: " + name + "%0A%0A" +
+    "Контекст: " + context + "%0A%0A" +
+    "Ситуации: " + problem + "%0A%0A" +
+    "Цель: " + goal;
+
+  var telegramLink = "https://t.me/unblock_eng?text=" + message;
+
+  window.open(telegramLink, "_blank");
 }
 </script>
 
