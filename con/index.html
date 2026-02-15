@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unblock English — English Performance Practice</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=EB+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   COLOR SYSTEM
+========================= */
+
+:root {
+  --bg: #F7F7F6;
+  --text: #181818;
+  --muted: #6A6A6A;
+  --border: #E6E6E3;
+  --accent: #223247;
+  --accent-hover: #162331;
+}
+
+/* =========================
+   BASE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* =========================
+   GRID STRUCTURE
+========================= */
+
+.container {
+  max-width: 1000px;
+  margin-left: 12%;
+  margin-right: auto;
+  padding-right: 40px;
+}
+
+section {
+  padding: 120px 0;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1, h2 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  margin: 0 0 32px 0;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  max-width: 700px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 16px;
+  max-width: 640px;
+  margin-bottom: 24px;
+}
+
+.statement {
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+  padding: 40px 0;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+.nav {
+  margin-top: 20px;
+}
+
+.nav a {
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-right: 24px;
+}
+
+/* =========================
+   LIST STYLE
+========================= */
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  max-width: 640px;
+}
+
+li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+  display: inline-block;
+  margin-top: 36px;
+  padding: 14px 28px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  padding: 140px 0 100px;
+}
+
+.footer-name {
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.footer-line {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.footer-small {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    margin-left: 24px;
+    margin-right: 24px;
+    padding-right: 0;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<div class="container navbar">
+  <div class="logo">UNBLOCK ENGLISH</div>
+  <div class="nav">
+    <a href="after-platforms.html">Plateau</a>
+    <a href="assessment.html">Assessment</a>
+  </div>
+</div>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section>
+  <div class="container">
+
+    <h1>Английский для специалистов,<br>
+    у которых знание не переходит в устойчивую речь</h1>
+
+    <p>Вы уже владеете английским. Читаете. Понимаете. Пишете.</p>
+
+    <p>Но в рабочих разговорах снижается скорость, формулировка требует усилия, аргументация упрощается.</p>
+
+    <p class="statement">Проблема — в механике переноса знания в функционирование.</p>
+
+  </div>
+</section>
+
+<!-- =========================
+     GAP SECTION
+========================= -->
+
+<section>
+  <div class="container">
+
+    <h2>Разрыв между знанием и функционированием</h2>
+
+    <ul>
+      <li>Понимание выше активной речи</li>
+      <li>Подготовленная речь сильнее спонтанной</li>
+      <li>Письменная форма устойчивее устной</li>
+      <li>Компетентность выше звучания</li>
+    </ul>
+
+    <p>Этот тип разрыва редко закрывается дополнительной теорией.</p>
+
+    <p><a href="after-platforms.html">Почему возникает плато</a></p>
+
+  </div>
+</section>
+
+<!-- =========================
+     FORMAT
+========================= -->
+
+<section>
+  <div class="container">
+
+    <h2>Фокус работы</h2>
+
+    <p>Изменяется точка приложения усилий: с изучения языка — на контроль речевого процесса в реальном времени.</p>
+
+    <ul>
+      <li>Скорость структурирования мысли</li>
+      <li>Операционная устойчивость речи</li>
+      <li>Удержание аргументации под нагрузкой</li>
+      <li>Перенос в реальные профессиональные сценарии</li>
+    </ul>
+
+    <p>Работа структурируется вокруг ваших профессиональных задач и опирается на внутреннюю модель переноса знания в функционирование.</p>
+
+  </div>
+</section>
+
+<!-- =========================
+     CONTEXT
+========================= -->
+
+<section>
+  <div class="container">
+
+    <h2>Профессиональный контекст</h2>
+
+    <p>25 лет жизни и работы в англоязычной среде (Нью-Йорк).</p>
+
+    <p>Сотрудничество с американскими языковыми институтами, включая Pace University English Language Institute (New York).</p>
+
+    <p>Фокус — функциональная автономность речи в профессиональной среде.</p>
+
+  </div>
+</section>
+
+<!-- =========================
+     ENTRY
+========================= -->
+
+<section>
+  <div class="container">
+
+    <h2>Вход в работу</h2>
+
+    <p>Работа начинается со структурной диагностики речевого паттерна.</p>
+
+    <p>По результатам определяется целесообразность и формат сотрудничества.</p>
+
+    <a class="cta" href="assessment.html">Пройти оценку</a>
+
+    <p class="footer-small">Решение принимается на основе анализа.</p>
+
+  </div>
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-name">UNBLOCK ENGLISH</div>
+
+    <div class="footer-line">English Performance Practice for Professionals</div>
+
+    <div class="footer-small">Method layer: protocol.unblock-english.ru</div>
+
+    <div class="footer-small">Telegram: @unblock_eng</div>
+
+    <div class="footer-small">© 2026 Kirill Zotov — All rights reserved.</div>
+
+  </div>
+</footer>
+
+</body>
+</html>
