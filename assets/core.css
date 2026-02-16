@@ -1,0 +1,314 @@
+/* =====================================
+   RESET / BASE
+===================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #111;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =====================================
+   GRID SYSTEM
+===================================== */
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 88px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+section:first-of-type {
+  border-top: none;
+  padding-top: 120px;
+}
+
+/* =====================================
+   TYPOGRAPHY
+===================================== */
+
+h1 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1.2;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  font-size: 28px;
+  margin: 0 0 28px 0;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0 0 20px 0;
+  font-size: 17px;
+}
+
+ul {
+  margin: 0 0 24px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.statement {
+  font-weight: 500;
+  margin-top: 28px;
+}
+
+.footer-small {
+  font-size: 14px;
+  color: #666;
+  margin-top: 12px;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+}
+
+.logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.nav a {
+  margin-left: 32px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+}
+
+/* =====================================
+   LINKS
+===================================== */
+
+a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* =====================================
+   CTA BUTTON
+===================================== */
+
+.cta {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 16px 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.cta:hover {
+  background: #000;
+}
+
+.cta:active {
+  transform: translateY(1px);
+}
+
+/* =====================================
+   FORM SYSTEM
+===================================== */
+
+form {
+  max-width: 720px;
+}
+
+form p {
+  margin-bottom: 28px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px; /* Prevent iOS zoom */
+  line-height: 1.5;
+  padding: 14px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 0;
+  background: #ffffff;
+  color: #111;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #111;
+  background: #fafafa;
+}
+
+/* =====================================
+   IMAGE SYSTEM
+===================================== */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.site-footer {
+  padding: 80px 0;
+  border-top: 1px solid #eaeaea;
+  margin-top: 80px;
+}
+
+.footer-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.footer-line {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.site-footer a {
+  text-decoration: none;
+  color: #111;
+}
+
+.site-footer a:hover {
+  opacity: 0.6;
+}
+
+/* =====================================
+   RESPONSIVE SYSTEM
+===================================== */
+
+@media (max-width: 900px) {
+
+  section {
+    padding: 72px 0;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    margin-right: 24px;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .cta {
+    width: 100%;
+    text-align: center;
+  }
+
+}
