@@ -1,0 +1,327 @@
+/* ====================================
+   UNBLOCK ENGLISH — CORE DESIGN SYSTEM V3
+   Editorial Identity × Institutional Authority
+==================================== */
+
+
+/* ===== COLOR SYSTEM ===== */
+
+:root {
+  --bg: #F7F7F6;
+  --text: #181818;
+  --muted: #6A6A6A;
+  --border: #E6E6E3;
+  --accent: #223247;
+  --accent-hover: #162331;
+  --white: #ffffff;
+}
+
+
+/* ===== BASE ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ===== LINKS ===== */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+
+/* ===== GRID & LAYOUT ===== */
+/* Keep editorial asymmetry, but tighten */
+
+.container {
+  max-width: 1040px;
+  margin-left: 11%;
+  margin-right: auto;
+  padding-right: 40px;
+}
+
+section {
+  padding: 110px 0;
+  border-top: 1px solid var(--border);
+}
+
+section:first-of-type {
+  border-top: none;
+}
+
+
+/* ===== TYPOGRAPHY SYSTEM ===== */
+
+h1,
+h2 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  margin: 0 0 32px 0;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  max-width: 720px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 36px;
+  display: inline-block;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+p {
+  font-size: 16.5px;
+  max-width: 660px;
+  margin-bottom: 24px;
+}
+
+
+/* ===== STRUCTURAL STATEMENT (No More Poetic Italic) ===== */
+
+.statement {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--accent);
+  margin: 40px 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--accent);
+}
+
+
+/* ===== LISTS — Clean Audit Style ===== */
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 14px;
+  max-width: 660px;
+}
+
+li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+
+/* ===== NAVIGATION ===== */
+
+.navbar {
+  padding: 40px 0;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.nav {
+  margin-top: 18px;
+}
+
+.nav a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-right: 32px;
+  color: var(--muted);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+
+/* ===== CTA — Hardened Quiet Luxury ===== */
+
+.cta {
+  display: inline-block;
+  margin-top: 36px;
+  padding: 16px 32px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.cta:hover {
+  background: var(--accent);
+  color: var(--white);
+}
+
+
+/* ===== FORM SYSTEM — Mobile Safe & Institutional ===== */
+
+form {
+  max-width: 720px;
+}
+
+form p {
+  margin-bottom: 28px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px; /* prevents iOS zoom */
+  line-height: 1.5;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text);
+  border-radius: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #ffffff;
+}
+
+
+/* ===== IMAGE SYSTEM ===== */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+  padding: 130px 0 100px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-name {
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.footer-line {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.footer-small {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  display: block;
+}
+
+
+/* ===== RESPONSIVE SYSTEM ===== */
+
+@media (max-width: 900px) {
+
+  .container {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-right: 0;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .container {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .nav a {
+    display: inline-block;
+    margin: 10px 24px 10px 0;
+  }
+
+  .cta {
+    width: 100%;
+    text-align: center;
+  }
+
+}
