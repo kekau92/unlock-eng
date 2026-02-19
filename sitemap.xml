@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://unblock-english.ru/</loc>
-    <lastmod>2026-02-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://unblock-english.ru/index.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>1.00</priority>
   </url>
+
   <url>
-    <loc>https://unblock-english.ru/diagnostic.html</loc>
-    <lastmod>2026-02-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://unblock-english.ru/after-platforms.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
   </url>
+
   <url>
-    <loc>https://unblock-english.ru/intake.html</loc>
-    <lastmod>2026-02-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://unblock-english.ru/assessment.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.90</priority>
   </url>
+
   <url>
-    <loc>https://unblock-english.ru/fla-reference.html</loc>
-    <lastmod>2026-02-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://unblock-english.ru/session.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.80</priority>
   </url>
+
 </urlset>
