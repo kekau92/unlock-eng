@@ -149,6 +149,14 @@ nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px sol
 .g-text strong{color:var(--ink)}
 .urgency-note{font-size:12px;color:var(--muted);margin-top:12px;max-width:900px}
 
+/* TOOLS LIST */
+.tools-list{list-style:none;max-width:560px}
+.tools-list li{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:15px}
+.tools-list li:last-child{border-bottom:none}
+.tool-name{font-weight:700;color:var(--ink);min-width:180px;flex-shrink:0}
+.tool-arrow{color:var(--teal);font-weight:700;flex-shrink:0}
+.tool-effect{color:var(--mid);font-family:'PT Serif',serif;font-style:italic}
+
 /* FAQ */
 .faq-list{max-width:640px}
 .faq-item{border-bottom:1px solid var(--border)}
@@ -291,14 +299,6 @@ footer a:hover{color:rgba(255,255,255,.9)}
             <div class="sci-outcome">→ Возвращает голос немедленно</div>
           </div>
         </li>
-        <li class="sci-item">
-          <div class="sci-abbr">RESI</div>
-          <div>
-            <div class="sci-name">Авторская диагностика</div>
-            <div class="sci-desc">Russian Educational &amp; Somatic Imprint — 61 утверждение, 5 модулей.</div>
-            <div class="sci-outcome">→ <a href="https://resi.unblock-english.ru" style="color:var(--teal);border-bottom:1px solid var(--teal)">resi.unblock-english.ru</a></div>
-          </div>
-        </li>
       </ul>
     </div>
   </div>
@@ -308,43 +308,38 @@ footer a:hover{color:rgba(255,255,255,.9)}
 <section class="section" id="contents">
   <div class="s-inner">
     <div class="s-label">Что внутри</div>
-    <h2 class="s-title">8 инструментов. Каждый — 1 минута.</h2>
-    <p class="s-sub">Это не теория. Каждое упражнение умещается в одну минуту — до звонка, в перерыве, в лифте.</p>
-    <div class="contents-grid">
-      <div class="ch-item">
-        <span class="ch-num">01</span>
-        <div><div class="ch-name">Точка опоры: Слово-якорь</div><div class="ch-tag">КПТ · страх оценки</div></div>
+    <h2 class="s-title">Начните с диагностики</h2>
+    <p class="s-sub">Книга начинается с определения вашего паттерна языковой тревожности.</p>
+
+    <div class="scenarios" style="margin-bottom:48px">
+      <div class="scenario">
+        <div class="sc-context">Тип A — тревога точности</div>
+        <div class="sc-scene">Ошибка ощущается как угроза. Внутренний критик сильнее речи. Молчание при малейшем сомнении.</div>
       </div>
-      <div class="ch-item">
-        <span class="ch-num">02</span>
-        <div><div class="ch-name">Ритм дыхания, ритм речи</div><div class="ch-tag">Физиология · box breathing</div></div>
+      <div class="scenario">
+        <div class="sc-context">Тип B — тревога беглости</div>
+        <div class="sc-scene">Мысли есть, слова не приходят. Тело блокирует речь раньше, чем успевает мысль.</div>
       </div>
-      <div class="ch-item">
-        <span class="ch-num">03</span>
-        <div><div class="ch-name">Освобождение от внутреннего критика</div><div class="ch-tag">КПТ · внутренний голос</div></div>
-      </div>
-      <div class="ch-item">
-        <span class="ch-num">04</span>
-        <div><div class="ch-name">Ошибка как данные: Коррекция без стыда</div><div class="ch-tag">ACT · принятие</div></div>
-      </div>
-      <div class="ch-item">
-        <span class="ch-num">05</span>
-        <div><div class="ch-name">Как подружиться со своими тревожными мыслями</div><div class="ch-tag">Mindfulness · наблюдение</div></div>
-      </div>
-      <div class="ch-item">
-        <span class="ch-num">06</span>
-        <div><div class="ch-name">Гибкость и паузы: ваш «спасательный круг»</div><div class="ch-tag">Практика · реальные ситуации</div></div>
-      </div>
-      <div class="ch-item">
-        <span class="ch-num">07</span>
-        <div><div class="ch-name">Как говорить с собой без давления</div><div class="ch-tag">ACT · самосострадание</div></div>
-      </div>
-      <div class="ch-item">
-        <span class="ch-num">08</span>
-        <div><div class="ch-name">Интеграция: Ваш личный ритуал спокойствия</div><div class="ch-tag">Ритуал · следующие 6 месяцев</div></div>
+      <div class="scenario">
+        <div class="sc-context">Тип C — смешанная</div>
+        <div class="sc-scene">Сочетание обоих паттернов. Встречается чаще всего.</div>
       </div>
     </div>
-    <div style="margin-top:16px;font-size:13px;color:var(--mid)">PDF · 162 стр. · Все диаграммы и упражнения включены</div>
+
+    <h3 style="font-family:'PT Serif',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:20px">8 инструментов. Каждый — точечное вмешательство.</h3>
+
+    <ul class="tools-list">
+      <li><span class="tool-name">Слово-якорь</span><span class="tool-arrow">→</span><span class="tool-effect">возвращает речь в моменте</span></li>
+      <li><span class="tool-name">Дыхание</span><span class="tool-arrow">→</span><span class="tool-effect">снимает блок перед разговором</span></li>
+      <li><span class="tool-name">Внутренний критик</span><span class="tool-arrow">→</span><span class="tool-effect">перестаёт мешать</span></li>
+      <li><span class="tool-name">Ошибка как данные</span><span class="tool-arrow">→</span><span class="tool-effect">убирает страх говорить</span></li>
+      <li><span class="tool-name">Работа с мыслями</span><span class="tool-arrow">→</span><span class="tool-effect">снижает перегруз</span></li>
+      <li><span class="tool-name">Паузы</span><span class="tool-arrow">→</span><span class="tool-effect">дают время думать вслух</span></li>
+      <li><span class="tool-name">Речь без давления</span><span class="tool-arrow">→</span><span class="tool-effect">убирает перфекционизм</span></li>
+      <li><span class="tool-name">Интеграция</span><span class="tool-arrow">→</span><span class="tool-effect">закрепляет результат</span></li>
+    </ul>
+
+    <div style="margin-top:20px;font-size:13px;color:var(--mid)">PDF · 162 стр. · Все диаграммы и упражнения включены</div>
   </div>
 </section>
 
@@ -359,7 +354,6 @@ footer a:hover{color:rgba(255,255,255,.9)}
         <div class="author-role">Специалист по языковой тревожности и коммуникации</div>
         <div class="author-bio">
           <p>Более 25 лет живёт в Нью-Йорке. Работал в международной среде, где английский использовался в переговорах и сложных коммуникационных ситуациях.</p>
-          <p>Автор диагностики RESI (Russian Educational &amp; Somatic Imprint — модель речевой блокировки под профессиональным давлением): <a href="https://resi.unblock-english.ru" style="color:var(--teal);border-bottom:1px solid var(--teal)">resi.unblock-english.ru</a></p>
           <p>Его метод объединяет КПТ и ACT с многолетней практикой работы с русскоязычными специалистами, которые владеют языком, но под давлением теряют к нему доступ.</p>
         </div>
       </div>
