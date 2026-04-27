@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Английский на выдохе — Кирилл Зотов</title>
+<meta name="description" content="Книга о языковой тревоге — не о грамматике. Для тех, кто знает английский, но замирает под давлением. PDF + аудио. КПТ и ACT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1917;--ink2:#2A2826;--mid:#5A5856;--muted:#9A9896;
+  --border:#E0DDD8;--bg:#FFFFFF;--bg2:#F7F5F2;--bg3:#EFECE7;
+  --teal:#2C5F78;--teal2:#224B5E;--teal-pale:#EBF2EE;--rust:#C4714A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'PT Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 6vw;justify-content:space-between}
+.nav-logo{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.nav-r{display:flex;align-items:center;gap:24px}
+.nav-link{font-size:13px;color:var(--mid)}
+.nav-link:hover{color:var(--ink)}
+.nav-buy{background:var(--teal);color:#fff;font-size:13px;font-weight:700;padding:7px 18px;border-radius:2px;transition:background .18s}
+.nav-buy:hover{background:var(--teal2)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 340px;max-width:1120px;margin:0 auto;padding:64px 40px 56px;gap:72px;align-items:start}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+.hero-h1{font-family:'PT Serif',serif;font-size:clamp(17px,2vw,24px);font-weight:400;font-style:italic;color:var(--mid);line-height:1.5;margin-bottom:8px}
+.hero-headline{font-family:'PT Serif',serif;font-size:clamp(30px,4.2vw,52px);font-weight:700;line-height:1.06;color:var(--ink);margin-bottom:28px}
+.hero-headline em{font-style:italic;color:var(--teal)}
+.hero-pull{font-family:'PT Serif',serif;font-style:italic;font-size:17px;color:var(--mid);line-height:1.6;border-left:3px solid var(--teal);padding-left:16px;margin-bottom:32px;max-width:480px}
+.hero-divider{border:none;border-top:1px solid var(--border);margin:28px 0}
+.hero-price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.price-from{font-size:13px;color:var(--muted)}
+.price-val{font-size:38px;font-weight:700;color:var(--ink);line-height:1}
+.price-desc{font-size:13px;color:var(--mid)}
+.hero-cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.btn-main{background:var(--teal);color:#fff;padding:14px 32px;font-size:15px;font-weight:700;border-radius:2px;cursor:pointer;border:none;transition:background .18s;white-space:nowrap}
+.btn-main:hover{background:var(--teal2)}
+.btn-sample{font-size:14px;color:var(--teal);font-weight:700;border-bottom:1px solid var(--teal);cursor:pointer;transition:opacity .15s}
+.btn-sample:hover{opacity:.7}
+.hero-note{font-size:12px;color:var(--muted)}
+
+/* COVER — real image */
+.cover-wrap{position:sticky;top:72px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.cover-img{
+  width:100%;max-width:260px;
+  border-radius:2px 6px 6px 2px;
+  box-shadow:-8px 8px 0 var(--teal2), 0 20px 50px rgba(44,95,120,.3);
+  display:block;
+}
+.cover-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:2px;letter-spacing:.04em}
+.b-cbt{background:var(--teal-pale);color:var(--teal)}
+.b-act{background:#EBF0E8;color:#4A6741}
+.b-mnd{background:#F5F0E8;color:#7A6A3A}
+
+/* SECTIONS */
+.section{border-top:1px solid var(--border);padding:60px 6vw}
+.s-inner{max-width:1120px;margin:0 auto}
+.s-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.s-title{font-family:'PT Serif',serif;font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:6px}
+.s-sub{font-family:'PT Serif',serif;font-size:16px;font-style:italic;color:var(--mid);max-width:580px;margin-bottom:36px}
+
+/* SCENARIOS */
+.scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.scenario{background:var(--bg);padding:28px 24px}
+.sc-context{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.sc-scene{font-family:'PT Serif',serif;font-size:15px;font-style:italic;color:var(--ink2);line-height:1.6;margin-bottom:12px}
+.sc-end{font-size:13px;font-weight:700;color:var(--teal)}
+
+/* MECHANISM */
+.mechanism-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.mech-text{font-family:'PT Serif',serif;font-size:16px;line-height:1.75;color:var(--ink2)}
+.mech-text p+p{margin-top:14px}
+.mech-text blockquote{border-left:3px solid var(--teal);padding-left:16px;margin:20px 0;font-style:italic;color:var(--teal);font-size:17px;line-height:1.6}
+.science-list{list-style:none;border:1px solid var(--border)}
+.sci-item{display:flex;gap:16px;padding:18px 20px;border-bottom:1px solid var(--border)}
+.sci-item:last-child{border-bottom:none}
+.sci-abbr{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);min-width:80px;padding-top:2px}
+.sci-name{font-weight:700;font-size:15px;color:var(--ink);margin-bottom:3px}
+.sci-desc{font-size:13px;color:var(--mid);line-height:1.5}
+.sci-outcome{font-size:13px;font-weight:700;color:var(--teal);margin-top:4px}
+
+/* CONTENTS */
+.contents-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border)}
+.ch-item{display:flex;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.ch-item:nth-child(even){border-right:none}
+.ch-item:nth-last-child(-n+2){border-bottom:none}
+.ch-num{font-family:'PT Serif',serif;font-size:22px;color:var(--border);font-weight:700;line-height:1.1;min-width:28px;flex-shrink:0}
+.ch-name{font-size:14px;font-weight:700;color:var(--ink);line-height:1.4}
+.ch-tag{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* AUTHOR */
+.author-grid{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start}
+.author-avatar{width:200px;height:200px;background:var(--teal-pale);border:1px solid var(--border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'PT Serif',serif;font-size:48px;color:var(--teal);flex-shrink:0}
+.author-scene{font-family:'PT Serif',serif;font-size:18px;font-style:italic;color:var(--teal);line-height:1.6;margin-bottom:20px;border-left:3px solid var(--teal);padding-left:16px}
+.author-name{font-family:'PT Serif',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.author-role{font-size:13px;color:var(--teal);font-weight:700;margin-bottom:16px}
+.author-bio{font-family:'PT Serif',serif;font-size:15px;line-height:1.75;color:var(--ink2)}
+.author-bio p+p{margin-top:12px}
+.author-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.a-tag{font-size:12px;border:1px solid var(--border);padding:4px 10px;color:var(--mid)}
+
+/* PRICING */
+.pricing-wrap{background:var(--bg2)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:900px;border:1px solid var(--border)}
+.plan{padding:28px 24px;border-right:1px solid var(--border);position:relative;background:var(--bg)}
+.plan:last-child{border-right:none}
+.plan.featured{border:2px solid var(--teal);margin:-1px}
+.plan-flag{display:inline-block;background:var(--teal);color:#fff;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px}
+.plan-format{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.plan-name{font-family:'PT Serif',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.plan-price{font-size:34px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:4px}
+.plan-launch{font-size:12px;color:var(--rust);font-weight:700;margin-bottom:16px}
+.plan-includes{list-style:none;margin-bottom:22px}
+.plan-includes li{font-size:13px;color:var(--ink2);padding:6px 0 6px 14px;border-bottom:1px solid var(--bg3);position:relative;line-height:1.4}
+.plan-includes li::before{content:'—';position:absolute;left:0;color:var(--teal)}
+.plan-btn{display:block;width:100%;padding:11px;text-align:center;font-size:13px;font-weight:700;border-radius:2px;cursor:pointer;border:1.5px solid var(--teal);color:var(--teal);background:transparent;transition:background .15s,color .15s}
+.plan-btn:hover,.plan.featured .plan-btn{background:var(--teal);color:#fff}
+.plan.featured .plan-btn:hover{background:var(--teal2)}
+.guarantee{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--border);border-top:none;padding:18px 24px;max-width:900px;background:var(--bg)}
+.g-text{font-size:13px;color:var(--mid);line-height:1.6}
+.g-text strong{color:var(--ink)}
+.urgency-note{font-size:12px;color:var(--muted);margin-top:12px;max-width:900px}
+
+/* FAQ */
+.faq-list{max-width:640px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:17px 0;cursor:pointer;font-size:15px;font-weight:700;color:var(--ink);gap:12px}
+.faq-q:hover{color:var(--teal)}
+.faq-plus{font-size:18px;color:var(--muted);flex-shrink:0;transition:transform .2s}
+.faq-plus.open{transform:rotate(45deg);color:var(--teal)}
+.faq-a{display:none;font-family:'PT Serif',serif;font-size:15px;color:var(--ink2);line-height:1.7;padding-bottom:18px}
+.faq-a.open{display:block}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.5);padding:44px 6vw 28px;font-size:13px;line-height:1.7}
+.footer-inner{max-width:1120px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px;margin-bottom:32px}
+.ft{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px}
+footer a{color:rgba(255,255,255,.5)}
+footer a:hover{color:rgba(255,255,255,.9)}
+.footer-rule{border:none;border-top:1px solid rgba(255,255,255,.08);margin-bottom:18px}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:11px;color:rgba(255,255,255,.28)}
+
+/* MOBILE */
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;gap:40px;padding:40px 5vw}
+  .cover-wrap{position:static}
+  .cover-img{max-width:200px}
+  .scenarios{grid-template-columns:1fr}
+  .mechanism-row{grid-template-columns:1fr}
+  .contents-grid{grid-template-columns:1fr}
+  .ch-item{border-right:none}
+  .ch-item:last-child{border-bottom:0}
+  .author-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .plan{border-right:none;border-bottom:1px solid var(--border)}
+  .plan.featured{margin:0;border-width:2px}
+  .nav-link{display:none}
+  .section{padding:48px 5vw}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Английский на выдохе</div>
+  <div class="nav-r">
+    <a class="nav-link" href="#contents">О книге</a>
+    <a class="nav-link" href="#author">Автор</a>
+    <a class="nav-buy" href="#buy">Купить</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow">Книга · PDF · КПТ и ACT</div>
+    <div class="hero-h1">Вы знаете английский.</div>
+    <h1 class="hero-headline">Но замираете,<br>когда нужно<br><em>говорить.</em></h1>
+    <div class="hero-pull">
+      «Замирание — это не слабость.<br>Это автоматическая реакция нервной системы.»<br>
+      <span style="font-size:13px;font-style:normal;">— из Главы 1</span>
+    </div>
+    <hr class="hero-divider">
+    <div class="hero-price-row">
+      <span class="price-from">от</span>
+      <span class="price-val">590 ₽</span>
+      <span class="price-desc">PDF + аудио · мгновенная доставка</span>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#buy" class="btn-main">Получить PDF — 590 ₽</a>
+      <a href="#sample" class="btn-sample">Читать введение →</a>
+    </div>
+    <div class="hero-note">Оплата через Robokassa — карты РФ, СБП, ЮMoney</div>
+  </div>
+
+  <!-- REAL COVER -->
+  <div class="cover-wrap">
+    <img class="cover-img" src="cover_angliyskiy.png" alt="Обложка книги «Английский на выдохе» — Кирилл Зотов">
+    <div class="cover-badges">
+      <span class="badge b-cbt">КПТ</span>
+      <span class="badge b-act">ACT</span>
+      <span class="badge b-mnd">Mindfulness</span>
+    </div>
+  </div>
+</div>
+
+<!-- SCENARIOS -->
+<section class="section" id="sample">
+  <div class="s-inner">
+    <div class="s-label">Узнаёте себя?</div>
+    <h2 class="s-title">Слова есть. Доступа нет.</h2>
+    <p class="s-sub">Это не проблема уровня языка. Это проблема доступа к нему под давлением.</p>
+    <div class="scenarios">
+      <div class="scenario">
+        <div class="sc-context">Zoom-звонок</div>
+        <div class="sc-scene">Начинается митинг с иностранным клиентом. Вы готовились. Знаете тему. Открываете рот — и слова исчезают. Потом вспоминаете всё в лифте.</div>
+        <div class="sc-end">Слова есть. Доступа нет.</div>
+      </div>
+      <div class="scenario">
+        <div class="sc-context">Митинг с командой</div>
+        <div class="sc-scene">Есть что сказать. Вы молчите. Коллега произносит то же самое через минуту — и все слушают его. Вы понимаете: дело не в английском.</div>
+        <div class="sc-end">Слова есть. Доступа нет.</div>
+      </div>
+      <div class="scenario">
+        <div class="sc-context">Жизнь за рубежом</div>
+        <div class="sc-scene">Магазин, врач, аэропорт. Вы читаете по-английски, смотрите сериалы без субтитров. Но открыть рот — и снова блок.</div>
+        <div class="sc-end">Слова есть. Доступа нет.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section class="section" style="background:var(--bg2)">
+  <div class="s-inner">
+    <div class="s-label">Почему это происходит</div>
+    <h2 class="s-title">Не слабость. Реакция нервной системы.</h2>
+    <div class="mechanism-row" style="margin-top:36px">
+      <div class="mech-text">
+        <p>Языковая тревога — это не вопрос словарного запаса. Под давлением мозг переключается в режим выживания: доступ к языковым центрам сужается, слова «пропадают».</p>
+        <p>В русскоязычной образовательной культуре это усиливается «культурой красной ручки» — десятилетиями обучения, где ошибка равна провалу.</p>
+        <blockquote>«Проблема не в знании языка.<br>Проблема в доступе к нему под давлением.»</blockquote>
+        <p>Эта книга работает именно с этим механизмом. Не добавляет слова в словарный запас — убирает блок, который мешает их использовать.</p>
+      </div>
+      <ul class="science-list">
+        <li class="sci-item">
+          <div class="sci-abbr">КПТ</div>
+          <div>
+            <div class="sci-name">Когнитивно-поведенческая терапия</div>
+            <div class="sci-desc">Находит и переписывает убеждения об ошибках и «правильном» английском.</div>
+            <div class="sci-outcome">→ Убирает страх ошибки</div>
+          </div>
+        </li>
+        <li class="sci-item">
+          <div class="sci-abbr">ACT</div>
+          <div>
+            <div class="sci-name">Терапия принятия и ответственности</div>
+            <div class="sci-desc">Учит действовать несмотря на тревогу — не ждать, пока она пройдёт.</div>
+            <div class="sci-outcome">→ Говорить с тревогой, не вместо неё</div>
+          </div>
+        </li>
+        <li class="sci-item">
+          <div class="sci-abbr">Mindfulness</div>
+          <div>
+            <div class="sci-name">Осознанность</div>
+            <div class="sci-desc">Box breathing и заземление — работают за 60 секунд до встречи.</div>
+            <div class="sci-outcome">→ Возвращает голос немедленно</div>
+          </div>
+        </li>
+        <li class="sci-item">
+          <div class="sci-abbr">RESI</div>
+          <div>
+            <div class="sci-name">Авторская диагностика</div>
+            <div class="sci-desc">Russian Educational &amp; Somatic Imprint — 61 утверждение, 5 модулей.</div>
+            <div class="sci-outcome">→ <a href="https://resi.unblock-english.ru" style="color:var(--teal);border-bottom:1px solid var(--teal)">resi.unblock-english.ru</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENTS -->
+<section class="section" id="contents">
+  <div class="s-inner">
+    <div class="s-label">Что внутри</div>
+    <h2 class="s-title">8 инструментов. Каждый — 1 минута.</h2>
+    <p class="s-sub">Это не теория. Каждое упражнение умещается в одну минуту — до звонка, в перерыве, в лифте.</p>
+    <div class="contents-grid">
+      <div class="ch-item">
+        <span class="ch-num">01</span>
+        <div><div class="ch-name">Маска говорящего</div><div class="ch-tag">КПТ · страх оценки</div></div>
+      </div>
+      <div class="ch-item">
+        <span class="ch-num">02</span>
+        <div><div class="ch-name">Дышим, устраняем страх</div><div class="ch-tag">Физиология · box breathing</div></div>
+      </div>
+      <div class="ch-item">
+        <span class="ch-num">03</span>
+        <div><div class="ch-name">Освобождение от критика</div><div class="ch-tag">КПТ · внутренний голос</div></div>
+      </div>
+      <div class="ch-item">
+        <span class="ch-num">04</span>
+        <div><div class="ch-name">Ошибка как точка роста</div><div class="ch-tag">ACT · принятие</div></div>
+      </div>
+      <div class="ch-item">
+        <span class="ch-num">05</span>
+        <div><div class="ch-name">Подружиться с мыслями</div><div class="ch-tag">Mindfulness · наблюдение</div></div>
+      </div>
+      <div class="ch-item">
+        <span class="ch-num">06</span>
+        <div><div class="ch-name">Безопасный круг</div><div class="ch-tag">Практика · реальные ситуации</div></div>
+      </div>
+      <div class="ch-item">
+        <span class="ch-num">07</span>
+        <div><div class="ch-name">Путь к самостоятельности</div><div class="ch-tag">ACT · долгосрочная система</div></div>
+      </div>
+      <div class="ch-item">
+        <span class="ch-num">08</span>
+        <div><div class="ch-name">Интеграция</div><div class="ch-tag">Ритуал · следующие 6 месяцев</div></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;font-size:13px;color:var(--mid)">PDF · 162 стр. · Все диаграммы и упражнения включены</div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="section" id="author" style="background:var(--bg2)">
+  <div class="s-inner">
+    <div class="s-label">Автор</div>
+    <div class="author-grid">
+      <div class="author-avatar">КЗ</div>
+      <div>
+        <div class="author-scene">«В 13 лет я стоял в американской школе и не мог сказать ни слова.»</div>
+        <div class="author-name">Кирилл Зотов</div>
+        <div class="author-role">Специалист по языковой тревожности и коммуникации</div>
+        <div class="author-bio">
+          <p>Более 25 лет живёт в Нью-Йорке. Работал в международной среде, где английский использовался в переговорах и сложных коммуникационных ситуациях.</p>
+          <p>Автор диагностики RESI (Russian Educational &amp; Somatic Imprint — модель речевой блокировки под профессиональным давлением): <a href="https://resi.unblock-english.ru" style="color:var(--teal);border-bottom:1px solid var(--teal)">resi.unblock-english.ru</a></p>
+          <p>Его метод объединяет КПТ и ACT с многолетней практикой работы с русскоязычными специалистами, которые владеют языком, но под давлением теряют к нему доступ.</p>
+        </div>
+        <div class="author-tags">
+          <span class="a-tag">RESI — авторская диагностика</span>
+          <span class="a-tag">КПТ / ACT</span>
+          <span class="a-tag">25+ лет в Нью-Йорке</span>
+          <span class="a-tag">Русскоязычная диаспора</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-wrap" id="buy">
+  <div class="s-inner">
+    <div class="s-label">Получить книгу</div>
+    <h2 class="s-title">Не PDF. Инструмент.</h2>
+    <p class="s-sub">Мгновенная доставка на email. Оплата через Robokassa.</p>
+
+    <div class="pricing-grid">
+
+      <!-- CORE -->
+      <div class="plan">
+        <div class="plan-format">Core</div>
+        <div class="plan-name">PDF + Аудио</div>
+        <div class="plan-price">590 ₽</div>
+        <div class="plan-launch">490 ₽ — первая неделя</div>
+        <ul class="plan-includes">
+          <li>PDF книга · 162 стр.</li>
+          <li>Аудио-фразы · 58 MP3</li>
+          <li>Все диаграммы и упражнения</li>
+        </ul>
+        <a href="#" class="plan-btn" onclick="alert('Ссылка оплаты Robokassa — подставить')">Получить</a>
+      </div>
+
+      <!-- PREMIUM / FEATURED -->
+      <div class="plan featured">
+        <div class="plan-flag">Рекомендуем</div>
+        <div class="plan-format">Premium</div>
+        <div class="plan-name">PDF + Аудио + Рабочая тетрадь</div>
+        <div class="plan-price">990 ₽</div>
+        <div class="plan-launch">890 ₽ — первая неделя</div>
+        <ul class="plan-includes">
+          <li>PDF книга · 162 стр.</li>
+          <li>Аудио-фразы · 58 MP3</li>
+          <li>Рабочая тетрадь · 27 листов</li>
+          <li>Все обновления бесплатно</li>
+        </ul>
+        <a href="#" class="plan-btn" onclick="alert('Ссылка оплаты Robokassa — подставить')">Получить комплект</a>
+      </div>
+
+      <!-- PRINT -->
+      <div class="plan">
+        <div class="plan-format">Бумажная</div>
+        <div class="plan-name">Печатная книга</div>
+        <div class="plan-price">1 490 ₽</div>
+        <div class="plan-launch">Доставка по РФ через Ridero</div>
+        <ul class="plan-includes">
+          <li>Печатная книга</li>
+          <li>PDF + Аудио в подарок</li>
+          <li>Доставка по РФ</li>
+        </ul>
+        <a href="#" class="plan-btn" onclick="alert('Ссылка Ridero — подставить')">Заказать книгу</a>
+      </div>
+
+    </div>
+
+    <div class="guarantee">
+      <div style="font-size:18px;flex-shrink:0;margin-top:2px">🛡</div>
+      <div class="g-text">
+        <strong>Гарантия возврата 30 дней.</strong> Если инструмент не помог — напишите, вернём деньги. Это цифровой товар — возврат исключительно наша добрая воля. &nbsp;<a href="mailto:support@unblock-english.ru" style="color:var(--teal)">support@unblock-english.ru</a>
+      </div>
+    </div>
+    <div class="urgency-note">Цена будет повышена после выхода печатной версии.</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="s-inner">
+    <div class="s-label">Вопросы</div>
+    <h2 class="s-title" style="margin-bottom:28px">Часто спрашивают</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="fq(this)">Это не для тех, кто не знает языка? <span class="faq-plus">+</span></div>
+        <div class="faq-a">Наоборот: именно для тех, кто знает, но замирает. Если вы понимаете английский, читаете письма и можете написать email — уровня достаточно. Книга не учит языку, она убирает блок, который мешает его использовать.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="fq(this)">Это терапия? <span class="faq-plus">+</span></div>
+        <div class="faq-a">Нет. Это инструмент на основе терапевтических методов — КПТ и ACT. Он не заменяет клиническую терапию, но эффективен при языковой тревоге, которая мешает работе.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="fq(this)">Как получить файл после оплаты? <span class="faq-plus">+</span></div>
+        <div class="faq-a">Сразу после оплаты на ваш email придёт ссылка на скачивание PDF и доступ к аудио-материалам. Обычно 1–3 минуты.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="fq(this)">Работает ли, если я не живу за рубежом? <span class="faq-plus">+</span></div>
+        <div class="faq-a">Да. Языковая тревога возникает при любом использовании английского под давлением: онлайн-митинги с иностранными коллегами, собеседования, клиенты — тот же механизм блокировки.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="fq(this)">Сколько времени занимает книга? <span class="faq-plus">+</span></div>
+        <div class="faq-a">Глава — 30–40 минут. Каждое упражнение — 60 секунд. При темпе одна глава в неделю — 2 месяца. Первые результаты заметны уже после первых двух глав.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="ft">Продавец</div>
+        ИП Зотов Кирилл [Отчество]<br>
+        ИНН: XXXXXXXXXXXX<br>
+        ОГРНИП: XXXXXXXXXXXXXXX<br>
+        <a href="mailto:support@unblock-english.ru">support@unblock-english.ru</a>
+      </div>
+      <div>
+        <div class="ft">Товар и доставка</div>
+        Цифровой товар (PDF + аудио).<br>
+        Мгновенная доставка на email.<br>
+        НДС не облагается.<br>
+        Версия 1.0 · Апрель 2026
+      </div>
+      <div>
+        <div class="ft">Оплата</div>
+        Через <strong style="color:rgba(255,255,255,.6)">Robokassa</strong><br>
+        Карты РФ, СБП, ЮMoney,<br>
+        электронные кошельки.<br>
+        Соединение TLS.
+      </div>
+      <div>
+        <div class="ft">Документы</div>
+        <a href="#">Публичная оферта</a><br>
+        <a href="#">Политика конфиденциальности</a><br>
+        <a href="#">Политика возврата</a><br>
+        <a href="#">Пользовательское соглашение</a>
+      </div>
+    </div>
+    <hr class="footer-rule">
+    <div class="footer-bottom">
+      <span>© 2026 Английский на выдохе · unblock-english.ru</span>
+      <span>Оплата через Robokassa</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function fq(el){
+  const a=el.nextElementSibling,p=el.querySelector('.faq-plus'),o=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-plus').forEach(x=>x.classList.remove('open'));
+  if(!o){a.classList.add('open');p.classList.add('open')}
+}
+</script>
+</body>
+</html>
