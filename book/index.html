@@ -225,7 +225,7 @@ footer a:hover{color:rgba(255,255,255,.9)}
     </div>
     <div class="hero-cta-row">
       <a href="#buy" class="btn-main">Получить книгу — 590 ₽</a>
-      <a href="#sample" class="btn-sample">Читать введение →</a>
+      <a href="#sample" class="btn-sample" onclick="openIntro(event)">Читать введение →</a>
     </div>
     <div class="hero-proof">Первые сдвиги заметны уже в начале.</div>
     <div class="hero-note" style="margin-top:8px">Мгновенная доставка на email после оплаты</div>
@@ -438,9 +438,8 @@ footer a:hover{color:rgba(255,255,255,.9)}
     <div class="footer-grid">
       <div>
         <div class="ft">Продавец</div>
-        ИП Зотов Кирилл [Отчество]<br>
-        ИНН: XXXXXXXXXXXX<br>
-        ОГРНИП: XXXXXXXXXXXXXXX<br>
+        Зотов Кирилл Валерьевич<br>
+        Самозанятый · ИНН 590623326925<br>
         <a href="mailto:support@unblock-english.ru">support@unblock-english.ru</a>
       </div>
       <div>
@@ -458,7 +457,43 @@ footer a:hover{color:rgba(255,255,255,.9)}
   </div>
 </footer>
 
+<!-- INTRO MODAL -->
+<div id="intro-modal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(26,25,23,.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px">
+  <div style="background:#fff;border-radius:3px;width:100%;max-width:780px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.25)">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid #E0DDD8;flex-shrink:0">
+      <span style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2C5F78">Введение — Английский на выдохе</span>
+      <button onclick="closeIntro()" style="background:none;border:none;cursor:pointer;font-size:22px;color:#9A9896;line-height:1;padding:0 4px" aria-label="Закрыть">×</button>
+    </div>
+    <iframe id="intro-pdf"
+      src="intro_angliyskiy.pdf"
+      style="flex:1;border:none;min-height:520px"
+      title="Введение — Английский на выдохе">
+    </iframe>
+    <div style="padding:14px 24px;border-top:1px solid #E0DDD8;display:flex;justify-content:space-between;align-items:center;flex-shrink:0">
+      <a href="intro_angliyskiy.pdf" download style="font-size:13px;color:#2C5F78;font-weight:700;border-bottom:1px solid #2C5F78">Скачать введение ↓</a>
+      <a href="#buy" onclick="closeIntro()" style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;background:#2C5F78;color:#fff;padding:9px 20px;border-radius:2px">Получить книгу →</a>
+    </div>
+  </div>
+</div>
+
 <script>
+function openIntro(e) {
+  e.preventDefault();
+  const m = document.getElementById('intro-modal');
+  m.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeIntro() {
+  const m = document.getElementById('intro-modal');
+  m.style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.getElementById('intro-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeIntro();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeIntro();
+});
 function fq(el){
   const a=el.nextElementSibling,p=el.querySelector('.faq-plus'),o=a.classList.contains('open');
   document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
