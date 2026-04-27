@@ -109,7 +109,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px sol
 
 /* PRICING */
 .pricing-wrap{background:var(--bg2)}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:900px;border:1px solid var(--border)}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:640px;border:1px solid var(--border)}
 .plan{padding:28px 24px;border-right:1px solid var(--border);position:relative;background:var(--bg)}
 .plan:last-child{border-right:none}
 .plan.featured{border:2px solid var(--teal);margin:-1px}
@@ -124,7 +124,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px sol
 .plan-btn{display:block;width:100%;padding:11px;text-align:center;font-size:13px;font-weight:700;border-radius:2px;cursor:pointer;border:1.5px solid var(--teal);color:var(--teal);background:transparent;transition:background .15s,color .15s}
 .plan-btn:hover,.plan.featured .plan-btn{background:var(--teal);color:#fff}
 .plan.featured .plan-btn:hover{background:var(--teal2)}
-.guarantee{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--border);border-top:none;padding:18px 24px;max-width:900px;background:var(--bg)}
+.guarantee{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--border);border-top:none;padding:18px 24px;max-width:640px;background:var(--bg)}
 .g-text{font-size:13px;color:var(--mid);line-height:1.6}
 .g-text strong{color:var(--ink)}
 .urgency-note{font-size:12px;color:var(--muted);margin-top:12px;max-width:900px}
@@ -218,23 +218,23 @@ footer a:hover{color:rgba(255,255,255,.9)}
 <section class="section" id="sample">
   <div class="s-inner">
     <div class="s-label">Узнаёте себя?</div>
-    <h2 class="s-title">Слова есть. Доступа нет.</h2>
+    <h2 class="s-title">Вы не одни. Это знакомо.</h2>
     <p class="s-sub">Это не проблема уровня языка. Это проблема доступа к нему под давлением.</p>
     <div class="scenarios">
       <div class="scenario">
         <div class="sc-context">Zoom-звонок</div>
         <div class="sc-scene">Начинается митинг с иностранным клиентом. Вы готовились. Знаете тему. Открываете рот — и слова исчезают. Потом вспоминаете всё в лифте.</div>
-        <div class="sc-end">Слова есть. Доступа нет.</div>
+        
       </div>
       <div class="scenario">
         <div class="sc-context">Митинг с командой</div>
         <div class="sc-scene">Есть что сказать. Вы молчите. Коллега произносит то же самое через минуту — и все слушают его. Вы понимаете: дело не в английском.</div>
-        <div class="sc-end">Слова есть. Доступа нет.</div>
+        
       </div>
       <div class="scenario">
         <div class="sc-context">Жизнь за рубежом</div>
         <div class="sc-scene">Магазин, врач, аэропорт. Вы читаете по-английски, смотрите сериалы без субтитров. Но открыть рот — и снова блок.</div>
-        <div class="sc-end">Слова есть. Доступа нет.</div>
+        
       </div>
     </div>
   </div>
@@ -338,8 +338,7 @@ footer a:hover{color:rgba(255,255,255,.9)}
 <section class="section" id="author" style="background:var(--bg2)">
   <div class="s-inner">
     <div class="s-label">Автор</div>
-    <div class="author-grid">
-      <div class="author-avatar">КЗ</div>
+    <div class="author-grid" style="grid-template-columns:1fr">
       <div>
         <div class="author-scene">«В 13 лет я стоял в американской школе и не мог сказать ни слова.»</div>
         <div class="author-name">Кирилл Зотов</div>
@@ -348,12 +347,6 @@ footer a:hover{color:rgba(255,255,255,.9)}
           <p>Более 25 лет живёт в Нью-Йорке. Работал в международной среде, где английский использовался в переговорах и сложных коммуникационных ситуациях.</p>
           <p>Автор диагностики RESI (Russian Educational &amp; Somatic Imprint — модель речевой блокировки под профессиональным давлением): <a href="https://resi.unblock-english.ru" style="color:var(--teal);border-bottom:1px solid var(--teal)">resi.unblock-english.ru</a></p>
           <p>Его метод объединяет КПТ и ACT с многолетней практикой работы с русскоязычными специалистами, которые владеют языком, но под давлением теряют к нему доступ.</p>
-        </div>
-        <div class="author-tags">
-          <span class="a-tag">RESI — авторская диагностика</span>
-          <span class="a-tag">КПТ / ACT</span>
-          <span class="a-tag">25+ лет в Нью-Йорке</span>
-          <span class="a-tag">Русскоязычная диаспора</span>
         </div>
       </div>
     </div>
@@ -374,7 +367,6 @@ footer a:hover{color:rgba(255,255,255,.9)}
         <div class="plan-format">Core</div>
         <div class="plan-name">PDF + Аудио</div>
         <div class="plan-price">590 ₽</div>
-        <div class="plan-launch">490 ₽ — первая неделя</div>
         <ul class="plan-includes">
           <li>PDF книга · 162 стр.</li>
           <li>Аудио-фразы · 58 MP3</li>
@@ -389,7 +381,6 @@ footer a:hover{color:rgba(255,255,255,.9)}
         <div class="plan-format">Premium</div>
         <div class="plan-name">PDF + Аудио + Рабочая тетрадь</div>
         <div class="plan-price">990 ₽</div>
-        <div class="plan-launch">890 ₽ — первая неделя</div>
         <ul class="plan-includes">
           <li>PDF книга · 162 стр.</li>
           <li>Аудио-фразы · 58 MP3</li>
@@ -399,29 +390,14 @@ footer a:hover{color:rgba(255,255,255,.9)}
         <a href="#" class="plan-btn" onclick="alert('Ссылка оплаты Robokassa — подставить')">Получить комплект</a>
       </div>
 
-      <!-- PRINT -->
-      <div class="plan">
-        <div class="plan-format">Бумажная</div>
-        <div class="plan-name">Печатная книга</div>
-        <div class="plan-price">1 490 ₽</div>
-        <div class="plan-launch">Доставка по РФ через Ridero</div>
-        <ul class="plan-includes">
-          <li>Печатная книга</li>
-          <li>PDF + Аудио в подарок</li>
-          <li>Доставка по РФ</li>
-        </ul>
-        <a href="#" class="plan-btn" onclick="alert('Ссылка Ridero — подставить')">Заказать книгу</a>
-      </div>
-
     </div>
 
     <div class="guarantee">
-      <div style="font-size:18px;flex-shrink:0;margin-top:2px">🛡</div>
+      <div style="font-size:18px;flex-shrink:0;margin-top:2px">✉️</div>
       <div class="g-text">
-        <strong>Гарантия возврата 30 дней.</strong> Если инструмент не помог — напишите, вернём деньги. Это цифровой товар — возврат исключительно наша добрая воля. &nbsp;<a href="mailto:support@unblock-english.ru" style="color:var(--teal)">support@unblock-english.ru</a>
+        Вопросы по заказу: <a href="mailto:support@unblock-english.ru" style="color:var(--teal)">support@unblock-english.ru</a>
       </div>
     </div>
-    <div class="urgency-note">Цена будет повышена после выхода печатной версии.</div>
   </div>
 </section>
 
