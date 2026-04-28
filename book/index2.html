@@ -40,6 +40,17 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 
+/* ── EYEBROW BAR ─────────────────────────────────── */
+.eyebrow-bar {
+  background: var(--teal3);
+  border-bottom: 1px solid var(--rule);
+  padding: 9px 6vw;
+  text-align: center;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--teal);
+}
+
 /* ── NAV ─────────────────────────────────────────── */
 nav {
   position: sticky; top: 0; z-index: 200;
@@ -51,9 +62,10 @@ nav {
   padding: 0 6vw; justify-content: space-between;
 }
 .nav-logo {
-  font-family: var(--serif);
-  font-size: 17px; font-weight: 600;
-  letter-spacing: .02em; color: var(--ink);
+  font-family: var(--sans);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted);
 }
 .nav-r { display: flex; align-items: center; gap: 28px; }
 .nav-link { font-size: 13px; color: var(--mid); letter-spacing: .03em; }
@@ -517,9 +529,9 @@ footer a:hover { color: rgba(245,240,232,.9); }
 
 /* ── MOBILE ──────────────────────────────────────── */
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; padding: 48px 5vw; gap: 48px; }
-  .hero-cover { align-items: flex-start; }
-  .cover-img { max-width: 220px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; padding: 48px 5vw; gap: 40px; }
+  .hero-cover { order: -1; align-items: flex-start; }
+  .cover-img { max-width: 200px; }
   .annotation-section { grid-template-columns: 1fr; padding: 64px 5vw; gap: 32px; }
   .ann-label { position: static; }
   .scenarios-inner { grid-template-columns: 1fr; }
@@ -540,7 +552,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Английский на выдохе</div>
+  <div class="nav-logo">Электронная книга · КПТ и ACT · языковая тревожность</div>
   <div class="nav-r">
     <a class="nav-link" href="#author">Автор</a>
     <a class="nav-cta" href="#buy">Получить книгу</a>
@@ -550,7 +562,6 @@ footer a:hover { color: rgba(245,240,232,.9); }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-eyebrow">Электронная книга · КПТ и ACT · работа с языковой тревожностью</div>
     <h1 class="hero-title">Английский</h1>
     <div class="hero-title-sub">на выдохе.</div>
     <div class="hero-breath"></div>
