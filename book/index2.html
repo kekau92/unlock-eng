@@ -529,9 +529,19 @@ footer a:hover { color: rgba(245,240,232,.9); }
 
 /* ── MOBILE ──────────────────────────────────────── */
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; padding: 48px 5vw; gap: 40px; }
-  .hero-cover { order: -1; align-items: flex-start; }
-  .cover-img { max-width: 200px; }
+  .hero {
+    grid-template-columns: 1fr; min-height: auto;
+    padding: 32px 5vw 48px; gap: 36px;
+    text-align: center;
+  }
+  .hero-cover { order: -1; align-items: center; }
+  .cover-img { max-width: 80vw; margin: 0 auto; }
+  .hero-pull { margin-left: auto; margin-right: auto; }
+  .hero-breath { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-price { text-align: center; }
+  .hero-proof { text-align: center; }
+  .hero-source { text-align: center; }
   .annotation-section { grid-template-columns: 1fr; padding: 64px 5vw; gap: 32px; }
   .ann-label { position: static; }
   .scenarios-inner { grid-template-columns: 1fr; }
