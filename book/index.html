@@ -155,7 +155,7 @@ nav {
   font-family: var(--serif);
   font-size: 15px; color: var(--mid);
 }
-.hero-price strong { color: var(--ink); font-style: italic; font-size: 19px; }
+.hero-price strong { color: var(--ink); font-style: normal; font-size: 20px; font-family: var(--sans); font-weight: 700; }
 .hero-proof {
   font-family: var(--serif);
   font-size: 14px; font-style: italic;
@@ -360,11 +360,23 @@ nav {
   color: var(--ink); margin-bottom: 8px; line-height: 1.3;
 }
 .plan-price {
-  font-family: var(--serif);
-  font-size: 44px; font-weight: 600;
+  font-family: var(--sans);
+  font-size: 44px; font-weight: 700;
   color: var(--ink); line-height: 1; margin-bottom: 20px;
 }
 .plan-price span { font-size: 22px; }
+.plan-oldprice {
+  font-family: var(--sans);
+  font-size: 14px; color: var(--muted);
+  margin-top: -12px; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 8px;
+}
+.plan-discount {
+  font-size: 12px; font-weight: 700;
+  color: var(--teal);
+  background: var(--teal3);
+  padding: 2px 7px; border-radius: 2px;
+}
 .plan-list { list-style: none; margin-bottom: 28px; }
 .plan-list li {
   font-size: 14px; color: var(--mid);
@@ -372,7 +384,7 @@ nav {
   border-bottom: 1px solid var(--rule);
   position: relative; line-height: 1.4;
 }
-.plan-list li::before { content: '—'; position: absolute; left: 0; color: var(--rule); }
+.plan-list li::before { content: '·'; position: absolute; left: 0; color: var(--muted); }
 .plan-list li:last-child { border-bottom: none; }
 .plan-btn {
   display: block; width: 100%;
@@ -591,7 +603,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <a class="btn-secondary" href="#buy">Скачать книгу</a>
     </div>
     <div class="hero-price">
-      Электронная книга PDF + аудио-фразы · <strong>590 ₽</strong>
+      Электронная книга PDF + аудио-фразы · <strong>490 ₽</strong> <span style="font-family:var(--sans);text-decoration:line-through;font-size:13px;color:var(--muted)">590 ₽</span> <span style="font-family:var(--sans);font-size:12px;font-weight:700;color:var(--teal);background:var(--teal3);padding:2px 6px;border-radius:2px">−15%</span>
     </div>
     <div class="hero-proof">Первые сдвиги заметны уже в начале.</div>
   </div>
@@ -677,30 +689,32 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <div class="plan">
         <span class="plan-type">Core</span>
         <div class="plan-name">Электронная книга PDF + Аудио-фразы</div>
-        <div class="plan-price"><span>₽</span>590</div>
+        <div class="plan-price"><span>₽</span>490</div>
+        <div class="plan-oldprice"><span style="text-decoration:line-through;color:var(--muted)">590 ₽</span> <span class="plan-discount">−15%</span></div>
         <ul class="plan-list">
           <li>Электронная книга PDF · 162 стр.</li>
           <li>Аудио-фразы · 58 MP3</li>
           <li>Все диаграммы и упражнения</li>
         </ul>
-        <a href="https://yookassa.ru/my/i/afDe8ofzbU_w/l" class="plan-btn">Получить</a>
+        <a href="#" class="plan-btn">Получить</a>
       </div>
       <div class="plan featured">
         <span class="plan-flag">↑ Рекомендуем</span>
         <span class="plan-type">Premium</span>
         <div class="plan-name">PDF + Аудио + Рабочая тетрадь</div>
-        <div class="plan-price"><span>₽</span>990</div>
+        <div class="plan-price"><span>₽</span>790</div>
+        <div class="plan-oldprice"><span style="text-decoration:line-through;color:var(--muted)">990 ₽</span> <span class="plan-discount">−20%</span></div>
         <ul class="plan-list">
           <li>Электронная книга PDF · 162 стр.</li>
           <li>Аудио-фразы · 58 MP3</li>
           <li>Рабочая тетрадь: журнал роста · карта тревоги · ритуал интеграции</li>
           <li>Все обновления бесплатно</li>
         </ul>
-        <a href="https://yookassa.ru/my/i/afDeYKuUM0_j/l" class="plan-btn">Получить комплект</a>
+        <a href="#" class="plan-btn">Получить комплект</a>
       </div>
     </div>
     <div class="pricing-sub">
-      <span>Ссылка для скачивания поступит на email в течение 24 часов после подтверждения оплаты.</span>
+      <span>Ссылка для скачивания поступит на email — обычно в течение нескольких часов после подтверждения оплаты.</span>
       <a href="mailto:support@unblock-english.ru">support@unblock-english.ru</a>
     </div>
   </div>
@@ -729,7 +743,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
         Как получить файл?
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">После оплаты я вышлю ссылку на email вручную — обычно в течение нескольких часов.</div>
+      <div class="faq-a">Ссылка на email сразу после оплаты. Обычно 1–3 минуты.</div>
     </div>
   </div>
 </div>
