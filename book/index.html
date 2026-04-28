@@ -174,9 +174,7 @@ nav {
   width: 100%; display: block;
   border-radius: 1px 8px 8px 1px;
   box-shadow: 0 20px 48px rgba(28,26,22,.18);
-  transition: transform .4s cubic-bezier(.2,.8,.3,1);
 }
-.cover-img:hover { transform: perspective(1000px) rotateY(-3deg) translateY(-4px); }
 
 /* ── SEPARATOR ───────────────────────────────────── */
 .sep {
@@ -254,11 +252,10 @@ nav {
 }
 .sc-body {
   font-family: var(--serif);
-  font-size: 18px; font-style: italic;
+  font-size: 17px; font-style: italic;
   color: var(--ink2); line-height: 1.65;
   margin-bottom: 24px;
-  hyphens: auto;
-  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .sc-end {
   font-family: var(--serif);
@@ -391,8 +388,9 @@ nav {
 .plan-list li::before { content: '·'; position: absolute; left: 0; color: var(--muted); }
 .plan-list li:last-child { border-bottom: none; }
 .plan-btn {
-  display: block; width: 100%;
-  padding: 14px; text-align: center;
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 48px;
+  text-align: center;
   font-size: 13px; font-weight: 700;
   letter-spacing: .04em;
   border: 1.5px solid var(--teal);
@@ -562,19 +560,26 @@ footer a:hover { color: rgba(245,240,232,.9); }
   .hero-price { text-align: center; }
   .hero-proof { text-align: center; }
   .nav-cta { font-size: 11px; padding: 6px 12px; white-space: nowrap; }
-  .annotation-section { grid-template-columns: 1fr; padding: 64px 5vw; gap: 32px; }
+  .annotation-section { grid-template-columns: 1fr; padding: 56px 5vw; gap: 24px; }
   .ann-label { position: static; }
+  .ann-lead { font-size: 20px; }
+  .ann-text { font-size: 17px; }
   .scenarios-inner { grid-template-columns: 1fr; }
-  .sc-item { border-right: none; border-bottom: 1px solid var(--rule); padding: 40px 5vw; }
+  .sc-item { border-right: none; border-bottom: 1px solid var(--rule); padding: 36px 5vw; }
   .sc-item:last-child { border-bottom: none; }
-  .author-section { grid-template-columns: 1fr; padding: 64px 5vw; gap: 40px; }
-  .pricing-section { padding: 64px 5vw; }
-  .pricing-grid { grid-template-columns: 1fr; }
-  .faq-section { grid-template-columns: 1fr; padding: 64px 5vw; gap: 32px; }
+  .author-section { grid-template-columns: 1fr; padding: 56px 5vw; gap: 36px; }
+  .author-scene { font-size: 28px; margin-bottom: 28px; }
+  .pricing-section { padding: 56px 5vw; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .pricing-sub { flex-direction: column; align-items: flex-start; }
+  .faq-section { grid-template-columns: 1fr; padding: 56px 5vw; gap: 24px; }
   .faq-label { position: static; }
+  .faq-list { max-width: 100%; }
   .nav-link { display: none; }
   .footer-top { flex-direction: column; gap: 24px; }
   .sep { padding: 0 5vw; }
+  .modal-box { max-height: 95vh; }
+  .modal-frame { min-height: 400px; }
 }
 </style>
 </head>
@@ -597,7 +602,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
     <div class="hero-breath"></div>
     <p class="hero-pull">
       «Замирание — это не слабость.<br>
-      Это автоматическая реакция нервной системы.»
+      Это автоматическая реакция нервной&nbsp;системы.»
     </p>
     <div class="hero-source">— из Главы 1</div>
     <div class="hero-actions">
@@ -609,7 +614,6 @@ footer a:hover { color: rgba(245,240,232,.9); }
     <div class="hero-price">
       Электронная книга PDF + аудио-фразы · <strong>490 ₽</strong> <span style="font-family:var(--sans);text-decoration:line-through;font-size:13px;color:var(--muted)">590 ₽</span> <span style="font-family:var(--sans);font-size:12px;font-weight:700;color:var(--teal);background:var(--teal3);padding:2px 6px;border-radius:2px">−15%</span>
     </div>
-    <div class="hero-proof">Первые сдвиги заметны уже в начале.</div>
   </div>
 
   <div class="hero-cover">
@@ -627,11 +631,11 @@ footer a:hover { color: rgba(245,240,232,.9); }
 <div class="annotation-section">
   <div class="ann-label">О книге</div>
   <div class="ann-body">
-    <p class="ann-lead">Эта книга написана для тех, кто уверен, что не знает английский. И для тех, кто знает — но в нужный момент теряет к нему доступ.</p>
+    <p class="ann-lead">Эта книга написана для тех, кто уверен, что не знает английский язык. И для тех, кто знает, но в нужный момент теряет к нему доступ.</p>
     <div class="ann-text">
       <p>Скорее всего, вы учили английский в школе — несколько лет, учебники, упражнения. Вы знаете больше, чем думаете. Просто страх оказался громче знания.</p>
       <p>Это не проблема словарного запаса. Это реакция нервной системы на воспринимаемую угрозу. Под давлением мозг переключается в режим защиты, и речь блокируется раньше, чем вы успеваете открыть рот. Вас учили не ошибаться, и ошибка стала сигналом опасности.</p>
-      <p>Эта книга работает именно с этим механизмом. Не учит языку — меняет отношение нервной системы к самому процессу речи. Методы основаны на когнитивно-поведенческой терапии и терапии принятия и ответственности — адаптированных для языкового контекста.</p>
+      <p>Эта книга работает именно с этим механизмом. Не учит языку, а меняет отношение нервной системы к самому процессу речи. Методы основаны на когнитивно-поведенческой терапии и терапии принятия и ответственности, адаптированных для языкового контекста.</p>
     </div>
     <blockquote class="ann-principle">
       «Смысл всегда важнее формы.<br>Вас поняли — значит вы говорили правильно.»
@@ -654,7 +658,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
     </div>
     <div class="sc-item">
       <div class="sc-context">За рубежом</div>
-      <p class="sc-body">Магазин, врач, аэропорт. Читаете, смотрите без субтитров. Но открыть рот — и снова блок.</p>
+      <p class="sc-body">Магазин, врач, аэропорт. Читаете, смотрите без субтитров. Но открыть рот — и&nbsp;снова блок.</p>
       <div class="sc-end">Понимаете всё.<br>Сказать — не можете.</div>
     </div>
   </div>
@@ -718,7 +722,6 @@ footer a:hover { color: rgba(245,240,232,.9); }
       </div>
     </div>
     <div class="pricing-sub">
-      <span>Ссылка для скачивания поступит на email, обычно в течение нескольких часов после подтверждения оплаты.</span>
       <a href="mailto:kirill.zotov@gmail.com">kirill.zotov@gmail.com</a>
     </div>
   </div>
@@ -747,7 +750,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
         Как получить файл?
         <span class="faq-icon">+</span>
       </div>
-      <div class="faq-a">Ссылка на email сразу после оплаты. Обычно 1–3 минуты.</div>
+      <div class="faq-a">Ссылка для скачивания поступит на email, обычно в течение нескольких часов после подтверждения оплаты.</div>
     </div>
   </div>
 </div>
