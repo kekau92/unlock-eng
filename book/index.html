@@ -70,10 +70,18 @@ nav {
 .nav-r { display: flex; align-items: center; gap: 28px; }
 .nav-link { font-size: 13px; color: var(--mid); letter-spacing: .03em; }
 .nav-link:hover { color: var(--ink); }
+.nav-fragment {
+  font-family: var(--serif);
+  font-size: 14px; font-style: italic;
+  color: var(--teal);
+  transition: opacity .18s;
+}
+.nav-fragment:hover { opacity: .65; }
 .nav-cta {
-  font-size: 12px; font-weight: 700; letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--teal); border-bottom: 1.5px solid var(--teal);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--teal);
+  border-bottom: 1px solid var(--teal);
   padding-bottom: 1px;
   transition: opacity .18s;
 }
@@ -342,6 +350,7 @@ nav {
   background: var(--cream);
   padding: 36px 32px;
   position: relative;
+  display: flex; flex-direction: column;
 }
 .plan.featured { background: var(--white); }
 .plan-flag {
@@ -378,7 +387,7 @@ nav {
   background: var(--teal3);
   padding: 2px 7px; border-radius: 2px;
 }
-.plan-list { list-style: none; margin-bottom: 28px; }
+.plan-list { list-style: none; margin-bottom: 28px; flex: 1; }
 .plan-list li {
   font-size: 14px; color: var(--mid);
   padding: 8px 0 8px 18px;
@@ -527,20 +536,6 @@ footer a:hover { color: rgba(245,240,232,.9); }
 }
 .modal-cta:hover { background: var(--teal2); }
 
-/* ── ANIMATIONS ──────────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.hero-eyebrow { animation: fadeUp .6s ease both; }
-.hero-title   { animation: fadeUp .6s .1s ease both; }
-.hero-title-sub { animation: fadeUp .6s .18s ease both; }
-.hero-breath  { animation: fadeUp .6s .26s ease both; }
-.hero-pull    { animation: fadeUp .6s .32s ease both; }
-.hero-source  { animation: fadeUp .6s .38s ease both; }
-.hero-actions { animation: fadeUp .6s .44s ease both; }
-.hero-cover   { animation: fadeUp .7s .2s ease both; }
-
 /* ── MOBILE ──────────────────────────────────────── */
 @media (max-width: 860px) {
   .hero {
@@ -590,6 +585,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
   <div class="nav-logo">Электронная книга · КПТ и ACT</div>
   <div class="nav-r">
     <a class="nav-link" href="#author">Автор</a>
+    <a class="nav-fragment" href="#" onclick="openIntro(event)">Читать фрагмент →</a>
     <a class="nav-cta" href="#buy">Получить книгу</a>
   </div>
 </nav>
@@ -722,7 +718,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
       </div>
     </div>
     <div class="pricing-sub">
-      <a href="mailto:kirill.zotov@gmail.com">kirill.zotov@gmail.com</a>
+      <span>Вопросы по заказу — <a href="mailto:kirill.zotov@gmail.com">kirill.zotov@gmail.com</a></span>
     </div>
   </div>
 </div>
@@ -766,7 +762,6 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <div class="footer-meta">
         Зотов Кирилл Валерьевич<br>
         Самозанятый · ИНН 590623326925<br>
-        <a href="mailto:kirill.zotov@gmail.com">kirill.zotov@gmail.com</a><br>
         <a href="oferta.html">Публичная оферта</a>
       </div>
     </div>
