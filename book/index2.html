@@ -582,9 +582,9 @@ footer a:hover { color: rgba(245,240,232,.9); }
     <div class="hero-source">— из Главы 1</div>
     <div class="hero-actions">
       <a class="btn-primary" href="#" onclick="openIntro(event)">
-        Читать введение (бесплатно) →
+        Читать фрагмент →
       </a>
-      <a class="btn-secondary" href="#buy">Получить книгу</a>
+      <a class="btn-secondary" href="#buy">Скачать книгу</a>
     </div>
     <div class="hero-price">
       Электронная книга PDF + аудио-фразы · <strong>590 ₽</strong>
@@ -760,7 +760,10 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <span class="modal-title">Введение — Английский на выдохе</span>
       <button class="modal-close" onclick="closeIntro()">×</button>
     </div>
-    <iframe class="modal-frame" src="intro_sample.pdf" title="Введение"></iframe>
+    <iframe class="modal-frame"
+      src="https://docs.google.com/viewer?url=https://unblock-english.ru/book/intro_sample.pdf&embedded=true"
+      title="Введение — Английский на выдохе"
+      id="intro-frame"></iframe>
     <div class="modal-foot">
       <a class="modal-dl" href="intro_sample.pdf" download>Скачать введение ↓</a>
       <a class="modal-cta" href="#buy" onclick="closeIntro()">Получить книгу →</a>
