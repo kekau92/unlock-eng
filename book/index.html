@@ -86,7 +86,7 @@ nav {
   min-height: 92vh;
   max-width: 1160px;
   margin: 0 auto;
-  padding: 48px 40px 60px;
+  padding: 32px 40px 60px;
   gap: 80px;
   align-items: center;
 }
@@ -141,14 +141,16 @@ nav {
 }
 .btn-primary:hover { background: var(--teal2); }
 .btn-secondary {
-  font-family: var(--serif);
-  font-size: 17px; font-style: italic;
-  color: var(--teal);
-  border-bottom: 1px solid currentColor;
-  cursor: pointer; transition: opacity .18s;
-  padding-bottom: 1px;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #E4DFD5; color: var(--ink2);
+  font-family: var(--sans);
+  font-size: 14px; font-weight: 700;
+  letter-spacing: .04em;
+  padding: 14px 24px; border-radius: 1px;
+  border: none;
+  cursor: pointer; transition: background .18s;
 }
-.btn-secondary:hover { opacity: .65; }
+.btn-secondary:hover { background: #D8D2C6; }
 .hero-price {
   font-family: var(--serif);
   font-size: 15px; color: var(--mid);
@@ -169,9 +171,7 @@ nav {
 .cover-img {
   width: 100%; display: block;
   border-radius: 1px 8px 8px 1px;
-  box-shadow:
-    -10px 12px 0 var(--teal2),
-    0 24px 64px rgba(28,26,22,.22);
+  box-shadow: 0 20px 48px rgba(28,26,22,.18);
   transition: transform .4s cubic-bezier(.2,.8,.3,1);
 }
 .cover-img:hover { transform: perspective(1000px) rotateY(-3deg) translateY(-4px); }
@@ -613,7 +613,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
   <div class="ann-body">
     <p class="ann-lead">Эта книга написана для тех, кто уверен, что не знает английский. И для тех, кто знает — но в нужный момент теряет к нему доступ.</p>
     <div class="ann-text">
-      <p>Шесть лет в школе. Слова, времена, правила. Красная ручка на полях. Большинство из нас вышли с реальной базой — A2 и выше. Но с убеждением: «У меня нет английского». Хотя он есть. Просто страх оказался сильнее знания.</p>
+      <p>Скорее всего, вы учили английский в школе — несколько лет, учебники, упражнения. Вы знаете больше, чем думаете. Просто страх оказался громче знания.</p>
       <p>Это не проблема словарного запаса. Это реакция нервной системы на воспринимаемую угрозу. Под давлением мозг переключается в режим защиты — и речь блокируется раньше, чем вы успеваете открыть рот. Вас учили не ошибаться — и ошибка стала сигналом опасности.</p>
       <p>Эта книга работает именно с этим механизмом. Не учит языку — меняет отношение нервной системы к самому процессу речи. Методы основаны на когнитивно-поведенческой терапии и терапии принятия и ответственности — адаптированных для языкового контекста.</p>
     </div>
