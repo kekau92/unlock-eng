@@ -787,10 +787,16 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <span class="modal-title">Введение — Английский на выдохе</span>
       <button class="modal-close" onclick="closeIntro()">×</button>
     </div>
+    <div id="intro-status" style="display:none;padding:12px 24px;font-size:13px;color:var(--muted);font-family:var(--sans);border-bottom:1px solid var(--rule);"></div>
     <iframe class="modal-frame"
-      src="https://docs.google.com/viewer?url=https://unblock-english.ru/book/intro_angliyskiy.pdf&embedded=true"
-      title="Введение — Английский на выдохе"
-      id="intro-frame"></iframe>
+      id="intro-frame"
+      src=""
+      title="Введение — Английский на выдохе"></iframe>
+    <div id="intro-fallback" style="display:none;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:16px;padding:40px;text-align:center;">
+      <div style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--mid)">Просмотр недоступен в браузере.</div>
+      <div style="font-size:14px;color:var(--muted)">Скачайте введение — это займёт секунду.</div>
+      <a href="intro_angliyskiy.pdf" download style="background:var(--teal);color:#fff;font-size:14px;font-weight:700;padding:12px 28px;border-radius:1px;">Скачать введение ↓</a>
+    </div>
     <div class="modal-foot">
       <a class="modal-dl" href="intro_angliyskiy.pdf" download>Скачать введение ↓</a>
       <a class="modal-cta" href="#buy" onclick="closeIntro()">Получить книгу →</a>
@@ -804,9 +810,58 @@ function openIntro(e) {
   const m = document.getElementById('intro-modal');
   m.style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  loadIntroFrame();
+}
+
+function loadIntroFrame() {
+  const frame = document.getElementById('intro-frame');
+  const fallback = document.getElementById('intro-fallback');
+  const status = document.getElementById('intro-status');
+  let attempts = 0;
+
+  fallback.style.display = 'none';
+  status.style.display = 'block';
+  status.textContent = 'Загружается...';
+
+  const src = 'https://docs.google.com/viewer?url=https://unblock-english.ru/book/intro_angliyskiy.pdf&embedded=true';
+
+  function tryLoad() {
+    attempts++;
+    frame.src = '';
+    setTimeout(() => {
+      frame.src = src + '&t=' + Date.now();
+    }, 100);
+
+    setTimeout(() => {
+      try {
+        const h = frame.contentWindow.document.body.innerHTML;
+        if (!h || h.length < 100) {
+          if (attempts < 3) {
+            status.textContent = 'Повторная загрузка...';
+            tryLoad();
+          } else {
+            frame.style.display = 'none';
+            fallback.style.display = 'flex';
+            status.style.display = 'none';
+          }
+        } else {
+          status.style.display = 'none';
+        }
+      } catch(e) {
+        // cross-origin — frame loaded ok
+        status.style.display = 'none';
+      }
+    }, 4000);
+  }
+
+  tryLoad();
 }
 function closeIntro() {
   document.getElementById('intro-modal').style.display = 'none';
+  document.getElementById('intro-frame').src = '';
+  document.getElementById('intro-frame').style.display = 'block';
+  document.getElementById('intro-fallback').style.display = 'none';
+  document.getElementById('intro-status').style.display = 'none';
   document.body.style.overflow = '';
 }
 document.getElementById('intro-modal').addEventListener('click', function(e) {
