@@ -6,12 +6,22 @@
 <title>Английский на выдохе — книга о языковой тревожности · Кирилл Зотов</title>
 <meta name="description" content="Книга о языковой тревожности: для тех, кто знает английский, но боится говорить. Практики КПТ и ACT. Электронная книга PDF + аудио.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"Английский на выдохе","author":{"@type":"Person","name":"Кирилл Зотов"},"description":"Книга о языковой тревожности. КПТ и ACT.","inLanguage":"ru","offers":{"@type":"Offer","price":"590","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}
+{"@context":"https://schema.org","@type":"Book","name":"Английский на выдохе","author":{"@type":"Person","name":"Кирилл Зотов"},"description":"Книга о языковой тревожности. КПТ и ACT.","inLanguage":"ru","offers":{"@type":"Offer","price":"490","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400;1,600&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+   ym(106913295, 'init', {clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true,ecommerce:"dataLayer"});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106913295" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <style>
-/* ── TOKENS ─────────────────────────────────────── */
 :root {
   --paper:   #F5F0E8;
   --cream:   #FAF7F2;
@@ -30,523 +40,123 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body {
-  font-family: var(--sans);
-  background: var(--cream);
-  color: var(--ink);
-  font-size: 17px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
 
-/* ── EYEBROW BAR ─────────────────────────────────── */
-.eyebrow-bar {
-  background: var(--teal3);
-  border-bottom: 1px solid var(--rule);
-  padding: 9px 6vw;
-  text-align: center;
-  font-size: 11px; font-weight: 700;
-  letter-spacing: .16em; text-transform: uppercase;
-  color: var(--teal);
-}
+.eyebrow-bar { background: var(--teal3); border-bottom: 1px solid var(--rule); padding: 9px 6vw; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
 
-/* ── NAV ─────────────────────────────────────────── */
-nav {
-  position: sticky; top: 0; z-index: 200;
-  background: rgba(250,247,242,.94);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--rule);
-  height: 56px;
-  display: flex; align-items: center;
-  padding: 0 6vw; justify-content: space-between;
-}
-.nav-logo {
-  font-family: var(--sans);
-  font-size: 11px; font-weight: 700;
-  letter-spacing: .14em; text-transform: uppercase;
-  color: var(--muted);
-}
+nav { position: sticky; top: 0; z-index: 200; background: rgba(250,247,242,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); height: 56px; display: flex; align-items: center; padding: 0 6vw; justify-content: space-between; }
+.nav-logo { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .nav-r { display: flex; align-items: center; gap: 28px; }
 .nav-link { font-size: 13px; color: var(--mid); letter-spacing: .03em; }
 .nav-link:hover { color: var(--ink); }
-.nav-fragment {
-  font-family: var(--serif);
-  font-size: 14px; font-style: italic;
-  color: var(--teal);
-  transition: opacity .18s;
-}
-.nav-fragment:hover { opacity: .65; }
-.nav-cta {
-  font-size: 12px; font-weight: 700;
-  letter-spacing: .08em; text-transform: uppercase;
-  color: var(--teal);
-  border-bottom: 1px solid var(--teal);
-  padding-bottom: 1px;
-  transition: opacity .18s;
-}
+.nav-cta { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); border-bottom: 1px solid var(--teal); padding-bottom: 1px; transition: opacity .18s; }
 .nav-cta:hover { opacity: .7; }
 
-/* ── HERO ────────────────────────────────────────── */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  min-height: 92vh;
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 32px 40px 60px;
-  gap: 80px;
-  align-items: center;
-}
-
-/* Left: text */
-.hero-text {}
-.hero-eyebrow {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 32px;
-}
-.hero-title {
-  font-family: var(--serif);
-  font-size: clamp(52px, 7vw, 88px);
-  font-weight: 600; line-height: .98;
-  color: var(--ink); margin-bottom: 12px;
-  letter-spacing: -.01em;
-}
-.hero-title-sub {
-  font-family: var(--serif);
-  font-size: clamp(36px, 5vw, 60px);
-  font-weight: 400; font-style: italic;
-  color: var(--teal); line-height: 1.05;
-  margin-bottom: 48px;
-}
-.hero-breath {
-  width: 48px; height: 1px;
-  background: var(--rule); margin-bottom: 36px;
-}
-.hero-pull {
-  font-family: var(--serif);
-  font-size: clamp(19px, 2.2vw, 24px);
-  font-style: italic;
-  color: var(--mid);
-  line-height: 1.55;
-  max-width: 440px;
-  margin-bottom: 8px;
-  hyphens: auto;
-  overflow-wrap: break-word;
-}
-.hero-source {
-  font-size: 12px; color: var(--muted);
-  letter-spacing: .06em; text-transform: uppercase;
-  margin-bottom: 52px;
-}
+.hero { display: grid; grid-template-columns: 1fr 380px; min-height: 92vh; max-width: 1160px; margin: 0 auto; padding: 32px 40px 60px; gap: 80px; align-items: center; }
+.hero-title { font-family: var(--serif); font-size: clamp(52px, 7vw, 88px); font-weight: 600; line-height: .98; color: var(--ink); margin-bottom: 12px; letter-spacing: -.01em; }
+.hero-title-sub { font-family: var(--serif); font-size: clamp(36px, 5vw, 60px); font-weight: 400; font-style: italic; color: var(--teal); line-height: 1.05; margin-bottom: 48px; }
+.hero-breath { width: 48px; height: 1px; background: var(--rule); margin-bottom: 36px; }
+.hero-pull { font-family: var(--serif); font-size: clamp(19px, 2.2vw, 24px); font-style: italic; color: var(--mid); line-height: 1.55; max-width: 440px; margin-bottom: 8px; hyphens: auto; overflow-wrap: break-word; }
+.hero-source { font-size: 12px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 52px; }
 .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-.btn-primary {
-  display: inline-block;
-  background: var(--teal); color: #fff;
-  font-family: var(--sans);
-  font-size: 14px; font-weight: 700;
-  letter-spacing: .04em;
-  padding: 14px 28px; border-radius: 1px;
-  cursor: pointer; transition: background .2s;
-  border: none;
-}
+.btn-primary { display: inline-block; background: var(--teal); color: #fff; font-family: var(--sans); font-size: 14px; font-weight: 700; letter-spacing: .04em; padding: 14px 28px; border-radius: 1px; cursor: pointer; transition: background .2s; border: none; }
 .btn-primary:hover { background: var(--teal2); }
-.btn-secondary {
-  font-family: var(--serif);
-  font-size: 17px; font-style: italic;
-  color: var(--teal);
-  background: none; border: none;
-  border-bottom: 1px solid var(--teal);
-  cursor: pointer;
-  padding: 0 0 2px;
-  transition: opacity .18s;
-}
+.btn-secondary { font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--teal); background: none; border: none; border-bottom: 1px solid var(--teal); cursor: pointer; padding: 0 0 2px; transition: opacity .18s; }
 .btn-secondary:hover { opacity: .6; }
-.hero-price {
-  font-family: var(--serif);
-  font-size: 14px; color: var(--mid);
-  display: flex; flex-wrap: wrap; align-items: baseline;
-  gap: 6px; margin-top: 16px;
-}
+.hero-price { font-family: var(--serif); font-size: 14px; color: var(--mid); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-top: 16px; }
 .hero-price strong { color: var(--ink); font-style: normal; font-size: 19px; font-family: var(--sans); font-weight: 700; }
-.hero-proof {
-  font-family: var(--serif);
-  font-size: 14px; font-style: italic;
-  color: var(--muted); margin-top: 10px;
-}
-
-/* Right: cover */
 .hero-cover { display: flex; flex-direction: column; align-items: center; gap: 24px; }
-.cover-frame {
-  position: relative;
-  width: 100%; max-width: 320px;
-}
-.cover-img {
-  width: 100%; display: block;
-  border-radius: 1px 8px 8px 1px;
-  box-shadow: 0 20px 48px rgba(28,26,22,.18);
-}
+.cover-frame { position: relative; width: 100%; max-width: 320px; }
+.cover-img { width: 100%; display: block; border-radius: 1px 8px 8px 1px; box-shadow: 0 20px 48px rgba(28,26,22,.18); }
 
-/* ── SEPARATOR ───────────────────────────────────── */
-.sep {
-  max-width: 1160px; margin: 0 auto;
-  padding: 0 40px;
-}
-.sep-line {
-  border: none; border-top: 1px solid var(--rule);
-}
+.sep { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+.sep-line { border: none; border-top: 1px solid var(--rule); }
 
-/* ── ANNOTATION ──────────────────────────────────── */
-.annotation-section {
-  max-width: 1160px; margin: 0 auto;
-  padding: 100px 40px;
-  display: grid; grid-template-columns: 1fr 2fr; gap: 80px;
-  align-items: start;
-}
-.ann-label {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--muted); padding-top: 8px;
-  position: sticky; top: 80px;
-}
-.ann-body {}
-.ann-lead {
-  font-family: var(--serif);
-  font-size: clamp(22px, 2.8vw, 30px);
-  font-weight: 400; line-height: 1.4;
-  color: var(--ink); margin-bottom: 32px;
-}
-.ann-text {
-  font-family: var(--serif);
-  font-size: 19px; line-height: 1.8;
-  color: var(--mid);
-}
+.annotation-section { max-width: 1160px; margin: 0 auto; padding: 100px 40px; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+.ann-label { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); padding-top: 8px; position: sticky; top: 80px; }
+.ann-lead { font-family: var(--serif); font-size: clamp(22px, 2.8vw, 30px); font-weight: 400; line-height: 1.4; color: var(--ink); margin-bottom: 32px; }
+.ann-text { font-family: var(--serif); font-size: 19px; line-height: 1.8; color: var(--mid); }
 .ann-text p + p { margin-top: 20px; }
-.ann-principle {
-  font-family: var(--serif);
-  font-size: clamp(22px, 2.5vw, 28px);
-  font-style: italic; font-weight: 600;
-  color: var(--teal);
-  border-left: 3px solid var(--teal);
-  padding: 4px 0 4px 24px;
-  margin: 40px 0 0;
-  line-height: 1.4;
-}
+.ann-principle { font-family: var(--serif); font-size: clamp(22px, 2.5vw, 28px); font-style: italic; font-weight: 600; color: var(--teal); border-left: 3px solid var(--teal); padding: 4px 0 4px 24px; margin: 40px 0 0; line-height: 1.4; }
 
-/* ── SCENARIOS ───────────────────────────────────── */
-.scenarios-section {
-  background: var(--paper);
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  padding: 0;
-}
-.scenarios-inner {
-  max-width: 1160px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3,1fr);
-}
-.sc-item {
-  padding: 64px 40px;
-  border-right: 1px solid var(--rule);
-  transition: background .2s;
-}
+.scenarios-section { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 0; }
+.scenarios-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); }
+.sc-item { padding: 64px 40px; border-right: 1px solid var(--rule); transition: background .2s; }
 .sc-item:last-child { border-right: none; }
 .sc-item:hover { background: rgba(44,95,120,.04); }
-.sc-context {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: .16em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 20px;
-  display: flex; align-items: center; gap: 8px;
-}
-.sc-context::before {
-  content: ''; display: block;
-  width: 20px; height: 1px; background: var(--rule);
-}
-.sc-body {
-  font-family: var(--serif);
-  font-size: 17px; font-style: italic;
-  color: var(--ink2); line-height: 1.65;
-  margin-bottom: 24px;
-  word-break: break-word;
-}
-.sc-end {
-  font-family: var(--serif);
-  font-size: 15px; font-weight: 600;
-  color: var(--teal);
-  padding-top: 18px;
-  border-top: 1px solid var(--rule);
-  line-height: 1.4;
-}
+.sc-context { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.sc-context::before { content: ''; display: block; width: 20px; height: 1px; background: var(--rule); }
+.sc-body { font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--ink2); line-height: 1.65; margin-bottom: 24px; word-break: break-word; }
+.sc-end { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--teal); padding-top: 18px; border-top: 1px solid var(--rule); line-height: 1.4; }
 
-/* ── AUTHOR ──────────────────────────────────────── */
-.author-section {
-  max-width: 1160px; margin: 0 auto;
-  padding: 100px 40px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-  align-items: start;
-}
-.author-left {}
-.author-scene {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-style: italic; font-weight: 400;
-  color: var(--ink); line-height: 1.25;
-  margin-bottom: 48px;
-}
+.author-section { max-width: 1160px; margin: 0 auto; padding: 100px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.author-scene { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 42px); font-style: italic; font-weight: 400; color: var(--ink); line-height: 1.25; margin-bottom: 48px; }
 .author-scene em { color: var(--teal); font-style: normal; }
-.author-name {
-  font-family: var(--serif);
-  font-size: 24px; font-weight: 600;
-  color: var(--ink); margin-bottom: 4px;
-}
-.author-role {
-  font-size: 13px; color: var(--teal);
-  font-weight: 700; letter-spacing: .04em;
-  margin-bottom: 32px;
-}
-.author-right {}
-.author-bio {
-  font-family: var(--serif);
-  font-size: 18px; line-height: 1.8;
-  color: var(--mid);
-}
+.author-name { font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.author-role { font-size: 13px; color: var(--teal); font-weight: 700; letter-spacing: .04em; margin-bottom: 32px; }
+.author-bio { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: var(--mid); }
 .author-bio p + p { margin-top: 18px; }
-.author-note {
-  margin-top: 36px;
-  font-family: var(--serif);
-  font-size: 17px; font-style: italic;
-  color: var(--ink2);
-  border-left: 2px solid var(--teal);
-  padding-left: 20px; line-height: 1.6;
-}
+.author-note { margin-top: 36px; font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--ink2); border-left: 2px solid var(--teal); padding-left: 20px; line-height: 1.6; }
 
-/* ── PRICING ─────────────────────────────────────── */
-.pricing-outer {
-  background: var(--paper);
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-.pricing-section {
-  max-width: 1160px; margin: 0 auto;
-  padding: 100px 40px;
-}
-.pricing-header {
-  margin-bottom: 56px;
-}
-.pricing-label {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 16px;
-}
-.pricing-title {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 600; color: var(--ink);
-  line-height: 1.15;
-}
-.pricing-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1px; background: var(--rule);
-  border: 1px solid var(--rule);
-  max-width: 680px;
-}
-.plan {
-  background: var(--cream);
-  padding: 36px 32px;
-  position: relative;
-  display: flex; flex-direction: column;
-}
+.pricing-outer { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.pricing-section { max-width: 1160px; margin: 0 auto; padding: 100px 40px; }
+.pricing-header { margin-bottom: 56px; }
+.pricing-label { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.pricing-title { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 42px); font-weight: 600; color: var(--ink); line-height: 1.15; }
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); max-width: 680px; }
+.plan { background: var(--cream); padding: 36px 32px; position: relative; display: flex; flex-direction: column; }
 .plan.featured { background: var(--white); }
-.plan-flag {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: .12em; text-transform: uppercase;
-  color: var(--teal); margin-bottom: 12px;
-  display: block;
-}
-.plan-type {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: .12em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 10px;
-}
-.plan-name {
-  font-family: var(--serif);
-  font-size: 19px; font-weight: 600;
-  color: var(--ink); margin-bottom: 8px; line-height: 1.3;
-}
-.plan-price {
-  font-family: var(--sans);
-  font-size: 44px; font-weight: 700;
-  color: var(--ink); line-height: 1; margin-bottom: 20px;
-}
+.plan-flag { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; display: block; }
+.plan-type { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.plan-name { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+.plan-price { font-family: var(--sans); font-size: 44px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 20px; }
 .plan-price span { font-size: 22px; }
-.plan-oldprice {
-  font-family: var(--sans);
-  font-size: 14px; color: var(--muted);
-  margin-top: -12px; margin-bottom: 20px;
-  display: flex; align-items: center; gap: 8px;
-}
-.plan-discount {
-  font-size: 12px; font-weight: 700;
-  color: var(--teal);
-  background: var(--teal3);
-  padding: 2px 7px; border-radius: 2px;
-}
+.plan-oldprice { font-family: var(--sans); font-size: 14px; color: var(--muted); margin-top: -12px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.plan-discount { font-size: 12px; font-weight: 700; color: var(--teal); background: var(--teal3); padding: 2px 7px; border-radius: 2px; }
 .plan-list { list-style: none; margin-bottom: 28px; flex: 1; }
-.plan-list li {
-  font-size: 14px; color: var(--mid);
-  padding: 8px 0 8px 18px;
-  border-bottom: 1px solid var(--rule);
-  position: relative; line-height: 1.4;
-}
+.plan-list li { font-size: 14px; color: var(--mid); padding: 8px 0 8px 18px; border-bottom: 1px solid var(--rule); position: relative; line-height: 1.4; }
 .plan-list li::before { content: '·'; position: absolute; left: 0; color: var(--muted); }
 .plan-list li:last-child { border-bottom: none; }
-.plan-btn {
-  display: flex; align-items: center; justify-content: center;
-  width: 100%; height: 48px;
-  text-align: center;
-  font-size: 13px; font-weight: 700;
-  letter-spacing: .04em;
-  border: 1.5px solid var(--teal);
-  color: var(--teal); background: transparent;
-  cursor: pointer; transition: background .18s, color .18s;
-  border-radius: 1px;
-}
-.plan-btn:hover, .plan.featured .plan-btn {
-  background: var(--teal); color: #fff;
-}
-.pricing-sub {
-  margin-top: 20px; max-width: 680px;
-  font-size: 13px; color: var(--muted);
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 8px;
-}
-.pricing-sub a { color: var(--teal); border-bottom: 1px solid var(--teal); }
+.plan-btn { display: flex; align-items: center; justify-content: center; width: 100%; height: 48px; text-align: center; font-size: 13px; font-weight: 700; letter-spacing: .04em; border: 1.5px solid var(--teal); color: var(--teal); background: transparent; cursor: pointer; transition: background .18s, color .18s; border-radius: 1px; }
+.plan-btn:hover, .plan.featured .plan-btn { background: var(--teal); color: #fff; }
 
-/* ── FAQ ─────────────────────────────────────────── */
-.faq-section {
-  max-width: 1160px; margin: 0 auto;
-  padding: 100px 40px;
-  display: grid; grid-template-columns: 1fr 2fr; gap: 80px;
-}
-.faq-label {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--muted); padding-top: 8px;
-  position: sticky; top: 80px;
-}
+.faq-section { max-width: 1160px; margin: 0 auto; padding: 100px 40px; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; }
+.faq-label { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); padding-top: 8px; position: sticky; top: 80px; }
 .faq-list { max-width: 580px; }
 .faq-item { border-bottom: 1px solid var(--rule); }
-.faq-q {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding: 22px 0; cursor: pointer;
-  font-family: var(--serif);
-  font-size: 19px; font-weight: 600;
-  color: var(--ink); gap: 16px; line-height: 1.3;
-}
+.faq-q { display: flex; justify-content: space-between; align-items: baseline; padding: 22px 0; cursor: pointer; font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink); gap: 16px; line-height: 1.3; }
 .faq-q:hover { color: var(--teal); }
-.faq-icon {
-  font-family: var(--sans);
-  font-size: 20px; font-weight: 400;
-  color: var(--muted); flex-shrink: 0;
-  transition: transform .25s, color .18s;
-}
+.faq-icon { font-family: var(--sans); font-size: 20px; font-weight: 400; color: var(--muted); flex-shrink: 0; transition: transform .25s, color .18s; }
 .faq-icon.open { transform: rotate(45deg); color: var(--teal); }
-.faq-a {
-  display: none;
-  font-family: var(--serif);
-  font-size: 17px; color: var(--mid);
-  line-height: 1.75; padding-bottom: 24px;
-}
+.faq-a { display: none; font-family: var(--serif); font-size: 17px; color: var(--mid); line-height: 1.75; padding-bottom: 24px; }
 .faq-a.open { display: block; }
 
-/* ── FOOTER ──────────────────────────────────────── */
-footer {
-  background: var(--ink);
-  color: rgba(245,240,232,.45);
-  padding: 56px 6vw 36px;
-  font-size: 13px; line-height: 1.75;
-}
+footer { background: var(--ink); color: rgba(245,240,232,.45); padding: 56px 6vw 36px; font-size: 13px; line-height: 1.75; }
 .footer-inner { max-width: 1160px; margin: 0 auto; }
-.footer-top {
-  display: flex; justify-content: space-between;
-  align-items: flex-start; gap: 40px;
-  flex-wrap: wrap; margin-bottom: 40px;
-}
-.footer-brand {
-  font-family: var(--serif);
-  font-size: 22px; font-weight: 600;
-  color: rgba(245,240,232,.85);
-}
-.footer-tagline {
-  font-family: var(--serif);
-  font-size: 14px; font-style: italic;
-  color: rgba(245,240,232,.3);
-  margin-top: 4px;
-}
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-brand { font-family: var(--serif); font-size: 22px; font-weight: 600; color: rgba(245,240,232,.85); }
+.footer-tagline { font-family: var(--serif); font-size: 14px; font-style: italic; color: rgba(245,240,232,.3); margin-top: 4px; }
 .footer-meta { font-size: 12px; line-height: 1.8; }
 footer a { color: rgba(245,240,232,.45); }
 footer a:hover { color: rgba(245,240,232,.9); }
 .footer-rule { border: none; border-top: 1px solid rgba(245,240,232,.08); margin-bottom: 20px; }
-.footer-bottom {
-  display: flex; justify-content: space-between;
-  flex-wrap: wrap; gap: 8px;
-  font-size: 11px; color: rgba(245,240,232,.2);
-  letter-spacing: .04em;
-}
+.footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 11px; color: rgba(245,240,232,.2); letter-spacing: .04em; }
 
-/* ── MODAL ───────────────────────────────────────── */
-.modal-overlay {
-  display: none; position: fixed; inset: 0; z-index: 999;
-  background: rgba(28,26,22,.78);
-  backdrop-filter: blur(6px);
-  align-items: center; justify-content: center; padding: 20px;
-}
-.modal-box {
-  background: var(--cream);
-  width: 100%; max-width: 800px; max-height: 90vh;
-  display: flex; flex-direction: column;
-  box-shadow: 0 32px 80px rgba(0,0,0,.3);
-}
-.modal-head {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 24px; border-bottom: 1px solid var(--rule);
-  flex-shrink: 0;
-}
-.modal-title {
-  font-family: var(--serif);
-  font-size: 15px; font-style: italic; color: var(--teal);
-}
-.modal-close {
-  background: none; border: none; cursor: pointer;
-  font-size: 22px; color: var(--muted); line-height: 1;
-}
+.modal-overlay { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(28,26,22,.78); backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 20px; }
+.modal-box { background: var(--cream); width: 100%; max-width: 800px; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 32px 80px rgba(0,0,0,.3); }
+.modal-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid var(--rule); flex-shrink: 0; }
+.modal-title { font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--teal); }
+.modal-close { background: none; border: none; cursor: pointer; font-size: 22px; color: var(--muted); line-height: 1; }
 .modal-close:hover { color: var(--ink); }
 .modal-frame { flex: 1; border: none; min-height: 500px; }
-.modal-foot {
-  padding: 14px 24px; border-top: 1px solid var(--rule);
-  display: flex; justify-content: space-between; align-items: center;
-  flex-shrink: 0;
-}
-.modal-dl {
-  font-family: var(--serif);
-  font-size: 14px; font-style: italic;
-  color: var(--teal); border-bottom: 1px solid var(--teal);
-}
-.modal-cta {
-  background: var(--teal); color: #fff;
-  font-size: 13px; font-weight: 700; letter-spacing: .04em;
-  padding: 10px 22px; border-radius: 1px;
-  transition: background .18s;
-}
+.modal-foot { padding: 14px 24px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+.modal-dl { font-family: var(--serif); font-size: 14px; font-style: italic; color: var(--teal); border-bottom: 1px solid var(--teal); }
+.modal-cta { background: var(--teal); color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .04em; padding: 10px 22px; border-radius: 1px; transition: background .18s; }
 .modal-cta:hover { background: var(--teal2); }
 
-/* ── MOBILE ──────────────────────────────────────── */
 @media (max-width: 860px) {
-  .hero {
-    grid-template-columns: 1fr; min-height: auto;
-    padding: 32px 5vw 48px; gap: 36px;
-    text-align: center;
-  }
+  .hero { grid-template-columns: 1fr; min-height: auto; padding: 32px 5vw 48px; gap: 36px; text-align: center; }
   .hero-cover { order: -1; align-items: center; }
   .cover-img { max-width: 80vw; margin: 0 auto; }
   .hero-pull { margin-left: 0; margin-right: auto; text-align: left; }
@@ -555,7 +165,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
   .hero-actions { flex-direction: column; align-items: center; gap: 16px; }
   .btn-primary { width: 100%; text-align: center; }
   .btn-secondary { width: auto; }
-  .hero-price { text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 6px; }
+  .hero-price { justify-content: center; }
   .nav-cta { font-size: 11px; padding: 6px 12px; white-space: nowrap; }
   .annotation-section { grid-template-columns: 1fr; padding: 56px 5vw; gap: 24px; }
   .ann-label { position: static; }
@@ -569,7 +179,6 @@ footer a:hover { color: rgba(245,240,232,.9); }
   .pricing-section { padding: 56px 5vw; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 100%; }
   .plan-name { font-size: 16px; }
-  .pricing-sub { flex-direction: column; align-items: flex-start; }
   .faq-section { grid-template-columns: 1fr; padding: 56px 5vw; gap: 24px; }
   .faq-label { position: static; }
   .faq-list { max-width: 100%; }
@@ -583,7 +192,6 @@ footer a:hover { color: rgba(245,240,232,.9); }
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">Электронная книга · КПТ и ACT</div>
   <div class="nav-r">
@@ -592,40 +200,32 @@ footer a:hover { color: rgba(245,240,232,.9); }
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
     <h1 class="hero-title">Английский</h1>
     <div class="hero-title-sub">на выдохе.</div>
     <div class="hero-breath"></div>
-    <p class="hero-pull">
-      «Замирание — это не слабость.<br>
-      Это автоматическая реакция нервной&nbsp;системы.»
-    </p>
+    <p class="hero-pull">«Замирание — это не слабость.<br>Это автоматическая реакция нервной&nbsp;системы.»</p>
     <div class="hero-source">— из Главы 1</div>
     <div class="hero-actions">
-      <a class="btn-primary" href="#" onclick="openIntro(event)">
-        Читать фрагмент →
-      </a>
+      <a class="btn-primary" href="#" onclick="openIntro(event)">Читать фрагмент →</a>
       <a class="btn-secondary" href="#buy">Получить книгу</a>
     </div>
     <div class="hero-price">
-      Электронная книга PDF + аудио-фразы · <strong>490 ₽</strong> <span style="font-family:var(--sans);text-decoration:line-through;font-size:13px;color:var(--muted)">590 ₽</span> <span style="font-family:var(--sans);font-size:12px;font-weight:700;color:var(--teal);background:var(--teal3);padding:2px 6px;border-radius:2px">−15%</span>
+      Электронная книга PDF + аудио-фразы · <strong>490 ₽</strong>
+      <span style="font-family:var(--sans);text-decoration:line-through;font-size:13px;color:var(--muted)">590 ₽</span>
+      <span style="font-family:var(--sans);font-size:12px;font-weight:700;color:var(--teal);background:var(--teal3);padding:2px 6px;border-radius:2px">−15%</span>
     </div>
   </div>
-
   <div class="hero-cover">
     <div class="cover-frame">
-      <img class="cover-img"
-        src="cover_angliyskiy.png"
-        alt="Книга о языковой тревожности «Английский на выдохе» — Кирилл Зотов">
+      <img class="cover-img" src="cover_angliyskiy.png" alt="Книга о языковой тревожности «Английский на выдохе» — Кирилл Зотов">
     </div>
   </div>
 </section>
 
 <div class="sep"><hr class="sep-line"></div>
 
-<!-- ANNOTATION -->
 <div class="annotation-section">
   <div class="ann-label">О книге</div>
   <div class="ann-body">
@@ -635,13 +235,10 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <p>Это не проблема словарного запаса. Это реакция нервной системы на воспринимаемую угрозу. Под давлением мозг переключается в режим защиты, и речь блокируется раньше, чем вы успеваете открыть рот. Вас учили не ошибаться, и ошибка стала сигналом опасности.</p>
       <p>Эта книга работает именно с этим механизмом. Не учит языку, а меняет отношение нервной системы к самому процессу речи. Методы основаны на когнитивно-поведенческой терапии и терапии принятия и ответственности, адаптированных для языкового контекста.</p>
     </div>
-    <blockquote class="ann-principle">
-      «Смысл всегда важнее формы.<br>Вас поняли — значит, вы говорили правильно.»
-    </blockquote>
+    <blockquote class="ann-principle">«Смысл всегда важнее формы.<br>Вас поняли — значит, вы говорили правильно.»</blockquote>
   </div>
 </div>
 
-<!-- SCENARIOS -->
 <section class="scenarios-section">
   <div class="scenarios-inner">
     <div class="sc-item">
@@ -662,29 +259,23 @@ footer a:hover { color: rgba(245,240,232,.9); }
   </div>
 </section>
 
-<!-- AUTHOR -->
 <section class="author-section" id="author">
   <div class="author-left">
-    <div class="author-scene">
-      «В 13 лет я стоял<br>в американской школе<br>и не мог сказать<br><em>ни слова.</em>»
-    </div>
+    <div class="author-scene">«В 13 лет я стоял<br>в американской школе<br>и не мог сказать<br><em>ни слова.</em>»</div>
     <div class="author-name">Кирилл Зотов</div>
     <div class="author-role">Специалист по языковой тревожности и коммуникации</div>
   </div>
   <div class="author-right">
     <div class="author-bio">
-      <p>Более 25 лет живёт в Нью-Йорке. Прошёл подготовку в Polyvagal Institute (США) и является Affiliate Member Ассоциации контекстуальной поведенческой науки (ACBS). Его метод объединяет протоколы регуляции нервной системы и ACT с практикой работы с русскоязычными специалистами, которые владеют языком — но под давлением теряют к нему доступ.</p>
+      <p>Более 25 лет живёт в Нью-Йорке. Прошёл подготовку в Polyvagal Institute (США) и является Affiliate Member Ассоциации контекстуальной поведенческой науки (ACBS). Его метод объединяет протоколы регуляции нервной системы и ACT с практикой работы с русскоязычными специалистами, которые владеют языком, но под давлением теряют к нему доступ.</p>
       <p>Фокус — не на изучении языка, а на восстановлении доступа к речи.</p>
     </div>
-    <div class="author-note">
-      Клиенты приходят не потому, что не знают язык. А потому, что не могут использовать то, что знают.
-    </div>
+    <div class="author-note">Клиенты приходят не потому, что не знают язык. А потому, что не могут использовать то, что знают.</div>
   </div>
 </section>
 
 <div class="sep"><hr class="sep-line"></div>
 
-<!-- PRICING -->
 <div class="pricing-outer" id="buy">
   <div class="pricing-section">
     <div class="pricing-header">
@@ -722,42 +313,28 @@ footer a:hover { color: rgba(245,240,232,.9); }
   </div>
 </div>
 
-<!-- FAQ -->
 <div class="faq-section">
   <div class="faq-label">Вопросы</div>
   <div class="faq-list">
     <div class="faq-item">
-      <div class="faq-q" onclick="fq(this)">
-        Я уже пробовал курсы — они не помогли.
-        <span class="faq-icon">+</span>
-      </div>
+      <div class="faq-q" onclick="fq(this)">Я уже пробовал курсы — они не помогли.<span class="faq-icon">+</span></div>
       <div class="faq-a">Курсы решают не ту проблему. Когда замираешь под давлением — дело не в нехватке слов или правил. Слова есть. Грамматика есть. Просто мозг переключается в режим защиты, и доступ к ним закрывается. Больше грамматики этот механизм не отключит. Книга работает именно с ним.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="fq(this)">
-        Это не для тех, кто не знает языка?
-        <span class="faq-icon">+</span>
-      </div>
-      <div class="faq-a">Основной фокус: уровень B1 — вы понимаете английский, но тревога мешает говорить. Начинающим (A1/A2), начните с Глав 1–2: слово-якорь и дыхание дадут опору раньше, чем придут нужные слова.</div>
+      <div class="faq-q" onclick="fq(this)">Это не для тех, кто не знает языка?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Основной фокус: уровень B1 — вы понимаете английский, но тревога мешает говорить. Начинающим (A1/A2) начните с Глав 1–2: слово-якорь и дыхание дадут опору раньше, чем придут нужные слова.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="fq(this)">
-        Это терапия?
-        <span class="faq-icon">+</span>
-      </div>
+      <div class="faq-q" onclick="fq(this)">Это терапия?<span class="faq-icon">+</span></div>
       <div class="faq-a">Нет. Инструмент на основе КПТ и ACT. Не заменяет клиническую терапию — эффективен при языковой тревожности, которая мешает работе.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="fq(this)">
-        Как получить файл?
-        <span class="faq-icon">+</span>
-      </div>
+      <div class="faq-q" onclick="fq(this)">Как получить файл?<span class="faq-icon">+</span></div>
       <div class="faq-a">Ссылка для скачивания поступит на email, обычно в течение нескольких часов после подтверждения оплаты.</div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -780,7 +357,6 @@ footer a:hover { color: rgba(245,240,232,.9); }
   </div>
 </footer>
 
-<!-- INTRO MODAL -->
 <div id="intro-modal" class="modal-overlay">
   <div class="modal-box">
     <div class="modal-head">
@@ -788,10 +364,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <button class="modal-close" onclick="closeIntro()">×</button>
     </div>
     <div id="intro-status" style="display:none;padding:12px 24px;font-size:13px;color:var(--muted);font-family:var(--sans);border-bottom:1px solid var(--rule);"></div>
-    <iframe class="modal-frame"
-      id="intro-frame"
-      src=""
-      title="Введение — Английский на выдохе"></iframe>
+    <iframe class="modal-frame" id="intro-frame" src="" title="Введение — Английский на выдохе"></iframe>
     <div id="intro-fallback" style="display:none;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:16px;padding:40px;text-align:center;">
       <div style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--mid)">Просмотр недоступен в браузере.</div>
       <div style="font-size:14px;color:var(--muted)">Скачайте введение — это займёт секунду.</div>
@@ -807,53 +380,33 @@ footer a:hover { color: rgba(245,240,232,.9); }
 <script>
 function openIntro(e) {
   e.preventDefault();
-  const m = document.getElementById('intro-modal');
-  m.style.display = 'flex';
+  document.getElementById('intro-modal').style.display = 'flex';
   document.body.style.overflow = 'hidden';
   loadIntroFrame();
 }
-
 function loadIntroFrame() {
   const frame = document.getElementById('intro-frame');
   const fallback = document.getElementById('intro-fallback');
   const status = document.getElementById('intro-status');
   let attempts = 0;
-
   fallback.style.display = 'none';
   status.style.display = 'block';
   status.textContent = 'Загружается...';
-
   const src = 'https://docs.google.com/viewer?url=https://unblock-english.ru/book/intro_angliyskiy.pdf&embedded=true';
-
   function tryLoad() {
     attempts++;
     frame.src = '';
-    setTimeout(() => {
-      frame.src = src + '&t=' + Date.now();
-    }, 100);
-
+    setTimeout(() => { frame.src = src + '&t=' + Date.now(); }, 100);
     setTimeout(() => {
       try {
         const h = frame.contentWindow.document.body.innerHTML;
         if (!h || h.length < 100) {
-          if (attempts < 3) {
-            status.textContent = 'Повторная загрузка...';
-            tryLoad();
-          } else {
-            frame.style.display = 'none';
-            fallback.style.display = 'flex';
-            status.style.display = 'none';
-          }
-        } else {
-          status.style.display = 'none';
-        }
-      } catch(e) {
-        // cross-origin — frame loaded ok
-        status.style.display = 'none';
-      }
+          if (attempts < 3) { status.textContent = 'Повторная загрузка...'; tryLoad(); }
+          else { frame.style.display = 'none'; fallback.style.display = 'flex'; status.style.display = 'none'; }
+        } else { status.style.display = 'none'; }
+      } catch(e) { status.style.display = 'none'; }
     }, 4000);
   }
-
   tryLoad();
 }
 function closeIntro() {
@@ -864,12 +417,8 @@ function closeIntro() {
   document.getElementById('intro-status').style.display = 'none';
   document.body.style.overflow = '';
 }
-document.getElementById('intro-modal').addEventListener('click', function(e) {
-  if (e.target === this) closeIntro();
-});
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeIntro();
-});
+document.getElementById('intro-modal').addEventListener('click', function(e) { if (e.target === this) closeIntro(); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeIntro(); });
 function fq(el) {
   const a = el.nextElementSibling;
   const ic = el.querySelector('.faq-icon');
