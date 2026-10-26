@@ -6,7 +6,7 @@
 <title>Английский на выдохе — книга о языковой тревожности · Кирилл Зотов</title>
 <meta name="description" content="Книга о языковой тревожности: для тех, кто знает английский, но боится говорить. Практики КПТ и ACT. Электронная книга PDF + аудио.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"Английский на выдохе","author":{"@type":"Person","name":"Кирилл Зотов"},"description":"Книга о языковой тревожности. КПТ и ACT.","inLanguage":"ru","offers":{"@type":"Offer","price":"490","priceCurrency":"RUB","availability":"https://schema.org/InStock"}}
+{"@context":"https://schema.org","@type":"Book","name":"Английский на выдохе","author":{"@type":"Person","name":"Кирилл Зотов"},"description":"Книга о языковой тревожности. КПТ и ACT.","inLanguage":"ru","offers":[{"@type":"Offer","name":"Книга","price":"490","priceCurrency":"RUB","url":"https://book.unblock-english.ru/buy?p=book","availability":"https://schema.org/InStock"},{"@type":"Offer","name":"Рабочая тетрадь","price":"390","priceCurrency":"RUB","url":"https://book.unblock-english.ru/buy?p=workbook","availability":"https://schema.org/InStock"},{"@type":"Offer","name":"Книга + рабочая тетрадь","price":"790","priceCurrency":"RUB","url":"https://book.unblock-english.ru/buy?p=bundle","availability":"https://schema.org/InStock"}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400;1,600&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -188,6 +188,20 @@ footer a:hover { color: rgba(245,240,232,.9); }
   .modal-box { max-height: 95vh; }
   .modal-frame { min-height: 400px; }
 }
+/* Страница продажи под автоматическую покупку (book-sales, файл 121): три карточки, «Как это работает», ссылки в ответах */
+.pricing-grid.three { grid-template-columns: repeat(3, 1fr); max-width: 1020px; }
+.how { max-width: 680px; margin-top: 48px; }
+.how .pricing-label { margin-bottom: 12px; }
+.how-steps { list-style: none; counter-reset: how; }
+.how-steps li { counter-increment: how; font-size: 14px; color: var(--mid); padding: 8px 0 8px 28px; border-bottom: 1px solid var(--rule); position: relative; line-height: 1.4; }
+.how-steps li::before { content: counter(how); position: absolute; left: 0; font-weight: 700; color: var(--teal); }
+.how-steps li:last-child { border-bottom: none; }
+.have-purchase { margin-top: 24px; font-family: var(--serif); font-size: 17px; font-style: italic; color: var(--mid); }
+.have-purchase a, .faq-a a { color: var(--teal); border-bottom: 1px solid var(--teal); }
+@media (max-width: 860px) {
+  .pricing-grid.three { grid-template-columns: 1fr; max-width: 100%; }
+  .how { max-width: 100%; }
+}
 </style>
 </head>
 <body>
@@ -212,9 +226,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <a class="btn-secondary" href="#buy">Получить книгу</a>
     </div>
     <div class="hero-price">
-      Электронная книга PDF + аудио-фразы · <strong>490 ₽</strong>
-      <span style="font-family:var(--sans);text-decoration:line-through;font-size:13px;color:var(--muted)">590 ₽</span>
-      <span style="font-family:var(--sans);font-size:12px;font-weight:700;color:var(--teal);background:var(--teal3);padding:2px 6px;border-radius:2px">−15%</span>
+      Электронная книга в формате PDF · <strong>490 ₽</strong>
     </div>
   </div>
   <div class="hero-cover">
@@ -282,33 +294,52 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <div class="pricing-label">Получить книгу</div>
       <h2 class="pricing-title">Не учит языку.<br>Возвращает речь.</h2>
     </div>
-    <div class="pricing-grid">
+    <div class="pricing-grid three">
       <div class="plan">
-        <span class="plan-type">Core</span>
-        <div class="plan-name">Электронная книга PDF + Аудио-фразы</div>
+        <span class="plan-type">Книга</span>
+        <div class="plan-name">Электронная книга</div>
         <div class="plan-price"><span>₽</span>490</div>
-        <div class="plan-oldprice"><span style="text-decoration:line-through;color:var(--muted)">590 ₽</span> <span class="plan-discount">−15%</span></div>
         <ul class="plan-list">
-          <li>Электронная книга PDF · 162 стр.</li>
-          <li>Аудио-фразы · 58 MP3</li>
+          <li>Сейчас в формате PDF</li>
+          <li>Аудиофразы — по ссылкам внутри книги</li>
           <li>Все диаграммы и упражнения</li>
+          <li>Новые форматы, если они выйдут, — в «Моих книгах» без доплаты</li>
         </ul>
-        <a href="https://yookassa.ru/my/i/afDr7lSaz0mF/l" class="plan-btn" onclick="ym(106913295,'reachGoal','buy_core')">Получить книгу</a>
+        <a href="https://book.unblock-english.ru/buy?p=book" class="plan-btn" onclick="ym(106913295,'reachGoal','buy_core')">Получить книгу</a>
+      </div>
+      <div class="plan">
+        <span class="plan-type">Рабочая тетрадь</span>
+        <div class="plan-name">Рабочая тетрадь к книге</div>
+        <div class="plan-price"><span>₽</span>390</div>
+        <ul class="plan-list">
+          <li>Сейчас в формате PDF</li>
+          <li>Журнал роста · карта тревоги · ритуал интеграции</li>
+          <li>Новые версии, если они выйдут, — в «Моих книгах» без доплаты</li>
+        </ul>
+        <a href="https://book.unblock-english.ru/buy?p=workbook" class="plan-btn" onclick="ym(106913295,'reachGoal','buy_workbook')">Получить тетрадь</a>
       </div>
       <div class="plan featured">
         <span class="plan-flag">↑ Рекомендуем</span>
-        <span class="plan-type">Premium</span>
-        <div class="plan-name">PDF + Аудио + Рабочая тетрадь</div>
+        <span class="plan-type">Книга + рабочая тетрадь</span>
+        <div class="plan-name">Электронная книга и рабочая тетрадь</div>
         <div class="plan-price"><span>₽</span>790</div>
-        <div class="plan-oldprice"><span style="text-decoration:line-through;color:var(--muted)">990 ₽</span> <span class="plan-discount">−20%</span></div>
         <ul class="plan-list">
-          <li>Электронная книга PDF · 162 стр.</li>
-          <li>Аудио-фразы · 58 MP3</li>
+          <li>Книга — сейчас в формате PDF</li>
+          <li>Аудиофразы — по ссылкам внутри книги</li>
           <li>Рабочая тетрадь: журнал роста · карта тревоги · ритуал интеграции</li>
-          <li>Все обновления бесплатно</li>
+          <li>Новые форматы и версии, если они выйдут, — в «Моих книгах» без доплаты</li>
         </ul>
-        <a href="https://yookassa.ru/my/i/afDsDarjUmKy/l" class="plan-btn" onclick="ym(106913295,'reachGoal','buy_premium')">Получить комплект</a>
+        <a href="https://book.unblock-english.ru/buy?p=bundle" class="plan-btn" onclick="ym(106913295,'reachGoal','buy_premium')">Получить комплект</a>
       </div>
+    </div>
+    <div class="how">
+      <div class="pricing-label">Как это работает</div>
+      <ol class="how-steps">
+        <li>Выберите книгу, тетрадь или комплект.</li>
+        <li>Оплатите на book.unblock-english.ru через ЮKassa.</li>
+        <li>Откройте «Мои книги»: войдите по email, файлы уже там. Письмо о покупке придёт на этот же адрес.</li>
+      </ol>
+      <p class="have-purchase">Уже покупали? Откройте <a href="https://book.unblock-english.ru/my">«Мои книги»</a>.</p>
     </div>
   </div>
 </div>
@@ -330,7 +361,19 @@ footer a:hover { color: rgba(245,240,232,.9); }
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="fq(this)">Как получить файл?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Ссылка для скачивания поступит на email, обычно в течение нескольких часов после подтверждения оплаты.</div>
+      <div class="faq-a">Оплата проходит на book.unblock-english.ru через ЮKassa. Сразу после оплаты файлы открываются на странице «Мои книги». Письмо о покупке приходит на email, указанный при заказе.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="fq(this)">Как войти, если я покупал(а) раньше?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Откройте «Мои книги» и введите email, с которого покупали. На него придёт одноразовая ссылка для входа. Если покупки там нет, напишите на <a href="mailto:unblock-english@yandex.ru">unblock-english@yandex.ru</a>.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="fq(this)">Нужна ли регистрация или пароль?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Нет. В «Мои книги» входят по email, указанному при покупке: на него приходит одноразовая ссылка.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="fq(this)">Можно ли вернуть деньги?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Да, в течение 7 дней после оплаты, пока ни один файл заказа не скачан. После скачивания деньги возвращаются, только если доступ не открылся, файл не открывается или не соответствует описанию. Просьбу можно отправить на <a href="mailto:unblock-english@yandex.ru">unblock-english@yandex.ru</a>. Подробно — <a href="https://book.unblock-english.ru/offer">в оферте</a>.</div>
     </div>
   </div>
 </div>
@@ -345,14 +388,15 @@ footer a:hover { color: rgba(245,240,232,.9); }
       <div class="footer-meta">
         Зотов Кирилл Валерьевич<br>
         Самозанятый · ИНН 590623326925<br>
-        <a href="mailto:kirill.zotov@gmail.com">kirill.zotov@gmail.com</a><br>
-        <a href="oferta.html">Публичная оферта</a>
+        <a href="mailto:unblock-english@yandex.ru">unblock-english@yandex.ru</a><br>
+        <a href="https://book.unblock-english.ru/offer">Публичная оферта</a><br>
+        <a href="https://book.unblock-english.ru/privacy">Политика обработки данных</a>
       </div>
     </div>
     <hr class="footer-rule">
     <div class="footer-bottom">
       <span>© 2026 unblock-english.ru</span>
-      <span>Цифровой товар · НДС не облагается · Версия 1.0</span>
+      <span>Цифровой товар · НДС не облагается</span>
     </div>
   </div>
 </footer>
