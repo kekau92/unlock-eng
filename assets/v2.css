@@ -256,6 +256,45 @@
 .v2 a.footer-small { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
 .v2 a.footer-small:hover { color: var(--accent); }
 
+/* ===== ССЫЛКА НА УСЛОВИЯ ПОД КНОПКОЙ ФОРМЫ ===== */
+
+.v2 .terms-link { margin: 16px 0 0; font-size: 14px; }
+
+/* ===== УВЕДОМЛЕНИЕ О COOKIE (у нижнего края окна, без анимации) ===== */
+
+.v2 .cookie-note {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 24px;
+  padding: 10px 24px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+.v2 .cookie-note[hidden] { display: none; }
+.v2 .cookie-note p { flex: 0 1 760px; margin: 0; max-width: 760px; font-size: 14px; line-height: 1.5; }
+.v2 .cookie-note a { text-decoration: underline; text-underline-offset: 3px; }
+.v2 .cookie-ok {
+  flex: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  background: var(--accent);
+  color: var(--white);
+  cursor: pointer;
+}
+.v2 .cookie-ok:hover { background: var(--accent-hover); }
+
 /* ===== ТЕЛЕФОН ===== */
 
 @media (max-width: 640px) {
@@ -266,6 +305,9 @@
   .v2 .v2-form .cta { align-self: stretch; }
   .v2 .soft { text-align: left; }
   .v2 .photo { flex-basis: auto; width: 240px; }
+  .v2 .cookie-note { gap: 16px; padding: 8px 24px; }
+  .v2 .cookie-note p { font-size: 13px; line-height: 1.45; }
+  .v2 .cookie-ok { padding: 10px 14px; }
   .v2 .nav a { margin: 8px 24px 8px 0; }
   /* таблица политики: строки карточками, подписи столбцов у каждой ячейки */
   .v2 table, .v2 tbody, .v2 tr, .v2 td { display: block; width: 100%; }

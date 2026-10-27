@@ -95,7 +95,7 @@ ym(106913295,'init',{ssr:true,webvisor:false,clickmap:true,referrer:document.ref
       </div>
       <div class="card">
         <h3>Если планы изменились</h3>
-        <p class="card-text">Отмена не позднее чем за 24 часа до сессии — возврат полностью. При отмене позже — один перенос. Если сессия не состоялась по моей вине — возврат или перенос по вашему выбору.</p>
+        <p class="card-text">Отмена не позднее чем за 24 часа до сессии — возврат полностью. При отмене позже — один перенос или возврат за вычетом фактических расходов. Если сессия не состоялась по моей вине — возврат или перенос по вашему выбору. Деньги возвращаются в течение 10 календарных дней.</p>
       </div>
       <div class="card">
         <h3>Что будет после</h3>
@@ -128,18 +128,19 @@ ym(106913295,'init',{ssr:true,webvisor:false,clickmap:true,referrer:document.ref
         <label for="f-situation">Если хотите, одна строка о ситуации (необязательно)</label>
         <span class="hint above" id="f-situation-hint">Опишите рабочую ситуацию, без медицинских подробностей. Если есть дата события, укажите её.</span>
         <textarea class="fld" id="f-situation" name="situation" rows="4" maxlength="1000" aria-describedby="f-situation-hint f-situation-note"></textarea>
-        <span class="hint" id="f-situation-note">Можно оставить пустым: о ситуации поговорим в переписке или на сессии.</span>
+        <span class="hint" id="f-situation-note">Можно оставить пустым: о ситуации поговорим на сессии.</span>
       </div>
       <div class="hp" aria-hidden="true"><input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
       <div class="field">
         <div class="check">
           <input type="checkbox" id="f-consent" name="consent" required aria-describedby="f-consent-err">
-          <label for="f-consent">Я согласен(на) на обработку персональных данных по <a href="/privacy/">политике</a>.</label>
+          <label for="f-consent">Согласен на обработку адреса почты, имени и описания ситуации для ответа на заявку в соответствии с <a href="/privacy/">политикой обработки персональных данных</a>.</label>
         </div>
         <span class="err" id="f-consent-err" hidden>Отметьте согласие на обработку персональных данных.</span>
       </div>
       <div class="field">
         <button type="submit" class="cta cta-primary">Отправить заявку</button>
+        <p class="terms-link"><a href="/terms/">Условия оказания услуг</a></p>
         <p class="err form-err" id="f-form-err" role="alert" hidden></p>
       </div>
     </form>
@@ -162,6 +163,24 @@ ym(106913295,'init',{ssr:true,webvisor:false,clickmap:true,referrer:document.ref
     <a class="footer-small" href="/privacy/">Политика обработки персональных данных</a>
   </div>
 </footer>
+<div class="cookie-note" id="cookie-note" role="region" aria-label="Уведомление о cookie" hidden>
+  <p>На сайте работает Яндекс Метрика, она использует файлы cookie. Подробнее — в <a href="/privacy/">политике обработки персональных данных</a>.</p>
+  <button type="button" class="cookie-ok" id="cookie-ok">Понятно</button>
+</div>
+<script>
+(function () {
+  var KEY = 'ue_cookie_note', n = document.getElementById('cookie-note'), de = document.documentElement, seen = false;
+  try { seen = localStorage.getItem(KEY) === '1'; } catch (e) { /* хранилище недоступно — показываем */ }
+  if (seen || !n) return;
+  n.hidden = false;
+  function pad() { var h = n.offsetHeight; document.body.style.paddingBottom = h + 'px'; de.style.scrollPaddingBottom = h + 'px'; }
+  pad(); window.addEventListener('resize', pad);
+  document.getElementById('cookie-ok').addEventListener('click', function () {
+    n.hidden = true; document.body.style.paddingBottom = ''; de.style.scrollPaddingBottom = ''; window.removeEventListener('resize', pad);
+    try { localStorage.setItem(KEY, '1'); } catch (e) { /* не запомнится — плашка появится при следующей загрузке */ }
+  });
+})();
+</script>
 <script>
 (function () {
   var CONTACT_ENDPOINT_LIVE = false;

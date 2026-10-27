@@ -58,5 +58,23 @@ ym(106913295,'init',{ssr:true,webvisor:false,clickmap:true,referrer:document.ref
     <a class="footer-small" href="/privacy/">Политика обработки персональных данных</a>
   </div>
 </footer>
+<div class="cookie-note" id="cookie-note" role="region" aria-label="Уведомление о cookie" hidden>
+  <p>На сайте работает Яндекс Метрика, она использует файлы cookie. Подробнее — в <a href="/privacy/">политике обработки персональных данных</a>.</p>
+  <button type="button" class="cookie-ok" id="cookie-ok">Понятно</button>
+</div>
+<script>
+(function () {
+  var KEY = 'ue_cookie_note', n = document.getElementById('cookie-note'), de = document.documentElement, seen = false;
+  try { seen = localStorage.getItem(KEY) === '1'; } catch (e) { /* хранилище недоступно — показываем */ }
+  if (seen || !n) return;
+  n.hidden = false;
+  function pad() { var h = n.offsetHeight; document.body.style.paddingBottom = h + 'px'; de.style.scrollPaddingBottom = h + 'px'; }
+  pad(); window.addEventListener('resize', pad);
+  document.getElementById('cookie-ok').addEventListener('click', function () {
+    n.hidden = true; document.body.style.paddingBottom = ''; de.style.scrollPaddingBottom = ''; window.removeEventListener('resize', pad);
+    try { localStorage.setItem(KEY, '1'); } catch (e) { /* не запомнится — плашка появится при следующей загрузке */ }
+  });
+})();
+</script>
 </body>
 </html>

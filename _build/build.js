@@ -28,12 +28,16 @@ const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&a
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 function t(k) {
   if (!(k in T) || typeof T[k] !== 'string' || !T[k]) throw new Error(`нет ключа ${k} в _build/texts.json`);
-  if (/\[[^\]]*\]/.test(T[k]) && !/\[ДАТА РЕДАКЦИИ\]|\[политике\]/.test(T[k])) throw new Error(`${k}: квадратные скобки в тексте`);
+  // ссылки в тексте ключа — markdown «[текст](/адрес)»; других квадратных скобок в текстах быть не должно
+  if (/\[|\]/.test(T[k].replace(MD_LINK, ''))) throw new Error(`${k}: квадратные скобки в тексте`);
   return T[k];
 }
+const MD_LINK = /\[([^\]]+)\]\((\/[^)\s]*)\)/g;
 /** Текст ключа в HTML: **жирный** → <strong>; остальное экранируется. */
 const rich = (s) => esc(s).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 const h = (k) => rich(t(k));
+/** То же, плюс ссылки «[текст](/адрес)» из ключа (только адреса этого сайта). */
+const md = (k) => rich(t(k)).replace(MD_LINK, '<a href="$2">$1</a>');
 const items = (k) => t(k).split(' / ').map((x) => x.trim());
 /** «Текст → адрес» — подпись ссылки до адреса включая стрелку. */
 const linkLabel = (k) => { const m = /^(.*→)/.exec(t(k)); if (!m) throw new Error(`${k}: нет «→»`); return esc(m[1].trim()); };
@@ -103,6 +107,34 @@ function footer() {
     <a class="footer-small" href="/privacy/">${esc(t('terms.privacy').split(' → ')[0])}</a>
   </div>
 </footer>
+` + cookieNote();
+}
+
+/**
+ * Уведомление о cookie (файл 122, раздел 8.1) на всех страницах v2. Только уведомление: Метрика работает сразу,
+ * не дожидаясь «Понятно». Плашка у нижнего края окна, страницу не блокирует; пока она видна, у страницы нижний отступ
+ * на её высоту и scroll-padding (поле формы в фокусе не уходит под плашку). «Понятно» запоминается в localStorage
+ * в try/catch: если хранилище недоступно, плашка показывается при каждой загрузке. Своих cookie сайт не ставит.
+ */
+function cookieNote() {
+  return `<div class="cookie-note" id="cookie-note" role="region" aria-label="Уведомление о cookie" hidden>
+  <p>${h('cookie.text')} ${md('cookie.link')}</p>
+  <button type="button" class="cookie-ok" id="cookie-ok">${h('cookie.button')}</button>
+</div>
+<script>
+(function () {
+  var KEY = 'ue_cookie_note', n = document.getElementById('cookie-note'), de = document.documentElement, seen = false;
+  try { seen = localStorage.getItem(KEY) === '1'; } catch (e) { /* хранилище недоступно — показываем */ }
+  if (seen || !n) return;
+  n.hidden = false;
+  function pad() { var h = n.offsetHeight; document.body.style.paddingBottom = h + 'px'; de.style.scrollPaddingBottom = h + 'px'; }
+  pad(); window.addEventListener('resize', pad);
+  document.getElementById('cookie-ok').addEventListener('click', function () {
+    n.hidden = true; document.body.style.paddingBottom = ''; de.style.scrollPaddingBottom = ''; window.removeEventListener('resize', pad);
+    try { localStorage.setItem(KEY, '1'); } catch (e) { /* не запомнится — плашка появится при следующей загрузке */ }
+  });
+})();
+</script>
 `;
 }
 
@@ -203,7 +235,9 @@ function sessionPage({ live, consentVersion }) {
         <h3>${h(title)}</h3>
         <p class="card-text">${h(text)}</p>${link ? `\n        <a class="more" href="/how-it-works/">${linkLabel(link)}</a>` : ''}
       </div>`;
-  const consent = esc(t('form.consent')).replace(/\[([^\]]+)\]\([^)]*\)/, '<a href="/privacy/">$1</a>');
+  const consent = md('form.consent');
+  if (!consent.includes('<a href="/privacy/">')) throw new Error('form.consent: нет ссылки на /privacy/');
+  if (!md('form.terms_link').includes('<a href="/terms/">')) throw new Error('form.terms_link: нет ссылки на /terms/');
   return head({ seo: 'session', url: `${SITE}/session/`, extraHead: ld }) + header('session') + `<main>
 <section class="hero-v2 hero-session">
   <div class="container narrow">
@@ -265,6 +299,7 @@ ${flow.map((x) => `      <li>${rich(x)}</li>`).join('\n')}
       </div>
       <div class="field">
         <button type="submit" class="cta cta-primary">${h('form.submit')}</button>
+        <p class="terms-link">${md('form.terms_link')}</p>
         <p class="err form-err" id="f-form-err" role="alert" hidden></p>
       </div>
     </form>
@@ -384,7 +419,7 @@ function legalPage(p, seo, url, date) {
   <div class="container narrow">
     <h1>${h(`${p}.page.title`)}</h1>
     <p class="muted">${esc(t(`${p}.page.date`).replace('[ДАТА РЕДАКЦИИ]', date))}</p>
-    ${body.join('\n    ')}
+${T[`${p}.page.offer`] ? `    <p>${h(`${p}.page.offer`)}</p>\n` : ''}    ${body.join('\n    ')}
   </div>
 </section>
 </main>
@@ -454,12 +489,19 @@ Disallow: /404.html
 Sitemap: ${SITE}/sitemap.xml
 `;
 
+/** Версия текста согласия — ключ form.consent_version (сохраняется с заявкой). */
+function consentVersion() {
+  const v = t('form.consent_version');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(v)) throw new Error(`form.consent_version: ${v}`);
+  return v;
+}
+
 function build({ date, live }) {
   const [dd, mm, yyyy] = date.split('.');
   const iso = `${yyyy}-${mm}-${dd}`;
   return {
     'index.html': home(),
-    'session/index.html': sessionPage({ live, consentVersion: iso }),
+    'session/index.html': sessionPage({ live, consentVersion: consentVersion() }),
     'how-it-works/index.html': howPage(),
     'terms/index.html': legalPage('terms', 'terms', `${SITE}/terms/`, date),
     'privacy/index.html': legalPage('privacy', 'privacy', `${SITE}/privacy/`, date),
