@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://unblock-english.ru/index.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://unblock-english.ru/</loc>
+    <lastmod>2026-10-27</lastmod>
     <priority>1.00</priority>
   </url>
-
   <url>
-    <loc>https://unblock-english.ru/after-platforms.html</loc>
-    <lastmod>2026-02-19</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://unblock-english.ru/assessment.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://unblock-english.ru/session/</loc>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.90</priority>
   </url>
-
   <url>
-    <loc>https://unblock-english.ru/session.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://unblock-english.ru/how-it-works/</loc>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.80</priority>
   </url>
-
   <url>
     <loc>https://unblock-english.ru/book/</loc>
     <lastmod>2026-10-26</lastmod>
     <priority>0.80</priority>
   </url>
-
+  <url>
+    <loc>https://unblock-english.ru/assessment.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://unblock-english.ru/after-platforms.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://unblock-english.ru/terms/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://unblock-english.ru/privacy/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.30</priority>
+  </url>
 </urlset>
