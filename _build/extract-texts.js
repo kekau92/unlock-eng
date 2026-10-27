@@ -70,7 +70,8 @@ function extract(md) {
     const [date, ...lead] = parts[0].split('\n\n');
     set(`${p}.page.date`, date.trim());
     if (lead.length) { if (p !== 'terms' || lead.length !== 1 || !lead[0].startsWith('**Публичная оферта.**')) throw new Error(`${p}: неожиданный текст до п. 1`); set('terms.page.offer', lead[0].trim()); }
-    parts.slice(1).forEach((part, i) => set(`${p}.page.${i + 1}`, part.trim()));
+    // абзацы «- …» внутри пункта — служебные заметки файла 122 (например, «- Ред. 19, запасной вариант …»), не текст страницы
+    parts.slice(1).forEach((part, i) => set(`${p}.page.${i + 1}`, part.split('\n\n').filter((b) => !b.startsWith('- ')).join('\n\n').trim()));
   }
   return { rev, texts: T, notes };
 }
