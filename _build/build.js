@@ -18,6 +18,9 @@ const CONTACT_ENDPOINT = 'https://resi.unblock-english.ru/api/contact';
 const OG_IMAGE = { url: `${SITE}/images/og-v2.png`, width: 1200, height: 630 };
 const PHOTO = { src: '/images/profile-v2.jpg', width: 240, height: 300 };
 const GOALS = { resi: 'home_to_resi', session: 'home_to_session', form: 'contact_form_sent' };
+// Вебвизор Метрики (запись действий на странице) выключен намеренно на всех страницах — до решения по тексту политики
+// (решение автора 27.10.2026). Карта кликов, trackLinks, accurateTrackBounce и цели остаются.
+const METRIKA_WEBVISOR = false;
 // шрифты сайта (те же, что на текущих страницах); font-display: swap, таблица стилей шрифтов не блокирует отрисовку
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=EB+Garamond:wght@500;600&amp;display=swap';
 
@@ -43,7 +46,7 @@ function linkPart(k, phrase, href, attrs = '') {
 const goal = (g) => ` onclick="if(window.ym)ym(${METRIKA},'reachGoal','${g}')"`;
 
 // ---------- общие части ----------
-function head({ seo, url, extraHead = '', webvisor = true }) {
+function head({ seo, url, extraHead = '' }) {
   return `<!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -69,7 +72,7 @@ function head({ seo, url, extraHead = '', webvisor = true }) {
 <link rel="stylesheet" href="/assets/v2.css">
 ${extraHead}<script>
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
-ym(${METRIKA},'init',{ssr:true,webvisor:${webvisor},clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+ym(${METRIKA},'init',{ssr:true,webvisor:${METRIKA_WEBVISOR},clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
 </script>
 </head>
 <body class="v2">
@@ -201,7 +204,7 @@ function sessionPage({ live, consentVersion }) {
         <p class="card-text">${h(text)}</p>${link ? `\n        <a class="more" href="/how-it-works/">${linkLabel(link)}</a>` : ''}
       </div>`;
   const consent = esc(t('form.consent')).replace(/\[([^\]]+)\]\([^)]*\)/, '<a href="/privacy/">$1</a>');
-  return head({ seo: 'session', url: `${SITE}/session/`, extraHead: ld, webvisor: false }) + header('session') + `<main>
+  return head({ seo: 'session', url: `${SITE}/session/`, extraHead: ld }) + header('session') + `<main>
 <section class="hero-v2 hero-session">
   <div class="container narrow">
     <h1>${h('session.h1')}</h1>
