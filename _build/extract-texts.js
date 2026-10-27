@@ -52,7 +52,8 @@ function extract(md) {
     if (/^совпадает с/.test(v)) delete T[k];
   }
   // пометки в скобках, которые файл даёт как пояснение, а не как текст
-  T['form.consent'] = T['form.consent'].replace(/ \(обязательная отметка:[^)]*\)$/, '');
+  // заметка в скобках после текста согласия: «(обязательная отметка: …)» до ред. 16, «(обязательная отметка. … — ред. 17)» с ред. 17
+  T['form.consent'] = T['form.consent'].replace(/ \(обязательная отметка[.:][^)]*\)$/, '');
   T['form.consent_version'] = T['form.consent_version'].replace(/ \(сохраняется[^)]*\)$/, '');
   T['form.terms_link'] = T['form.terms_link'].replace(/ — строка под кнопкой «Отправить заявку»$/, '');
   T['seo.home.schema.provider'] = T['seo.home.schema.provider'].replace(/ \(только имя, другого текста нет\)$/, '');
