@@ -209,6 +209,19 @@ footer a:hover { color: rgba(245,240,232,.9); }
   .pricing-grid.three { grid-template-columns: 1fr; max-width: 100%; }
   .how { max-width: 100%; }
 }
+/* Уведомление о cookie — как на страницах сайта v2 */
+.cookie-note { position: fixed; left: 0; right: 0; bottom: 0; z-index: 150; display: flex; align-items: center; justify-content: center; gap: 16px 24px; padding: 10px 24px; background: #FFFFFF; border-top: 1px solid #E6E6E3; }
+.cookie-note[hidden] { display: none; }
+.cookie-note p { flex: 0 1 760px; margin: 0; max-width: 760px; font-size: 14px; line-height: 1.5; color: #181818; }
+.cookie-note a { color: #223247; text-decoration: underline; text-underline-offset: 3px; }
+.cookie-ok { flex: none; font-family: 'Inter', var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; padding: 10px 20px; border: 1px solid #223247; border-radius: 0; background: #223247; color: #FFFFFF; cursor: pointer; }
+.cookie-ok:hover { background: #162331; }
+.cookie-ok:focus-visible, .cookie-note a:focus-visible { outline: 2px solid #223247; outline-offset: 3px; }
+@media (max-width: 640px) {
+  .cookie-note { gap: 16px; padding: 8px 24px; }
+  .cookie-note p { font-size: 13px; line-height: 1.45; }
+  .cookie-ok { padding: 10px 14px; }
+}
 </style>
 </head>
 <body>
@@ -479,6 +492,24 @@ function fq(el) {
   document.querySelectorAll('.faq-icon').forEach(x => x.classList.remove('open'));
   if (!open) { a.classList.add('open'); ic.classList.add('open'); }
 }
+</script>
+<div class="cookie-note" id="cookie-note" role="region" aria-label="Уведомление о cookie" hidden>
+  <p>На сайте работает Яндекс Метрика, она использует файлы cookie. Подробнее — в <a href="/privacy/">политике обработки персональных данных</a>.</p>
+  <button type="button" class="cookie-ok" id="cookie-ok">Понятно</button>
+</div>
+<script>
+(function () {
+  var KEY = 'ue_cookie_note', n = document.getElementById('cookie-note'), de = document.documentElement, seen = false;
+  try { seen = localStorage.getItem(KEY) === '1'; } catch (e) { /* хранилище недоступно — показываем */ }
+  if (seen || !n) return;
+  n.hidden = false;
+  function pad() { var h = n.offsetHeight; document.body.style.paddingBottom = h + 'px'; de.style.scrollPaddingBottom = h + 'px'; }
+  pad(); window.addEventListener('resize', pad);
+  document.getElementById('cookie-ok').addEventListener('click', function () {
+    n.hidden = true; document.body.style.paddingBottom = ''; de.style.scrollPaddingBottom = ''; window.removeEventListener('resize', pad);
+    try { localStorage.setItem(KEY, '1'); } catch (e) { /* не запомнится — плашка появится при следующей загрузке */ }
+  });
+})();
 </script>
 </body>
 </html>
