@@ -20,6 +20,8 @@ const PHOTO = { src: '/images/profile-v2.jpg', width: 240, height: 300 };
 const GOALS = { resi: 'home_to_resi', session: 'home_to_session', form: 'contact_form_sent' };
 // Вебвизор Метрики (запись действий на странице) выключен намеренно на всех страницах — до решения по тексту политики
 // (решение автора 27.10.2026). Карта кликов, trackLinks, accurateTrackBounce и цели остаются.
+// Код счётчика — как на прежней главной (449570c): tag.js?id=106913295 вместе с ssr:true (ssr без ?id счётчик не создаёт —
+// так было в выкатке 5f20b7b), ecommerce:"dataLayer".
 const METRIKA_WEBVISOR = false;
 // шрифты сайта (те же, что на текущих страницах); font-display: swap, таблица стилей шрифтов не блокирует отрисовку
 const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=EB+Garamond:wght@500;600&amp;display=swap';
@@ -75,8 +77,8 @@ function head({ seo, url, extraHead = '' }) {
 <link rel="stylesheet" href="/assets/core.css">
 <link rel="stylesheet" href="/assets/v2.css">
 ${extraHead}<script>
-(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
-ym(${METRIKA},'init',{ssr:true,webvisor:${METRIKA_WEBVISOR},clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=${METRIKA}','ym');
+ym(${METRIKA},'init',{ssr:true,webvisor:${METRIKA_WEBVISOR},clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
 </script>
 </head>
 <body class="v2">
