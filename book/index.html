@@ -209,6 +209,10 @@ footer a:hover { color: rgba(245,240,232,.9); }
   .pricing-grid.three { grid-template-columns: 1fr; max-width: 100%; }
   .how { max-width: 100%; }
 }
+/* Переход по ссылке из книги (/book/downloads/ → #workbook-card): верх карточки — под шапкой (56px) с отступом карточки (36px) и 16px;
+   прыжок без плавной прокрутки — иначе после загрузки шрифтов текст выше становится короче и прокрутка уходит ниже карточки */
+#workbook-card { scroll-margin-top: 108px; }
+html:has(#workbook-card:target) { scroll-behavior: auto; }
 /* Уведомление о cookie — как на страницах сайта v2 */
 .cookie-note { position: fixed; left: 0; right: 0; bottom: 0; z-index: 150; display: flex; align-items: center; justify-content: center; gap: 16px 24px; padding: 10px 24px; background: #FFFFFF; border-top: 1px solid #E6E6E3; }
 .cookie-note[hidden] { display: none; }
@@ -329,7 +333,7 @@ footer a:hover { color: rgba(245,240,232,.9); }
         <a href="https://book.unblock-english.ru/buy?p=book" class="plan-btn" onclick="ym(106913295,'reachGoal','buy_core')">Получить книгу</a>
       </div>
       <div class="plan">
-        <span class="plan-type">Рабочая тетрадь</span>
+        <span class="plan-type" id="workbook-card">Рабочая тетрадь</span>
         <div class="plan-name">Рабочая тетрадь к книге</div>
         <div class="plan-price"><span>₽</span>390</div>
         <ul class="plan-list">
