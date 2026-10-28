@@ -4,7 +4,7 @@
 //   node _build/build.js --write [--date ДД.ММ.ГГГГ] [--live]     собрать страницы
 //   node _build/build.js --verify [--date ДД.ММ.ГГГГ] [--live]    страницы совпадают со сборкой
 // --live — CONTACT_ENDPOINT_LIVE = true: форма отправляет заявку на сервер. Без флага форма показывает почту и срок ответа.
-// Дата редакции условий и политики — --date (по умолчанию сегодня). Старые страницы (assessment.html, after-platforms.html,
+// Дата редакции условий и политики — EDITION_DATE (рядом с form.consent_version); --date ДД.ММ.ГГГГ её заменяет (новая редакция). Старые страницы (assessment.html, after-platforms.html,
 // /book/, /workbook) сборка не трогает; session.html — заглушка с переходом на /session/.
 
 const fs = require('node:fs');
@@ -491,6 +491,10 @@ Disallow: /404.html
 Sitemap: ${SITE}/sitemap.xml
 `;
 
+/** Дата редакции условий и политики (страницы /terms/, /privacy/ и sitemap.xml) — для --write и --verify без --date. Менять только
+ *  при новой редакции условий или политики; --date ДД.ММ.ГГГГ имеет приоритет. */
+const EDITION_DATE = '27.10.2026';
+
 /** Версия текста согласия — ключ form.consent_version (сохраняется с заявкой). */
 function consentVersion() {
   const v = t('form.consent_version');
@@ -516,8 +520,7 @@ function build({ date, live }) {
 
 if (require.main === module) {
   const i = process.argv.indexOf('--date');
-  const now = new Date();
-  const date = i > 0 ? process.argv[i + 1] : `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}.${now.getFullYear()}`;
+  const date = i > 0 ? process.argv[i + 1] : EDITION_DATE;
   if (!/^\d{2}\.\d{2}\.\d{4}$/.test(date)) { console.error('✗ --date ДД.ММ.ГГГГ'); process.exit(1); }
   const live = process.argv.includes('--live');
   try {
