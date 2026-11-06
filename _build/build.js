@@ -12,6 +12,15 @@ const path = require('node:path');
 
 const ROOT = path.join(__dirname, '..');
 const T = JSON.parse(fs.readFileSync(path.join(__dirname, 'texts.json'), 'utf8'));
+// Тексты точек входа Рабочего набора (файл 23, ред. 3.1): поверх texts.json, сам texts.json по-прежнему сверяется с файлом 122.
+// «ключ[0]» заменяет первый пункт списка « / », остальные пункты остаются из файла 122.
+for (const [k, v] of Object.entries(JSON.parse(fs.readFileSync(path.join(__dirname, 'texts-entry-points.json'), 'utf8')))) {
+  if (k.startsWith('_')) continue;
+  const m = /^(.+)\[0\]$/.exec(k);
+  if (m) { const list = T[m[1]].split(' / '); list[0] = v; T[m[1]] = list.join(' / '); } else T[k] = v;
+}
+// Метки источника на ссылках в набор (без персональных данных): главная — main, страница книги — book (book/index.html).
+const PRO_OFFER = 'https://pro.unblock-english.ru/offer/';
 const SITE = 'https://unblock-english.ru';
 const METRIKA = 106913295;
 const CONTACT_ENDPOINT = 'https://resi.unblock-english.ru/api/contact';
@@ -197,12 +206,15 @@ ${rhythm}
     </div>`) + `
 ` + section(`<h2>${h('products.title')}</h2>
     <p class="muted lead-cards">${h('products.lead')}</p>
-    <div class="cards">
+    <div class="cards four">
       ${card('products.journal_name', 'products.journal_price', 'products.journal_text', '', 'products.journal_link', 'https://journal.unblock-english.ru/')}
       ${card('products.resi_name', 'products.resi_price', 'products.resi_text', 'tools.resi.ai', 'products.resi_link', 'https://resi.unblock-english.ru/', goal(GOALS.resi))}
+      ${card('products.nabor_name', 'products.nabor_price', 'products.nabor_text', '', 'products.nabor_link', `${PRO_OFFER}?from=main`)}
       ${card('products.book_name', 'products.book_price', 'products.book_text', '', 'products.book_link', '/book/')}
     </div>
-    <p class="after-cards">${linkPart('home.tools.choose', 'записаться на первую сессию', '/session/', goal(GOALS.session))}</p>`, { id: 'tools' }) + `
+    <p class="after-cards">${linkPart('home.tools.choose', 'записаться на первую сессию', '/session/', goal(GOALS.session))}</p>
+    <p class="services-diff">${h('home.services_diff.first')}</p>
+    <p class="services-diff">${h('home.services_diff.review')}</p>`, { id: 'tools' }) + `
 ` + section(`<h2>${h('home.notfit_title')}</h2>
     ${ul('home.notfit_items')}
     <p class="after-list">${h('home.notfit_close')}</p>

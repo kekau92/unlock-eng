@@ -208,7 +208,14 @@ footer a:hover { color: rgba(245,240,232,.9); }
 @media (max-width: 860px) {
   .pricing-grid.three { grid-template-columns: 1fr; max-width: 100%; }
   .how { max-width: 100%; }
+  .nabor { max-width: 100%; }
 }
+/* Карточка Рабочего набора (файл 23, ред. 3.1, Т3); ссылка с меткой источника from=book */
+.nabor { max-width: 680px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--rule); }
+.nabor .pricing-label { margin-bottom: 12px; }
+.nabor-text { font-size: 15px; color: var(--mid); line-height: 1.5; }
+.nabor-price { margin-top: 12px; font-size: 13px; font-weight: 700; letter-spacing: .06em; color: var(--teal); }
+.nabor-link { display: inline-block; margin-top: 12px; font-size: 14px; color: var(--teal); border-bottom: 1px solid var(--teal); }
 /* Переход по ссылкам из книги (/book/downloads/ и /workbook → #workbook-card): верх карточки — под шапкой (56px) с отступом карточки (36px) и 16px;
    прыжок без плавной прокрутки — иначе после загрузки шрифтов текст выше становится короче и прокрутка уходит ниже карточки */
 #workbook-card { scroll-margin-top: 108px; }
@@ -365,6 +372,12 @@ html:has(#workbook-card:target) { scroll-behavior: auto; }
         <li>Откройте «Мои книги»: войдите по email, файлы уже там. Письмо о покупке придёт на этот же адрес.</li>
       </ol>
       <p class="have-purchase">Уже покупали? Откройте <a href="https://book.unblock-english.ru/my">«Мои книги»</a>.</p>
+    </div>
+    <div class="nabor" id="nabor">
+      <div class="pricing-label">Для IT и финансов — Рабочий набор</div>
+      <p class="nabor-text">Страницы на сайте для рабочих разговоров: что сказать и в каком порядке до, во время и после разговора. Набор не заменяет книгу и не требуется для неё.</p>
+      <p class="nabor-price">1 990 ₽</p>
+      <a class="nabor-link" href="https://pro.unblock-english.ru/offer/?from=book">Подробнее о наборе → pro.unblock-english.ru</a>
     </div>
   </div>
 </div>

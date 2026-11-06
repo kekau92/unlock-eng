@@ -181,6 +181,7 @@
 .v2 .card-text { font-size: 16px; color: var(--muted); }
 .v2 .card .more { margin-top: auto; padding-top: 4px; }
 .v2 .after-cards { margin-top: 40px; }
+.v2 .services-diff { margin-top: 16px; color: var(--muted); }
 /* ссылки внутри текста — с подчёркиванием (отличаются не только цветом) */
 .v2 main p a,
 .v2 main li a,
