@@ -19,7 +19,7 @@ for (const [k, v] of Object.entries(JSON.parse(fs.readFileSync(path.join(__dirna
   const m = /^(.+)\[0\]$/.exec(k);
   if (m) { const list = T[m[1]].split(' / '); list[0] = v; T[m[1]] = list.join(' / '); } else T[k] = v;
 }
-// Метки источника на ссылках в набор (без персональных данных): главная — main, страница книги — book (book/index.html).
+// Метки источника на ссылках в набор (без персональных данных): utm_source=main на главной, utm_source=book на странице книги (book/index.html).
 const PRO_OFFER = 'https://pro.unblock-english.ru/offer/';
 const SITE = 'https://unblock-english.ru';
 const METRIKA = 106913295;
@@ -209,7 +209,7 @@ ${rhythm}
     <div class="cards four">
       ${card('products.journal_name', 'products.journal_price', 'products.journal_text', '', 'products.journal_link', 'https://journal.unblock-english.ru/')}
       ${card('products.resi_name', 'products.resi_price', 'products.resi_text', 'tools.resi.ai', 'products.resi_link', 'https://resi.unblock-english.ru/', goal(GOALS.resi))}
-      ${card('products.nabor_name', 'products.nabor_price', 'products.nabor_text', '', 'products.nabor_link', `${PRO_OFFER}?from=main`)}
+      ${card('products.nabor_name', 'products.nabor_price', 'products.nabor_text', '', 'products.nabor_link', `${PRO_OFFER}?utm_source=main`)}
       ${card('products.book_name', 'products.book_price', 'products.book_text', '', 'products.book_link', '/book/')}
     </div>
     <p class="after-cards">${linkPart('home.tools.choose', 'записаться на первую сессию', '/session/', goal(GOALS.session))}</p>
